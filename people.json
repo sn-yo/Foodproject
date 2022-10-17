@@ -1,0 +1,49 @@
+{
+    "status":"True",
+    "message":"",
+    "table":"Group",
+    "data":[
+       {
+          "Grp_ID":"1",
+          "Grp_Name":"เนื้อ",
+          "ShowName":"GRILL & STEAK",
+          "SUbGrpID":"102",
+          "Grp_Image":"img/icons/Steak.png"
+       },
+       {
+          "Grp_ID":"2",
+          "Grp_Name":"Pasta",
+          "ShowName":"SPAGHETTI & RICE",
+          "SUbGrpID":"104",
+          "Grp_Image":"img/icons/Salad.png"
+       },
+       {
+          "Grp_ID":"3",
+          "Grp_Name":"ส้มตำ",
+          "ShowName":"SOMTUM & YUM",
+          "SUbGrpID":"105",
+          "Grp_Image":"img/icons/Pizza.png"
+       },
+       {
+          "Grp_ID":"5",
+          "Grp_Name":"Japan",
+          "ShowName":"SUSHI & SASHIMI",
+          "SUbGrpID":"110",
+          "Grp_Image":"img/icons/Burger.png"
+       },
+       {
+          "Grp_ID":"6",
+          "Grp_Name":"ของหวาน",
+          "ShowName":"DESSERT",
+          "SUbGrpID":"103",
+          "Grp_Image":"img/icons/Sandwich.png"
+       },
+       {
+          "Grp_ID":"7",
+          "Grp_Name":"SALAD",
+          "ShowName":"SALAD",
+          "SUbGrpID":"",
+          "Grp_Image":"img/icons/Steak.png"
+       }
+    ]
+ }
