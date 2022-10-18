@@ -1,0 +1,49 @@
+Check in
+103.58.151.121:8080/Checkin?BookingID=553706
+
+Get Group
+103.58.151.121:8080/GetGroup
+
+Get Menu
+103.58.151.121:8080/GetMenu
+or
+103.58.151.121:8080/GetMenu?FoodGroup=2
+
+Get FoodInst
+103.58.151.121:8080/GetFoodInst?FoodCode=3
+
+GetPopular
+103.58.151.121:8080/GetPopular
+
+GetRecommend
+103.58.151.121:8080/GetRecommend
+
+GetConfig
+103.58.151.121:8080/GetConfig
+
+Post Data
+103.58.151.121:8080/PostData?DBTable=orderdetail&DBAction=Insert&KeyUpdate=unid
+
+Body
+[
+    {
+        "ItemNo": "1",
+        "NickName": "suangsan",
+        "FoodCode": "3",
+        "FoodName":"เนื้อวากิว MD",
+        "FoodQty": "1",
+        "FoodInst": "11111,12222",
+        "Order_Remark":"ทดสอบ",
+        "Inv_No":"425922",
+        "Booking_Ref":"553706"
+    },
+    {
+        "ItemNo": "2",
+        "NickName": "suangsan",
+        "FoodCode": "5",
+        "FoodName":"Cho Lava",
+        "FoodQty": "1",
+        "Inv_No":"425922",
+        "Booking_Ref":"553706"
+    }
+]
