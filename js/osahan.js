@@ -41,7 +41,7 @@ Version: 1.0
     $('.cat-slider').slick({
         //   centerMode: true,
         //   centerPadding: '30px',
-        slidesToShow: 8,
+        slidesToShow: 6,
         arrows: true,
         responsive: [{
                 breakpoint: 768,
