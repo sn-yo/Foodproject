@@ -1,27 +1,47 @@
-const data_signup = "http://103.58.151.121:8080/GetFoodInst?FoodCode=3";
+function onLoadPage(code){
+    const data_signup = "http://103.58.151.121:8080/GetFoodInst?FoodCode="+code;
 
-const data_getmenu = "http://103.58.151.121:8080/GetMenu";
+    // const data_getmenu = "http://103.58.151.121:8080/GetMenu";
 
-fetch(data_signup)
-    .then(function (response){
-        return response.json()
-    })
-    .then(function (data){
-        appendData(data)
-    })
-    .catch(function(err){
-        console.log('error: ' + err)
-    })
+    fetch(data_signup)
+        .then(function (response){
+            return response.json()
+        })
+        .then(function (data){
+            appendData(data)
+        })
+        .catch(function(err){
+            console.log('error: ' + err)
+        })
 
 
-function appendData(data){
-    var mainContainer = document.getElementById("myCatagory");
-    console.log(data.data);
+    function appendData(data){
+        var mainContainer = document.getElementById("myCatagory");
+        console.log(data.data);
 
-    // var show_name = document.getElementById("ins_custname");
-    // show_name.innerHTML = data.data[0].Cust_Name;
+        var get_code = localStorage.getItem("code");
+        var get_name = localStorage.getItem("name");
+        var get_img = localStorage.getItem("pathimg");
 
+        document.getElementById("show_detail_name").innerHTML = get_name;
+        document.getElementById("show_detail_img").src = get_img;
+
+        if((get_code == '3') || (get_code == '32') || (get_code == '52')){
+            document.getElementById("option_forsteak").style.display = "block";
+        }else if(get_code == '65'){
+            // console.log('spa');
+            document.getElementById("option_forspa").style.display = "block";
+        }else{
+            // console.log('salud');
+            document.getElementById("option_forslud").style.display = "block";
+        }
+
+        // var show_name = document.getElementById("ins_custname");
+        // show_name.innerHTML = data.data[0].Cust_Name;
+
+    }
 }
+
 
 
 function chk_additem(){

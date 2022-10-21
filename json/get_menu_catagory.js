@@ -32,10 +32,10 @@ $.ajax({
                 menu.getElementsByClassName('href_catagory')[0].href = "get_catagory_sushi.html";
             }else if(data[i].Grp_ID == '6'){
                 menu.getElementsByClassName('pic_catagory')[0].src = "img/icons/Pizza.png";
-                menu.getElementsByClassName('href_catagory')[0].href = "#";
+                menu.getElementsByClassName('href_catagory')[0].href = "get_catagory_dessert.html";
             }else if(data[i].Grp_ID == '7'){
                 menu.getElementsByClassName('pic_catagory')[0].src = "img/icons/Salad.png";
-                menu.getElementsByClassName('href_catagory')[0].href = "#";
+                menu.getElementsByClassName('href_catagory')[0].href = "get_catagory_salad.html";
             }else{
                 menu.getElementsByClassName('pic_catagory')[0].src = "img/icons/Steak.png";
                 menu.getElementsByClassName('href_catagory')[0].href = "#";

@@ -20,7 +20,14 @@ $.ajax({
             // ชื่อเมนู
             menu.getElementsByClassName('text-black')[0].id = data[i].FoodCode;
             menu.getElementsByClassName('text-black')[0].innerHTML = data[i].FoodName;
-            menu.getElementsByClassName('pic_reccomend')[0].src = "img/FoodImage/"+data[i].Food_ImageName;
+            var pathimg = "img/FoodImage/"+data[i].Food_ImageName
+            menu.getElementsByClassName('pic_reccomend')[0].src = pathimg;
+
+            //set
+            var xx = menu.getElementsByClassName("click_for_this")[0];
+            // console.log('xx', xx);
+            xx.setAttribute("food", "xxxxx");
+            xx.setAttribute("onclick", "OnBeforeClick('"+data[i].FoodCode+"','"+data[i].FoodName+"','"+pathimg+"')");
             
                         
             
