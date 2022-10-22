@@ -130,6 +130,9 @@ function clickconfirm(fooditem){
         }else{
             // console.log('qty', chk_qty);
             updatemyCart(get_curr_food_code, chk_qty);
+            // removemyCart(get_curr_food_code);
+            // localStorage.setItem('image', 'myCat.png');
+            // removemyCart(get_curr_food_code);
         }
     }
     
@@ -141,16 +144,37 @@ function updatemyCart(product_cood, Quantity){
     console.log('update');
     var get_cart = JSON.parse(localStorage.getItem("cart"));
     for(let data of get_cart){
+        console.log(data.code);
         if(data.code == product_cood){
-            data.qty = 6+Quantity;
+            
+            console.log(data.qty);
+
+            data.qty += Quantity;
+            console.log(Quantity);
             console.log(data.qty);
         }
     }
-    localStorage.setItem("cart", JSON.stringify(get_cart));
+    console.log(get_cart);
+    localStorage.removeItem("cart");
+    // localStorage.setItem("cart", JSON.stringify(get_cart));
+    console.log(get_cart);
 
 }
 
 function removemyCart(product_cood){
-    let temp = cart.filter(item => item.code != product_cood);
-    localStorage.setItem("cart", JSON.stringify(get_cart));
+    var get_cart = JSON.parse(localStorage.getItem("cart"));
+    var temp = get_cart.filter(item => item.code != product_cood);
+    console.log(temp);
+    localStorage.setItem("cart", JSON.stringify(temp));
+}
+
+function test123(){
+    var food_objs = {
+        "code" : "3",
+        "name" : "get_curr_food_name",
+        "qty" : 10
+    }
+
+    // localStorage.removeItem('image');
+    localStorage.setItem('cart', food_objs);
 }
