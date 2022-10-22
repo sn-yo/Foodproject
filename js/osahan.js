@@ -38,32 +38,68 @@ Version: 1.0
     });
 
 
+    // $('.cat-slider').slick({
+    //     //   centerMode: true,
+    //     //   centerPadding: '30px',
+    //     slidesToShow: 4,
+    //     arrows: true,
+    //     responsive: [{
+    //             breakpoint: 768,
+    //             settings: {
+    //                 arrows: false,
+    //                 centerMode: true,
+    //                 centerPadding: '40px',
+    //                 slidesToShow: 4
+    //             }
+    //         },
+    //         {
+    //             breakpoint: 480,
+    //             settings: {
+    //                 arrows: false,
+    //                 centerMode: false,
+    //                 centerPadding: '40px',
+    //                 slidesToShow: 4
+    //             }
+    //         }
+    //     ]
+    // });
+
     $('.cat-slider').slick({
         //   centerMode: true,
         //   centerPadding: '30px',
-        slidesToShow: 8,
-        arrows: true,
+        arrows: false,
+        infinite: false,
+        speed: 300,
+        centerPadding: '40px',
+        slidesToShow: 4,
+        slidesToScroll: 4,
+
         responsive: [{
                 breakpoint: 768,
                 settings: {
-                    arrows: true,
-                    centerMode: true,
+                    arrows: false,
+                    infinite: false,
+                    speed: 300,
                     centerPadding: '40px',
-                    slidesToShow: 4
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
                 }
             },
             {
                 breakpoint: 480,
                 settings: {
                     arrows: false,
-                    centerMode: true,
+                    infinite: false,
+                    speed: 300,
                     centerPadding: '40px',
-                    slidesToShow: 3
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
                 }
             }
         ]
     });
 
+    
     // Trending slider
 
     $('.trending-slider').slick({

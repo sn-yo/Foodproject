@@ -840,6 +840,12 @@ p {
     border-radius: 0px;
 }
 
+.count-number-getfood .btn {
+    padding: 2px 15px;
+    font-size: 24px;
+    border-radius: 0px;
+}
+
 .count-number-input {
     width: 24px;
     text-align: center;
@@ -850,6 +856,19 @@ p {
     height: 24px;
     border-radius: 0px;
     vertical-align: bottom;
+}
+
+.count-number-input-getfood {
+    width: 70px;
+    text-align: center;
+    margin: 0 -4px;
+    background: #6c757d;
+    border: none;
+    color: #fff;
+    height: 42px;
+    border-radius: 0px;
+    vertical-align: bottom;
+    font-size: 25px;
 }
 
 .non_veg,

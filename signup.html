@@ -44,38 +44,39 @@
 				<div class="text-center pb-3">
 					<img alt="#" src="img/logo_copper02.png" class="img-fluid item-img w-80">
 					<button class="btn_y copper_yy btn-lg btn-block mt-3">
-                        <h4>Customer Book Name</h4>
+                        <h4 id="ins_custname">Customer Book Name</h4>
                     </button>
                     <button class="btn_y copper_yy btn-lg btn-block mt-3">
-                        <h4>Hungry Hub Exclusive Menus Unlimited All Premium M</h4>
-                        <p></p>
-                        <h3>3,590.00</h3>
+                        <h4 id="ins_promote">Hungry Hub Exclusive Menus Unlimited All Premium M</h4>
                     </button>
                     
 				</div>
 				
-				<form class="mt-5 mb-4" action="home.html">
+				<form id="myForm" class="mt-5 mb-4" action="home.html">
 					<div class="row mt-5">
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="exampleInputNumber1" class="text-dark">หมายเลขโต๊ะ</label>
-                                <input type="text" placeholder="Enter Table no." class="form-control" id="exampleInputNumber1" aria-describedby="numberHelp" value="1">
+                                <input type="text" placeholder="Enter Table no." class="form-control" id="ins_tableno" aria-describedby="numberHelp" value="1">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="exampleInputNumber2" class="text-dark">เวลา</label>
-                                <input type="text" placeholder="Enter Time" class="form-control" id="exampleInputNumber2" aria-describedby="numberHelp" value="12.00 - 14.00">
+                                <input type="text" placeholder="Enter Time" class="form-control" id="ins_timebook" aria-describedby="numberHelp" value="12.00 - 14.00">
                             </div>
                         </div>
                     </div>
 					<div class="form-group">
 						<label for="exampleInputName3" class="text-dark">กรุณาระบุชื่อ</label>
-						<input type="text" placeholder="Enter Name" class="form-control" id="exampleInputName3" aria-describedby="nameHelp" value="Adam">
+						<input type="text" placeholder="Enter Name" class="form-control" id="ins_newname" aria-describedby="nameHelp" value="John">
+                        <input type="hidden" id="ins_invno" value="123">
+                        <input type="hidden" id="booking_ref" value="234">
 					</div>
-					<button class="btn btn-primary btn-lg btn-block">
+					<button class="btn btn-primary btn-lg btn-block" onclick="getAccount()">
 					   สั่งอาหาร
 					</button>
+                    <p id="demo"></p>
 				</form>
 				
 				
@@ -84,100 +85,10 @@
     </div>
     <nav id="main-nav">
         <ul class="second-nav">
-            <li><a href="home.html"><i class="feather-home mr-2"></i> Homepage</a></li>
-            <li><a href="my_order.html"><i class="feather-list mr-2"></i> My Orders</a></li>
-            <li>
-                <a href="#"><i class="feather-edit-2 mr-2"></i> Authentication</a>
-                <ul>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="signup.html">Register</a></li>
-                    <li><a href="forgot_password.html">Forgot Password</a></li>
-                    <li><a href="verification.html">Verification</a></li>
-                    <li><a href="location.html">Location</a></li>
-                </ul>
-            </li>
-            <li><a href="favorites.html"><i class="feather-heart mr-2"></i> Favorites</a></li>
-            <li><a href="trending.html"><i class="feather-trending-up mr-2"></i> Trending</a></li>
-            <li><a href="most_popular.html"><i class="feather-award mr-2"></i> Most Popular</a></li>
-            <li><a href="restaurant.html"><i class="feather-paperclip mr-2"></i> Restaurant Detail</a></li>
-            <li><a href="checkout.html"><i class="feather-list mr-2"></i> Checkout</a></li>
-            <li><a href="successful.html"><i class="feather-check-circle mr-2"></i> Successful</a></li>
-            <li><a href="map.html"><i class="feather-map-pin mr-2"></i> Live Map</a></li>
-            <li>
-                <a href="#"><i class="feather-user mr-2"></i> Profile</a>
-                <ul>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="favorites.html">Delivery support</a></li>
-                    <li><a href="contact-us.html">Contact Us</a></li>
-                    <li><a href="terms.html">Terms of use</a></li>
-                    <li><a href="privacy.html">Privacy & Policy</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="feather-alert-triangle mr-2"></i> Error</a>
-                <ul>
-                    <li><a href="not-found.html">Not Found</a>
-                        <li><a href="maintence.html"> Maintence</a>
-                            <li><a href="coming-soon.html">Coming Soon</a>
-                </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="feather-link mr-2"></i> Navigation Link Example</a>
-                    <ul>
-                        <li>
-                            <a href="#">Link Example 1</a>
-                            <ul>
-                                <li>
-                                    <a href="#">Link Example 1.1</a>
-                                    <ul>
-                                        <li><a href="#">Link</a></li>
-                                        <li><a href="#">Link</a></li>
-                                        <li><a href="#">Link</a></li>
-                                        <li><a href="#">Link</a></li>
-                                        <li><a href="#">Link</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">Link Example 1.2</a>
-                                    <ul>
-                                        <li><a href="#">Link</a></li>
-                                        <li><a href="#">Link</a></li>
-                                        <li><a href="#">Link</a></li>
-                                        <li><a href="#">Link</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Link Example 2</a></li>
-                        <li><a href="#">Link Example 3</a></li>
-                        <li><a href="#">Link Example 4</a></li>
-                        <li data-nav-custom-content>
-                            <div class="custom-message">
-                                You can add any custom content to your navigation items. This text is just an example.
-                            </div>
-                        </li>
-                    </ul>
-                </li>
+            
         </ul>
         <ul class="bottom-nav">
-            <li class="email">
-                <a class="text-danger" href="home.html">
-                    <p class="h5 m-0"><i class="feather-home text-danger"></i></p>
-                    Home
-                </a>
-            </li>
-            <li class="github">
-                <a href="faq.html">
-                    <p class="h5 m-0"><i class="feather-message-circle"></i></p>
-                    FAQ
-                </a>
-            </li>
-            <li class="ko-fi">
-                <a href="contact-us.html">
-                    <p class="h5 m-0"><i class="feather-phone"></i></p>
-                    Help
-                </a>
-            </li>
+            
         </ul>
     </nav>
     <!-- Bootstrap core JavaScript -->
@@ -189,6 +100,23 @@
     <script type="text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="js/osahan.js"></script>
+
+    <!-- json data -->
+    <script src="json/get_signup.js"></script>
+    <script>
+        function getAccount(){
+            var ins_newname = document.getElementById("ins_newname").value;
+            var ins_newinvno = document.getElementById("ins_invno").value;
+            var ins_newbookingref = document.getElementById("booking_ref").value;
+            localStorage.setItem('Set_name', ins_newname);
+            localStorage.setItem('Set_invno', ins_newinvno);
+            localStorage.setItem('Set_bookingref', ins_newbookingref);
+
+            if(!localStorage.getItem("cart")){                
+                localStorage.setItem("cart", "[]");
+            }
+        }
+    </script>
     
 </body>
 

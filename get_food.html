@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Askbootstrap">
+    <meta name="author" content="Askbootstrap">
+    <link rel="icon" type="image/png" href="img/fav.png">
+    <title>COPPER Restaurant</title>
+    <!-- Slick Slider -->
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.min.css" />
+    <!-- Feather Icon-->
+    <link href="vendor/icons/feather.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Sidebar CSS -->
+    <link href="vendor/sidebar/demo.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="section-header">
+        <section class="header-main shadow-sm bg-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-1">
+                        <a href="home.html" class="brand-wrap mb-0">
+                            <img alt="#" class="img-fluid" src="img/logo_web.png">
+                        </a>
+                        <!-- brand-wrap.// -->
+                    </div>
+                    <div class="col-3 d-flex align-items-center m-none">
+                        
+                    </div>
+                    <!-- col.// -->
+                    <div class="col-8">
+                        <div class="d-flex align-items-center justify-content-end pr-5">
+                            <!-- search -->
+                            
+                            <!-- offers -->
+                            
+                            <!-- signin -->
+                            
+                            <!-- my account -->
+                            <div class="dropdown mr-4 m-none">
+                                
+                            </div>
+                            <!-- signin -->
+                            <a href="checkout.html" class="widget-header mr-4 text-dark">
+                                <div class="icon d-flex align-items-center">
+                                    <i class="feather-shopping-cart h6 mr-2 mb-0"></i> <span>Cart</span>
+                                </div>
+                            </a>
+                            <!-- <a class="toggle" href="#">
+                                <span></span>
+                            </a> -->
+                        </div>
+                        <!-- widgets-wrap.// -->
+                    </div>
+                    <!-- col.// -->
+                </div>
+                <!-- row.// -->
+            </div>
+            <!-- container.// -->
+        </section>
+        <!-- header-main .// -->
+    </header>
+    <div class="d-none">
+        <div class="bg-primary p-3 d-flex align-items-center">
+            <img alt="#" class="img-fluid" src="img/logo_circle_copper02.png">
+            <h4 class="font-weight-bold m-0 text-white" style="padding-left: 20px;">COPPER Buffet</h4>
+        </div>
+    </div>
+    <div class="py-5 osahan-coming-soon d-flex justify-content-center align-items-center">
+        <div class="col-md-6">
+            <div class="text-center pb-3">
+                <h1 class="font-weight-bold" id="show_detail_name">เนื้อวากิว MD</h1>
+                
+            </div>
+            <!-- continue -->
+            <div class="bg-white rounded p-4 shadow-sm">
+				<a href="#">
+					<img alt="#" id="show_detail_img" src="img/steak01.png" class="img-fluid item-img w-100">
+				</a>
+				<p></p>
+                <h6 class="font-weight-bold mb-2 text-center ">ระบุจำนวน</h6>
+				
+				<div class="align-items-center text-center p-2">
+                                
+					<div class="ml-auto">
+						<span class="count-number-getfood"><button type="button" id="click_del" onclick="chk_delitem()" class="btn left dec btn btn-outline-secondary"> <i class="feather-minus text-success"></i> </button><input class="count-number-input-getfood" type="text" id="ins_qty" readonly="" value="1"><button type="button" id="click_add" onclick="chk_additem()" class="btn right inc btn btn-outline-secondary"> <i class="feather-plus text-success"></i> </button></span>
+					</div>
+                    
+				</div>						
+				<p class="p-3"></p>	
+                
+                
+                <div id="option_forall" style="display: none;">
+
+                    <div class="row m-0">
+                        <h6 class="p-3 m-0 bg-light w-100">Option <small class="text-black-50">เลือกเพิ่มเติม</small></h6>
+                        <div class="col-md-12 px-0 border-top">
+                            <div class="" id="getfood_point">
+                                
+                                                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <template>
+                    <div class="p-1 border-bottom gold-members" id="getfood_master">
+                        <span class="float-right"><!-- <a href="#" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#extras">0</a>--></span>
+                        <div class="media">
+                            <div class="custom-control custom-checkbox py-2">
+                                <input type="checkbox" id="checkbox_for1" class="custom-control-input desc_idforoption">
+                                    <label title="" type="checkbox" for="checkbox_for1" class="custom-control-label font-weight-bold desc_foroption">ติดมัน.</label>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+                <p></p>
+                <p></p>
+				
+                <a href="checkout.html" class="btn rounded btn-primary btn-lg btn-block" onclick="clickconfirm(3)">Add to Basket</a>
+                <div class="p-5"></div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer class="section-footer border-top bg-dark">
+        <div class="container">
+            
+            <!-- footer-top.// -->
+            
+        </div>
+        <!-- //container -->
+        <section class="footer-copyright border-top py-3 bg-light">
+            
+        </section>
+    </footer>
+    <nav id="main-nav">
+        <ul class="second-nav">
+            <li><a href="home.html"><i class="feather-home mr-2"></i> Homepage</a></li>
+            <li><a href="my_order.html"><i class="feather-list mr-2"></i> My Orders</a></li>
+            
+        </ul>
+        <ul class="bottom-nav">
+            <li class="email">
+                <a class="text-danger" href="home.html">
+                    <p class="h5 m-0"><i class="feather-home text-danger"></i></p>
+                    Home
+                </a>
+            </li>
+            <li class="ko-fi">
+                <a href="signup.html">
+                    <p class="h5 m-0"><i class="feather-user"></i></p>
+                    Sign Out
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
+        <div class="row">
+            <div class="col selected">
+                <a href="home.html" class="text-danger small font-weight-bold text-decoration-none">
+                    <p class="h4 m-0"><i class="feather-home text-danger"></i></p>
+                    Home
+                </a>
+            </div>
+            <div class="col bg-white rounded-circle mt-n4 px-3 py-2">
+                <div class="bg-danger rounded-circle mt-n0 shadow">
+                    <a href="checkout.html" class="text-white small font-weight-bold text-decoration-none">
+                        <i class="feather-shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <a href="my_order.html" class="text-dark small font-weight-bold text-decoration-none">
+                    <p class="h4 m-0"><i class="feather-user"></i></p>
+                    My Order
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- slick Slider JS-->
+    <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+    <!-- Sidebar JS-->
+    <script type="text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script type="text/javascript" src="js/osahan.js"></script>
+
+    <!-- json -->
+    <script src="json/get_foodinst.js"></script>
+    <script>
+        let current_menu = localStorage.getItem("code");
+        // console.log(current_menu);
+        onLoadPage(current_menu);
+    </script>
+</body>
+
+</html>
