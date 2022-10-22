@@ -10,10 +10,6 @@ function get_list(menu_id, menu_catagory){
             // console.log(data.length);
             var xloop = 0;
 
-            var show_groupname = localStorage.getItem("group_name");
-            // console.log(show_groupname);
-            document.getElementById("cata_showgroupname").innerHTML = show_groupname;
-
             for(var xrow = 0; xrow < (data.length/2); xrow++){
                 // console.log('xrow', xrow);
                 var row_mb = document.createElement('div');

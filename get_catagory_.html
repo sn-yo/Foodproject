@@ -22,14 +22,13 @@
 </head>
 
 <body class="fixed-bottom-bar">
-    
     <header class="section-header">
         <section class="header-main shadow-sm bg-white">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-1">
                         <a href="home.html" class="brand-wrap mb-0">
-                            <img alt="#" class="img-fluid" src="img/logo_circle_copper02.png">
+                            <img alt="#" class="img-fluid" src="img/logo_web.png">
                         </a>
                         <!-- brand-wrap.// -->
                     </div>
@@ -102,72 +101,16 @@
             </div>
         </template>
         <!-- menu catagory -->
-        
-        <!-- menu recommend and popular -->
-        <div class="container">
-            <div class="">
-				<!-- <p class="font-weight-bold pt-4 m-0">Recommended เมนูแนะนำ</p> -->
-                <div id="recommend_point">
 
-                    
-                </div>
-            </div>
-
-            <div class="">
-				<!-- <p class="font-weight-bold pt-4 m-0">Most Popular เมนูยอดนิยม</p> -->
-                <div id="mostpopular_point">
-
-                </div>
-            </div>
-        </div>
-
-        <template>
-            <div class="osahan-slider-item" id="recommend_master">
-                <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                    <div class="list-card-image">
-                        <a href="get_steak01.html" class="click_for_this" food="type" onclick="OnBeforeClick('code','name','path')">
-                            <img alt="#" src="img/steak01.png" class="img-fluid item-img w-100 pic_reccomend">
-                        </a>
-                    </div>
-                    <div class="p-3 position-relative">
-                        <div class="list-card-body">
-                            <h6 class="mb-1"><a href="get_steak01.html" onclick="OnBeforeClick('code','name','path')" id="recommand01" class="text-black">เนื้อวากิว MD</a>
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </template>
-
-        <template>
-            <div class="osahan-slider-item" id="mostpopular_master">
-                <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
-                    <div class="list-card-image">
-                        <a href="get_sushi.html">
-                            <img alt="#" src="img/sushi_wagyu01.png" class="img-fluid item-img w-100 pic_mostpopular">
-                        </a>
-                    </div>
-                    <div class="p-3 position-relative">
-                        <div class="list-card-body">
-                            <h6 class="mb-1"><a href="get_sushi.html" id="mostpopular01" class="text-black">ปลากระพงต้มยำซอส</a>
-                            </h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </template>
-        <!-- menu recommend and popular -->
-
-        <!-- recommanded -->
         <div class="container">
 		
 			<!-- CATAGORY  GRILL & STEAK -->
             <div class="pt-2 pb-3 title d-flex align-items-center">
-                <h5 class="m-0" id="cata_showgroupname">Recommended เมนูแนะนำ</h5>
+                <h5 class="m-0" id="cata_showgroupname">GRILL & STEAK</h5>
                 
             </div>
             
-            <div class="most_sale" id="catagory_home_point">
+            <div class="most_sale" id="catagory_steak_point">
                                 
                 <div class="row mb-3"></div>                
                 
@@ -176,13 +119,13 @@
             <template>
                 <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm" id="master_catagory_steak">
                     <div class="list-card-image">
-                        <a href="get_steak01.html" class="click_for_this" onclick="OnBeforeClick('code','name','path')">
+                        <a href="#">
                             <img alt="#" src="img/steak01.png" class="img-fluid item-img w-100 pic_catagory_steak">
                         </a>
                     </div>
                     <div class="p-3 position-relative">
                         <div class="list-card-body">
-                            <h6 class="mb-1"><a href="#" onclick="OnBeforeClick('code','name','path')" class="text-black text_name">เนื้อวากิว Blue R</a></h6>
+                            <h6 class="mb-1"><a href="#" class="text-black text_name">เนื้อวากิว Blue R</a></h6>
                             
                             <p></p>
                         </div>
@@ -192,7 +135,6 @@
 
             <!-- CATAGORY  GRILL & STEAK -->
         </div>
-        <!-- recommanded -->
 
     </div>
     <!-- Footer -->
@@ -314,36 +256,15 @@
             </div>
         </div>
     </div>
-
-    
- 
-
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    
     <!-- json -->
     <script src="json/get_menu_catagory.js"></script>
-    <script src="json/get_menu_recommend.js"></script>
-    <!-- <script src="json/get_menu_mostpopular.js"></script> -->
-
-    <!-- slick Slider JS-->
-    <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
-
-    
-    
-    <!-- Sidebar JS-->
-    <script type="text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script type="text/javascript" src="js/osahan.js"></script>
+    <script src="json/get_list_bycatagory.js"></script>
     <script>
-        function OnBeforeClick(code, name, path){
-            // alert(code);
-            localStorage.setItem('code',code);
-            localStorage.setItem('name',name);
-            localStorage.setItem('pathimg',path);
-        }
+        var get_group_id = localStorage.getItem("group_id");
+        get_list(get_group_id,'catagory_steak_point');
 
         function OnClickCata(group_id, group_name){
             // alert(group_id);
@@ -351,6 +272,13 @@
             localStorage.setItem('group_name',group_name);
         }
     </script>
+
+    <!-- slick Slider JS-->
+    <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+    <!-- Sidebar JS-->
+    <script type="text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script type="text/javascript" src="js/osahan.js"></script>
     
 </body>
 
