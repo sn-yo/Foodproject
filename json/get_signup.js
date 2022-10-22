@@ -14,7 +14,7 @@ fetch(data_signup)
 
 function appendData(data){
     var mainContainer = document.getElementById("myCatagory");
-    console.log(data.data);
+    // console.log(data.data);
 
     var show_name = document.getElementById("ins_custname");
     show_name.innerHTML = data.data[0].Cust_Name;
@@ -27,6 +27,12 @@ function appendData(data){
 
     var show_time = document.getElementById("ins_timebook");
     show_time.value = data.data[0].Round_Time;
+
+    var inv_no = document.getElementById("ins_invno");
+    inv_no.value = data.data[0].Inv_No;
+
+    var booking_ref = document.getElementById("booking_ref");
+    booking_ref.value = data.data[0].Booking_Ref;
 }
 
 function myFunction() {

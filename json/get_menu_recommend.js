@@ -27,7 +27,7 @@
 //             var xx = menu.getElementsByClassName("click_for_this")[0];
 //             // console.log('xx', xx);
 //             xx.setAttribute("food", "xxxxx");
-//             xx.setAttribute("onclick", "OnBeforeClick('"+data[i].FoodCode+"','"+data[i].FoodName+"','"+pathimg+"')");
+//             xx.setAttribute("onclick", "OnChooseFood('"+data[i].FoodCode+"','"+data[i].FoodName+"','"+pathimg+"')");
             
                         
             
@@ -72,7 +72,7 @@ $.ajax({
                     var xx = menu.getElementsByClassName("click_for_this")[0];
                     // console.log('xx', xx);
                     
-                    xx.setAttribute("onclick", "OnBeforeClick('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+pathimg+"')");
+                    xx.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+pathimg+"')");
 
                     var col_6_tag1 = document.createElement('div');
                     col_6_tag1.className = "col-6";

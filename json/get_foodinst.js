@@ -26,18 +26,42 @@ function onLoadPage(code){
         document.getElementById("show_detail_name").innerHTML = get_name;
         document.getElementById("show_detail_img").src = get_img;
 
-        if((get_code == '3') || (get_code == '32') || (get_code == '52')){
-            document.getElementById("option_forsteak").style.display = "block";
-        }else if(get_code == '65'){
-            // console.log('spa');
-            document.getElementById("option_forspa").style.display = "block";
-        }else{
-            // console.log('salud');
-            document.getElementById("option_forslud").style.display = "block";
-        }
+        // if((get_code == '3') || (get_code == '32') || (get_code == '52')){
+        //     // document.getElementById("option_forsteak").style.display = "block";
+        // }else if(get_code == '65'){
+        //     // console.log('spa');
+        //     // document.getElementById("option_forspa").style.display = "block";
+        // }else{
+        //     // console.log('salud');
+        //     // document.getElementById("option_forslud").style.display = "block";
+        // }
 
         // var show_name = document.getElementById("ins_custname");
         // show_name.innerHTML = data.data[0].Cust_Name;
+        var chk_inst = data.data.length;
+        // console.log(chk_inst);
+        if(chk_inst > 0){
+            document.getElementById("option_forall").style.display = "block";
+            
+            const myoption = data.data;
+            for(var i=0; i<myoption.length; i++){
+                var temp = document.getElementsByTagName("template")[0];
+                // console.log(temp.content);
+                var option_choose = temp.content.firstElementChild.cloneNode(true);
+                option_choose.setAttribute("id", "getfood_"+myoption[i].ID);
+                option_choose.getElementsByClassName("desc_foroption")[0].innerHTML = myoption[i].SpcDesc;
+                
+                option_choose.getElementsByClassName("desc_foroption")[0].setAttribute("for","optionchoose_"+myoption[i].ID);
+                option_choose.getElementsByClassName("desc_idforoption")[0].setAttribute("id", "optionchoose_"+myoption[i].ID);
+
+                // var setid_option = document.getElementById("checkbox_for1");
+                // console.log(setid_option);
+                // setid_option.setAttribute("id", "optionchoose_"+myoption[i].ID);
+
+                document.getElementById("getfood_point").appendChild(option_choose);
+            }
+        }
+
 
     }
 }

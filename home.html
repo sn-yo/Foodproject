@@ -125,13 +125,13 @@
             <div class="osahan-slider-item" id="recommend_master">
                 <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
                     <div class="list-card-image">
-                        <a href="get_steak01.html" class="click_for_this" food="type" onclick="OnBeforeClick('code','name','path')">
+                        <a href="get_food.html" class="click_for_this" food="type" onclick="OnChooseFood('code','name','path')">
                             <img alt="#" src="img/steak01.png" class="img-fluid item-img w-100 pic_reccomend">
                         </a>
                     </div>
                     <div class="p-3 position-relative">
                         <div class="list-card-body">
-                            <h6 class="mb-1"><a href="get_steak01.html" onclick="OnBeforeClick('code','name','path')" id="recommand01" class="text-black">เนื้อวากิว MD</a>
+                            <h6 class="mb-1"><a href="get_food.html" onclick="OnChooseFood('code','name','path')" id="recommand01" class="text-black">เนื้อวากิว MD</a>
                             </h6>
                         </div>
                     </div>
@@ -176,13 +176,13 @@
             <template>
                 <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm" id="master_catagory_steak">
                     <div class="list-card-image">
-                        <a href="get_steak01.html" class="click_for_this" onclick="OnBeforeClick('code','name','path')">
+                        <a href="get_food.html" class="click_for_this" onclick="OnChooseFood('code','name','path')">
                             <img alt="#" src="img/steak01.png" class="img-fluid item-img w-100 pic_catagory_steak">
                         </a>
                     </div>
                     <div class="p-3 position-relative">
                         <div class="list-card-body">
-                            <h6 class="mb-1"><a href="#" onclick="OnBeforeClick('code','name','path')" class="text-black text_name">เนื้อวากิว Blue R</a></h6>
+                            <h6 class="mb-1"><a href="#" onclick="OnChooseFood('code','name','path')" class="text-black text_name">เนื้อวากิว Blue R</a></h6>
                             
                             <p></p>
                         </div>
@@ -338,7 +338,7 @@
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="js/osahan.js"></script>
     <script>
-        function OnBeforeClick(code, name, path){
+        function OnChooseFood(code, name, path){
             // alert(code);
             localStorage.setItem('code',code);
             localStorage.setItem('name',name);

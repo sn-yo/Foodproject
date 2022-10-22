@@ -29,7 +29,12 @@ function get_list(menu_id, menu_catagory){
                         // console.log('i'+i ," Grp_ID"+data[xloop].FoodCode);
                         // console.log('loop:', xloop + data[xloop].FoodCode);
                         menu.getElementsByClassName('text_name')[0].innerHTML = data[xloop].FoodName;
-                        menu.getElementsByClassName('pic_catagory_steak')[0].src = "img/FoodImage/"+data[xloop].Food_ImageName;
+                        var pathimg = "img/FoodImage/"+data[xloop].Food_ImageName;
+                        menu.getElementsByClassName('pic_catagory_steak')[0].src = pathimg;
+
+                        //set
+                        var xx = menu.getElementsByClassName("click_for_this")[0];                        
+                        xx.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+pathimg+"')");
 
                         var col_6_tag1 = document.createElement('div');
                         col_6_tag1.className = "col-6";

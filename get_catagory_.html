@@ -119,7 +119,7 @@
             <template>
                 <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm" id="master_catagory_steak">
                     <div class="list-card-image">
-                        <a href="#">
+                        <a href="get_food.html" class="click_for_this" onclick="OnChooseFood('code','name','path')">
                             <img alt="#" src="img/steak01.png" class="img-fluid item-img w-100 pic_catagory_steak">
                         </a>
                     </div>
@@ -265,6 +265,13 @@
     <script>
         var get_group_id = localStorage.getItem("group_id");
         get_list(get_group_id,'catagory_steak_point');
+
+        function OnChooseFood(code, name, path){
+            // alert(code);
+            localStorage.setItem('code',code);
+            localStorage.setItem('name',name);
+            localStorage.setItem('pathimg',path);
+        }
 
         function OnClickCata(group_id, group_name){
             // alert(group_id);
