@@ -111,6 +111,10 @@
             localStorage.setItem('Set_name', ins_newname);
             localStorage.setItem('Set_invno', ins_newinvno);
             localStorage.setItem('Set_bookingref', ins_newbookingref);
+
+            if(!localStorage.getItem("cart")){                
+                localStorage.setItem("cart", "[]");
+            }
         }
     </script>
     

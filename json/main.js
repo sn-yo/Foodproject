@@ -9,29 +9,29 @@ function onloadListData(){
     var thisblock = document.getElementById("listData1");
     var chkbtnconfirm = document.getElementById("chk_beforeconfirm");
     
-    if(!show_code){
-        console.log('1');
-        thisblock.style.display = "none";
-        chkbtnconfirm.href = '#';        
+    // if(!show_code){
+    //     console.log('1');
+    //     thisblock.style.display = "none";
+    //     chkbtnconfirm.href = '#';        
 
-        document.getElementById("show_total").innerHTML = '$0';
-        document.getElementById("show_fee").innerHTML = '$0';
-        document.getElementById("show_topay").innerHTML = '$0';
-    }else{
-        console.log('2');
-        thisblock.style.display = "block";
-        chkbtnconfirm.href = 'confirm.html';
+    //     document.getElementById("show_total").innerHTML = '$0';
+    //     document.getElementById("show_fee").innerHTML = '$0';
+    //     document.getElementById("show_topay").innerHTML = '$0';
+    // }else{
+    //     console.log('2');
+    //     thisblock.style.display = "block";
+    //     chkbtnconfirm.href = 'confirm.html';
 
-        document.getElementById("show_name").innerHTML = show_name;
-        document.getElementById("show_name2").innerHTML = show_name;
-        $("#show_img").attr("src", show_img);
-        document.getElementById("show_qty").value = show_qty;
-        document.getElementById("show_prc").innerHTML = '$'+show_prc*show_qty;
-        document.getElementById("show_total").innerHTML = 'ต่อหน่อย $'+show_prc;
-        document.getElementById("show_inst").innerHTML = show_inst;
-        // document.getElementById("show_fee").innerHTML = '$10';
-        // document.getElementById("show_topay").innerHTML = '$'+((show_prc*show_qty)+10);   
-    }
+    //     document.getElementById("show_name").innerHTML = show_name;
+    //     document.getElementById("show_name2").innerHTML = show_name;
+    //     $("#show_img").attr("src", show_img);
+    //     document.getElementById("show_qty").value = show_qty;
+    //     document.getElementById("show_prc").innerHTML = '$'+show_prc*show_qty;
+    //     document.getElementById("show_total").innerHTML = 'ต่อหน่อย $'+show_prc;
+    //     document.getElementById("show_inst").innerHTML = show_inst;
+    //     // document.getElementById("show_fee").innerHTML = '$10';
+    //     // document.getElementById("show_topay").innerHTML = '$'+((show_prc*show_qty)+10);   
+    // }
 
     
 
@@ -48,6 +48,15 @@ function onloadListData(){
     //     console.log('hide');
     //     thisblock.style.display = 'none';
     // }
+
+    let my_cart = localStorage.getItem("cart");
+    my_cart = JSON.parse(my_cart);
+    console.log(my_cart.length);
+
+    if(my_cart > 0){
+        
+    }
+
     
 }
 

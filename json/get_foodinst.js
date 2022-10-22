@@ -97,45 +97,60 @@ function chk_delitem(){
 }
 
 function clickconfirm(fooditem){
-    if(fooditem == 3){
-        var foodname = 'เนื้อวากิว MD';
-        var chk_qty = document.getElementById("ins_qty").value;
-        var chk_option = document.querySelector('input[name="option"]:checked');
+    var get_curr_food_code = localStorage.getItem("code");
+    var get_curr_food_name = localStorage.getItem("name");
+    var chk_qty = parseInt(document.getElementById("ins_qty").value);
+    // var food_objs = [
+    //     {
+    //         "code" : get_curr_food_code,
+    //         "name" : get_curr_food_name,
+    //         "qty" : chk_qty
+    //     }
+    // ]
 
-        // console.log('chkbox',chk_option);
-
-        var checkedValue = null; 
-        var inputElements = document.getElementsByClassName('messageCheckbox');
-        for(var i=0; inputElements[i]; ++i){
-            if(inputElements[i].checked){
-                checkedValue = inputElements[i].value;
-                break;
-            }
-        }
-        // console.log('chkb',checkedValue);
-
-        
-        localStorage.setItem('NickName', 'John');
-        localStorage.setItem('FoodCode', fooditem);
-        localStorage.setItem('FoodName', foodname);
-        localStorage.setItem('FoodQty',chk_qty);
-        localStorage.setItem('FoodInst',chk_option.value);
-        localStorage.setItem('FoodImage', 'img/steak_wagu01.png');
-        localStorage.setItem('FoodPrc',350);
-
-    }else if(fooditem == 1070){
-        var foodname = 'โรลแซลมอน';
-        var chk_qty = document.getElementById("ins_qty").value;
-        var chk_option = '';
-
-        
-        localStorage.setItem('NickName2', 'John');
-        localStorage.setItem('FoodCode2', fooditem);
-        localStorage.setItem('FoodName2', foodname);
-        localStorage.setItem('FoodQty2',chk_qty);
-        localStorage.setItem('FoodInst2',chk_option.value);
-        localStorage.setItem('FoodImage2', 'img/sushi_salmon02.png');
-        localStorage.setItem('FoodPrc2',30);
+    var food_objs = {
+        "code" : get_curr_food_code,
+        "name" : get_curr_food_name,
+        "qty" : chk_qty
     }
 
+
+    // localStorage.setItem("cart", JSON.stringify(food_objs));
+    
+    var get_cart = JSON.parse(localStorage.getItem("cart"));
+    
+    // console.log('cart:', get_cart.length);
+    if(get_cart.length == 0){
+        get_cart.push(food_objs);
+    }else{
+        // console.log(get_cart.find(element => element.code == get_curr_food_code));
+        let chk_old_code = get_cart.find(element => element.code == get_curr_food_code);
+        if(chk_old_code === undefined){
+            get_cart.push(food_objs);
+        }else{
+            // console.log('qty', chk_qty);
+            updatemyCart(get_curr_food_code, chk_qty);
+        }
+    }
+    
+    localStorage.setItem("cart", JSON.stringify(get_cart));
+
+}
+
+function updatemyCart(product_cood, Quantity){
+    console.log('update');
+    var get_cart = JSON.parse(localStorage.getItem("cart"));
+    for(let data of get_cart){
+        if(data.code == product_cood){
+            data.qty = 6+Quantity;
+            console.log(data.qty);
+        }
+    }
+    localStorage.setItem("cart", JSON.stringify(get_cart));
+
+}
+
+function removemyCart(product_cood){
+    let temp = cart.filter(item => item.code != product_cood);
+    localStorage.setItem("cart", JSON.stringify(get_cart));
 }

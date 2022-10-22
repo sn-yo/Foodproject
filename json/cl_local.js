@@ -1,4 +1,10 @@
 function chk_clearlocal(){
+    // document.getElementById("chk_beforesuccees").href = "#";
+    //successful.html
+    window.localStorage.clear();
+}
+
+function test(){
     // console.log('xxxxx');
     let show_code = localStorage.getItem('FoodCode');
     let show_name = localStorage.getItem('FoodName');
@@ -38,10 +44,10 @@ function chk_clearlocal(){
 
     // console.log(dataToSend);
 
-    let dataReceived = ""; 
+    // let dataReceived = ""; 
 
     // const xhr = new XMLHttpRequest();
-    const url = "https://cors-anywhere.herokuapp.com/http://103.58.151.121:8080/PostData?DBTable=orderdetail&DBAction=Insert&KeyUpdate=ItemNo";
+    // const url = "https://cors-anywhere.herokuapp.com/http://103.58.151.121:8080/PostData?DBTable=orderdetail&DBAction=Insert&KeyUpdate=ItemNo";
 
     // xhr.open('POST', url, true);
     // xhr.setRequestHeader('Content-Type','application/json; charset=UTF-8');
@@ -68,22 +74,18 @@ function chk_clearlocal(){
     //     .then(result => console.log(result))
     //     .catch(error => console.log('error', error));
 
-    fetch(url, {
-        method: 'POST',
-        body: dataToSend,
-        headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-        },
-    })
-        .then((response) => response.json())
-        .then((json) => console.log(json));
+    // fetch(url, {
+    //     method: 'POST',
+    //     body: dataToSend,
+    //     headers: {
+    //         'Content-type': 'application/json; charset=UTF-8',
+    //     },
+    // })
+    //     .then((response) => response.json())
+    //     .then((json) => console.log(json));
 
 
-    document.getElementById("chk_beforesuccees").href = "#";
-    //successful.html
 
-
-    window.localStorage.clear();
 
 //     fetch('https://jsonplaceholder.typicode.com/posts', {
 //   method: 'POST',
@@ -105,17 +107,17 @@ function chk_clearlocal(){
 
 
 function onloadListData(){  
-    let show_name = localStorage.getItem('FoodName');
+    let show_name = localStorage.getItem('name');
     let show_img = localStorage.getItem('FoodImage');
     let show_qty = localStorage.getItem('FoodQty');
     let show_prc = localStorage.getItem('FoodPrc');
     let show_code = localStorage.getItem('FoodCode');
 
-    document.getElementById("show_name").innerHTML = show_name;
-    document.getElementById("show_qty").innerHTML = ' x '+show_qty;
+    // document.getElementById("show_name").innerHTML = '';
+    // document.getElementById("show_qty").innerHTML = ' x '+show_qty;
     
-    document.getElementById("show_total").innerHTML = '$'+show_prc*show_qty;        
-    document.getElementById("show_fee").innerHTML = '$10';
+    // document.getElementById("show_total").innerHTML = '$'+show_prc*show_qty;        
+    // document.getElementById("show_fee").innerHTML = '$10';
     // document.getElementById("show_topay").innerHTML = '$'+((show_prc*show_qty)+10); 
 }
 
