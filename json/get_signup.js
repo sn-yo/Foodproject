@@ -1,4 +1,4 @@
-function checkin(bookingid){
+function checkin(bookingid, pathname){
     const data_signup = "http://103.58.151.121:8080/Checkin?BookingID="+bookingid;
 
     fetch(data_signup)
@@ -6,24 +6,29 @@ function checkin(bookingid){
             return response.json()
         })
         .then(function (data){
-            appendData(data)
+            appendData(data, bookingid, pathname)
         })
         .catch(function(err){
             // console.log('error: ' + err)
-            chkbooking(err, bookingid);
+            chkbooking(err, bookingid, pathname);
         })
 }
 
-function chkbooking(err, bookingid){
+function chkbooking(err, bookingid, pathname){
     // alert('ไม่สามารถใช้ได้ '+err);
     document.getElementById("bookingref").innerHTML = bookingid;
-    $('#my_message').modal('show');
+    console.log(pathname);
+    window.location.href = "page_error.html"+pathname;
+    // $('#my_message').modal('show');
 }
 
-function appendData(data){
-    console.log(data);
-    var mainContainer = document.getElementById("myCatagory");
-    // console.log(data.data);
+function appendData(data, bookingid, pathname){
+    console.log(data.status);
+    if(data.status == "False"){
+        
+        console.log(pathname);
+        window.location.href = "page_error.html"+pathname;
+    }
 
     var show_name = document.getElementById("ins_custname");
     show_name.innerHTML = data.data[0].Cust_Name;
@@ -32,16 +37,22 @@ function appendData(data){
     show_promote.innerHTML = data.data[0].Package_Name;
 
     var show_tableno = document.getElementById("ins_tableno");
-    show_tableno.value = data.data[0].TableNo;
+    show_tableno.innerHTML = data.data[0].TableNo;
 
     var show_time = document.getElementById("ins_timebook");
-    show_time.value = data.data[0].Round_Time;
+    show_time.innerHTML = data.data[0].Round_Time;
 
-    var inv_no = document.getElementById("ins_invno");
+    document.getElementById("ins_adult").innerHTML = data.data[0].adult;
+
+    var ins_newname = document.getElementById("ins_newname").value;
+    
+    var inv_no = document.getElementById("hdins_invno");
     inv_no.value = data.data[0].Inv_No;
 
-    var booking_ref = document.getElementById("booking_ref");
+    var booking_ref = document.getElementById("hdbooking_ref");
     booking_ref.value = data.data[0].Booking_Ref;
+    
+    
 }
 
 function myFunction() {

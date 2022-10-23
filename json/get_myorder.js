@@ -10,6 +10,8 @@ $.ajax({
         var mydata = response.data;
         console.log(mydata);
 
+        
+
         // var oldname = '';
         // var namegroup = []
         // var namelist = {}
