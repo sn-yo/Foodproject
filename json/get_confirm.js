@@ -5,6 +5,7 @@ function onLoadPage(){
     document.getElementById("confirm_showitem").innerHTML = my_cart.length;
 
     if(my_cart.length > 0){
+        var total_amount = 0;
         for(var i=0; i<my_cart.length; i++){
             // console.log(my_cart);
             var temp = document.getElementsByTagName("template")[0];
@@ -13,8 +14,11 @@ function onLoadPage(){
             // console.log(menu);
             menu.getElementsByClassName('confirm_showname')[0].innerHTML = my_cart[i].name;
             menu.getElementsByClassName('confirm_showqty')[0].innerHTML = "x "+my_cart[i].qty;
-            menu.getElementsByClassName('confirm_showprc')[0].innerHTML = 999;
+            menu.getElementsByClassName('confirm_showprc')[0].innerHTML = xFormatNumber(parseFloat(my_cart[i].prc * parseInt(my_cart[i].qty)));
+            total_amount += parseFloat(my_cart[i].prc * parseInt(my_cart[i].qty));
+            document.getElementById("confirm_showamount").innerHTML = xFormatNumber(total_amount);
 
+            // console.log(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(total_amount));
 
             document.getElementById("list_order_point").appendChild(menu);
         }
@@ -24,6 +28,10 @@ function onLoadPage(){
 }
 
 onLoadPage();
+
+function xFormatNumber(number){
+    return new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(number);
+}
 
 function OnConcirm(){
     var myHeaders = new Headers();

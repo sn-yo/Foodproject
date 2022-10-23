@@ -111,11 +111,19 @@ function call_refresh(my_cart){
         
         let sum_qty = count_qty.reduce(function(prev, next){
             return prev + next;
-        }, 0);    
+        }, 0);
+        
+        let count_prc = my_cart.map(function(item){
+            return parseFloat(item.prc)*parseInt(item.qty);
+        });
+        
+        let sum_prc = count_prc.reduce(function(prev, next){
+            return prev + next;
+        }, 0);  
         
         document.getElementById("show_totalitem").innerHTML = my_cart.length;
-        document.getElementById("show_totalqty").innerHTML = sum_qty;
-        document.getElementById("show_totalprc").innerHTML = 99999;
+        document.getElementById("show_totalqty").innerHTML = xFormatNumber(sum_qty);
+        document.getElementById("show_totalprc").innerHTML = xFormatNumber(sum_prc);
     }else{
         document.getElementById("show_totalitem").innerHTML = '';
         document.getElementById("show_totalqty").innerHTML = '';
@@ -124,3 +132,6 @@ function call_refresh(my_cart){
     
 }
 
+function xFormatNumber(number){
+    return new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(number);
+}

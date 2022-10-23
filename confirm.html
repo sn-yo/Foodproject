@@ -81,7 +81,7 @@
 					<div class="osahan-status">
 						<!-- status complete -->
 						<div class="p-3 status-order bg-white border-bottom d-flex align-items-center">
-							<p class="m-0"><i class="feather-calendar text-primary"></i> 16 June, 11:30AM</p>
+							<p class="m-0" id="confirm_showtime"><i class="feather-calendar text-primary"></i> 16 June, 11:30AM</p>
 							
 						</div>
 						
@@ -101,7 +101,7 @@
                                         <div id="list_order_point"></div>
                                         
                                         <hr>
-                                        <p class="mb-0 font-weight-bold text-black">TOTAL <span class="float-right text-secondary">970</span></p>
+                                        <p class="mb-0 font-weight-bold text-black">TOTAL <span class="float-right text-secondary" id="confirm_showamount">970</span></p>
                                         
                                         </p>
                                     </div>
@@ -111,7 +111,7 @@
                         <template>
                             <p class="mb-2">
                                 <i class="feather-ui-press text-success food-item">·</i>
-                                <span class="confirm_showname" style="font-size: 18px;"> ตำไทย</span>
+                                <span class="confirm_showname" style="font-size: 16px;"> ตำไทย</span>
                                 <span class="confirm_showqty"> x 1</span>
                                 <span class="float-right text-secondary confirm_showprc">314</span>
                             </p>
@@ -259,10 +259,18 @@
         var mm = String(xtoday.getMonth() + 1).padStart(2, '0'); //January is 0!
         var yyyy = xtoday.getFullYear();
 
+        var hh = xtoday.getHours;
+        const withPmAm = xtoday.toLocaleTimeString('en-US', {
+            // en-US can be set to 'default' to use user's browser settings
+            hour: '2-digit',
+            minute: '2-digit',
+        });
+
         xtoday = mm + '/' + dd + '/' + yyyy;
         xtoday = dd +' '+ monthNames[d.getMonth()]+',';
         
-        console.log(xtoday);
+        // console.log(withPmAm);
+        document.getElementById("confirm_showtime").innerHTML = xtoday+' '+withPmAm;
     </script>
     
 </body>

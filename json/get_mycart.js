@@ -30,7 +30,9 @@ function clickconfirm(){
     var get_curr_food_code = localStorage.getItem("code");
     var get_curr_food_name = localStorage.getItem("name");
     var get_curr_food_img = localStorage.getItem("pathimg");
+    var get_curr_food_prc = parseFloat(localStorage.getItem("prc"));
     var chk_qty = parseInt(document.getElementById("ins_qty").value);
+
 
     // var checkbox = document.getElementsById("optionchoose_21").value;
     // console.log('chkbox', checkbox);
@@ -59,7 +61,8 @@ function clickconfirm(){
             "name" : get_curr_food_name,
             "qty" : chk_qty,
             "opt_inst" : allcheck,
-            "img_path" : get_curr_food_img
+            "img_path" : get_curr_food_img,
+            "prc" : get_curr_food_prc
         }
     ]
     // console.log('food obj', food_objs);
@@ -91,7 +94,8 @@ function clickconfirm(){
                 "name" : get_curr_food_name,
                 "qty" : chk_qty,
                 "opt_inst" : allcheck,
-                "img_path" : get_curr_food_img
+                "img_path" : get_curr_food_img,
+                "prc" : get_curr_food_prc
             }
             get_cart.push(food_objs);
             localStorage.setItem("cart", JSON.stringify(get_cart));

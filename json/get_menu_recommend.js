@@ -70,9 +70,12 @@ $.ajax({
 
                     //set
                     var xx = menu.getElementsByClassName("click_for_this")[0];
+                    var yy = menu.getElementsByClassName('text_name')[0];
                     // console.log('xx', xx);
                     
-                    xx.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+pathimg+"')");
+                    xx.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+pathimg+"',"+data[xloop].Food_Price+")");
+                    yy.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+pathimg+"',"+data[xloop].Food_Price+")");
+                    yy.href = "get_food.html"
 
                     var col_6_tag1 = document.createElement('div');
                     col_6_tag1.className = "col-6";
