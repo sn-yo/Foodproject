@@ -200,6 +200,12 @@
     <script src="json/get_foodinst.js"></script>
     <script src="json/get_mycart.js"></script>
     <script>
+        const my_bookingid = localStorage.getItem("Set_bookingref");
+        // console.log(my_bookingid);
+        if(my_bookingid == '' || my_bookingid == null){
+            // console.log('redirect');
+            window.location.href = "signup.html";
+        }
         let current_menu = localStorage.getItem("code");
         // console.log(current_menu);
         onLoadPage(current_menu);

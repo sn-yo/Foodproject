@@ -243,6 +243,13 @@
     <script type="text/javascript" src="js/osahan.js"></script>
     <script src="json/get_confirm.js"></script>
     <script>
+        const my_bookingid = localStorage.getItem("Set_bookingref");
+        // console.log(my_bookingid);
+        if(my_bookingid == '' || my_bookingid == null){
+            // console.log('redirect');
+            window.location.href = "signup.html";
+        }
+        
         const monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
         const d = new Date();
         var xtoday = new Date();
