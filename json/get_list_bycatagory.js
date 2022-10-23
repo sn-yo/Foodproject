@@ -29,7 +29,23 @@ function get_list(menu_id, menu_catagory){
                         // console.log('i'+i ," Grp_ID"+data[xloop].FoodCode);
                         // console.log('loop:', xloop + data[xloop].FoodCode);
                         menu.getElementsByClassName('text_name')[0].innerHTML = data[xloop].FoodName;
-                        var pathimg = "img/FoodImage/"+data[xloop].Food_ImageName;
+                        menu.getElementsByClassName('text_name')[0].setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+pathimg+"')");
+                        var pathimg = '';
+                        if(data[xloop].Food_ImageName == ''){
+                            pathimg = "img/food_empty.png";
+                        }else{
+                            pathimg = "img/FoodImage/"+data[xloop].Food_ImageName;
+                        }
+                        // console.log(pathimg);
+                        // var img = document.createElement('img');
+                        // img.src = pathimg;
+                        // img.onload = function(e){
+                        //     menu.getElementsByClassName('pic_catagory_steak')[0].src = pathimg;
+                        // };
+                        // img.onerror = function(e) {                            
+                        //     pathimg2 = "img/food_empty.png";
+                        //     menu.getElementsByClassName('pic_catagory_steak')[0].src = pathimg2;
+                        // };
                         menu.getElementsByClassName('pic_catagory_steak')[0].src = pathimg;
 
                         //set

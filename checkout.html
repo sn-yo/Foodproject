@@ -90,30 +90,34 @@
                         </div>
                         <div class="bg-white border-bottom py-2">
 							
-							<div id="listData1">
-                                <div class="gold-members d-flex align-items-center justify-content-between px-3 py-2 border-bottom">
+							<div id="listData_point">
+                                
+                            </div>
+
+                            <template>
+                                <div class="gold-members d-flex align-items-center justify-content-between px-3 py-2 border-bottom" id="cart_master">
                                     <div class="media align-items-center">
-                                        <!-- <div class="mr-2 text-success">&middot;</div> -->
-                                        <img alt="osahan" id="show_img" src="img/sushi_steak.png" class="mr-3 rounded-circle img-fluid">
                                         <div class="media-body">
-                                            <p class="m-0" id="show_name">ซูชิเนื้อวากิว</p>
+                                            <h6 class="m-0 my_cart_show_name" id="">ซูชิเนื้อวากิว </h6>
+                                            <small class="text-black-50 my_cart_show_optinst">เลือกเพิ่มเติม</small>
                                         </div>
                                     </div>
                                     <div class="d-flex align-items-center">
-                                        <span class="count-number float-right"><button type="button" class="btn-sm left dec btn btn-outline-secondary"> <i class="feather-minus"></i> </button><input class="count-number-input" type="text" id="show_qty" readonly="" value="2"><button type="button" class="btn-sm right inc btn btn-outline-secondary"> <i class="feather-plus"></i> </button></span>
-                                        <p class="text-gray mb-0 float-right ml-2 text-muted small" id="show_prc">350</p>
+                                        <span class="count-number float-right"><button type="button" class="btn-sm left dec btn btn-outline-secondary my_cart_minus" onclick="chk_delitem(item)"> <i class="feather-minus"></i> </button><input class="count-number-input my_cart_show_qty" type="text" id="show_qty" readonly="" value="2"><button type="button" class="btn-sm right inc btn btn-outline-secondary my_cart_plus" onclick="chk_additem(item)"> <i class="feather-plus"></i> </button></span>
+                                        <p class="text-gray mb-0 float-right ml-2 text-muted small my_cart_show_prc" id="show_prc">350</p>
                                     </div>
                                 </div>
-                            </div>                            
+                            </template>
                                                         
                             
                         </div>
                         
 						
                         <div class="bg-white p-3 clearfix border-bottom">
-                            <p class="mb-1"><span id="show_name2">Item Total</span> <span id="show_total" class="float-right text-dark">1150</span></p>
+                            <p class="mb-1"><span id="show_name2">Total Item</span> <span id="show_totalitem" class="float-right text-dark mycart_showtotalitem">1150</span></p>
                             <!-- <p class="mb-1">Restaurant Charges <span class="float-right text-dark">$62.8</span></p> -->
-                            <p class="mb-1"><span id="show_inst"></span></p>
+                            <p class="mb-1"><span id="show_inst">Total Qty</span><span id="show_totalqty" class="float-right text-dark mycart_showtotalitem">1150</span></p>
+                            <p class="mb-1"><span id="show_inst">Total Price</span><span id="show_totalprc" class="float-right text-dark mycart_showtotalitem">1150</span></p>
                             <!-- <p class="mb-1 text-success">Total Discount<span class="float-right text-success">$1884</span></p> -->
                             <!-- <hr>
                             <h6 class="font-weight-bold mb-0">TO PAY <span id="show_topay" class="float-right">$1160</span></h6> -->

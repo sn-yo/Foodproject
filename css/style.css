@@ -861,14 +861,15 @@ p {
 .count-number-input-getfood {
     width: 70px;
     text-align: center;
-    margin: 0 -4px;
-    background: #6c757d;
+    margin: 0 5px;
+    background: #cfffed;
     border: none;
-    color: #fff;
+    color: #000000;
     height: 42px;
     border-radius: 0px;
     vertical-align: bottom;
     font-size: 25px;
+    font-weight: bold;
 }
 
 .non_veg,
