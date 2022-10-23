@@ -47,7 +47,7 @@ $.ajax({
                 // menu.getElementsByClassName('href_catagory')[0].href = "get_catagory_salad.html";
             }else{
                 menu.getElementsByClassName('pic_catagory')[0].src = "img/icons/Steak.png";
-                menu.getElementsByClassName('href_catagory')[0].href = "#";
+                // menu.getElementsByClassName('href_catagory')[0].href = "#";
             }
             
             

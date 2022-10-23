@@ -158,6 +158,11 @@
         // console.log(urlParams);
         const bookingid = urlParams.get('BookingID');
         checkin(bookingid);
+        let my_cart = localStorage.getItem("cart");
+        console.log(my_cart);
+        if(my_cart){
+            localStorage.removeItem("cart");
+        }
 
         function getAccount(){
             var ins_newname = document.getElementById("ins_newname").value;

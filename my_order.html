@@ -38,37 +38,11 @@
                     <!-- col.// -->
                     <div class="col-8">
                         <div class="d-flex align-items-center justify-content-end pr-5">
-                            <!-- search -->
-                            <a href="search.html" class="widget-header mr-4 text-dark">
-                                <div class="icon d-flex align-items-center">
-                                    <i class="feather-search h6 mr-2 mb-0"></i> <span>Search</span>
-                                </div>
-                            </a>
-                            <!-- offers -->
-                            <a href="offers.html" class="widget-header mr-4 text-white btn bg-primary m-none">
-                                <div class="icon d-flex align-items-center">
-                                    <i class="feather-disc h6 mr-2 mb-0"></i> <span>Offers</span>
-                                </div>
-                            </a>
-                            <!-- signin -->
-                            <a href="login.html" class="widget-header mr-4 text-dark m-none">
-                                <div class="icon d-flex align-items-center">
-                                    <i class="feather-user h6 mr-2 mb-0"></i> <span>Sign in</span>
-                                </div>
-                            </a>
+                            
+                            
                             <!-- my account -->
                             <div class="dropdown mr-4 m-none">
-                                <a href="#" class="dropdown-toggle text-dark py-3 d-block" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img alt="#" src="img/user/1.jpg" class="img-fluid rounded-circle header-user mr-2 header-user"> Hi Osahan
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="#">My account</a>
-                                    <a class="dropdown-item" href="#">Delivery support</a>
-                                    <a class="dropdown-item" href="#">Contant us</a>
-                                    <a class="dropdown-item" href="#">Term of use</a>
-                                    <a class="dropdown-item" href="#">Privacy policy</a>
-                                    <a class="dropdown-item" href="#">Logout</a>
-                                </div>
+                                
                             </div>
                             <!-- signin -->
                             <a href="checkout.html" class="widget-header mr-4 text-dark">
@@ -92,8 +66,8 @@
     </header>
     <div class="d-none">
         <div class="bg-primary border-bottom p-3 d-flex align-items-center">
-            
-            <h4 class="font-weight-bold m-0 text-white">My Order</h4>
+            <img alt="#" class="img-fluid" src="img/logo_circle_copper02.png">
+            <h4 class="font-weight-bold m-0 text-white" style="padding-left: 20px;">COPPER Buffet</h4>
         </div>
     </div>
     <section class="py-4 osahan-main-body">
@@ -109,7 +83,8 @@
                 </div>
                 <div class="tab-content col-md-9" id="myTabContent">
                     <div class="tab-pane fade show active" id="completed" role="tabpanel" aria-labelledby="completed-tab">
-                        <div class="order-body">
+                        <div class="order-body" id="myorder_point">
+                            
                             <div class="pb-3">
                                 <div class="p-3 rounded shadow-sm bg-white">
                                     <div class="d-flex border-bottom pb-3">                                        
@@ -121,7 +96,7 @@
                                         </div>
                                     </div>
                                     <div class="d-flex pt-3">
-                                        <div class="small">
+                                        <div class="small showlistitem">
                                             <p class="text- font-weight-bold mb-0">ส้มตำ x 1</p>
                                             <p class="text- font-weight-bold mb-0">ซูชิเนื้อวากิว x 4</p>
                                         </div>
@@ -133,31 +108,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="pb-3">
-                                <div class="p-3 rounded shadow-sm bg-white">
-                                    <div class="d-flex border-bottom pb-3">                                        
-                                        <div>                                            
-                                            <p>ORDER 16:32</p>
-                                        </div>
-                                        <div class="ml-auto">
-                                            
-                                            <p class="small font-weight-bold text-center"><i class="feather-clock"></i> 19/10/2022</p>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex pt-3">
-                                        <div class="small">
-                                            <p class="text- font-weight-bold mb-0">ส้มตำ x 1</p>
-                                            <p class="text- font-weight-bold mb-0">ซูชิเนื้อวากิว x 4</p>
-                                            <p class="text- font-weight-bold mb-0">ซูชิแซลมอน x 4</p>
-                                        </div>
-                                        <div class="text-muted m-0 ml-auto mr-3 small">รวมเงิน<br>
-                                            <span class="text-dark font-weight-bold">1200.00</span>
-                                        </div>
-                                        <div class="text-right">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                            
                         </div>
                     </div>
                     
@@ -165,78 +117,46 @@
             </div>
         </div>
     </section>
+
+    <template>
+        <div class="pb-3">
+            <div class="p-3 rounded shadow-sm bg-white">
+                <div class="d-flex border-bottom pb-3">                                        
+                    <div>                                            
+                        <p>ORDER 16:32</p>
+                    </div>
+                    <div class="ml-auto">                        
+                        <p class="small font-weight-bold text-center"><i class="feather-clock"></i> 19/10/2022</p>
+                    </div>
+                </div>
+                <div class="d-flex pt-3" id="showlistitem">
+                    <div class="small">
+                        <p class="text- font-weight-bold mb-0">ส้มตำ x 1</p>
+                        <p class="text- font-weight-bold mb-0">ซูชิเนื้อวากิว x 4</p>
+                        <p class="text- font-weight-bold mb-0">ซูชิแซลมอน x 4</p>
+                    </div>
+                    <div class="text-muted m-0 ml-auto mr-3 small">รวมเงิน<br>
+                        <span class="text-dark font-weight-bold">1200.00</span>
+                    </div>
+                    <div class="text-right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
     <!-- footer -->
     <footer class="section-footer border-top bg-dark">
         <div class="container">
-            <section class="footer-top padding-y py-5">
-                <div class="row pt-3">
-                    <aside class="col-md-4 footer-about">
-                        <article class="d-flex pb-3">
-                            <div><img alt="#" src="img/logo_web.png" class="logo-footer mr-3"></div>
-                            <div>
-                                <h6 class="title text-white">About Us</h6>
-                                <p class="text-muted">Some short text about company like You might remember the Dell computer commercials in which a youth reports.</p>
-                                <div class="d-flex align-items-center">
-                                    <a class="btn btn-icon btn-outline-light mr-1 btn-sm" title="Facebook" target="_blank" href="#"><i class="feather-facebook"></i></a>
-                                    <a class="btn btn-icon btn-outline-light mr-1 btn-sm" title="Instagram" target="_blank" href="#"><i class="feather-instagram"></i></a>
-                                    <a class="btn btn-icon btn-outline-light mr-1 btn-sm" title="Youtube" target="_blank" href="#"><i class="feather-youtube"></i></a>
-                                    <a class="btn btn-icon btn-outline-light mr-1 btn-sm" title="Twitter" target="_blank" href="#"><i class="feather-twitter"></i></a>
-                                </div>
-                            </div>
-                        </article>
-                    </aside>
-                    <aside class="col-sm-3 col-md-2 text-white">
-                        <h6 class="title">Error Pages</h6>
-                        <ul class="list-unstyled hov_footer">
-                            <li> <a href="#" class="text-muted">Not found</a></li>
-                            <li> <a href="#" class="text-muted">Maintence</a></li>
-                            <li> <a href="#" class="text-muted">Coming Soon</a></li>
-                        </ul>
-                    </aside>
-                    <aside class="col-sm-3 col-md-2 text-white">
-                        <h6 class="title">Services</h6>
-                        <ul class="list-unstyled hov_footer">
-                            <li> <a href="#" class="text-muted">Delivery Support</a></li>
-                            <li> <a href="#" class="text-muted">Contact Us</a></li>
-                            <li> <a href="#" class="text-muted">Terms of use</a></li>
-                            <li> <a href="#" class="text-muted">Privacy policy</a></li>
-                        </ul>
-                    </aside>
-                    <aside class="col-sm-3  col-md-2 text-white">
-                        <h6 class="title">For users</h6>
-                        <ul class="list-unstyled hov_footer">
-                            <li> <a href="#" class="text-muted"> User Login </a></li>
-                            <li> <a href="#" class="text-muted"> User register </a></li>
-                            <li> <a href="#" class="text-muted"> Forgot Password </a></li>
-                            <li> <a href="#" class="text-muted"> Account Setting </a></li>
-                        </ul>
-                    </aside>
-                    <aside class="col-sm-3  col-md-2 text-white">
-                        <h6 class="title">More Pages</h6>
-                        <ul class="list-unstyled hov_footer">
-                            <li> <a href="#" class="text-muted"> Trending </a></li>
-                            <li> <a href="#" class="text-muted"> Most popular </a></li>
-                            <li> <a href="#" class="text-muted"> Restaurant Details </a></li>
-                            <li> <a href="#" class="text-muted"> Favorites </a></li>
-                        </ul>
-                    </aside>
-                </div>
-                <!-- row.// -->
-            </section>
-            <!-- footer-top.// -->
+            
             
         </div>
         <!-- //container -->
         <section class="footer-copyright border-top py-3 bg-light">
-            <div class="container d-flex align-items-center">
-                <p class="mb-0"> © 2020 Company All rights reserved </p>
-                <p class="text-muted mb-0 ml-auto d-flex align-items-center">
-                    <a href="#" class="d-block"><img alt="#" src="img/appstore.png" height="40"></a>
-                    <a href="#" class="d-block ml-3"><img alt="#" src="img/playmarket.png" height="40"></a>
-                </p>
-            </div>
+            
         </section>
     </footer>
+    
     <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
         <div class="row">
             <div class="col selected">
@@ -260,29 +180,6 @@
             </div>
         </div>
     </div>
-    <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
-        <div class="row">
-            <div class="col selected">
-                <a href="home.html" class="text-danger small font-weight-bold text-decoration-none">
-                    <p class="h4 m-0"><i class="feather-home text-danger"></i></p>
-                    Home
-                </a>
-            </div>
-            <div class="col bg-white rounded-circle mt-n4 px-3 py-2">
-                <div class="bg-danger rounded-circle mt-n0 shadow">
-                    <a href="checkout.html" class="text-white small font-weight-bold text-decoration-none">
-                        <i class="feather-shopping-cart"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col">
-                <a href="profile.html" class="text-dark small font-weight-bold text-decoration-none">
-                    <p class="h4 m-0"><i class="feather-user"></i></p>
-                    Profile
-                </a>
-            </div>
-        </div>
-    </div>
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -292,6 +189,7 @@
     <script type="text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="js/osahan.js"></script>
+    <script src="json/get_myorder.js"></script>
 </body>
 
 </html>
