@@ -106,7 +106,7 @@
 		
 			<!-- CATAGORY  GRILL & STEAK -->
             <div class="pt-2 pb-3 title d-flex align-items-center">
-                <h5 class="m-0" id="cata_showgroupname">GRILL & STEAK</h5>
+                <h5 class="m-0" id="cata_showgroupname">0</h5>
                 
             </div>
             
@@ -119,15 +119,14 @@
             <template>
                 <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm" id="master_catagory_steak">
                     <div class="list-card-image">
-                        <a href="get_food.html" class="click_for_this" onclick="OnChooseFood('code','name','path')">
+                        <a href="get_food.html" class="click_for_this" onclick="OnChooseFood('code','name','nameeng','path','prc')">
                             <img alt="#" src="img/steak01.png" class="img-fluid item-img w-100 pic_catagory_steak">
                         </a>
                     </div>
                     <div class="p-3 position-relative">
                         <div class="list-card-body">
-                            <h6 class="mb-1"><a href="get_food.html" class="text-black text_name" onclick="OnChooseFood('code','name','path')">เนื้อวากิว Blue R</a></h6>
-                            
-                            <p></p>
+                            <h6 class="mb-1"><a href="get_food.html" class="text-black text_name" onclick="OnChooseFood('code','name','nameeng','path','prc')">0</a></h6>
+                            <span class="cata_shownameeng" style="color:gray"></span>
                         </div>
                     </div>
                 </div>
@@ -272,11 +271,13 @@
         var get_group_id = localStorage.getItem("group_id");
         get_list(get_group_id,'catagory_steak_point');
 
-        function OnChooseFood(code, name, path){
+        function OnChooseFood(code, name, nameeng, path, prc){
             // alert(code);
             localStorage.setItem('code',code);
             localStorage.setItem('name',name);
+            localStorage.setItem('nameeng',nameeng);
             localStorage.setItem('pathimg',path);
+            localStorage.setItem('prc',prc);
         }
 
         function OnClickCata(group_id, group_name){

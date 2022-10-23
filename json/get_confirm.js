@@ -4,6 +4,8 @@ function onLoadPage(){
     my_cart = JSON.parse(my_cart);
     document.getElementById("confirm_showitem").innerHTML = my_cart.length;
 
+    document.getElementById("confirm_showtableno").innerHTML = '#'+localStorage.getItem("Set_tableno");
+
     if(my_cart.length > 0){
         var total_amount = 0;
         for(var i=0; i<my_cart.length; i++){

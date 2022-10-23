@@ -65,6 +65,7 @@ $.ajax({
                     // console.log('i'+i ," Grp_ID"+data[xloop].FoodCode);
                     // console.log('loop:', xloop + data[xloop].FoodCode);
                     menu.getElementsByClassName('text_name')[0].innerHTML = data[xloop].FoodName;
+                    menu.getElementsByClassName("home_shownameeng")[0].innerHTML = data[xloop].FoodName_E;
                     var pathimg = "img/FoodImage/"+data[xloop].Food_ImageName;
                     menu.getElementsByClassName('pic_catagory_steak')[0].src = pathimg;
 
@@ -73,8 +74,8 @@ $.ajax({
                     var yy = menu.getElementsByClassName('text_name')[0];
                     // console.log('xx', xx);
                     
-                    xx.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+pathimg+"',"+data[xloop].Food_Price+")");
-                    yy.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+pathimg+"',"+data[xloop].Food_Price+")");
+                    xx.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"',"+data[xloop].Food_Price+")");
+                    yy.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"',"+data[xloop].Food_Price+")");
                     yy.href = "get_food.html"
 
                     var col_6_tag1 = document.createElement('div');

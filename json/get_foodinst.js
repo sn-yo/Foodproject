@@ -21,10 +21,12 @@ function onLoadPage(code){
 
         var get_code = localStorage.getItem("code");
         var get_name = localStorage.getItem("name");
+        var get_nameeng = localStorage.getItem("nameeng");
         var get_img = localStorage.getItem("pathimg");
 
         document.getElementById("show_detail_name").innerHTML = get_name;
         document.getElementById("show_detail_img").src = get_img;
+        document.getElementById("show_detail_nameeng").innerHTML = get_nameeng;
 
         // if((get_code == '3') || (get_code == '32') || (get_code == '52')){
         //     // document.getElementById("option_forsteak").style.display = "block";

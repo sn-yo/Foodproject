@@ -76,6 +76,7 @@
                         <input type="hidden" id="hdins_invno" >
                         <input type="hidden" id="booking_ref" >
                         <input type="hidden" id="hdbooking_ref" >
+                        <input type="hidden" id="hdtableno" >
 					</div>
 					<button class="btn btn-primary btn-lg btn-block" style="height: 90px;" onclick="getAccount()">
 					   สั่งอาหาร
@@ -176,13 +177,15 @@
             var ins_newname = document.getElementById("ins_newname").value;
             var ins_newinvno = document.getElementById("hdins_invno").value;
             var ins_newbookingref = document.getElementById("hdbooking_ref").value;
-            console.log(ins_newbookingref);
+            var ins_newtableno = document.getElementById("hdtableno").value;
+            // console.log(ins_newbookingref);
 
             
             if(ins_newname != ''){
                 localStorage.setItem('Set_name', ins_newname);
                 localStorage.setItem('Set_invno', ins_newinvno);
                 localStorage.setItem('Set_bookingref', ins_newbookingref);
+                localStorage.setItem('Set_tableno', ins_newtableno);
             }
 
             // if(!localStorage.getItem("cart")){                

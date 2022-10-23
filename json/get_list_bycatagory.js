@@ -33,14 +33,17 @@ function get_list(menu_id, menu_catagory){
                         menu.setAttribute("id", "Grp_ID"+data[xloop].FoodCode);
                         // console.log('i'+i ," Grp_ID"+data[xloop].FoodCode);
                         // console.log('loop:', xloop + data[xloop].FoodCode);
+                        var pathimg = "img/FoodImage/"+data[xloop].Food_ImageName;
+
                         menu.getElementsByClassName('text_name')[0].innerHTML = data[xloop].FoodName;
-                        menu.getElementsByClassName('text_name')[0].setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+pathimg+"')");
-                        var pathimg = '';
-                        if(data[xloop].Food_ImageName == ''){
-                            pathimg = "img/food_empty.png";
-                        }else{
-                            pathimg = "img/FoodImage/"+data[xloop].Food_ImageName;
-                        }
+                        menu.getElementsByClassName('cata_shownameeng')[0].innerHTML = data[xloop].FoodName_E;
+                        menu.getElementsByClassName('text_name')[0].setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"','"+data[xloop].Food_Price+"')");                        
+                        
+                        // if(data[xloop].Food_ImageName == ''){
+                        //     pathimg = "img/food_empty.png";
+                        // }else{
+                        //     pathimg = "img/FoodImage/"+data[xloop].Food_ImageName;
+                        // }
                         // console.log(pathimg);
                         // var img = document.createElement('img');
                         // img.src = pathimg;
@@ -55,7 +58,7 @@ function get_list(menu_id, menu_catagory){
 
                         //set
                         var xx = menu.getElementsByClassName("click_for_this")[0];                        
-                        xx.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+pathimg+"')");
+                        xx.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"','"+data[xloop].Food_Price+"')");
 
                         var col_6_tag1 = document.createElement('div');
                         col_6_tag1.className = "col-6";

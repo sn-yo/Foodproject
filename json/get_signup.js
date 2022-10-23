@@ -38,6 +38,7 @@ function appendData(data, bookingid, pathname){
 
     var show_tableno = document.getElementById("ins_tableno");
     show_tableno.innerHTML = data.data[0].TableNo;
+    document.getElementById("hdtableno").value = data.data[0].TableNo;
 
     var show_time = document.getElementById("ins_timebook");
     show_time.innerHTML = data.data[0].Round_Time;
