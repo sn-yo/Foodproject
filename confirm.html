@@ -93,15 +93,13 @@
                             <div class="osahan-track-order-detail po">
                                 <h5 class="mt-0 mb-3">รายการอาหารที่สั่ง</h5>
                                 <div class="row">
-                                    <div class="col-md-5">
-                                        
-                                    </div>
+                                    
                                     <div class="col-md-12">
-                                        <div class="mb-2"><small><i class="feather-list"></i> 5 items</small></div>
-                                        <p class="mb-2"><i class="feather-ui-press text-success food-item">·</i> กระเพรา วากิว x 1 <span class="float-right text-secondary">314</span></p>
-                                        <p class="mb-2"><i class="feather-ui-press text-success food-item">·</i> กุ้งถัง x 2 <span class="float-right text-secondary">209</span></p>
-                                        <p class="mb-2"><i class="feather-ui-press text-success food-item">·</i> ข้าวกะเพราเนื้อ+ไข่ออนเซน x 1<span class="float-right text-secondary">133</span></p>
-                                        <p class="mb-2"><i class="feather-ui-press text-success food-item">·</i> ตำไทย x 1 <span class="float-right text-secondary">314</span></p>
+                                        <div class="mb-2">                                            
+                                            <i class="feather-list"></i> <span id="confirm_showitem"></span> items
+                                        </div>
+                                        <div id="list_order_point"></div>
+                                        
                                         <hr>
                                         <p class="mb-0 font-weight-bold text-black">TOTAL <span class="float-right text-secondary">970</span></p>
                                         
@@ -110,10 +108,18 @@
                                 </div>
                             </div>
                         </div>
+                        <template>
+                            <p class="mb-2">
+                                <i class="feather-ui-press text-success food-item">·</i>
+                                <span class="confirm_showname" style="font-size: 18px;"> ตำไทย</span>
+                                <span class="confirm_showqty"> x 1</span>
+                                <span class="float-right text-secondary confirm_showprc">314</span>
+                            </p>
+                        </template>
                         
                         
                         <div class="p-3">
-                            <a class="btn btn-success btn-block btn-lg"  id="chk_beforesuccees" href="successful.html">ยืนยัน<i class="feather-arrow-right"></i></a>
+                            <a class="btn btn-success btn-block btn-lg" onclick="OnConcirm()"  id="chk_beforesuccees" href="#">ยืนยัน<i class="feather-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -235,8 +241,23 @@
     <script type="text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="js/osahan.js"></script>
+    <script src="json/get_confirm.js"></script>
+    <script>
+        const monthNames = ["January", "February", "March", "April", "May", "June","July", "August", "September", "October", "November", "December"];
+        const d = new Date();
+        var xtoday = new Date();
+        // console.log(today);
 
-    <script src="json/cl_local.js"></script>
+        var dd = String(xtoday.getDate()).padStart(2, '0');
+        var mm = String(xtoday.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = xtoday.getFullYear();
+
+        xtoday = mm + '/' + dd + '/' + yyyy;
+        xtoday = dd +' '+ monthNames[d.getMonth()]+',';
+        
+        console.log(xtoday);
+    </script>
+    
 </body>
 
 </html>

@@ -1,18 +1,27 @@
-const data_signup = "http://103.58.151.121:8080/Checkin?BookingID=553706";
+function checkin(bookingid){
+    const data_signup = "http://103.58.151.121:8080/Checkin?BookingID="+bookingid;
 
-fetch(data_signup)
-    .then(function (response){
-        return response.json()
-    })
-    .then(function (data){
-        appendData(data)
-    })
-    .catch(function(err){
-        console.log('error: ' + err)
-    })
+    fetch(data_signup)
+        .then(function (response){
+            return response.json()
+        })
+        .then(function (data){
+            appendData(data)
+        })
+        .catch(function(err){
+            // console.log('error: ' + err)
+            chkbooking(err, bookingid);
+        })
+}
 
+function chkbooking(err, bookingid){
+    // alert('ไม่สามารถใช้ได้ '+err);
+    document.getElementById("bookingref").innerHTML = bookingid;
+    $('#my_message').modal('show');
+}
 
 function appendData(data){
+    console.log(data);
     var mainContainer = document.getElementById("myCatagory");
     // console.log(data.data);
 

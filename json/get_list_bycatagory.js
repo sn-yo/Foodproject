@@ -1,4 +1,9 @@
 function get_list(menu_id, menu_catagory){
+    let lastPageUrl = document.referrer;
+    let menuX = menu_id;
+    console.log(`Last visited page URL is ${lastPageUrl}`);
+    console.log(menuX);
+
     $.ajax({
         type: "GET",
         url: "http://103.58.151.121:8080/GetMenu?FoodGroup="+menu_id,
