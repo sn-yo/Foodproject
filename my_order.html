@@ -85,31 +85,7 @@
                     <div class="tab-pane fade show active" id="completed" role="tabpanel" aria-labelledby="completed-tab">
                         <div class="order-body" id="myorder_point">
                             
-                            <div class="pb-3">
-                                <div class="p-3 rounded shadow-sm bg-white">
-                                    <div class="d-flex border-bottom pb-3">                                        
-                                        <div>                                            
-                                            <p>ORDER 16:28</p>
-                                        </div>
-                                        <div class="ml-auto">
-                                            <p class="small font-weight-bold text-center"><i class="feather-clock"></i> 19/10/2022</p>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex pt-3">
-                                        <div class="small showlistitem">
-                                            <p class="text- font-weight-bold mb-0">ส้มตำ x 1</p>
-                                            <p class="text- font-weight-bold mb-0">ซูชิเนื้อวากิว x 4</p>
-                                        </div>
-                                        <div class="text-muted m-0 ml-auto mr-3 small">รวมเงิน<br>
-                                            <span class="text-dark font-weight-bold">350.00</span>
-                                        </div>
-                                        <div class="text-right">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            
+                                                        
                         </div>
                     </div>
                     
@@ -120,27 +96,29 @@
 
     <template>
         <div class="pb-3">
-            <div class="p-3 rounded shadow-sm bg-white">
+            <div class="p-3 rounded shadow-sm" style="background-color: rgb(180, 255, 202);">
+                
                 <div class="d-flex border-bottom pb-3">                                        
                     <div>                                            
-                        <p>ORDER 16:32</p>
+                        <p class="myorder_showtime">0</p>
                     </div>
                     <div class="ml-auto">                        
-                        <p class="small font-weight-bold text-center"><i class="feather-clock"></i> 19/10/2022</p>
+                        <p class="small font-weight-bold text-center myorder_showdate"><i class="feather-clock"></i> 0</p>
                     </div>
                 </div>
                 <div class="d-flex pt-3" id="showlistitem">
-                    <div class="small">
-                        <p class="text- font-weight-bold mb-0">ส้มตำ x 1</p>
+                    <div class="small" id="myorder_showlistfood">
+                        <p class="font-weight-bold mb-0">ส้มตำ x 1</p>
                         <p class="text- font-weight-bold mb-0">ซูชิเนื้อวากิว x 4</p>
                         <p class="text- font-weight-bold mb-0">ซูชิแซลมอน x 4</p>
                     </div>
                     <div class="text-muted m-0 ml-auto mr-3 small">รวมเงิน<br>
-                        <span class="text-dark font-weight-bold">1200.00</span>
+                        <span class="text-dark font-weight-bold myorder_showprc">0</span>
                     </div>
                     <div class="text-right">
                     </div>
                 </div>
+
             </div>
         </div>
     </template>
