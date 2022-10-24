@@ -50,7 +50,7 @@ function onloadListData(){
         }
     }else{
         document.getElementById("chk_beforeconfirm").href = "#";
-        $("#my_message_chkcart").modal('show');
+        // $("#my_message_chkcart").modal('show');
         
     }
 }
