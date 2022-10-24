@@ -1,12 +1,21 @@
 function get_list(menu_id, menu_catagory){
     let lastPageUrl = document.referrer;
     let menuX = menu_id;
-    console.log(`Last visited page URL is ${lastPageUrl}`);
-    console.log(menuX);
+    let getLastPage = localStorage.getItem("currPage");
+    // console.log(getLastPage);
+    localStorage.setItem("lastPage", getLastPage);
+    localStorage.setItem("currPage", menuX);
+
+    // console.log(`Last visited page URL is ${lastPageUrl}`);
+    // console.log(menuX);
+
+    let getBookingID = localStorage.getItem("Set_bookingref");
+    let addUrl = "&BookingID="+getBookingID;
+    // console.log(addUrl);
 
     $.ajax({
         type: "GET",
-        url: "http://103.58.151.121:8080/GetMenu?FoodGroup="+menu_id,
+        url: "http://103.58.151.121:8080/GetMenu?FoodGroup="+menu_id+addUrl,
         async: false,
         cache: false,
         success: function( response ) {

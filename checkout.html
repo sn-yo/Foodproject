@@ -19,6 +19,53 @@
     <link href="css/style.css" rel="stylesheet">
     <!-- Sidebar CSS -->
     <link href="vendor/sidebar/demo.css" rel="stylesheet">
+    <style>
+        /* The snackbar - position it at the bottom and in the middle of the screen */
+        #snackbar {
+        visibility: hidden; /* Hidden by default. Visible on click */
+        min-width: 250px; /* Set a default minimum width */
+        margin-left: -125px; /* Divide value of min-width by 2 */
+        background-color: #333; /* Black background color */
+        color: #fff; /* White text color */
+        text-align: center; /* Centered text */
+        border-radius: 2px; /* Rounded borders */
+        padding: 16px; /* Padding */
+        position: fixed; /* Sit on top of the screen */
+        z-index: 1; /* Add a z-index if needed */
+        left: 50%; /* Center the snackbar */
+        top: 100px; /* 30px from the bottom */
+        }
+
+        /* Show the snackbar when clicking on a button (class added with JavaScript) */
+        #snackbar.show {
+        visibility: visible; /* Show the snackbar */
+        /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+        However, delay the fade out process for 2.5 seconds */
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        /* Animations to fade the snackbar in and out */
+        @-webkit-keyframes fadein {
+        from {top: 0; opacity: 0;}
+        to {top: 100px; opacity: 1;}
+        }
+
+        @keyframes fadein {
+        from {top: 0; opacity: 0;}
+        to {top: 100px; opacity: 1;}
+        }
+
+        @-webkit-keyframes fadeout {
+        from {top: 100px; opacity: 1;}
+        to {top: 0; opacity: 0;}
+        }
+
+        @keyframes fadeout {
+        from {top: 100px; opacity: 1;}
+        to {top: 0; opacity: 0;}
+        }
+    </style>
 </head>
 
 <body class="fixed-bottom-bar">
@@ -97,7 +144,9 @@
                             <template>
                                 <div class="gold-members d-flex align-items-center justify-content-between px-3 py-2 border-bottom" id="cart_master">
                                     <div class="media align-items-center">
+                                        <a href="#" style="padding-right: 4px; font-size: 15px;" class="mycart_remove" onclick="chk_remiveitem(item)"><i class="feather-x-circle text-danger"></i></a>
                                         <div class="media-body">
+                                            
                                             <h6 class="m-0 my_cart_show_name" id="">ซูชิเนื้อวากิว </h6>
                                             <small class="text-black-50 my_cart_show_optinst">เลือกเพิ่มเติม</small>
                                         </div>
@@ -122,9 +171,15 @@
                             <!-- <hr>
                             <h6 class="font-weight-bold mb-0">TO PAY <span id="show_topay" class="float-right">$1160</span></h6> -->
                         </div>
-                        <div class="p-3">
-                            <a class="btn btn-success btn-block btn-lg" id="chk_beforeconfirm" href="confirm.html">สั่งอาหาร<i class="feather-arrow-right"></i></a>
+                        <div class="p-3 row">
+                            <div class="col-6">
+                                <a class="btn btn-info btn-block btn-lg" id="" onclick="backPage()" href="get_catagory_.html"><i class="feather-arrow-left"></i>กลับไปสั่งเพิ่ม</a>
+                            </div>
+                            <div class="col-6">
+                                <a class="btn btn-success btn-block btn-lg" id="chk_beforeconfirm" href="confirm.html">สั่งอาหาร<i class="feather-arrow-right"></i></a>
+                            </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -186,7 +241,15 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <button onclick="myFunction()">Show Snackbar</button>
+        </div>
+
     </div>
+
+    <div id="snackbar">Some text some message..</div>
+
     <!-- modal -->
 
 

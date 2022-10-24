@@ -42,15 +42,16 @@ $.ajax({
             var row2 = document.createElement("div");
             if(i % 2){
                 // console.log(i%2);
-                row2.className = "p-3 rounded shadow-sm";
-                row2.style = "background-color: rgb(180, 255, 202)"
+                row2.className = "p-3 rounded shadow-sm bg-white";
+                // row2.style = "background-color: rgb(180, 255, 202)";
             }else{
-                row2.className = "p-3 rounded shadow-sm";
-                row2.style = "background-color: rgb(64,224,208)"
+                row2.className = "p-3 rounded shadow-sm bg-white";
+                // row2.style = "background-color: rgb(64,224,208)";
             }
 
             var row3 = document.createElement("div");
-            row3.className = "d-flex border-bottom pb-3";
+            row3.className = "d-flex border-bottom pb-3 rounded";
+            row3.style = "background-color: #F5F5F5; padding: 15px;";
 
             var row4 = document.createElement("div");
             var rowp1 = document.createElement("p");
@@ -64,6 +65,7 @@ $.ajax({
 
             var xrow1 = document.createElement("div");
             xrow1.className  = "d-flex pt-3";
+            xrow1.style = "background-color: #FFFAF0; padding:5px;";
 
             var xrow2 = document.createElement("div");
             xrow2.className  = "small";
@@ -75,7 +77,7 @@ $.ajax({
 
             var row_span = document.createElement("span");
             row_span.className = "text-dark font-weight-bold myorder_showprc";
-            row_span.style = "font-size: 20px";
+            row_span.style = "font-size: 14px";
             row_span.innerHTML = xFormatNumber(mydata[i].SumPrice);
             
 
@@ -91,7 +93,7 @@ $.ajax({
             for(var j=0; j<myArray.length; j++){
                 var rowp2 = document.createElement("p");
                 rowp2.className = "font-weight mb-0";
-                rowp2.style = "font-size: 14px";
+                rowp2.style = "font-size: 12px";
                 rowp2.innerHTML = myArray[j];
                 xrow2.appendChild(rowp2);
             }

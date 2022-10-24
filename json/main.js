@@ -43,11 +43,24 @@ function onloadListData(){
                 var bt_plus = menu.getElementsByClassName("my_cart_plus")[0];
                 bt_plus.setAttribute("onclick", "chk_additem("+i+")");
 
+                var bt_remove = menu.getElementsByClassName("mycart_remove")[0];
+                bt_remove.setAttribute("onclick", "chk_removeitem("+my_cart[i].code+")");
+
 
                 // console.log(menu);
                 document.getElementById("listData_point").appendChild(menu);
             }
         }
+
+        var chk_addcart = localStorage.getItem("clickaddcart");
+        console.log(chk_addcart);
+        if(chk_addcart == null || chk_addcart == '' || chk_addcart == 0){            
+            localStorage.setItem("clickaddcart",1);
+            chk_addcart = 1;
+            myFunction(chk_addcart);
+        }
+        
+
     }else{
         document.getElementById("chk_beforeconfirm").href = "#";
         // $("#my_message_chkcart").modal('show');
@@ -103,6 +116,16 @@ function chk_delitem(item){
     
 }
 
+function chk_removeitem(code){
+    console.log(code);
+    var get_cart = JSON.parse(localStorage.getItem("cart"));
+    let curr_cart = get_cart.filter(item => item.code != code);
+    localStorage.setItem("cart", JSON.stringify(curr_cart));
+    
+    // document.getElementById("listData_point").style.display = 'none';
+    location.reload();
+}
+
 function call_refresh(my_cart){
     if(my_cart != null){
         let count_qty = my_cart.map(function(item){
@@ -134,4 +157,124 @@ function call_refresh(my_cart){
 
 function xFormatNumber(number){
     return new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(number);
+}
+
+function myFunction(count) {
+    console.log(count);
+    if(count == 1){
+        let bookingid  = localStorage.getItem("Set_bookingref");
+        const data_signup = "http://103.58.151.121:8080/CheckTimeOut?BookingID="+bookingid;
+
+        fetch(data_signup)
+            .then(function (response){
+                return response.json()
+            })
+            .then(function (data){
+                appendData(data)
+            })
+            .catch(function(err){
+                // console.log('error: ' + err)
+                chkbooking(err);
+            })
+        
+        // Get the snackbar DIV
+        var x = document.getElementById("snackbar");
+    
+        // Add the "show" class to DIV
+        x.className = "show";
+    
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+
+    }
+    count += 1;
+    localStorage.setItem("clickaddcart", count);
+}
+
+function appendData(data){
+    console.log(data);
+    var x = document.getElementById("snackbar");
+    x.innerHTML = data.message;
+}
+
+function backPage(){
+    let lastPage = localStorage.getItem("lastPage");
+    let menu_id = lastPage;
+
+    let getBookingID = localStorage.getItem("Set_bookingref");
+    let addUrl = "&BookingID="+getBookingID;
+    // console.log(addUrl);
+
+    $.ajax({
+        type: "GET",
+        url: "http://103.58.151.121:8080/GetMenu?FoodGroup="+menu_id+addUrl,
+        async: false,
+        cache: false,
+        success: function( response ) {
+            // console.log( response );
+            const data = response.data;
+            // console.log(data.length);
+            var xloop = 0;
+
+            var show_groupname = localStorage.getItem("group_name");
+            // console.log(show_groupname);
+            document.getElementById("cata_showgroupname").innerHTML = show_groupname;
+
+            for(var xrow = 0; xrow < (data.length/2); xrow++){
+                // console.log('xrow', xrow);
+                var row_mb = document.createElement('div');
+                row_mb.className = "row mb-3";
+
+                
+                for(var i=0; i < 2; i++){
+                    if(xloop < data.length){
+                        var temp = document.getElementsByTagName("template")[1];
+                        var menu = temp.content.firstElementChild.cloneNode(true);
+
+                        menu.setAttribute("id", "Grp_ID"+data[xloop].FoodCode);
+                        // console.log('i'+i ," Grp_ID"+data[xloop].FoodCode);
+                        // console.log('loop:', xloop + data[xloop].FoodCode);
+                        var pathimg = "img/FoodImage/"+data[xloop].Food_ImageName;
+
+                        menu.getElementsByClassName('text_name')[0].innerHTML = data[xloop].FoodName;
+                        menu.getElementsByClassName('cata_shownameeng')[0].innerHTML = data[xloop].FoodName_E;
+                        menu.getElementsByClassName('text_name')[0].setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"','"+data[xloop].Food_Price+"')");                        
+                        
+                        // if(data[xloop].Food_ImageName == ''){
+                        //     pathimg = "img/food_empty.png";
+                        // }else{
+                        //     pathimg = "img/FoodImage/"+data[xloop].Food_ImageName;
+                        // }
+                        // console.log(pathimg);
+                        // var img = document.createElement('img');
+                        // img.src = pathimg;
+                        // img.onload = function(e){
+                        //     menu.getElementsByClassName('pic_catagory_steak')[0].src = pathimg;
+                        // };
+                        // img.onerror = function(e) {                            
+                        //     pathimg2 = "img/food_empty.png";
+                        //     menu.getElementsByClassName('pic_catagory_steak')[0].src = pathimg2;
+                        // };
+                        menu.getElementsByClassName('pic_catagory_steak')[0].src = pathimg;
+
+                        //set
+                        var xx = menu.getElementsByClassName("click_for_this")[0];                        
+                        xx.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"','"+data[xloop].Food_Price+"')");
+
+                        var col_6_tag1 = document.createElement('div');
+                        col_6_tag1.className = "col-6";
+                        // col_6_tag1.innerHTML = "i="+xloop;
+                        col_6_tag1.appendChild(menu);
+                        row_mb.appendChild(col_6_tag1);
+                    }
+                    
+                    xloop += 1;
+                }
+                document.getElementById(menu_catagory).appendChild(row_mb);
+            }
+            
+
+        }
+    });
+
 }
