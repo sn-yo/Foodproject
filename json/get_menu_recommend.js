@@ -45,7 +45,7 @@ $.ajax({
     async: false,
     cache: false,
     success: function( response ) {
-        console.log( response );
+        // console.log( response );
         const data = response.data;
         // console.log(data.length);
         var xloop = 0;
