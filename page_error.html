@@ -129,7 +129,7 @@
         const urlParams = new URLSearchParams(queryString);
         // console.log(urlParams);
         const bookingid = urlParams.get('BookingID');
-        console.log('bkid ', bookingid);
+        // console.log('bkid ', bookingid);
         
         let my_cart = localStorage.getItem("cart");
         // console.log(my_cart);
@@ -137,9 +137,9 @@
             localStorage.removeItem("cart");
         }
 
-        function chk_error(bookingid){
-            const data_pageerror = "http://103.58.151.121:8080/Checkin?BookingID="+bookingid;
-            console.log(data_pageerror);
+        function chk_error(bookingid, urlxJson){
+            const data_pageerror = urlxJson+"Checkin?BookingID="+bookingid;
+            // console.log(data_pageerror);
 
             fetch(data_pageerror)
                 .then(function (response){
@@ -161,9 +161,24 @@
             console.log(message);
             document.getElementById("ins_custname").innerHTML = message;
 
+            window.localStorage.clear();
+
         }
 
-        chk_error(bookingid);
+        let jsonUrl2 = "json/config.json";
+        $.ajax({
+            type: "GET",
+            url: jsonUrl2,
+            async: false,
+            cache: false,
+            success: function( response ) {
+                // console.log(response.urlJson);
+                let urlxJson = response.urlJson;
+                chk_error(bookingid, urlxJson);
+            }
+        });
+
+        
 
         
     </script>

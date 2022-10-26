@@ -1,6 +1,6 @@
 $.ajax({
     type: "GET",
-    url: "http://103.58.151.121:8080/GetPopular",
+    url: "http://103.82.248.28:8080/GetPopular",
     async: false,
     success: function( response ) {
         //console.log( response );

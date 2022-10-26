@@ -165,7 +165,24 @@
         const pathname = window.location.search;
         // console.log('pathname', pathname);
         // console.log(bookingid);
-        checkin(bookingid, pathname);
+        const jsonUrl = "json/config.json";
+        const jsonUrldata = '';
+        fetch(jsonUrl)
+            .then(function (response){
+                return response.json()
+            })
+            .then(function (data){
+                const urlxJson = data.urlJson;
+                checkin(bookingid, pathname, urlxJson);
+                // resultxData(xxx)
+            })
+            .catch(function(err){
+                console.log('error: ' + err)
+            })
+
+        // function resultxData(data){
+        //     console.log(data);
+        // }        
 
         let my_cart = localStorage.getItem("cart");
         // console.log(my_cart);

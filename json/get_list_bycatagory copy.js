@@ -1,7 +1,7 @@
 function get_list(menu_id, menu_catagory){
     $.ajax({
         type: "GET",
-        url: "http://103.58.151.121:8080/GetMenu?FoodGroup="+menu_id,
+        url: "http://103.82.248.28:8080/GetMenu?FoodGroup="+menu_id,
         async: false,
         cache: false,
         success: function( response ) {

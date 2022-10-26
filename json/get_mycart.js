@@ -87,7 +87,7 @@ function clickconfirm(){
 
         // console.log('chk 1', chk_old_code);
         if(chk_old_code == undefined){
-            console.log('เพิ่มรายการใหม่');
+            // console.log('เพิ่มรายการใหม่');
             var food_objs = 
             {
                 "code" : get_curr_food_code,
@@ -100,8 +100,8 @@ function clickconfirm(){
             get_cart.push(food_objs);
             localStorage.setItem("cart", JSON.stringify(get_cart));
         }else{
-            console.log('มีรายการนี้แล้ว บวกเพิ่ม');
-            console.log('จำนวนรายการ', get_cart.length);
+            // console.log('มีรายการนี้แล้ว บวกเพิ่ม');
+            // console.log('จำนวนรายการ', get_cart.length);
             for(let data of get_cart){
                 // console.log('1',get_cart);
                 // console.log('2',data);

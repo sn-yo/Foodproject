@@ -9,8 +9,6 @@ function onloadListData(){
 
     var thisblock = document.getElementById("listData1");
     var chkbtnconfirm = document.getElementById("chk_beforeconfirm");
-    
-    
 
     let my_cart = localStorage.getItem("cart");
     my_cart = JSON.parse(my_cart);
@@ -53,11 +51,23 @@ function onloadListData(){
         }
 
         var chk_addcart = localStorage.getItem("clickaddcart");
-        console.log(chk_addcart);
+        // console.log(chk_addcart);
         if(chk_addcart == null || chk_addcart == '' || chk_addcart == 0){            
             localStorage.setItem("clickaddcart",1);
             chk_addcart = 1;
-            myFunction(chk_addcart);
+            // myFunction(chk_addcart);
+            let jsonUrl2 = "json/config.json";
+            $.ajax({
+                type: "GET",
+                url: jsonUrl2,
+                async: false,
+                cache: false,
+                success: function( response ) {
+                    // console.log(response.urlJson);
+                    let urlxJson = response.urlJson;
+                    myFunction(chk_addcart, urlxJson);
+                }
+            });
         }
         
 
@@ -117,7 +127,7 @@ function chk_delitem(item){
 }
 
 function chk_removeitem(code){
-    console.log(code);
+    // console.log(code);
     var get_cart = JSON.parse(localStorage.getItem("cart"));
     let curr_cart = get_cart.filter(item => item.code != code);
     localStorage.setItem("cart", JSON.stringify(curr_cart));
@@ -159,11 +169,11 @@ function xFormatNumber(number){
     return new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(number);
 }
 
-function myFunction(count) {
-    console.log(count);
+function myFunction(count, urlxJson) {
+    // console.log(count);
     if(count == 1){
         let bookingid  = localStorage.getItem("Set_bookingref");
-        const data_signup = "http://103.58.151.121:8080/CheckTimeOut?BookingID="+bookingid;
+        const data_signup = urlxJson+"CheckTimeOut?BookingID="+bookingid;
 
         fetch(data_signup)
             .then(function (response){
@@ -192,8 +202,8 @@ function myFunction(count) {
 }
 
 function appendData(data){
-    console.log(data);
-    var x = document.getElementById("snackbar");
+    // console.log(data);
+    var x = document.getElementById("snackbar_message");
     x.innerHTML = data.message;
 }
 
@@ -203,11 +213,27 @@ function backPage(){
 
     let getBookingID = localStorage.getItem("Set_bookingref");
     let addUrl = "&BookingID="+getBookingID;
-    // console.log(addUrl);
+    // console.log(urlxJson);
 
+    let jsonUrl2 = "json/config.json";
     $.ajax({
         type: "GET",
-        url: "http://103.58.151.121:8080/GetMenu?FoodGroup="+menu_id+addUrl,
+        url: jsonUrl2,
+        async: false,
+        cache: false,
+        success: function( response ) {
+            // console.log(response.urlJson);
+            let urlxJson = response.urlJson;
+            backPageTo(urlxJson);
+        }
+    });    
+
+}
+
+function backPageTo(urlxJson){
+    $.ajax({
+        type: "GET",
+        url: urlxJson+"GetMenu?FoodGroup="+menu_id+addUrl,
         async: false,
         cache: false,
         success: function( response ) {
@@ -276,5 +302,4 @@ function backPage(){
 
         }
     });
-
 }

@@ -36,6 +36,21 @@ function xFormatNumber(number){
 }
 
 function OnConcirm(){
+    let jsonUrl2 = "json/config.json";
+    $.ajax({
+        type: "GET",
+        url: jsonUrl2,
+        async: false,
+        cache: false,
+        success: function( response ) {
+            // console.log(response.urlJson);
+            let urlxJson = response.urlJson;
+            OnConfirm(urlxJson);
+        }
+    });
+}
+
+function OnConfirm(urlxJson){
     var myHeaders = new Headers();
     myHeaders.append("Cache-Control", "no-cache");
     myHeaders.append("Content-Type", "application/json");
@@ -106,23 +121,20 @@ function OnConcirm(){
         mode: 'no-cors'
     };
 
-    // fetch("http://103.58.151.121:8080/PostData?DBTable=orderdetail&DBAction=Insert&KeyUpdate=ItemNo", requestOptions)
-    // .then(response => response.text())
-    // .then(result => console.log(result))
-    // .catch(error => console.log('error', error));
-    fetch("http://103.58.151.121:8080/PostData?DBTable=orderdetail&DBAction=Insert&KeyUpdate=ItemNo", requestOptions)
+    
+    fetch(urlxJson+"PostData?DBTable=orderdetail&DBAction=Insert&KeyUpdate=ItemNo", requestOptions)
     .then(response => response.text())
     .then(result => appendData(result))
     .catch(error => appendError(error));
 
     function appendError(error){
-        console.log('error');
+        // console.log('error');
         console.log(error);
     }
 
     function appendData(result){
-        console.log('finish');
-        console.log(result);
+        // console.log('finish');
+        // console.log(result);
         window.localStorage.removeItem('cart');
         window.location.href = "successful.html";
     }

@@ -1,6 +1,7 @@
-function checkin(bookingid, pathname){
-    
-    const data_signup = "http://103.82.248.28:8080/Checkin?BookingID="+bookingid;
+function checkin(bookingid, pathname, urlxJson){
+    // const mainUrl = resultData(0);
+    // console.log(urlxJson);
+    const data_signup = urlxJson+"Checkin?BookingID="+bookingid;
 
     fetch(data_signup)
         .then(function (response){
@@ -20,16 +21,15 @@ function checkin(bookingid, pathname){
 function chkbooking(err, bookingid, pathname){
     // alert('ไม่สามารถใช้ได้ '+err);
     document.getElementById("bookingref").innerHTML = bookingid;
-    console.log(pathname);
+    // console.log(pathname);
     window.location.href = "page_error.html"+pathname;
     // $('#my_message').modal('show');
 }
 
 function appendData(data, bookingid, pathname){
-    console.log(data.status);
-    if(data.status == "False"){
-        
-        console.log(pathname);
+    // console.log(data.status);
+    if(data.status == "False"){        
+        // console.log(pathname);
         window.location.href = "page_error.html"+pathname;
     }
 

@@ -18,7 +18,7 @@ $(document).ready(function(){
     // console.log(point);
     // console.log(pointx);
     
-    const data_signup = "http://103.58.151.121:8080/GetGroup";
+    const data_signup = "http://103.82.248.28:8080/GetGroup";
 
     var getjson = {}
 

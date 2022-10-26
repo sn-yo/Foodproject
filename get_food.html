@@ -221,7 +221,19 @@
         }
         let current_menu = localStorage.getItem("code");
         // console.log(current_menu);
-        onLoadPage(current_menu);
+        
+        let jsonUrl2 = "json/config.json";
+        $.ajax({
+            type: "GET",
+            url: jsonUrl2,
+            async: false,
+            cache: false,
+            success: function( response ) {
+                // console.log(response.urlJson);
+                let urlxJson = response.urlJson;
+                onLoadPage(current_menu, urlxJson);
+            }
+        });
     </script>
 </body>
 

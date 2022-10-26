@@ -269,7 +269,20 @@
             window.location.href = "signup.html";
         }
         var get_group_id = localStorage.getItem("group_id");
-        get_list(get_group_id,'catagory_steak_point');
+        
+
+        let jsonUrl2 = "json/config.json";
+        $.ajax({
+            type: "GET",
+            url: jsonUrl2,
+            async: false,
+            cache: false,
+            success: function( response ) {
+                // console.log(response.urlJson);
+                let urlxJson = response.urlJson;
+                get_list(get_group_id,'catagory_steak_point', urlxJson);
+            }
+        });
 
         function OnChooseFood(code, name, nameeng, path, prc){
             // alert(code);

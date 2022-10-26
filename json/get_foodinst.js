@@ -1,7 +1,5 @@
-function onLoadPage(code){
-    const data_signup = "http://103.58.151.121:8080/GetFoodInst?FoodCode="+code;
-
-    // const data_getmenu = "http://103.58.151.121:8080/GetMenu";
+function onLoadPage(code, urlxJson){
+    const data_signup = urlxJson+"GetFoodInst?FoodCode="+code;
 
     fetch(data_signup)
         .then(function (response){
@@ -17,7 +15,7 @@ function onLoadPage(code){
 
     function appendData(data){
         var mainContainer = document.getElementById("myCatagory");
-        console.log(data.data);
+        // console.log(data.data);
 
         var get_code = localStorage.getItem("code");
         var get_name = localStorage.getItem("name");
@@ -125,11 +123,11 @@ function updatemyCart(product_cood, Quantity){
         // console.log(data.code);
         if(data.code == product_cood){
             
-            console.log(data.qty);
+            // console.log(data.qty);
 
             data.qty += Quantity;
-            console.log(Quantity);
-            console.log(data.qty);
+            // console.log(Quantity);
+            // console.log(data.qty);
         }
     }
     // console.log(get_cart);
@@ -142,7 +140,7 @@ function updatemyCart(product_cood, Quantity){
 function removemyCart(product_cood){
     var get_cart = JSON.parse(localStorage.getItem("cart"));
     var temp = get_cart.filter(item => item.code != product_cood);
-    console.log(temp);
+    // console.log(temp);
     localStorage.setItem("cart", JSON.stringify(temp));
 }
 
