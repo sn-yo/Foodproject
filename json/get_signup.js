@@ -1,5 +1,6 @@
 function checkin(bookingid, pathname){
-    const data_signup = "http://103.58.151.121:8080/Checkin?BookingID="+bookingid;
+    
+    const data_signup = "http://103.82.248.28:8080/Checkin?BookingID="+bookingid;
 
     fetch(data_signup)
         .then(function (response){
@@ -13,6 +14,8 @@ function checkin(bookingid, pathname){
             chkbooking(err, bookingid, pathname);
         })
 }
+
+
 
 function chkbooking(err, bookingid, pathname){
     // alert('ไม่สามารถใช้ได้ '+err);
