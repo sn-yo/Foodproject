@@ -27,13 +27,21 @@ function onLoadPage(code, urlxJson){
         document.getElementById("show_detail_nameeng").innerHTML = get_nameeng;
 
         let current_livestation = localStorage.getItem("livestation");
+        let current_livestationdesc = localStorage.getItem("livestationdesc");
         
         if(current_livestation == 0){
             // console.log('live 0');
             document.getElementById("addtobasket").style.display = "block";
+            // document.getElementById("addtobasket").innerHTML = "";
+            document.getElementById("showbasket").style.display = "none";            
+            document.getElementById("showclickqty").style.display = "block";
         }else{
             // console.log('live 1');
             document.getElementById("addtobasket").style.display = "none";
+            document.getElementById("showbasket").style.display = "block";
+            document.getElementById("showbasket").innerHTML = current_livestationdesc;
+            document.getElementById("showbasket").style.pointerEvents = "none";
+            document.getElementById("showclickqty").style.display = "none";
         }
 
         // var show_name = document.getElementById("ins_custname");

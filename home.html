@@ -364,7 +364,7 @@
             // console.log('redirect');
             window.location.href = "signup.html";
         }
-        function OnChooseFood(code, name, nameeng, path, prc, livestation){
+        function OnChooseFood(code, name, nameeng, path, prc, livestation, livestationdesc){
             // alert(code);
             localStorage.setItem('code',code);
             localStorage.setItem('name',name);
@@ -372,6 +372,7 @@
             localStorage.setItem('pathimg',path);
             localStorage.setItem('prc',prc);
             localStorage.setItem('livestation',livestation);
+            localStorage.setItem('livestationdesc',livestationdesc);
         }
 
         function OnClickCata(group_id, group_name){
