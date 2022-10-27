@@ -18,9 +18,10 @@ $.ajax({
 });
 
 function loadPageGroupmenu(urlxJson){
+    let xbookingid = localStorage.getItem("Set_bookingref");
     $.ajax({
         type: "GET",
-        url: urlxJson+"GetGroup",
+        url: urlxJson+"GetGroup?BookingID="+xbookingid,
         async: false,
         cache: false,
         success: function( response ) {
