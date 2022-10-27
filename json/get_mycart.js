@@ -123,19 +123,3 @@ function clickconfirm(){
     }
 
 }
-
-// let count = 0;
-// const counter = document.getElementById("counter");
-// //addtobasket
-
-// document.getElementById("addtobasket").addEventListener('click', event => {
-//     const cl = counter.classList;
-//     const c = 'animated-counter';
-//     count++;
-//     let xdata = JSON.parse(localStorage.getItem("cart"));
-//     let xcount = xdata.length;
-//     counter.innerText = xcount;
-//     cl.remove(c, cl.contains(c));
-//     setTimeout(() =>
-//     counter.classList.add('animated-counter'),1)
-// })
