@@ -176,13 +176,13 @@
             <template>
                 <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm" id="master_catagory_steak">
                     <div class="list-card-image">
-                        <a href="get_food.html" class="click_for_this" onclick="OnChooseFood('code','name','nameeng','path','prc')">
+                        <a href="get_food.html" class="click_for_this" onclick="OnChooseFood('code','name','nameeng','path','prc','livestation')">
                             <img alt="#" src="img/steak01.png" class="img-fluid item-img w-100 pic_catagory_steak">
                         </a>
                     </div>
                     <div class="p-3 position-relative">
                         <div class="list-card-body">
-                            <h6 class="mb-1"><a href="#" onclick="OnChooseFood('code','name','nameeng','path','prc')" class="text-black text_name">.</a></h6>
+                            <h6 class="mb-1"><a href="#" onclick="OnChooseFood('code','name','nameeng','path','prc','livestation')" class="text-black text_name">.</a></h6>
                             <span class="home_shownameeng" style="color:gray"></span>
                             
                         </div>
@@ -344,13 +344,14 @@
             // console.log('redirect');
             window.location.href = "signup.html";
         }
-        function OnChooseFood(code, name, nameeng, path, prc){
+        function OnChooseFood(code, name, nameeng, path, prc, livestation){
             // alert(code);
             localStorage.setItem('code',code);
             localStorage.setItem('name',name);
             localStorage.setItem('nameeng',nameeng);
             localStorage.setItem('pathimg',path);
             localStorage.setItem('prc',prc);
+            localStorage.setItem('livestation',livestation);
         }
 
         function OnClickCata(group_id, group_name){

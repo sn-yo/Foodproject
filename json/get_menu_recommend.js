@@ -47,9 +47,12 @@ function loadPageGetRecommend(urlxJson){
                         var xx = menu.getElementsByClassName("click_for_this")[0];
                         var yy = menu.getElementsByClassName('text_name')[0];
                         // console.log('xx', xx);
+
+                        var liveStation = data[xloop].LiveStation;
+                        // console.log(liveStation)
                         
-                        xx.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"',"+data[xloop].Food_Price+")");
-                        yy.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"',"+data[xloop].Food_Price+")");
+                        xx.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"',"+data[xloop].Food_Price+","+liveStation+")");
+                        yy.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"',"+data[xloop].Food_Price+","+liveStation+")");
                         yy.href = "get_food.html"
     
                         var col_6_tag1 = document.createElement('div');

@@ -138,7 +138,7 @@
                 <p></p>
                 <p></p>
 				
-                <a href="checkout.html" class="btn rounded btn-primary btn-lg btn-block" onclick="clickconfirm()">Add to Basket</a>
+                <a href="checkout.html" style="display: none;" class="btn rounded btn-primary btn-lg btn-block" id="addtobasket" onclick="clickconfirm()">Add to Basket</a>
                 <div class="p-5"></div>
             </div>
         </div>
@@ -221,6 +221,7 @@
         }
         let current_menu = localStorage.getItem("code");
         // console.log(current_menu);
+        
         
         let jsonUrl2 = "json/config.json";
         $.ajax({

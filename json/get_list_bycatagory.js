@@ -46,7 +46,7 @@ function get_list(menu_id, menu_catagory, urlxJson){
     
                         menu.getElementsByClassName('text_name')[0].innerHTML = data[xloop].FoodName;
                         menu.getElementsByClassName('cata_shownameeng')[0].innerHTML = data[xloop].FoodName_E;
-                        menu.getElementsByClassName('text_name')[0].setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"','"+data[xloop].Food_Price+"')");                        
+                        menu.getElementsByClassName('text_name')[0].setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"',"+data[xloop].Food_Price+","+data[xloop].LiveStation+")");                        
                         
                         // if(data[xloop].Food_ImageName == ''){
                         //     pathimg = "img/food_empty.png";
@@ -67,7 +67,7 @@ function get_list(menu_id, menu_catagory, urlxJson){
     
                         //set
                         var xx = menu.getElementsByClassName("click_for_this")[0];                        
-                        xx.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"','"+data[xloop].Food_Price+"')");
+                        xx.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"',"+data[xloop].Food_Price+","+data[xloop].LiveStation+")");
     
                         var col_6_tag1 = document.createElement('div');
                         col_6_tag1.className = "col-6";

@@ -26,15 +26,15 @@ function onLoadPage(code, urlxJson){
         document.getElementById("show_detail_img").src = get_img;
         document.getElementById("show_detail_nameeng").innerHTML = get_nameeng;
 
-        // if((get_code == '3') || (get_code == '32') || (get_code == '52')){
-        //     // document.getElementById("option_forsteak").style.display = "block";
-        // }else if(get_code == '65'){
-        //     // console.log('spa');
-        //     // document.getElementById("option_forspa").style.display = "block";
-        // }else{
-        //     // console.log('salud');
-        //     // document.getElementById("option_forslud").style.display = "block";
-        // }
+        let current_livestation = localStorage.getItem("livestation");
+        
+        if(current_livestation == 0){
+            // console.log('live 0');
+            document.getElementById("addtobasket").style.display = "block";
+        }else{
+            // console.log('live 1');
+            document.getElementById("addtobasket").style.display = "none";
+        }
 
         // var show_name = document.getElementById("ins_custname");
         // show_name.innerHTML = data.data[0].Cust_Name;
