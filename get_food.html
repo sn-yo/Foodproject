@@ -19,7 +19,8 @@
     <link href="css/style.css" rel="stylesheet">
     <!-- Sidebar CSS -->
     <link href="vendor/sidebar/demo.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/mycart.css">
+    
+    <link rel="stylesheet" href="css/stylemycart.css">
 </head>
 
 <body>
@@ -73,6 +74,7 @@
         <div class="bg-primary p-3 d-flex align-items-center">
             <img alt="#" class="img-fluid" src="img/logo_circle_copper02.png">
             <h4 class="font-weight-bold m-0 text-white" style="padding-left: 20px;">COPPER Buffet</h4>
+            <img alt="#" class="img-fluid" src="img/logo_circle_copper02.png">
         </div>
     </div>
     <div class="py-5 osahan-coming-soon d-flex justify-content-center align-items-center">
@@ -141,9 +143,21 @@
                 <p></p>
                 <p></p>
 				
-                <a href="checkout.html" style="display: none;" class="btn rounded btn-primary btn-lg btn-block" id="addtobasket" onclick="clickconfirm()">Add to Basket</a>
+                <!-- <a href="checkout.html" style="display: none;" class="btn rounded btn-primary btn-lg btn-block" id="addtobasket" onclick="clickconfirm()">Add to Basket</a> -->
+                <div class="text-center" style="padding-left: 80px; padding-right: 80px;">
+                    
+                    <button class="button" id="addtobasket2" onclick="clickconfirm()">
+                        <span>Add to Basket</span>
+                        <div class="cart">
+                            <svg viewBox="0 0 36 26">
+                                <polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
+                                <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
                 <a href="#" class="btn btn-outline-info btn-lg" id="showbasket" disabled></a>
-                <!-- <button id="add-animation">add to cart</button> -->
+                
                 <div class="p-5"></div>
             </div>
         </div>
@@ -220,6 +234,8 @@
     <!-- json -->
     <script src="json/get_foodinst.js"></script>
     <script src="json/get_mycart.js"></script>
+    <script src="json/script.js"></script>
+
     <script>
         const my_bookingid = localStorage.getItem("Set_bookingref");
         // console.log(my_bookingid);
@@ -246,14 +262,14 @@
         //     // yy_count.setAtti = "none";
         // }
 
-        // document.getElementById("addtobasket").addEventListener('click', event => {
+        // document.getElementById("add-animation").addEventListener('click', event => {
         //     const cl = counter.classList;
         //     const c = 'animated-counter';
         //     count++;
         //     counter.innerText = count;
         //     cl.remove(c, cl.contains(c));
         //     setTimeout(() =>
-        //     counter.classList.add('animated-counter'),2)
+        //     counter.classList.add('animated-counter'),1)
         // })
         
         

@@ -11,7 +11,7 @@
     align-items: center;
     justify-content: center;
     top: .2rem;
-    right: .8rem;
+    right: -2rem;
 }
 
 .counter-container span:not(.animated-counter){
@@ -19,17 +19,28 @@
 }
 
 .counter-container span .animated-counter{
-    animation: count .4s ease-in-out
+    animation: count .10s ease-in-out
 }
 @keyframes count{
     from{
         top: -2rem;
-        right: -5rem;
-        transform: rotate(120deg);
+        right: 5rem;
+    }
+    30%{
+        top: -2rem;
+        right: 2rem;
+    }    
+    70%{
+        top: -2rem;
+        right: 0rem;
+    }
+        
+    100%{
+        top: -2rem;
+        right: -1rem;
     }
     to{
         top: .2rem;
-        right: .8rem;
-        transform: rotate(0deg);
+        right: -2rem;
     }
 }

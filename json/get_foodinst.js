@@ -31,13 +31,15 @@ function onLoadPage(code, urlxJson){
         
         if(current_livestation == 0){
             // console.log('live 0');
-            document.getElementById("addtobasket").style.display = "block";
+            // document.getElementById("addtobasket").style.display = "block";
+            document.getElementById("addtobasket2").style.display = "block";
             // document.getElementById("addtobasket").innerHTML = "";
             document.getElementById("showbasket").style.display = "none";            
             document.getElementById("showclickqty").style.display = "block";
         }else{
             // console.log('live 1');
-            document.getElementById("addtobasket").style.display = "none";
+            // document.getElementById("addtobasket").style.display = "none";
+            document.getElementById("addtobasket2").style.display = "none";
             document.getElementById("showbasket").style.display = "block";
             document.getElementById("showbasket").innerHTML = current_livestationdesc;
             document.getElementById("showbasket").style.pointerEvents = "none";
