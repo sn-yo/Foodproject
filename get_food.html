@@ -141,10 +141,10 @@
                 <p></p>
                 <p></p>
 				
-                <a href="#" style="display: none;" class="btn rounded btn-primary btn-lg btn-block" id="addtobasket" onclick="clickconfirm()">Add to Basket</a>
+                <a href="checkout.html" style="display: none;" class="btn rounded btn-primary btn-lg btn-block" id="addtobasket" onclick="clickconfirm()">Add to Basket</a>
                 <a href="#" class="btn btn-outline-info btn-lg" id="showbasket" disabled></a>
-                <button id="add-animation">add to cart</button>
-                <div class="p-5">checkout.html</div>
+                <!-- <button id="add-animation">add to cart</button> -->
+                <div class="p-5"></div>
             </div>
         </div>
     </div>
@@ -193,7 +193,7 @@
                 <div class="bg-danger rounded-circle mt-n0 shadow">
                     <a href="checkout.html" class="text-white small font-weight-bold text-decoration-none">
                         <div class="counter-container">
-                            <span id="counter">1</span>
+                            <!-- <span id="counter">1</span> -->
                             <i class="feather-shopping-cart"></i>
                         </div>
                     </a>
@@ -246,15 +246,15 @@
         //     // yy_count.setAtti = "none";
         // }
 
-        document.getElementById("addtobasket").addEventListener('click', event => {
-            const cl = counter.classList;
-            const c = 'animated-counter';
-            count++;
-            counter.innerText = count;
-            cl.remove(c, cl.contains(c));
-            setTimeout(() =>
-            counter.classList.add('animated-counter'),1)
-        })
+        // document.getElementById("addtobasket").addEventListener('click', event => {
+        //     const cl = counter.classList;
+        //     const c = 'animated-counter';
+        //     count++;
+        //     counter.innerText = count;
+        //     cl.remove(c, cl.contains(c));
+        //     setTimeout(() =>
+        //     counter.classList.add('animated-counter'),2)
+        // })
         
         
         
@@ -269,7 +269,7 @@
                 let urlxJson = response.urlJson;
                 onLoadPage(current_menu, urlxJson);
 
-                $('#addtobasket').click();
+                
             }
         });
     </script>
