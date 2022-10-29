@@ -26,13 +26,50 @@ function chk_delitem(){
     }
 }
 
+function myFunction_showmessagetimeout(count, urlxJson) {
+    // console.log(count);
+    if(count == 1){
+        let bookingid  = localStorage.getItem("Set_bookingref");
+        const data_signup = urlxJson+"CheckTimeOut?BookingID="+bookingid;
+
+        fetch(data_signup)
+            .then(function (response){
+                return response.json()
+            })
+            .then(function (data){
+                appendData(data)
+            })
+            .catch(function(err){
+                console.log('error: ' + err)
+                // chkbooking(err);
+            })
+        
+        // Get the snackbar DIV
+        var x = document.getElementById("snackbar");
+    
+        // Add the "show" class to DIV
+        x.className = "show";
+    
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+
+    }
+    count += 1;
+    localStorage.setItem("clickaddcart", count);
+}
+
+function appendData(data){
+    // console.log(data);
+    var x = document.getElementById("snackbar_message");
+    x.innerHTML = data.message;
+}
+
 function clickconfirm(){
     var get_curr_food_code = localStorage.getItem("code");
     var get_curr_food_name = localStorage.getItem("name");
     var get_curr_food_img = localStorage.getItem("pathimg");
     var get_curr_food_prc = parseFloat(localStorage.getItem("prc"));
     var chk_qty = parseInt(document.getElementById("ins_qty").value);
-
 
     // var checkbox = document.getElementsById("optionchoose_21").value;
     // console.log('chkbox', checkbox);
@@ -120,6 +157,26 @@ function clickconfirm(){
             }
             localStorage.setItem('cart', JSON.stringify(get_cart));
         }
+    }
+
+    var chk_addcart = localStorage.getItem("clickaddcart");
+    // console.log(chk_addcart);
+    if(chk_addcart == null || chk_addcart == '' || chk_addcart == 0){            
+        localStorage.setItem("clickaddcart",1);
+        chk_addcart = 1;
+        // myFunction(chk_addcart);
+        let jsonUrl2 = "json/config.json";
+        $.ajax({
+            type: "GET",
+            url: jsonUrl2,
+            async: false,
+            cache: false,
+            success: function( response ) {
+                // console.log(response.urlJson);
+                let urlxJson = response.urlJson;
+                myFunction_showmessagetimeout(chk_addcart, urlxJson);
+            }
+        });
     }
 
 }

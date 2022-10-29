@@ -50,25 +50,25 @@ function onloadListData(){
             }
         }
 
-        var chk_addcart = localStorage.getItem("clickaddcart");
-        // console.log(chk_addcart);
-        if(chk_addcart == null || chk_addcart == '' || chk_addcart == 0){            
-            localStorage.setItem("clickaddcart",1);
-            chk_addcart = 1;
-            // myFunction(chk_addcart);
-            let jsonUrl2 = "json/config.json";
-            $.ajax({
-                type: "GET",
-                url: jsonUrl2,
-                async: false,
-                cache: false,
-                success: function( response ) {
-                    // console.log(response.urlJson);
-                    let urlxJson = response.urlJson;
-                    myFunction(chk_addcart, urlxJson);
-                }
-            });
-        }
+        // var chk_addcart = localStorage.getItem("clickaddcart");
+        // // console.log(chk_addcart);
+        // if(chk_addcart == null || chk_addcart == '' || chk_addcart == 0){            
+        //     // localStorage.setItem("clickaddcart",1);
+        //     chk_addcart = 1;
+        //     // myFunction(chk_addcart);
+        //     let jsonUrl2 = "json/config.json";
+        //     $.ajax({
+        //         type: "GET",
+        //         url: jsonUrl2,
+        //         async: false,
+        //         cache: false,
+        //         success: function( response ) {
+        //             // console.log(response.urlJson);
+        //             let urlxJson = response.urlJson;
+        //             //myFunction(chk_addcart, urlxJson);
+        //         }
+        //     });
+        // }
         
 
     }else{
@@ -199,7 +199,7 @@ function myFunction(count, urlxJson) {
 
     }
     count += 1;
-    localStorage.setItem("clickaddcart", count);
+    // localStorage.setItem("clickaddcart", count);
 }
 
 function appendData(data){

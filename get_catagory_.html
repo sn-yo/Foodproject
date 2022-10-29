@@ -76,15 +76,20 @@
         <!-- header-main .// -->
     </header>
     <div class="osahan-home-page">
-        <div class="bg-primary p-3 d-none">
-            <div class="text-white">
-                <div class="title d-flex align-items-center">
-                    <img alt="#" class="img-fluid" src="img/logo_circle_copper02.png">
-                    <h4 class="font-weight-bold m-0 text-white" style="padding-left: 20px;">COPPER Buffet</h4>
-                    
+        <div class="d-none">
+            <div class="bg-primary p-3 align-items-center">
+                <div class="row">
+                    <div class="col-2 text-center">
+                        <img alt="#" src="img/logo_circle_copper02.png">
+                    </div>
+                    <div class="col-8 text-center">
+                        <h4 class="font-weight-bold m-0 text-white" style="padding-top: 10px;">COPPER Buffet</h4>
+                    </div>
+                    <div class="col-2 text-center">
+                        <h4 class="font-weight-bold m-0 text-white" id="settableno" style="padding-top: 10px;"></h4>
+                    </div>
                 </div>
             </div>
-
         </div>
         
         <!-- menu catagory -->
@@ -300,6 +305,9 @@
             localStorage.setItem('group_id',group_id);
             localStorage.setItem('group_name',group_name);
         }
+        
+        let getSet_tableno = localStorage.getItem("Set_tableno");
+        document.getElementById("settableno").innerHTML = "#"+getSet_tableno;
     </script>
 
     <!-- slick Slider JS-->
