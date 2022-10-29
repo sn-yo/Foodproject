@@ -42,7 +42,7 @@ function onloadListData(){
                 bt_plus.setAttribute("onclick", "chk_additem("+i+")");
 
                 var bt_remove = menu.getElementsByClassName("mycart_remove")[0];
-                bt_remove.setAttribute("onclick", "chk_removeitem("+my_cart[i].code+")");
+                bt_remove.setAttribute("onclick", "chk_removeitem("+my_cart[i].code+",'"+my_cart[i].opt_inst+"')");
 
 
                 // console.log(menu);
@@ -126,10 +126,11 @@ function chk_delitem(item){
     
 }
 
-function chk_removeitem(code){
+function chk_removeitem(code, type){
     // console.log(code);
+    // console.log(type);
     var get_cart = JSON.parse(localStorage.getItem("cart"));
-    let curr_cart = get_cart.filter(item => item.code != code);
+    let curr_cart = get_cart.filter(item => item.code != code || item.opt_inst != type);
     localStorage.setItem("cart", JSON.stringify(curr_cart));
     
     // document.getElementById("listData_point").style.display = 'none';

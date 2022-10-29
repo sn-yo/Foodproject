@@ -380,6 +380,11 @@
             localStorage.setItem('group_id',group_id);
             localStorage.setItem('group_name',group_name);
         }
+
+        let getLastPage = localStorage.getItem("currPage");
+        // console.log(getLastPage);
+        localStorage.setItem("lastPage", getLastPage);
+        localStorage.setItem("currPage", 0);
     </script>
     
 </body>
