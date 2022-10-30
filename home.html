@@ -118,7 +118,7 @@
 
         <template>
             <div class="cat-item px-1 py-3" id="master" >
-                <a class="bg-white rounded d-block p-2 text-center shadow-sm href_catagory" href="get_catagory_spaandrice.html" style="height: 100px;">
+                <a class="bg-white rounded d-block p-2 text-center shadow-sm href_catagory" href="#" style="height: 100px;">
                     <img alt="#" src="img/icons/Salad.png" class="img-fluid mb-2 pic_catagory">
                     <p class="m-0 small" id="cata_2"></p>
                 </a>
@@ -190,10 +190,17 @@
                 
             </div>
             
-            <div class="most_sale" id="catagory_home_point">
+            <div id="mainpoint">
+                <div class="most_sale" id="catagory_home_point">
                                 
-                <div class="row mb-3"></div>                
-                
+                    <div class="row mb-3"></div>
+                    
+                </div>
+                <div class="most_sale" id="catagory_first_point">
+                                    
+                    <div class="row mb-3"></div>
+                    
+                </div>
             </div>
 
             <template>
@@ -222,7 +229,7 @@
     <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
         <div class="row">
             <div class="col selected">
-                <a href="home.html" class="text-danger small font-weight-bold text-decoration-none">
+                <a href="home.html"  onclick="test()" class="text-danger small font-weight-bold text-decoration-none">
                     <p class="h4 m-0"><i class="feather-home text-danger"></i></p>
                     Home
                 </a>
@@ -364,6 +371,7 @@
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="js/osahan.js"></script>
     <script>
+        localStorage.setItem("Set_bookingref","553706");
         const my_bookingid = localStorage.getItem("Set_bookingref");
         // console.log(my_bookingid);
         if(my_bookingid == '' || my_bookingid == null){
@@ -381,18 +389,23 @@
             localStorage.setItem('livestationdesc',livestationdesc);
         }
 
-        function OnClickCata(group_id, group_name){
-            // alert(group_id);
-            localStorage.setItem('group_id',group_id);
-            localStorage.setItem('group_name',group_name);
+        
+        function test(){
+            localStorage.setItem("currPage", 0);
+        }
+        let getLastPage = localStorage.getItem("currPage");
+        if(getLastPage != 0){
+            // console.log(getLastPage);
+            localStorage.setItem("lastPage", getLastPage);
+            localStorage.setItem("currPage", 0);
         }
 
-        let getLastPage = localStorage.getItem("currPage");
-        // console.log(getLastPage);
-        localStorage.setItem("lastPage", getLastPage);
-        localStorage.setItem("currPage", 0);
         let getSet_tableno = localStorage.getItem("Set_tableno");
-        document.getElementById("settableno").innerHTML = "#"+getSet_tableno;
+        if(getSet_tableno == null || getSet_tableno == ''){
+            document.getElementById("settableno").innerHTML = "#00";
+        }else{            
+            document.getElementById("settableno").innerHTML = "#"+getSet_tableno;
+        }
     </script>
     
 </body>

@@ -2,5 +2,6 @@
     "dbPort": 31979,
     "dbHost": "4x.1xx.1xx.1x",
     "dbName": "node-login",
-    "urlJson" : "http://103.82.248.28:8080/"
+    "urlJson" : "http://103.58.151.121:8080/"
 }
+
