@@ -174,9 +174,18 @@ function clickconfirm(){
             success: function( response ) {
                 // console.log(response.urlJson);
                 let urlxJson = response.urlJson;
-                myFunction_showmessagetimeout(chk_addcart, urlxJson);
+                myFunction_showmessagetimeout(chk_addcart, urlxJson);                
+                setTimeout(xredirecto, 6000);
             }
         });
+    }else{
+        // alert('555');
+        setTimeout(xredirecto, 2000);
+        
     }
 
+}
+
+function xredirecto(){
+    window.location.href = "home.html";
 }
