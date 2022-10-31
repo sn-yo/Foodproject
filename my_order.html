@@ -140,7 +140,7 @@
     <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
         <div class="row">
             <div class="col selected">
-                <a href="home.html"  onclick="test()" class="text-copper small font-weight-bold text-decoration-none">
+                <a href="home.html"  onclick="clicktoHome()" class="text-copper small font-weight-bold text-decoration-none">
                     <p class="h4 m-0"><i class="feather-home text-copper"></i></p>
                     Home
                 </a>
@@ -155,7 +155,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col selected">
+            <div class="col selected notify_message">
                 <a href="my_order.html" class="text-copper small font-weight-bold text-decoration-none">
                     <p class="h4 m-0"><i class="feather-user text-copper"></i></p>
                     My Order
@@ -174,6 +174,7 @@
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="js/osahan.js"></script>
     <script src="json/get_myorder.js"></script>
+    <script src="json/main_func.js"></script>
     <script>
         const my_bookingid = localStorage.getItem("Set_bookingref");
         // console.log(my_bookingid);

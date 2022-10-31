@@ -164,3 +164,31 @@ function test123(){
     // localStorage.removeItem('image');
     localStorage.setItem('cart', food_objs);
 }
+
+function xFormatNumber(number){
+    return new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(number);
+}
+
+function shownotify(){
+    let curr_mycart = JSON.parse(localStorage.getItem("cart"));
+    let count_mycart = curr_mycart.length;
+    let count_prc = curr_mycart.map(function(item){
+        return parseFloat(item.prc)*parseInt(item.qty);
+    });
+    
+    let sum_prc = count_prc.reduce(function(prev, next){
+        return prev + next;
+    }, 0);  
+
+    $(".notify_message").notify(
+        count_mycart+" Item _______________ "+xFormatNumber(sum_prc),
+        {
+            
+            position : "top right",
+            autoHide : false,
+            style: 'bootstrap',
+            className: 'success',
+            arrowShow: false,
+        }
+    );
+}

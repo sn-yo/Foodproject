@@ -361,7 +361,7 @@
 
 
     <!-- json -->
-    <!-- <script src="json/notify.js"></script> -->
+    <script src="json/notify.js"></script>
     <script src="json/get_menu_catagory.js"></script>
     <script src="json/get_menu_recommend.js"></script>
     <!-- <script src="json/get_menu_mostpopular.js"></script> -->
@@ -412,15 +412,21 @@
             document.getElementById("settableno").innerHTML = "#"+getSet_tableno;
         }
 
-        function shownotify(){
-            $(".notify_message").notify(
-                "2 item    250฿",
-                {
-                    position : "top right",
-                    autoHide : false
-                }
-            );
-        }
+        // shownotify();
+        $(document).ready(function() {   //same as: $(function() { 
+            let curr_mycart = JSON.parse(localStorage.getItem("cart"));
+            let count_mycart = 0;
+            console.log(curr_mycart);
+            if(curr_mycart){
+                count_mycart = curr_mycart.length;
+            }else{
+                count_mycart = 0;
+            }
+
+            if(count_mycart > 0 && curr_mycart != null){
+                shownotify();
+            }
+        });
         
 
         

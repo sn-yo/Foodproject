@@ -192,3 +192,50 @@ function loadPageGetCatagory_bylastpage(urlxJson){
     
 }
 
+function xFormatNumber(number){
+    return new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(number);
+}
+
+function shownotify(){
+    let curr_mycart = JSON.parse(localStorage.getItem("cart"));
+    let count_mycart = curr_mycart.length;
+    let count_prc = curr_mycart.map(function(item){
+        return parseFloat(item.prc)*parseInt(item.qty);
+    });
+    
+    let sum_prc = count_prc.reduce(function(prev, next){
+        return prev + next;
+    }, 0);  
+
+    $(".notify_message").notify(
+        count_mycart+" Item _______________ "+xFormatNumber(sum_prc),
+        {
+            
+            position : "top right",
+            autoHide : false,
+            style: 'bootstrap',
+            className: 'success',
+            arrowShow: false,
+        }
+    );
+
+    // $(".notify_message").notify("xxxx", "success");
+    // $.notify.addStyle('happyblue', {
+    //     html: "<div>☺<span data-notify-text/>☺</div>",
+    //     classes: {
+    //       base: {
+    //         "white-space": "nowrap",
+    //         "background-color": "lightblue",
+    //         "padding": "5px"
+    //       },
+    //       superblue: {
+    //         "color": "white",
+    //         "background-color": "blue"
+    //       }
+    //     }
+    //   });
+    // console.log('show data');
+    // alert('123');
+
+    // $('#showtoast').toast('show');
+}
