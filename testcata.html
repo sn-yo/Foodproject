@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+		
+        <!-- CATAGORY  GRILL & STEAK -->
+        <div class="pt-2 pb-3 title d-flex align-items-center">
+            <h5 class="m-0" id="cata_showgroupname">Recommended เมนูแนะนำ</h5>
+            
+        </div>
+        
+        <div id="mainpoint">
+            <div class="most_sale" id="catagory_home_point">
+                            
+                <div class="row mb-3"></div>
+                
+            </div>
+            <div class="most_sale" id="catagory_first_point">
+                                
+                <div class="row mb-3"></div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+
+        let getBookingID = localStorage.getItem("Set_bookingref");
+        let addUrl = "&BookingID="+getBookingID;
+        let menu_id = 8;
+        let urlxJson = "http://103.58.151.121:8080/";
+
+        $.ajax({
+            type: "GET",
+            url: urlxJson+"GetMenu?FoodGroup="+menu_id+addUrl,
+            async: false,
+            cache: false,
+            success: function( response ) {
+                console.log(response.data);
+                let masterdata = response.data;
+                // const result = masterdata.group(({ SubGroupName }) => SubGroupName);
+
+                // console.log(result);
+
+                for(var i =0; i<masterdata.length; i++){
+                    console.log(masterdata[i].SubGroupName);
+                }
+
+            }
+        });
+    </script>
+    
+</body>
+</html>

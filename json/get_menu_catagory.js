@@ -101,12 +101,11 @@ function OnClickCata(group_id, group_name, urlxJson){
         success: function( response ) {
             // console.log(response);
             const data = response.data;
-            // console.log(data.length);
+            console.log(data);
             var xloop = 0;
 
             var show_groupname = localStorage.getItem("group_name");
             document.getElementById("cata_showgroupname").innerHTML = show_groupname;
-
             
             var homemaster = document.getElementById("catagory_home_point");
             homemaster.remove();
