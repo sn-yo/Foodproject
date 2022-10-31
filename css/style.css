@@ -1428,3 +1428,40 @@ footer .text-muted {
         max-width: 100%;
     }
 }
+
+.btn-copper {
+    color: #fff;
+    background-color: #D2691E;
+    border-color: #D2691E;
+  }
+  
+  .btn-copper:hover {
+    color: #fff;
+    background-color: #D2691E;
+    border-color: #D2691E;
+  }
+  
+  .btn-copper:focus, .btn-copper.focus {
+    color: #fff;
+    background-color: #D2691E;
+    border-color: #D2691E;
+    box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+  }
+  
+  .btn-copper.disabled, .btn-copper:disabled {
+    color: #fff;
+    background-color: #D2691E;
+    border-color: #D2691E;
+  }
+  
+  .btn-copper:not(:disabled):not(.disabled):active, .btn-copper:not(:disabled):not(.disabled).active,
+  .show > .btn-copper.dropdown-toggle {
+    color: #fff;
+    background-color: #D2691E;
+    border-color: #D2691E;
+  }
+  
+  .btn-copper:not(:disabled):not(.disabled):active:focus, .btn-copper:not(:disabled):not(.disabled).active:focus,
+  .show > .btn-copper.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+  }
