@@ -86,7 +86,7 @@ function loadPageGetRecommend(urlxJson){
                 }
                 document.getElementById("catagory_home_point").appendChild(row_mb);
             }
-            setTimeout(shownotify(), 5000);
+            // setTimeout(shownotify(), 5000);
     
         }
     });
