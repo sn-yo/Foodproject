@@ -1,15 +1,4 @@
 const jsonUrl2 = "json/config.json";
-function shownotify(){
-    console.log('show noti');
-    document.getElementsByClassName("notify_message").notify('55555555556');
-    // $(".notify_message").notify(
-    //     "2 item    250฿",
-    //     {
-    //         position : "top right",
-    //         autoHide : false
-    //     }
-    // );
-}
 
 $.ajax({
     type: "GET",
@@ -25,6 +14,7 @@ $.ajax({
         console.log(local_currpage);
         if(local_currpage == 0){
             loadPageGetRecommend(urlxJson);
+            
         }else{
             loadPageGetCatagory_bylastpage(urlxJson);
         }
@@ -86,10 +76,18 @@ function loadPageGetRecommend(urlxJson){
                 }
                 document.getElementById("catagory_home_point").appendChild(row_mb);
             }
-            setTimeout(shownotify(), 5000);
-    
+            // setTimeout(shownotify(), 10000);
+            // shownotify();
+            // async function main() {
+            //     setTimeout(shownotify(), 10000);
+            // };
+            // main();
         }
     });
+
+    
+    // setTimeout($("#catagory_home_point").notify('555'), 10000);
+    // setTimeout(alert('show'), 10000);
 }
 
 function loadPageGetCatagory_bylastpage(urlxJson){
@@ -192,3 +190,50 @@ function loadPageGetCatagory_bylastpage(urlxJson){
     
 }
 
+function xFormatNumber(number){
+    return new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(number);
+}
+
+function shownotify(){
+    let curr_mycart = JSON.parse(localStorage.getItem("cart"));
+    let count_mycart = curr_mycart.length;
+    let count_prc = curr_mycart.map(function(item){
+        return parseFloat(item.prc)*parseInt(item.qty);
+    });
+    
+    let sum_prc = count_prc.reduce(function(prev, next){
+        return prev + next;
+    }, 0);  
+
+    $(".notify_message").notify(
+        count_mycart+" Item _______________ "+xFormatNumber(sum_prc),
+        {
+            
+            position : "top right",
+            autoHide : false,
+            style: 'bootstrap',
+            className: 'success',
+            arrowShow: false,
+        }
+    );
+
+    // $(".notify_message").notify("xxxx", "success");
+    // $.notify.addStyle('happyblue', {
+    //     html: "<div>☺<span data-notify-text/>☺</div>",
+    //     classes: {
+    //       base: {
+    //         "white-space": "nowrap",
+    //         "background-color": "lightblue",
+    //         "padding": "5px"
+    //       },
+    //       superblue: {
+    //         "color": "white",
+    //         "background-color": "blue"
+    //       }
+    //     }
+    //   });
+    // console.log('show data');
+    // alert('123');
+
+    // $('#showtoast').toast('show');
+}

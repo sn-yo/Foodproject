@@ -181,9 +181,9 @@
         </template>
         <!-- menu recommend and popular -->
 
-        <div>
+        <!-- <div>
             <button class="btn btn-info notify_message" onclick="shownotify()">test</button>
-        </div>
+        </div> -->
 
         <!-- recommanded -->
         <div class="container">
@@ -352,7 +352,7 @@
         </div>
     </div>
 
-    
+      
  
 
     <!-- Bootstrap core JavaScript -->
@@ -402,7 +402,7 @@
         if(getLastPage != 0){
             // console.log(getLastPage);
             localStorage.setItem("lastPage", getLastPage);
-            localStorage.setItem("currPage", 0);
+            // localStorage.setItem("currPage", 0);
         }
 
         let getSet_tableno = localStorage.getItem("Set_tableno");
@@ -412,17 +412,24 @@
             document.getElementById("settableno").innerHTML = "#"+getSet_tableno;
         }
 
-        function shownotify(){
-            $(".notify_message").notify(
-                "2 item    250฿",
-                {
-                    position : "top right",
-                    autoHide : false
-                }
-            );
-        }
         
+        
+        
+        // shownotify();
+        $(document).ready(function() {   //same as: $(function() { 
+            let curr_mycart = JSON.parse(localStorage.getItem("cart"));
+            let count_mycart = 0;
+            console.log(curr_mycart);
+            if(curr_mycart){
+                count_mycart = curr_mycart.length;
+            }else{
+                count_mycart = 0;
+            }
 
+            if(count_mycart > 0 && curr_mycart != null){
+                shownotify();
+            }
+        });
         
     </script>
     

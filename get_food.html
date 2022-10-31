@@ -224,7 +224,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col selected">
+            <div class="col selected notify_message">
                 <a href="my_order.html" class="text-copper small font-weight-bold text-decoration-none">
                     <p class="h4 m-0"><i class="feather-user text-copper"></i></p>
                     My Order
@@ -253,6 +253,7 @@
     <script type="text/javascript" src="js/osahan.js"></script>
 
     <!-- json -->
+    <script src="json/notify.js"></script>
     <script src="json/get_foodinst.js"></script>
     <script src="json/get_mycart.js"></script>
     <script src="json/script.js"></script>
@@ -309,6 +310,22 @@
                 
             }
         });
+
+        $(document).ready(function() {   //same as: $(function() { 
+            let curr_mycart = JSON.parse(localStorage.getItem("cart"));
+            let count_mycart = 0;
+            console.log(curr_mycart);
+            if(curr_mycart){
+                count_mycart = curr_mycart.length;
+            }else{
+                count_mycart = 0;
+            }
+
+            if(count_mycart > 0 && curr_mycart != null){
+                shownotify();
+            }
+        });
+
     </script>
 </body>
 
