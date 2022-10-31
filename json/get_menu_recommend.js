@@ -98,8 +98,25 @@ function loadPageGetCatagory_bylastpage(urlxJson){
     let menu_id = localStorage.getItem("currPage");
     let menucata_name = localStorage.getItem("group_name");
 
-    if(menucata_name == "Live Stationx"){
-        console.log('menucata_name');
+    if(menucata_name == "Live Station"){
+        console.log('menucata_name live station');
+        // $.ajax({
+        //     type: "GET",
+        //     url: urlxJson+"GetMenu?FoodGroup="+menu_id+addUrl,
+        //     async: false,
+        //     cache: false,
+        //     success: function( response ) {
+        //         console.log(response.data);
+        //         let data = response.data;
+        //         console.log(typeof(data));
+        //         for(var i=0;i<data.length;i++){
+        //             console.log(data[i].SubGroupName);
+        //         }
+
+                
+
+        //     }
+        // });
     }else{
         $.ajax({
             type: "GET",
