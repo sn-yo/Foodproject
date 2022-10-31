@@ -1,4 +1,15 @@
 const jsonUrl2 = "json/config.json";
+function shownotify(){
+    console.log('show noti');
+    document.getElementsByClassName("notify_message").notify('55555555556');
+    // $(".notify_message").notify(
+    //     "2 item    250฿",
+    //     {
+    //         position : "top right",
+    //         autoHide : false
+    //     }
+    // );
+}
 
 $.ajax({
     type: "GET",
@@ -75,7 +86,7 @@ function loadPageGetRecommend(urlxJson){
                 }
                 document.getElementById("catagory_home_point").appendChild(row_mb);
             }
-            
+            setTimeout(shownotify(), 5000);
     
         }
     });
@@ -180,3 +191,4 @@ function loadPageGetCatagory_bylastpage(urlxJson){
     }
     
 }
+

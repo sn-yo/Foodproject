@@ -181,6 +181,10 @@
         </template>
         <!-- menu recommend and popular -->
 
+        <div>
+            <button class="btn btn-info notify_message" onclick="shownotify()">test</button>
+        </div>
+
         <!-- recommanded -->
         <div class="container">
 		
@@ -244,7 +248,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col selected">
+            <div class="col selected notify_message">
                 <a href="my_order.html" class="text-copper small font-weight-bold text-decoration-none">
                     <p class="h4 m-0"><i class="feather-user text-copper"></i></p>
                     My Order
@@ -357,6 +361,7 @@
 
 
     <!-- json -->
+    <script src="json/notify.js"></script>
     <script src="json/get_menu_catagory.js"></script>
     <script src="json/get_menu_recommend.js"></script>
     <!-- <script src="json/get_menu_mostpopular.js"></script> -->
@@ -406,6 +411,19 @@
         }else{            
             document.getElementById("settableno").innerHTML = "#"+getSet_tableno;
         }
+
+        function shownotify(){
+            $(".notify_message").notify(
+                "2 item    250฿",
+                {
+                    position : "top right",
+                    autoHide : false
+                }
+            );
+        }
+        
+
+        
     </script>
     
 </body>

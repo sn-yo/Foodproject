@@ -3,6 +3,7 @@ function onclick1(){
     console.log('sss');
 }
 
+
 const jsonUrl = "json/config.json";
 
 $.ajax({
@@ -74,10 +75,14 @@ function loadPageGroupmenu(urlxJson){
                 
                 //console.log(menu.getElementsByClassName('m-0 small')[0].id);
                 cat_item.appendChild(menu);
+                
+                
             }
             document.getElementById("container_point").appendChild(cat_item);
         }
     });
+
+    
 }
 
 function OnClickCata(group_id, group_name, urlxJson){
@@ -92,6 +97,9 @@ function OnClickCata(group_id, group_name, urlxJson){
     let getBookingID = localStorage.getItem("Set_bookingref");
     let addUrl = "&BookingID="+getBookingID;
     let menu_id = group_id;
+
+    
+    
 
     $.ajax({
         type: "GET",
