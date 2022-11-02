@@ -205,6 +205,11 @@
                     <div class="row mb-3"></div>
                     
                 </div>
+                <div class="most_sale" id="catagory_livestation_point">
+                                
+                    <div class="row mb-3"></div>
+                    
+                </div>
             </div>
 
             <template>
@@ -223,10 +228,40 @@
                     </div>
                 </div>
             </template>
+            <template>
+                <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm" id="master_catagory_steak">
+                    <div class="list-card-image">
+                        <a href="get_food.html" class="click_for_this" onclick="OnChooseFood('code','name','nameeng','path','prc','livestation')">
+                            <img alt="#" src="img/steak01.png" class="img-fluid item-img w-100 pic_catagory_steak">
+                        </a>
+                    </div>
+                    <div class="p-3 position-relative">
+                        <div class="list-card-body">
+                            <h6 class="mb-1"><a href="#" onclick="OnChooseFood('code','name','nameeng','path','prc','livestation')" class="text-black text_name">.</a></h6>
+                            <span class="home_shownameeng" style="color:gray; font-size: 13px;"></span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </template>
 
             <!-- CATAGORY  GRILL & STEAK -->
         </div>
         <!-- recommanded -->
+
+        <!-- live station -->
+        <!-- <div class="container" id="livestation_point">
+            <div class="pt-2 pb-3 title d-flex align-items-center">
+                <h5 class="m-0" id="cata_showlivestation_name">ปรับ live station</h5>
+                
+            </div>
+
+            <div id="mainlivestation_point">
+                
+            </div>
+
+        </div> -->
+        <!-- live station -->
 
     </div>
     <!-- Footer -->
@@ -376,7 +411,7 @@
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="js/osahan.js"></script>
     <script>
-        // localStorage.setItem("Set_bookingref","553706");
+        localStorage.setItem("Set_bookingref","553706");
         const my_bookingid = localStorage.getItem("Set_bookingref");
         // console.log(my_bookingid);
         if(my_bookingid == '' || my_bookingid == null){
@@ -416,7 +451,7 @@
         $(document).ready(function() {   //same as: $(function() { 
             let curr_mycart = JSON.parse(localStorage.getItem("cart"));
             let count_mycart = 0;
-            console.log(curr_mycart);
+            // console.log(curr_mycart);
             if(curr_mycart){
                 count_mycart = curr_mycart.length;
             }else{
