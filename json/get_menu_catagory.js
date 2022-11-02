@@ -97,6 +97,7 @@ function OnClickCata(group_id, group_name, urlxJson){
     let getBookingID = localStorage.getItem("Set_bookingref");
     let addUrl = "&BookingID="+getBookingID;
     let menu_id = group_id;
+    // console.log(group_name);
 
     if(group_name == "Live Station"){
         // console.log('live station');
@@ -106,18 +107,30 @@ function OnClickCata(group_id, group_name, urlxJson){
             async: false,
             cache: false,
             success: function( response ) {
-                document.getElementById("catagory_home_point").remove();
+                document.getElementById("catagory_home_point").remove();                
+                var cata_master = document.createElement("div");
+                cata_master.className = "most_sale";
+                cata_master.id = "catagory_home_point";
+                document.getElementById("mainpoint").appendChild(cata_master);
+
+                document.getElementById("catagory_first_point").remove();
+                var cata_first_master = document.createElement("div");
+                cata_first_master.className = "most_sale";
+                cata_first_master.id = "catagory_first_point";
+                document.getElementById("mainpoint").appendChild(cata_first_master);
+
+                
                 document.getElementById("cata_showgroupname").innerHTML = group_name;
                 var masterdata = response.data;
-                console.log(masterdata);
+                // console.log(masterdata);
                 let curr_live = [];
                 
                 let unique = [...new Set(masterdata.map(item => item.SubGroupName))]
-                console.log(unique);
+                // console.log(unique);
 
 
                 for(var i=0;i<unique.length;i++){
-                    console.log(unique[i])
+                    // console.log(unique[i])
                     var create_header = document.createElement("div");
                     create_header.className = "pt-2 pb-3 title d-flex align-items-center";
 
@@ -128,7 +141,7 @@ function OnClickCata(group_id, group_name, urlxJson){
                     var xloop = 0;
 
                     let curr_livestation = masterdata.filter(item => item.SubGroupName == unique[i]);
-                    console.log(curr_livestation);
+                    // console.log(curr_livestation);
 
                     for(var xrow = 0; xrow < (curr_livestation.length/2); xrow++){
                         // console.log('xrow', xrow);
@@ -137,14 +150,16 @@ function OnClickCata(group_id, group_name, urlxJson){
 
                         for(var j=0; j < 2; j++){
                             if(xloop < curr_livestation.length){
-                                var temp = document.getElementsByTagName("template")[3];
+                                var temp = document.getElementsByTagName("template")[4];
                                 var menu = temp.content.firstElementChild.cloneNode(true);
 
                                 menu.setAttribute("id", "hGrp_ID"+curr_livestation[xloop].FoodCode);
                                 // console.log('i'+i ," Grp_ID"+data[xloop].FoodCode);
                                 // console.log('loop:', xloop + data[xloop].FoodCode);
                                 menu.getElementsByClassName('text_name')[0].innerHTML = curr_livestation[xloop].FoodName;
+
                                 menu.getElementsByClassName("home_shownameeng")[0].innerHTML = curr_livestation[xloop].FoodName_E;
+
                                 var pathimg = "img/FoodImage/"+curr_livestation[xloop].Food_ImageName;
                                 menu.getElementsByClassName('pic_catagory_steak')[0].src = pathimg;
             
@@ -174,7 +189,7 @@ function OnClickCata(group_id, group_name, urlxJson){
                     }
 
                     create_header.appendChild(create_h5);
-                    document.getElementById("livestation_point").appendChild(create_header);
+                    document.getElementById("catagory_livestation_point").appendChild(create_header);
                 }
             }
         });
@@ -215,6 +230,12 @@ function OnClickCata(group_id, group_name, urlxJson){
                 cata_first_master.className = "most_sale";
                 cata_first_master.id = "catagory_first_point";
                 document.getElementById("mainpoint").appendChild(cata_first_master);
+
+                document.getElementById("catagory_livestation_point").remove();
+                var cata_livestation_master = document.createElement("div");
+                cata_livestation_master.className = "most_sale";
+                cata_livestation_master.id = "catagory_livestation_point";
+                document.getElementById("mainpoint").appendChild(cata_livestation_master);
     
     
                 for(var xrow = 0; xrow < (data.length/2); xrow++){

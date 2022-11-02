@@ -22,11 +22,12 @@ $.ajax({
         console.log('onclickback');
         let local_lastpage = localStorage.getItem("lastPage");
         let local_currpage = localStorage.getItem("currPage");
+        let group_name = localStorage.getItem("group_name");
         console.log(local_currpage);
         if(local_currpage == 0){
             loadPageGetRecommend(urlxJson);
         }else{
-            loadPageGetCatagory_bylastpage(urlxJson);
+            loadPageGetCatagory_bylastpage(urlxJson, group_name);
         }
     }
 });
@@ -92,31 +93,108 @@ function loadPageGetRecommend(urlxJson){
     });
 }
 
-function loadPageGetCatagory_bylastpage(urlxJson){
+function loadPageGetCatagory_bylastpage(urlxJson, group_name){
     let getBookingID = localStorage.getItem("Set_bookingref");
     let addUrl = "&BookingID="+getBookingID;
     let menu_id = localStorage.getItem("currPage");
     let menucata_name = localStorage.getItem("group_name");
 
     if(menucata_name == "Live Station"){
-        console.log('menucata_name live station');
-        // $.ajax({
-        //     type: "GET",
-        //     url: urlxJson+"GetMenu?FoodGroup="+menu_id+addUrl,
-        //     async: false,
-        //     cache: false,
-        //     success: function( response ) {
-        //         console.log(response.data);
-        //         let data = response.data;
-        //         console.log(typeof(data));
-        //         for(var i=0;i<data.length;i++){
-        //             console.log(data[i].SubGroupName);
-        //         }
+        // console.log('menucata_name live station');
+        
+        $.ajax({
+            type: "GET",
+            url: urlxJson+"GetMenu?FoodGroup="+menu_id+addUrl,
+            async: false,
+            cache: false,
+            success: function( response ) {
+                document.getElementById("catagory_home_point").remove();                
+                var cata_master = document.createElement("div");
+                cata_master.className = "most_sale";
+                cata_master.id = "catagory_home_point";
+                document.getElementById("mainpoint").appendChild(cata_master);
+
+                document.getElementById("catagory_first_point").remove();
+                var cata_first_master = document.createElement("div");
+                cata_first_master.className = "most_sale";
+                cata_first_master.id = "catagory_first_point";
+                document.getElementById("mainpoint").appendChild(cata_first_master);
 
                 
+                document.getElementById("cata_showgroupname").innerHTML = group_name;
+                var masterdata = response.data;
+                // console.log(masterdata);
+                let curr_live = [];
+                
+                let unique = [...new Set(masterdata.map(item => item.SubGroupName))]
+                // console.log(unique);
 
-        //     }
-        // });
+
+                for(var i=0;i<unique.length;i++){
+                    // console.log(unique[i])
+                    var create_header = document.createElement("div");
+                    create_header.className = "pt-2 pb-3 title d-flex align-items-center";
+
+                    var create_h5 = document.createElement("h5");
+                    create_h5.className = "m-0";
+                    create_h5.innerHTML = unique[i];
+
+                    var xloop = 0;
+
+                    let curr_livestation = masterdata.filter(item => item.SubGroupName == unique[i]);
+                    // console.log(curr_livestation);
+
+                    for(var xrow = 0; xrow < (curr_livestation.length/2); xrow++){
+                        // console.log('xrow', xrow);
+                        var row_mb = document.createElement('div');
+                        row_mb.className = "row mb-3";
+
+                        for(var j=0; j < 2; j++){
+                            if(xloop < curr_livestation.length){
+                                var temp = document.getElementsByTagName("template")[4];
+                                var menu = temp.content.firstElementChild.cloneNode(true);
+
+                                menu.setAttribute("id", "hGrp_ID"+curr_livestation[xloop].FoodCode);
+                                // console.log('i'+i ," Grp_ID"+data[xloop].FoodCode);
+                                // console.log('loop:', xloop + data[xloop].FoodCode);
+                                menu.getElementsByClassName('text_name')[0].innerHTML = curr_livestation[xloop].FoodName;
+
+                                menu.getElementsByClassName("home_shownameeng")[0].innerHTML = curr_livestation[xloop].FoodName_E;
+
+                                var pathimg = "img/FoodImage/"+curr_livestation[xloop].Food_ImageName;
+                                menu.getElementsByClassName('pic_catagory_steak')[0].src = pathimg;
+            
+                                //set
+                                var xx = menu.getElementsByClassName("click_for_this")[0];
+                                var yy = menu.getElementsByClassName('text_name')[0];
+                                // console.log('xx', xx);
+        
+                                var liveStation = curr_livestation[xloop].LiveStation;
+                                var liveStationdesc = curr_livestation[xloop].SubGroupName;
+                                // console.log(liveStation)
+                                
+                                xx.setAttribute("onclick", "OnChooseFood('"+curr_livestation[xloop].FoodCode+"','"+curr_livestation[xloop].FoodName+"','"+curr_livestation[xloop].FoodName_E+"','"+pathimg+"',"+curr_livestation[xloop].Food_Price+","+liveStation+",'"+liveStationdesc+"')");
+                                yy.setAttribute("onclick", "OnChooseFood('"+curr_livestation[xloop].FoodCode+"','"+curr_livestation[xloop].FoodName+"','"+curr_livestation[xloop].FoodName_E+"','"+pathimg+"',"+curr_livestation[xloop].Food_Price+","+liveStation+",'"+liveStationdesc+"')");
+                                yy.href = "get_food.html"
+
+                                var col_6_tag1 = document.createElement('div');
+                                col_6_tag1.className = "col-6";
+                                // col_6_tag1.innerHTML = "i="+xloop;
+                                col_6_tag1.appendChild(menu);
+                                row_mb.appendChild(col_6_tag1);
+                            }
+                            xloop += 1;
+
+                        }
+                        create_h5.appendChild(row_mb);
+                    }
+
+                    create_header.appendChild(create_h5);
+                    document.getElementById("catagory_livestation_point").appendChild(create_header);
+                }
+            }
+        });
+
     }else{
         $.ajax({
             type: "GET",
