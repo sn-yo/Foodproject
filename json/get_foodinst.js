@@ -32,7 +32,7 @@ function onLoadPage(code, urlxJson){
         if(current_livestation == 0){
             // console.log('live 0');
             // document.getElementById("addtobasket").style.display = "block";
-            document.getElementById("addtobasket2").style.display = "block";
+            document.getElementById("addtobasket2").style.display = "inline";
             // document.getElementById("addtobasket").innerHTML = "";
             document.getElementById("showbasket").style.display = "none";            
             document.getElementById("showclickqty").style.display = "block";
@@ -180,14 +180,17 @@ function shownotify(){
         return prev + next;
     }, 0);  
 
-    $(".notify_message").notify(
-        count_mycart+" Item _______________ "+xFormatNumber(sum_prc),
+    $(".notify_message").notify({
+            item1 : count_mycart+" Item",
+            p1: "                       ",
+            item2 : sum_prc + " ฿",
+        },            
         {
             
-            position : "top right",
+            position : "top",
             autoHide : false,
             style: 'bootstrap',
-            className: 'success',
+            className: 'success2',
             arrowShow: false,
         }
     );

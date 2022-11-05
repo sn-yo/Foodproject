@@ -22,6 +22,20 @@
     
     <link rel="stylesheet" href="css/stylemycart.css">
     <link rel="stylesheet" href="css/stylemymessage.css">
+    <style>
+        .flex-item {                        
+            width: 200px;
+            color: white;
+            font-weight: bold;            
+            text-align: center;
+        }
+
+        .checkwidth{
+            width : 200px;
+        }
+
+        
+    </style>
 </head>
 
 <body>
@@ -150,28 +164,54 @@
                         </div>
                     </div>
                 </template>
-                <p></p>
-                <p></p>
 				
-                <!-- <a href="checkout.html" style="display: none;" class="btn rounded btn-primary btn-lg btn-block" id="addtobasket" onclick="clickconfirm()">Add to Basket</a> -->
-                <div class="text-center" style="padding-left: 50px; padding-right: 50px;">
-                    
-                    <button class="button" id="addtobasket2" onclick="clickconfirm()">
-                        <span>Add to Basket</span>
-                        <div class="cart">
-                            <svg viewBox="0 0 36 26">
-                                <polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
-                                <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
-                            </svg>
-                        </div>
-                    </button>
-                </div>
+                <!-- <a href="checkout.html" style="display: none;" class="btn rounded btn-primary btn-lg btn-block" id="addtobasket" onclick="clickconfirm()">Add to Basket</a> -->                
                 <a href="#" class="btn btn-outline-info btn-lg" id="showbasket" disabled></a>
                 
+                <div class="p-2"></div>
+                <div>
+                    <div class="text-center">
+                        
+                        <button class="buttonc" id="addtobasket2" onclick="clickconfirm()">
+                            <span>Add to Basket</span>
+                            <div class="cart">
+                                <svg viewBox="0 0 36 26">
+                                    <polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
+                                    <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                </div>
                 <div class="p-5"></div>
             </div>
+            <!-- <div class="bg-white">
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-6 text-center">
+                        <button class="button" id="addtobasket2" onclick="clickconfirm()">
+                            <span>Add to Basket</span>
+                            <div class="cart">
+                                <svg viewBox="0 0 36 26">
+                                    <polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
+                                    <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
+                                </svg>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="col-3"></div>
+            
+                </div>
+                <div class="row p-5">
+                    <p></p>
+                </div>
+            </div> -->
+            
         </div>
+        <p></p>
     </div>
+    
+
     <!-- footer -->
     <footer class="section-footer border-top bg-dark">
         <div class="container">
@@ -207,10 +247,10 @@
     </nav>
     
     <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
-        <div class="row">
-            <div class="col selected">
+        <div class="row notify_message" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+            <div class="col">
                 <a href="home.html"  onclick="clicktoHome()" class="text-copper small font-weight-bold text-decoration-none">
-                    <p class="h4 m-0"><i class="feather-home text-copper"></i></p>
+                    <p class="h4 m-0 p-copper"><i class="feather-home text-copper"></i></p>
                     Home
                 </a>
             </div>
@@ -224,9 +264,9 @@
                     </a>
                 </div>
             </div>
-            <div class="col selected notify_message">
+            <div class="col">
                 <a href="my_order.html" class="text-copper small font-weight-bold text-decoration-none">
-                    <p class="h4 m-0"><i class="feather-user text-copper"></i></p>
+                    <p class="h4 m-0 p-copper"><i class="feather-user text-copper"></i></p>
                     My Order
                 </a>
             </div>

@@ -1,33 +1,33 @@
-.button {
-    --background: #D2691E;   /*362a89*/
+.buttonc {
+    --background: #9A6B4D;   /*362a89*/
     --text: #fff;
     --cart: #fff;
     --tick: var(--background);
     position: relative;
     border: none;
     background: none;
-    padding: 8px 28px;
+    padding: 8px 18px;
     border-radius: 8px;
     -webkit-appearance: none;
     -webkit-tap-highlight-color: transparent;
     -webkit-mask-image: -webkit-radial-gradient(white, black);
     overflow: hidden;
     cursor: pointer;
-    text-align: center;
+    
     min-width: 144px;
     color: var(--text);
     background: var(--background);
     transform: scale(var(--scale, 1));
     transition: transform 0.4s cubic-bezier(0.36, 1.01, 0.32, 1.27);
     height: 80px;
-    width: 100%;
+    
 }
-.button:active {
+.buttonc:active {
     --scale: 0.95;
 }
-.button span {
-    font-size: 16px;
-    font-weight: 500;
+.buttonc span {
+    font-size: 15px;
+    font-weight: bold;
     display: block;
     position: relative;
     padding-left: 24px;
@@ -36,7 +36,7 @@
     transform: translateY(var(--span-y, 0));
     transition: transform 0.7s ease;
 }
-.button span:before, .button span:after {
+.buttonc span:before, .buttonc span:after {
     content: '';
     width: var(--w, 2px);
     height: var(--h, 14px);
@@ -48,13 +48,13 @@
     transform: scale(0.75) rotate(var(--icon-r, 0deg)) translateY(var(--icon-y, 0));
     transition: transform 0.65s ease 0.05s;
 }
-.button span:after {
+.buttonc span:after {
     --w: 14px;
     --h: 2px;
     --l: 2px;
     --t: 12px;
 }
-.button .cart {
+.buttonc .cart {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -62,11 +62,11 @@
     transform-origin: 12px 23px;
     transform: translateX(-120px) rotate(-18deg);
 }
-.button .cart:before, .button .cart:after {
+.buttonc .cart:before, .buttonc .cart:after {
     content: '';
     position: absolute;
 }
-.button .cart:before {
+.buttonc .cart:before {
     width: 6px;
     height: 6px;
     border-radius: 50%;
@@ -75,7 +75,7 @@
     left: 9px;
     filter: drop-shadow(11px 0 0 var(--cart));
 }
-.button .cart:after {
+.buttonc .cart:after {
     width: 16px;
     height: 9px;
     background: var(--cart);
@@ -85,7 +85,7 @@
     transform: perspective(4px) rotateX(-6deg) scaleY(var(--fill, 0));
     transition: transform 1.2s ease var(--fill-d);
 }
-.button .cart svg {
+.buttonc .cart svg {
     z-index: 1;
     width: 36px;
     height: 26px;
@@ -97,13 +97,13 @@
     stroke-linecap: round;
     stroke-linejoin: round;
 }
-.button .cart svg polyline:last-child {
+.buttonc .cart svg polyline:last-child {
     stroke: var(--tick);
     stroke-dasharray: 10px;
     stroke-dashoffset: var(--offset, 10px);
     transition: stroke-dashoffset 0.4s ease var(--offset-d);
 }
-.button.loading {
+.buttonc.loading {
     --scale: 0.95;
     --span-y: -50px;
     --icon-r: 180deg;
@@ -112,7 +112,7 @@
     --offset: 0;
     --offset-d: 1.73s;
 }
-.button.loading .cart {
+.buttonc.loading .cart {
     animation: cart 3.4s linear forwards 0.2s;
 }
 @keyframes cart {

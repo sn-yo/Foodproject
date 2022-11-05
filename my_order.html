@@ -82,6 +82,14 @@
     <section class="py-4 osahan-main-body">
         <div class="container">
             <div class="row">
+                <div class="tab-content col-md-12" >
+                    <h3 class="bg-white" style="padding: 10px 5px 10px 5px;">My Order</h3>
+                </div>
+                
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
                 
                 <div class="tab-content col-md-12" id="myTabContent">
                     <div class="tab-pane fade show active" id="completed" role="tabpanel" aria-labelledby="completed-tab">
@@ -138,10 +146,10 @@
     </footer>
     
     <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
-        <div class="row">
-            <div class="col selected">
+        <div class="row notify_message" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+            <div class="col">
                 <a href="home.html"  onclick="clicktoHome()" class="text-copper small font-weight-bold text-decoration-none">
-                    <p class="h4 m-0"><i class="feather-home text-copper"></i></p>
+                    <p class="h4 m-0 p-copper"><i class="feather-home text-copper"></i></p>
                     Home
                 </a>
             </div>
@@ -155,9 +163,9 @@
                     </a>
                 </div>
             </div>
-            <div class="col selected notify_message">
+            <div class="col">
                 <a href="my_order.html" class="text-copper small font-weight-bold text-decoration-none">
-                    <p class="h4 m-0"><i class="feather-user text-copper"></i></p>
+                    <p class="h4 m-0 p-copper"><i class="feather-user text-copper"></i></p>
                     My Order
                 </a>
             </div>

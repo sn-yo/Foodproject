@@ -122,9 +122,13 @@ function OnConfirm(urlxJson){
     };
 
     
+    // fetch(urlxJson+"PostData?DBTable=orderdetail&DBAction=Insert&KeyUpdate=ItemNo", requestOptions)
+    // .then(response => response.text())
+    // .then(result => appendData(result))
+    // .catch(error => appendError(error));
+
     fetch(urlxJson+"PostData?DBTable=orderdetail&DBAction=Insert&KeyUpdate=ItemNo", requestOptions)
-    .then(response => response.text())
-    .then(result => appendData(result))
+    .then(data => appendData(data))
     .catch(error => appendError(error));
 
     function appendError(error){
@@ -132,10 +136,11 @@ function OnConfirm(urlxJson){
         console.log(error);
     }
 
-    function appendData(result){
+    function appendData(data){
         // console.log('finish');
-        // console.log(result);
+        console.log(data);
         window.localStorage.removeItem('cart');
+
         window.location.href = "successful.html";
     }
 

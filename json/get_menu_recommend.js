@@ -302,14 +302,17 @@ function shownotify(){
         return prev + next;
     }, 0);  
 
-    $(".notify_message").notify(
-        count_mycart+" Item _______________ "+xFormatNumber(sum_prc),
+    $(".notify_message").notify({
+            item1 : count_mycart+" Item",
+            p1: "                       ",
+            item2 : sum_prc + " ฿",
+        },            
         {
             
-            position : "top right",
+            position : "top",
             autoHide : false,
             style: 'bootstrap',
-            className: 'success',
+            className: 'success2',
             arrowShow: false,
         }
     );

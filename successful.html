@@ -75,12 +75,13 @@
     <div class="py-5 osahan-coming-soon d-flex justify-content-center align-items-center">
         <div class="col-md-6">
             <div class="text-center pb-3">
-                <h1 class="font-weight-bold">Your order has been successful</h1>
+                <h2 class="font-weight-bold">Your order has been successful</h2>
                 
             </div>
             <!-- continue -->
             <div class="bg-white rounded text-center p-4 shadow-sm">
-                <h1 class="display-1 mb-4">🎉</h1>
+                
+                <img src="img/animation_200_check2w.gif" alt="">
                 <h6 class="font-weight-bold mb-2">Preparing your order</h6>
                 <p class="small text-muted">Your order will be prepared and will come soon</p>
                 <a href="home.html" class="btn rounded btn-primary btn-lg btn-block">Home</a>
@@ -123,28 +124,32 @@
         </ul>
     </nav>
     <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
-        <div class="row">
-            <div class="col selected">
-                <a href="home.html" class="text-danger small font-weight-bold text-decoration-none">
-                    <p class="h4 m-0"><i class="feather-home text-danger"></i></p>
+        <div class="row notify_message" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+            <div class="col">
+                <a href="home.html"  onclick="clicktoHome()" class="text-copper small font-weight-bold text-decoration-none">
+                    <p class="h4 m-0 p-copper"><i class="feather-home text-copper"></i></p>
                     Home
                 </a>
             </div>
             <div class="col bg-white rounded-circle mt-n4 px-3 py-2">
-                <div class="bg-danger rounded-circle mt-n0 shadow">
+                <div class="bg-copper rounded-circle mt-n0 shadow">
                     <a href="checkout.html" class="text-white small font-weight-bold text-decoration-none">
-                        <i class="feather-shopping-cart"></i>
+                        <div class="counter-container">
+                            <!-- <span id="counter">1</span> -->
+                            <i class="feather-shopping-cart"></i>
+                        </div>
                     </a>
                 </div>
             </div>
             <div class="col">
-                <a href="my_order.html" class="text-dark small font-weight-bold text-decoration-none">
-                    <p class="h4 m-0"><i class="feather-user"></i></p>
+                <a href="my_order.html" class="text-copper small font-weight-bold text-decoration-none">
+                    <p class="h4 m-0 p-copper"><i class="feather-user text-copper"></i></p>
                     My Order
                 </a>
             </div>
         </div>
     </div>
+
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -154,12 +159,17 @@
     <script type="text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="js/osahan.js"></script>
+    <script src="json/main_func.js"></script>
     <script>
         const my_bookingid = localStorage.getItem("Set_bookingref");
         // console.log(my_bookingid);
         if(my_bookingid == '' || my_bookingid == null){
             // console.log('redirect');
             window.location.href = "signup.html";
+        }
+        setTimeout(xredirecto, 6000);
+        function xredirecto(){
+            window.location.href = "home.html";
         }
     </script>
 </body>

@@ -176,13 +176,13 @@ a {
 
 .osahan-menu-fotter .col.selected a {
     /* color: #dc3545; */
-    color: #FF8C00;
+    color: #9A6B4D;
     background: #f8f9fa;
 }
 
 .osahan-menu-fotter .col.selected p {
     /* color: #dc3545; */
-    color: #FF8C00;
+    color: #9A6B4D;
 }
 
 .osahan-menu-fotter .col.bg-white.rounded-circle.mt-n4.px-3.py-2 {
@@ -567,6 +567,10 @@ a {
 p {
     color: #424242;
     letter-spacing: 0.2px;
+}
+
+.p-copper {
+    color: #9A6B4D;
 }
 
 .btn-link {
@@ -1431,37 +1435,46 @@ footer .text-muted {
 
 .btn-copper {
     color: #fff;
-    background-color: #D2691E;
-    border-color: #D2691E;
+    background-color: #9A6B4D;
+    border-color: #9A6B4D;
   }
   
   .btn-copper:hover {
     color: #fff;
-    background-color: #D2691E;
-    border-color: #D2691E;
+    background-color: #9A6B4D;
+    border-color: #9A6B4D;
   }
   
   .btn-copper:focus, .btn-copper.focus {
     color: #fff;
-    background-color: #D2691E;
-    border-color: #D2691E;
+    background-color: #9A6B4D;
+    border-color: #9A6B4D;
     box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
   }
   
   .btn-copper.disabled, .btn-copper:disabled {
     color: #fff;
-    background-color: #D2691E;
-    border-color: #D2691E;
+    background-color: #9A6B4D;
+    border-color: #9A6B4D;
   }
   
   .btn-copper:not(:disabled):not(.disabled):active, .btn-copper:not(:disabled):not(.disabled).active,
   .show > .btn-copper.dropdown-toggle {
     color: #fff;
-    background-color: #D2691E;
-    border-color: #D2691E;
+    background-color: #9A6B4D;
+    border-color: #9A6B4D;
   }
   
   .btn-copper:not(:disabled):not(.disabled):active:focus, .btn-copper:not(:disabled):not(.disabled).active:focus,
   .show > .btn-copper.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(154, 107, 77, 0.5);
   }
+
+
+  .bg-copper{
+    background-color:#9A6B4D!important
+}
+  
+  a.bg-copper:focus,a.bg-copper:hover,button.bg-copper:focus,button.bg-copper:hover{
+    background-color:#9A6B4D!important
+}

@@ -6787,13 +6787,13 @@ button.bg-danger:focus {
 }
 
 .bg-copper {
-  background-color: #FF8C00 !important;
+  background-color: #9A6B4D !important;
 }
 
 a.bg-copper:hover, a.bg-copper:focus,
 button.bg-copper:hover,
 button.bg-copper:focus {
-  background-color: #FF8C00 !important;
+  background-color: #9A6B4D !important;
 }
 
 .bg-light {
@@ -10148,11 +10148,11 @@ a.text-danger:hover, a.text-danger:focus {
 }
 
 .text-copper {
-  color: #FF8C00 !important;
+  color: #9A6B4D !important;
 }
 
 a.text-copper:hover, a.text-copper:focus {
-  color: #FF8C00 !important;
+  color: #9A6B4D !important;
 }
 
 .text-light {
