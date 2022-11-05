@@ -491,32 +491,32 @@ a {
 
 .bg-primary {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#FF8C00+0,bf7748+100 */
-    background: #FF8C00;
+    background: #9A6B4D;
     /* Old browsers */
-    background: -moz-linear-gradient(45deg, #FF8C00 0%, #bf7748 100%);
+    background: -moz-linear-gradient(45deg, #9A6B4D 0%, #9A6B4D 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg, #FF8C00 0%, #bf7748 100%);
+    background: -webkit-linear-gradient(45deg, #9A6B4D 0%, #9A6B4D 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg, #FF8C00 0%, #bf7748 100%);
+    background: linear-gradient(45deg, #9A6B4D 0%, #9A6B4D 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#FF8C00', endColorstr='#bf7748', GradientType=1);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#9A6B4D', endColorstr='#9A6B4D', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
     ;
 }
 
 .btn-primary {
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#FF8C00+0,bf7748+100 */
-    background: #FF8C00;
+    background: #9A6B4D;
     /* Old browsers */
-    background: -moz-linear-gradient(45deg, #FF8C00 0%, #bf7748 100%);
+    background: -moz-linear-gradient(45deg, #9A6B4D 0%, #9A6B4D 100%);
     /* FF3.6-15 */
-    background: -webkit-linear-gradient(45deg, #FF8C00 0%, #bf7748 100%);
+    background: -webkit-linear-gradient(45deg, #9A6B4D 0%, #9A6B4D 100%);
     /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(45deg, #FF8C00 0%, #bf7748 100%);
+    background: linear-gradient(45deg, #9A6B4D 0%, #9A6B4D 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#FF8C00', endColorstr='#bf7748', GradientType=1);
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#9A6B4D', endColorstr='#9A6B4D', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
-    border-color: #FF8C00;
+    border-color: #9A6B4D;
 }
 
 .btn-primary:hover {
