@@ -70,7 +70,7 @@ function loadPageGroupmenu(urlxJson){
                 //     // menu.getElementsByClassName('href_catagory')[0].href = "#";
                 // }
     
-                menu.getElementsByClassName('pic_catagory')[0].src = "img/icons/"+data[i].Grp_Image;
+                //menu.getElementsByClassName('pic_catagory')[0].src = "img/icons/"+data[i].Grp_Image;
                 
                 
                 //console.log(menu.getElementsByClassName('m-0 small')[0].id);

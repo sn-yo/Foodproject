@@ -110,16 +110,32 @@
     <div class="osahan-home-page">
         
         <div class="d-none">
+            <div class="p-3">                
+                <div class="row text-center">
+                    <img src="img/logo_copper03.png" alt="#">
+                </div>
+            </div>
             <div class="bg-primary p-3 align-items-center">
                 <div class="row">
-                    <div class="col-2 text-center">
-                        <img alt="#" src="img/logo_circle_copper02.png">
+                    <div class="col-3 text-center">
+                        <h6 class="font-weight-bold m-0 text-white" style="padding-top: 10px;">คุณ นพดล</h6>
                     </div>
-                    <div class="col-8 text-center">
-                        <h4 class="font-weight-bold m-0 text-white" style="padding-top: 10px;">COPPER Buffet</h4>
+                    <div class="col-6 text-center">
+                        
                     </div>
-                    <div class="col-2 text-center">
-                        <h4 class="font-weight-bold m-0 text-white" id="settableno" style="padding-top: 10px;"></h4>
+                    <div class="col-3 text-center">
+                        <h6 class="font-weight-bold m-0 text-white" style="padding-top: 10px;">เหลือเวลา</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3 text-center">
+                        <h6 class="font-weight-bold m-0 text-white" id="settableno" style="padding-top: 10px;">โต๊ะ  124</h6>
+                    </div>
+                    <div class="col-6 text-center">
+                        
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="font-weight-bold m-0 text-white"  style="padding-top: 10px;">83:10 นาที</h6>
                     </div>
                 </div>
             </div>
@@ -133,7 +149,7 @@
         <template>
             <div class="cat-item px-1 py-3" id="master" >
                 <a class="bg-white rounded d-block p-2 text-center shadow-sm href_catagory" href="#" style="height: 100px;">
-                    <img alt="#" src="img/icons/Salad.png" class="img-fluid mb-2 pic_catagory">
+                    <!-- <img alt="#" src="img/icons/Salad.png" class="img-fluid mb-2 pic_catagory"> -->
                     <p class="m-0 small" id="cata_2"></p>
                 </a>
             </div>
@@ -440,7 +456,7 @@
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="js/osahan.js"></script>
     <script>
-        // localStorage.setItem("Set_bookingref","553706");
+        localStorage.setItem("Set_bookingref","553706");
         const my_bookingid = localStorage.getItem("Set_bookingref");
         // console.log(my_bookingid);
         if(my_bookingid == '' || my_bookingid == null){
@@ -471,9 +487,9 @@
 
         let getSet_tableno = localStorage.getItem("Set_tableno");
         if(getSet_tableno == null || getSet_tableno == ''){
-            document.getElementById("settableno").innerHTML = "#00";
+            document.getElementById("settableno").innerHTML = "โต๊ะ 00";
         }else{            
-            document.getElementById("settableno").innerHTML = "#"+getSet_tableno;
+            document.getElementById("settableno").innerHTML = "โต๊ะ"+getSet_tableno;
         }
 
         // shownotify();

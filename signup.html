@@ -20,6 +20,11 @@
     <!-- Sidebar CSS -->
     <link href="vendor/sidebar/demo.css" rel="stylesheet">
     <style>
+        body {
+            background-image: url('img/bg2.png');
+            background-repeat: no-repeat;
+            background-position: center;
+        }
         .btn_y {
             border: 2px solid black;
             background-color: white;
@@ -33,22 +38,78 @@
             border-color: #F5B7B1;
             color: #000;
         }
+
+        .inp-name {
+            background: transparent;
+            border: 3px solid #ccc;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            font-size: 20px; 
+            text-align: center;
+        }
+        
+        .inp-name::placeholder {
+            font-weight: bold;            
+            color: #FFF;
+        }
+
+        .showdesc {
+            color: #FFF;
+        }
+
+        .showpackage {
+            color: #FFF;
+            border: 4px solid #FFF;
+        }
+
+        /* CSS */
+        .button-42 {
+        background-color: initial;
+        background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+        border-radius: 6px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+        height: 40px;
+        line-height: 40px;
+        outline: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        pointer-events: auto;
+        position: relative;
+        text-align: center;
+        touch-action: manipulation;
+        user-select: none;
+        -webkit-user-select: none;
+        vertical-align: top;
+        white-space: nowrap;
+        width: 100%;
+        z-index: 9;
+        border: 0;
+        transition: box-shadow .2s;
+        }
+
+        .button-42:hover {
+        box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+        }
     </style>
 </head>
 
 <body>
-    <div class="osahan-signup login-page">
+    <div class="osahan-signup ">
+        <!-- login-page -->
         
         <div class="py-5 osahan-coming-soon d-flex justify-content-center align-items-center">
 			<div class="col-md-6">
 				<div class="text-center pb-3">
-					<img alt="#" src="img/logo_copper02.png" class="img-fluid item-img w-80">
-					<button class="btn_y copper_yy btn-lg btn-block mt-3">
-                        <h4 id="ins_custname">Customer Book Name</h4>
-                    </button>
-                    <button class="btn_y copper_yy btn-lg btn-block mt-3">
-                        <h4 id="ins_promote">Hungry Hub Exclusive Menus Unlimited All Premium M</h4>
-                    </button>
+					<img alt="#" src="img/logo-white.png" class="img-fluid item-img w-80">
+					
+                    <p class="p-5"></p>
+                    <h6 class="text-center showdesc">package</h6>
+                    <h4 id="ins_promote" class="text-center showpackage">Hungry Hub Exclusive Menus Unlimited All Premium M</h4>
                     
 				</div>
 				
@@ -56,22 +117,22 @@
                     <div class="row">
                         <div class="col-4">
                             <!-- <label for="exampleInputNumber1" class="text-dark text-center" style="font-size: 20px;">โต๊ะ</label> -->
-                            <h5 class="text-center">โต๊ะ</h5>
-                            <h6 class="text-center border-bottom" id="ins_tableno"></h6>
+                            <h5 class="text-center showdesc">โต๊ะ</h5>
+                            <h6 class="text-center border-bottom showdesc" id="ins_tableno">20</h6>
                         </div>
                         <div class="col-4">
-                            <h5 class="text-center">เวลา</h5>
-                            <h6 class="text-center border-bottom p-0" id="ins_timebook"></h6>
+                            <h5 class="text-center showdesc">เวลา</h5>
+                            <h6 class="text-center border-bottom p-0 showdesc" id="ins_timebook">10.00 - 12.00</h6>
                         </div>
                         <div class="col-4">                            
-                            <h5 class="text-center">จำนวน</h5>
-                            <h6 class="text-center border-bottom p-0" id="ins_adult"></h6>
+                            <h5 class="text-center showdesc">จำนวน</h5>
+                            <h6 class="text-center border-bottom p-0 showdesc" id="ins_adult">4</h6>
                         </div>
                     </div>
 					<div class="row p-4"></div>
 					<div class="form-group">
-						<h5 class="text-center">กรุณาระบุชื่อ</h5>
-						<input type="text" placeholder="Enter Name" class="form-control" style="font-size: 20px; text-align: center;" id="ins_newname" aria-describedby="nameHelp" required>
+						<!-- <h5 class="text-center">กรุณาระบุชื่อ</h5> -->
+						<input type="text" placeholder="กรุณาระบุชื่อ" class="form-control inp-name" id="ins_newname" aria-describedby="nameHelp" required>
                         <input type="hidden" id="ins_invno" >
                         <input type="hidden" id="hdins_invno" >
                         <input type="hidden" id="booking_ref" >
@@ -173,7 +234,7 @@
             })
             .then(function (data){
                 const urlxJson = data.urlJson;
-                checkin(bookingid, pathname, urlxJson);
+                // checkin(bookingid, pathname, urlxJson);
                 // resultxData(xxx)
             })
             .catch(function(err){
