@@ -1,0 +1,46 @@
+.button-70 {
+    background-image: linear-gradient(#0dccea, #0d70ea);
+    border: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: .9em;    
+    padding: 1px;
+    text-align: center;
+}
+
+.btn-info-copper {
+    color: #fff;
+    background-color: #fff;
+    border-color: #fff;
+    height: 50px;
+    width: 100%;
+}
+
+.active, .btn-info-copper:hover {
+    color: #fff;
+    background-color: #b84a17;
+    border-color: #ff5e01;
+    height: 50px;
+    width: 100%;
+  }
+
+.btn-info-copper:focus, .btn-info-copper.focus {
+    color: #fff;
+    background-color: #b84a17;
+    border-color: #ff5e01;
+    height: 50px;
+    width: 100%;
+}
+
+
+
+@media (max-width: 576px) {
+    .grp_btn_menucata {
+        margin-top: 10px;
+        border: #b84a17 1px;
+        border-style: solid none solid none;
+        
+    }
+}
