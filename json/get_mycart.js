@@ -175,12 +175,12 @@ function clickconfirm(){
                 // console.log(response.urlJson);
                 let urlxJson = response.urlJson;
                 myFunction_showmessagetimeout(chk_addcart, urlxJson);                
-                setTimeout(xredirecto, 6000);
+                setTimeout(xredirecto, 3000);
             }
         });
     }else{
         // alert('555');
-        setTimeout(xredirecto, 2000);
+        setTimeout(xredirecto, 500);
         
     }
 

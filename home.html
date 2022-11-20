@@ -127,7 +127,7 @@
             <div class="bg-copper">
                 <div class="row">
                     <div class="col-6">
-                        <span class="showtxtsirname">คุณ <span class="showtxtname" id="setcustomername">blue</span></span>
+                        <span class="showtxtsirname">คุณ <span class="showtxtname" id="setcustomername"></span></span>
                     </div>
                     <div class="col-6 text-right">
                         <span class="showtxtshowtimedesc">เหลือเวลาอีก </span>
@@ -135,7 +135,7 @@
                 </div>
                 <div class="row">
                     <div class="col-6">
-                        <span class="showtxtsirname">โต๊ะ &nbsp;<span class="showtxtname" id="settableno">blue</span></span>
+                        <span class="showtxtsirname">โต๊ะ &nbsp;<span class="showtxtname" id="settableno"></span></span>
                     </div>
                     <div class="col-6 text-right">
                         <span class="showtxtshowtimeout">83:20 <span class="showtxtsirname">นาที</span> </span>
@@ -300,7 +300,7 @@
     </div>
     <!-- Footer -->
     <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
-        <div class="row notify_message" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+        <div class="row notify_message" >
             <div class="col">
                 <a href="" class="btn btn-coppernew rounded">
                     <p class="h4 m-0 p-copper"><i class="feather-home text-copper"></i></p>
@@ -485,9 +485,9 @@
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="js/osahan.js"></script>
     <script>
-        localStorage.setItem("Set_bookingref","553706");
+        // localStorage.setItem("Set_bookingref","553695");
         localStorage.setItem('group_id', 0);
-        localStorage.setItem('currPage', 0);
+        // localStorage.setItem('currPage', 0);
         const my_bookingid = localStorage.getItem("Set_bookingref");
         // console.log(my_bookingid);
         if(my_bookingid == '' || my_bookingid == null){

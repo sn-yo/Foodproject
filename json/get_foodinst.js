@@ -34,7 +34,7 @@ function onLoadPage(code, urlxJson){
             // document.getElementById("addtobasket").style.display = "block";
             document.getElementById("addtobasket2").style.display = "inline";
             // document.getElementById("addtobasket").innerHTML = "";
-            document.getElementById("showbasket").style.display = "none";            
+            document.getElementById("showbasket").style.display = "none";
             document.getElementById("showclickqty").style.display = "block";
         }else{
             // console.log('live 1');
@@ -181,16 +181,16 @@ function shownotify(){
     }, 0);  
 
     $(".notify_message").notify({
-            item1 : count_mycart+" Item",
-            p1: "                       ",
-            item2 : sum_prc + " ฿",
+        item1 : "รายการอาหารที่เลือก : "+count_mycart+" รายการ",
+        p1: "                       ",
+        item2 : "฿"+sum_prc,
         },            
         {
             
             position : "top",
             autoHide : false,
             style: 'bootstrap',
-            className: 'success2',
+            className: 'copper',
             arrowShow: false,
         }
     );

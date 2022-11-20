@@ -119,7 +119,7 @@
 
 .btn-coppernew:not(:disabled):not(.disabled):active:focus, .btn-coppernew:not(:disabled):not(.disabled).active:focus,
 .show > .btn-coppernew.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(219, 149, 20, 0.5);
 }
 
 
@@ -212,3 +212,234 @@
     font-weight: 200;
     font-size: 18px;
 }
+
+/* get_food */
+
+.show_detail_name{
+    color: #976a4d;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.show_detail_nameeng{
+    color: #976a4d;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.show_detail_prc {
+    color: #FFF;
+}
+
+.enter_count{
+    color: #976a4d;
+    font-weight: 500;
+    text-align: center;
+    font-size: 20px;
+}
+
+
+.btn-outline-delitem {
+    color: #976a4d;
+    border-color: #976a4d;
+    background-color: #fde4d3;
+    
+}
+
+.btn-outline-delitem:hover {
+    color: #976a4d;
+    background-color: #fde4d3;
+    border-color: #976a4d;
+}
+
+.btn-outline-delitem:focus, .btn-outline-delitem.focus {
+    /* box-shadow: 0 0 0 0.2rem rgba(216, 17, 156, 0.5); */
+    box-shadow: none;
+}
+
+.btn-outline-delitem.disabled, .btn-outline-delitem:disabled {
+    color: #976a4d;
+    background-color: transparent;
+}
+
+.btn-outline-delitem:not(:disabled):not(.disabled):active, .btn-outline-delitem:not(:disabled):not(.disabled).active,
+.show > .btn-outline-delitem.dropdown-toggle {
+    color: #fff;
+    background-color: #976a4d;
+    border-color: #976a4d;
+}
+
+.btn-outline-delitem:not(:disabled):not(.disabled):active:focus, .btn-outline-delitem:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-delitem.dropdown-toggle:focus {
+    /* box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5); */
+    box-shadow: none;
+}
+
+.text-delitem {
+    color: #633710;
+    font-weight: bold;
+}
+
+.count-number-input-getfood2 {
+    width: 80px;
+    text-align: center;
+    margin: 0 5px;
+    background: #976a4d;
+    border: none;
+    color: #FFF;
+    height: 42px;
+    border-radius: 0px;
+    vertical-align: bottom;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+
+.btn-copperaddcart {
+    background-image: linear-gradient(#976a4d, #633710);
+    border: none;
+    color: white;
+    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    height: 70px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 20px;
+    margin: 2px 2px;
+    cursor: pointer;
+}
+.btn-copperaddcart i {
+    color: #fff;
+}
+  
+.btn-copperaddcart:hover {
+    color: #fff;
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+.btn-copperaddcart:focus, .btn-copperaddcart.focus {
+    color: #fff;
+    background-color: #138496;
+    border-color: #117a8b;
+    box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+}
+
+.btn-copperaddcart.disabled, .btn-copperaddcart:disabled {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-copperaddcart:not(:disabled):not(.disabled):active, .btn-copperaddcart:not(:disabled):not(.disabled).active,
+.show > .btn-copperaddcart.dropdown-toggle {
+    color: #fff;
+    background-color: #117a8b;
+    border-color: #10707f;
+}
+
+.btn-copperaddcart:not(:disabled):not(.disabled):active:focus, .btn-copperaddcart:not(:disabled):not(.disabled).active:focus,
+.show > .btn-copperaddcart.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(219, 149, 20, 0.5);
+}
+
+
+/* get_food */
+
+
+/* check out */
+
+.showtoppic {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    color: #633710;
+}
+
+.show_countmenu {
+    color: #633710;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.mycart_showtotalitem {
+    color: #633710;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.btn-coppercheckout {
+    background-image: linear-gradient(#976a4d, #633710);
+    border: none;
+    color: white;
+    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 2px 2px;
+    cursor: pointer;
+}
+.btn-coppercheckout i {
+    color: #fff;
+}
+  
+.btn-coppercheckout:hover {
+    color: #fff;
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+.btn-coppercheckout:focus, .btn-coppercheckout.focus {
+    color: #fff;
+    background-color: #138496;
+    border-color: #117a8b;
+    box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+}
+
+.btn-coppercheckout.disabled, .btn-coppercheckout:disabled {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-coppercheckout:not(:disabled):not(.disabled):active, .btn-coppercheckout:not(:disabled):not(.disabled).active,
+.show > .btn-coppercheckout.dropdown-toggle {
+    color: #fff;
+    background-color: #117a8b;
+    border-color: #10707f;
+}
+
+.btn-coppercheckout:not(:disabled):not(.disabled):active:focus, .btn-coppercheckout:not(:disabled):not(.disabled).active:focus,
+.show > .btn-coppercheckout.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(219, 149, 20, 0.5);
+}
+
+.count-number-input-checkout {
+    width: 24px;
+    text-align: center;
+    margin: 0 5px;
+    background: #976a4d;
+    border: none;
+    color: #FFF;
+    
+    border-radius: 0px;
+    vertical-align: bottom;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+
+.my_cart_show_name {
+    color: #976a4d;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.myfood_choose {
+    border-bottom: 1px #633710 dotted;
+}
+
+/* check out */

@@ -155,9 +155,9 @@ function call_refresh(my_cart){
             return prev + next;
         }, 0);  
         
-        document.getElementById("show_totalitem").innerHTML = my_cart.length;
-        document.getElementById("show_totalqty").innerHTML = xFormatNumber(sum_qty);
-        document.getElementById("show_totalprc").innerHTML = xFormatNumber(sum_prc);
+        document.getElementById("show_totalitem").innerHTML = my_cart.length+" เมนู";
+        document.getElementById("show_totalqty").innerHTML = xFormatNumber(sum_qty)+" จาน";
+        document.getElementById("show_totalprc").innerHTML = xFormatNumber(sum_prc)+" บาท";
     }else{
         document.getElementById("show_totalitem").innerHTML = '';
         document.getElementById("show_totalqty").innerHTML = '';
