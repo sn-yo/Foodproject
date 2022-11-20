@@ -24,7 +24,7 @@ $.ajax({
         let local_currpage = localStorage.getItem("currPage");
         let group_name = localStorage.getItem("group_name");
         console.log(local_currpage);
-        if(local_currpage == 0){
+        if(local_currpage == 0 || local_currpage == null){
             loadPageGetRecommend(urlxJson);
         }else{
             loadPageGetCatagory_bylastpage(urlxJson, group_name);
@@ -59,7 +59,7 @@ function loadPageGetRecommend(urlxJson){
                         // console.log('i'+i ," Grp_ID"+data[xloop].FoodCode);
                         // console.log('loop:', xloop + data[xloop].FoodCode);
                         menu.getElementsByClassName('text_name')[0].innerHTML = data[xloop].FoodName;
-                        menu.getElementsByClassName("home_shownameeng")[0].innerHTML = data[xloop].FoodName_E;
+                        // menu.getElementsByClassName("home_shownameeng")[0].innerHTML = data[xloop].FoodName_E;
                         var pathimg = "img/FoodImage/"+data[xloop].Food_ImageName;
                         menu.getElementsByClassName('pic_catagory_steak')[0].src = pathimg;
     
@@ -159,7 +159,7 @@ function loadPageGetCatagory_bylastpage(urlxJson, group_name){
                                 // console.log('loop:', xloop + data[xloop].FoodCode);
                                 menu.getElementsByClassName('text_name')[0].innerHTML = curr_livestation[xloop].FoodName;
 
-                                menu.getElementsByClassName("home_shownameeng")[0].innerHTML = curr_livestation[xloop].FoodName_E;
+                                // menu.getElementsByClassName("home_shownameeng")[0].innerHTML = curr_livestation[xloop].FoodName_E;
 
                                 var pathimg = "img/FoodImage/"+curr_livestation[xloop].Food_ImageName;
                                 menu.getElementsByClassName('pic_catagory_steak')[0].src = pathimg;
@@ -210,7 +210,7 @@ function loadPageGetCatagory_bylastpage(urlxJson, group_name){
                 var show_groupname = localStorage.getItem("group_name");
                 document.getElementById("cata_showgroupname").innerHTML = show_groupname;
 
-                let xmenu_recommend = document.getElementById("xmenu_recommend");
+                let xmenu_recommend = document.getElementById("menucata0");
                 // console.log(xmenu_recommend);
                 xmenu_recommend.classList.remove("active");
 
@@ -260,7 +260,7 @@ function loadPageGetCatagory_bylastpage(urlxJson, group_name){
                             // console.log('i'+i ," Grp_ID"+data[xloop].FoodCode);
                             // console.log('loop:', xloop + data[xloop].FoodCode);
                             menu.getElementsByClassName('text_name')[0].innerHTML = data[xloop].FoodName;
-                            menu.getElementsByClassName("home_shownameeng")[0].innerHTML = data[xloop].FoodName_E;
+                            // menu.getElementsByClassName("home_shownameeng")[0].innerHTML = data[xloop].FoodName_E;
                             var pathimg = "img/FoodImage/"+data[xloop].Food_ImageName;
                             menu.getElementsByClassName('pic_catagory_steak')[0].src = pathimg;
         

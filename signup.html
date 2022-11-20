@@ -24,7 +24,8 @@
         body {
             background-image: url('img/bg2.png');
             background-repeat: no-repeat;
-            background-position: center;
+            background-position: top center;
+            background-attachment: fixed;
             
         }
         .btn_y {
@@ -303,6 +304,7 @@
             .then(function (data){
                 const urlxJson = data.urlJson;
                 checkin(bookingid, pathname, urlxJson);
+                // console.log('seccess: ' + data)
                 // resultxData(xxx)
             })
             .catch(function(err){

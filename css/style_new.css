@@ -16,10 +16,18 @@
     border-color: #b84a17;
     height: 50px;
     width: 100%;
+    display: block;
+    
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn-info-copper p {
+    top: 50%;
     text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .active, .btn-info-copper:hover {
@@ -27,10 +35,16 @@
     background-image: linear-gradient(#976a4d, #633710);
     height: 50px;
     width: 100%;
+    border: 0;
+    outline: none;
+    box-shadow: none;
 }
 
 .active .grp-menucata, .btn-info-copper:hover .grp-menucata {
     color: #fff;
+    border: 0;
+    outline: none;
+    box-shadow: none;
 }
 
 .btn-info-copper:focus, .btn-info-copper.focus {
@@ -38,10 +52,16 @@
     background-image: linear-gradient(#976a4d, #633710);
     height: 50px;
     width: 100%;
+    border: 0;
+    outline: none;
+    box-shadow: none;
 }
 
 .btn-info-copper:focus .grp-menucata, .btn-info-copper.focus .grp-menucata {
     color: #fff;
+    border: 0;
+    outline: none;
+    box-shadow: none;
 }
 
 .btn-signup {
@@ -117,6 +137,9 @@
     font-size: 11px;
     color: #b84a17;
     text-align: center;
+    justify-items: center;    
+    justify-content: center;
+    align-items: center;
 }
 
 .bg-copper {
@@ -187,5 +210,5 @@
 .showvalue {
     color: #FFF;
     font-weight: 200;
-    font-size: 20px;
+    font-size: 18px;
 }

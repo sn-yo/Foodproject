@@ -23,6 +23,13 @@
     <link rel="stylesheet" href="css/stylemycart.css">
     <link rel="stylesheet" href="css/stylemymessage.css">
     <style>
+        body {
+            background-image: url('img/bg_home2.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
         .flex-item {                        
             width: 200px;
             color: white;
@@ -86,10 +93,18 @@
         <!-- header-main .// -->
     </header>
     <div class="d-none">
-        <div class="bg-primary p-3 align-items-center">
+        <div class="p-3 align-items-center">
             <div class="row">
+                <div class="col-2">
+                    <a href="home.html"><i class="feather-arrow-left-circle" style="font-size: 40px; color: white;"></i></a>
+                </div>
+                <div class="col-10 text-center">
+                    <img alt="#" src="img/logo_copper05.png">
+                </div>
+            </div>
+            <!-- <div class="row">
                 <div class="col-2 text-center">
-                    <!-- <img alt="#" class="img-fluid" src="img/logo_circle_copper02.png"> -->
+                    
                     <a href="home.html"><i class="feather-arrow-left-circle" style="font-size: 40px; color: white;"></i></a>
                 </div>
                 <div class="col-8 text-center">
@@ -98,7 +113,7 @@
                 <div class="col-2 text-center">
                     <img alt="#" src="img/logo_circle_copper02.png">
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="py-5 osahan-coming-soon d-flex justify-content-center align-items-center">
@@ -355,7 +370,7 @@
         $(document).ready(function() {   //same as: $(function() { 
             let curr_mycart = JSON.parse(localStorage.getItem("cart"));
             let count_mycart = 0;
-            console.log(curr_mycart);
+            // console.log(curr_mycart);
             if(curr_mycart){
                 count_mycart = curr_mycart.length;
             }else{

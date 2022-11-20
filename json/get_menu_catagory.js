@@ -15,6 +15,7 @@ $.ajax({
         // console.log(response.urlJson);
         let urlxJson = response.urlJson;
         loadPageGroupmenu(urlxJson);
+        // console.log('load');
     }
 });
 
@@ -40,7 +41,7 @@ function loadPageGroupmenu(urlxJson){
                 menu.getElementsByClassName('m-0 smallx')[0].innerHTML = 'เมนูแนะนำ';
                 menu.getElementsByClassName('m-0 smallx')[0].className = "m-0 smallx grp-menucata";
                 
-                menu.getElementsByClassName('href_catagory')[0].id = 'xmenu_recommend';
+                menu.getElementsByClassName('href_catagory')[0].id = 'menucata0';
                 menu.getElementsByClassName('href_catagory')[0].href = "home.html";
                 menu.getElementsByClassName('href_catagory')[0].setAttribute('onclick', "test()");
                 menu.getElementsByClassName('href_catagory')[0].className = 'btn btn-info-copper active href_catagory_recommend';
@@ -124,7 +125,7 @@ function OnClickCata(group_id, group_name, urlxJson, xlength){
     // console.log(group_id);
     // let menu_recommend = document.getElementsByClassName("href_catagory_recommend");
     // menu_recommend.className = 'btn btn-info-copper href_catagory_recommend';
-    let xmenu_recommend = document.getElementById("xmenu_recommend");
+    let xmenu_recommend = document.getElementById("menucata0");
     // console.log(xmenu_recommend);
     xmenu_recommend.classList.remove("active");
 
@@ -202,7 +203,7 @@ function OnClickCata(group_id, group_name, urlxJson, xlength){
                                 // console.log('loop:', xloop + data[xloop].FoodCode);
                                 menu.getElementsByClassName('text_name')[0].innerHTML = curr_livestation[xloop].FoodName;
 
-                                menu.getElementsByClassName("home_shownameeng")[0].innerHTML = curr_livestation[xloop].FoodName_E;
+                                // menu.getElementsByClassName("home_shownameeng")[0].innerHTML = curr_livestation[xloop].FoodName_E;
 
                                 var pathimg = "img/FoodImage/"+curr_livestation[xloop].Food_ImageName;
                                 menu.getElementsByClassName('pic_catagory_steak')[0].src = pathimg;
@@ -297,7 +298,7 @@ function OnClickCata(group_id, group_name, urlxJson, xlength){
                             // console.log('i'+i ," Grp_ID"+data[xloop].FoodCode);
                             // console.log('loop:', xloop + data[xloop].FoodCode);
                             menu.getElementsByClassName('text_name')[0].innerHTML = data[xloop].FoodName;
-                            menu.getElementsByClassName("home_shownameeng")[0].innerHTML = data[xloop].FoodName_E;
+                            // menu.getElementsByClassName("home_shownameeng")[0].innerHTML = data[xloop].FoodName_E;
                             var pathimg = "img/FoodImage/"+data[xloop].Food_ImageName;
                             menu.getElementsByClassName('pic_catagory_steak')[0].src = pathimg;
         

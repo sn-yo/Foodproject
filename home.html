@@ -41,7 +41,7 @@
         body {
             background-image: url('img/bg_home2.png');
             background-repeat: no-repeat;
-            background-position: center;
+            background-position: top center;
             background-attachment: fixed;
         }
 
@@ -219,8 +219,9 @@
         </div> -->
 
         <!-- recommanded -->
+        
         <div class="container">
-		
+            		
 			<!-- CATAGORY  GRILL & STEAK -->
             <div class="pt-2 pb-3 title d-flex align-items-center">
                 <h5 class="m-0 showgrpname" id="cata_showgroupname">เมนูแนะนำ</h5>
@@ -255,7 +256,7 @@
                     <div class="p-3 position-relative">
                         <div class="list-card-body">
                             <h6 class="mb-1"><a href="#" onclick="OnChooseFood('code','name','nameeng','path','prc','livestation')" class="text-black text_name">.</a></h6>
-                            <span class="home_shownameeng" style="color:gray"></span>
+                            <!-- <span class="home_shownameeng" style="color:gray"></span> -->
                             
                         </div>
                     </div>
@@ -271,7 +272,7 @@
                     <div class="p-3 position-relative">
                         <div class="list-card-body">
                             <h6 class="mb-1"><a href="#" onclick="OnChooseFood('code','name','nameeng','path','prc','livestation')" class="text-black text_name">.</a></h6>
-                            <span class="home_shownameeng" style="color:gray; font-size: 13px;"></span>
+                            <!-- <span class="home_shownameeng" style="color:gray; font-size: 13px;"></span> -->
                             
                         </div>
                     </div>
@@ -485,6 +486,8 @@
     <script type="text/javascript" src="js/osahan.js"></script>
     <script>
         localStorage.setItem("Set_bookingref","553706");
+        localStorage.setItem('group_id', 0);
+        localStorage.setItem('currPage', 0);
         const my_bookingid = localStorage.getItem("Set_bookingref");
         // console.log(my_bookingid);
         if(my_bookingid == '' || my_bookingid == null){
@@ -505,6 +508,7 @@
         
         function test(){
             localStorage.setItem("currPage", 0);
+            localStorage.setItem('group_id', 0);
         }
         let getLastPage = localStorage.getItem("currPage");
         if(getLastPage != 0){
