@@ -585,15 +585,16 @@
 				"font-weight": "bold",
 				"padding": "8px 20px 8px 14px",
 				// "text-shadow": "0 1px 0 rgba(255, 255, 255, 0.5)",
-				"background-color": "#fcf8e3",
-				"border": "1px solid #fbeed5",
+				"background-color": "#1c1e2a",
+				"border": "1px solid #1c1e2a",
 				"border-radius": "4px",
 				"white-space": "nowrap",
 				"padding-left": "10px",
 				"background-repeat": "no-repeat",
 				"background-position": "3px 7px",
 				"text-align" : "center",
-				"width" : width+"px"
+				"margin-left": "25px",
+				"width" : (width-50)+"px"
 				
 			},
 			error: {
@@ -612,6 +613,12 @@
 				"color": "#000",
 				"background-color": "#32CD32",
 				"border-color": "#D6E9C6",
+				
+			},
+			copper: {
+				"color": "#000",
+				"background-color": "#1c1e2a",
+				"border-color": "#1c1e2a",
 				
 			},
 			info: {

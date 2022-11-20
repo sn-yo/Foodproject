@@ -1,5 +1,5 @@
 const jsonUrl2 = "json/config.json";
-function shownotify(){
+function shownotify2(){
     console.log('show noti');
     document.getElementsByClassName("notify_message").notify('55555555556');
     // $(".notify_message").notify(
@@ -209,6 +209,15 @@ function loadPageGetCatagory_bylastpage(urlxJson, group_name){
     
                 var show_groupname = localStorage.getItem("group_name");
                 document.getElementById("cata_showgroupname").innerHTML = show_groupname;
+
+                let xmenu_recommend = document.getElementById("xmenu_recommend");
+                // console.log(xmenu_recommend);
+                xmenu_recommend.classList.remove("active");
+
+                var show_groupid = localStorage.getItem("group_id");
+                let xmenu_recommend_list = document.getElementById("menucata"+show_groupid);
+                // console.log(xmenu_recommend_list);
+                xmenu_recommend_list.className = "btn btn-info-copper active href_catagory";
     
                 
                 var homemaster = document.getElementById("catagory_home_point");
@@ -303,16 +312,16 @@ function shownotify(){
     }, 0);  
 
     $(".notify_message").notify({
-            item1 : count_mycart+" Item",
+            item1 : "รายการอาหารที่เลือก : "+count_mycart+" รายการ",
             p1: "                       ",
-            item2 : sum_prc + " ฿",
+            item2 : "฿"+sum_prc,
         },            
         {
             
             position : "top",
             autoHide : false,
             style: 'bootstrap',
-            className: 'success2',
+            className: 'copper',
             arrowShow: false,
         }
     );

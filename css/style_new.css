@@ -12,28 +12,95 @@
 
 .btn-info-copper {
     color: #fff;
-    background-color: #fff;
-    border-color: #fff;
+    background-color: transparent;
+    border-color: #b84a17;
     height: 50px;
     width: 100%;
+}
+
+.btn-info-copper p {
+    text-align: center;
 }
 
 .active, .btn-info-copper:hover {
     color: #fff;
-    background-color: #b84a17;
-    border-color: #ff5e01;
-    height: 50px;
-    width: 100%;
-  }
-
-.btn-info-copper:focus, .btn-info-copper.focus {
-    color: #fff;
-    background-color: #b84a17;
-    border-color: #ff5e01;
+    background-image: linear-gradient(#976a4d, #633710);
     height: 50px;
     width: 100%;
 }
 
+.active .grp-menucata, .btn-info-copper:hover .grp-menucata {
+    color: #fff;
+}
+
+.btn-info-copper:focus, .btn-info-copper.focus {
+    color: #fff;
+    background-image: linear-gradient(#976a4d, #633710);
+    height: 50px;
+    width: 100%;
+}
+
+.btn-info-copper:focus .grp-menucata, .btn-info-copper.focus .grp-menucata {
+    color: #fff;
+}
+
+.btn-signup {
+    background-image: linear-gradient(#976a4d, #633710);
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 50%;
+}
+
+.btn-coppernew {
+    background-image: linear-gradient(#976a4d, #633710);
+    border: none;
+    color: white;
+    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+    margin: 2px 2px;
+    cursor: pointer;
+}
+.btn-coppernew i {
+    color: #fff;
+}
+  
+.btn-coppernew:hover {
+    color: #fff;
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+.btn-coppernew:focus, .btn-coppernew.focus {
+    color: #fff;
+    background-color: #138496;
+    border-color: #117a8b;
+    box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+}
+
+.btn-coppernew.disabled, .btn-coppernew:disabled {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-coppernew:not(:disabled):not(.disabled):active, .btn-coppernew:not(:disabled):not(.disabled).active,
+.show > .btn-coppernew.dropdown-toggle {
+    color: #fff;
+    background-color: #117a8b;
+    border-color: #10707f;
+}
+
+.btn-coppernew:not(:disabled):not(.disabled):active:focus, .btn-coppernew:not(:disabled):not(.disabled).active:focus,
+.show > .btn-coppernew.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+}
 
 
 @media (max-width: 576px) {
@@ -43,4 +110,82 @@
         border-style: solid none solid none;
         
     }
+}
+
+.grp-menucata {
+    font: bold;
+    font-size: 11px;
+    color: #b84a17;
+    text-align: center;
+}
+
+.bg-copper {
+    background-color: #976a4d !important;
+}
+  
+  a.bg-copper:hover, a.bg-copper:focus,
+  button.bg-copper:hover,
+  button.bg-copper:focus {
+    background-color: #976a4d !important;
+}
+
+.showtxtsirname {
+    font-weight: 100;
+    font-size: 18px;
+    color: #fff;
+    padding-left: 10px;
+    
+}
+
+.showtxtname {
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
+}
+
+.showtxtshowtimedesc {
+    font-weight: 100;
+    font-size: 20px;
+    padding-right: 15px;
+    color: #fff;
+}
+
+.showtxtshowtimeout{
+    font-weight: bold;
+    font-size: 18px;
+    padding-right: 15px;
+    color: #fff;
+}
+
+.showgrpname {
+    font-weight: bold;
+    color: #633710;
+}
+
+.inp-name {
+    background: transparent;
+    border: 3px solid #ccc;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    font-size: 20px; 
+    text-align: center;
+}
+
+.inp-name::placeholder {
+    font-weight: normal;            
+    color: #FFF;
+}
+
+.showdesc {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.showvalue {
+    color: #FFF;
+    font-weight: 200;
+    font-size: 20px;
 }

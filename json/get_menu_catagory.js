@@ -29,6 +29,26 @@ function loadPageGroupmenu(urlxJson){
             // console.log( response );
             var cat_item = document.createElement('div');
             cat_item.className = "cat-slider";
+
+            //สร้างเมนูแนะนำ
+            for(var index=0; index<1; index++){
+                var temp = document.getElementsByTagName("template")[0];
+                var menu = temp.content.firstElementChild.cloneNode(true);
+                menu.setAttribute("id", "Grp_ID_recommend");
+                // ชื่อเมนู
+                menu.getElementsByClassName('m-0 smallx')[0].id = 'recommend';
+                menu.getElementsByClassName('m-0 smallx')[0].innerHTML = 'เมนูแนะนำ';
+                menu.getElementsByClassName('m-0 smallx')[0].className = "m-0 smallx grp-menucata";
+                
+                menu.getElementsByClassName('href_catagory')[0].id = 'xmenu_recommend';
+                menu.getElementsByClassName('href_catagory')[0].href = "home.html";
+                menu.getElementsByClassName('href_catagory')[0].setAttribute('onclick', "test()");
+                menu.getElementsByClassName('href_catagory')[0].className = 'btn btn-info-copper active href_catagory_recommend';
+
+                cat_item.appendChild(menu);
+            }
+
+            //สร้างเมนู
             const data = response.data;
             for(var i=0; i < data.length; i++){
                 var temp = document.getElementsByTagName("template")[0];
@@ -37,12 +57,14 @@ function loadPageGroupmenu(urlxJson){
                 //console.log(data[i].Grp_ID);
                 menu.setAttribute("id", "Grp_ID"+data[i].Grp_ID);
                 // ชื่อเมนู
-                menu.getElementsByClassName('m-0 small')[0].id = data[i].Grp_ID;
-                menu.getElementsByClassName('m-0 small')[0].innerHTML = data[i].ShowName;
+                menu.getElementsByClassName('m-0 smallx')[0].id = data[i].Grp_ID;
+                menu.getElementsByClassName('m-0 smallx')[0].innerHTML = data[i].ShowName;
     
                 // menu.getElementsByClassName('href_catagory')[0].href = "get_catagory_.html";
+                menu.getElementsByClassName('href_catagory')[0].id = 'menucata'+data[i].Grp_ID;
                 menu.getElementsByClassName('href_catagory')[0].href = "#";
-                menu.getElementsByClassName('href_catagory')[0].setAttribute('onclick', "OnClickCata('"+data[i].Grp_ID+"','"+data[i].ShowName+"','"+urlxJson+"')");
+                menu.getElementsByClassName('href_catagory')[0].setAttribute('onclick', "OnClickCata('"+data[i].Grp_ID+"','"+data[i].ShowName+"','"+urlxJson+"',"+data.length+")");
+                
     
                 // console.log(data[i].Grp_Image);
                 
@@ -85,7 +107,7 @@ function loadPageGroupmenu(urlxJson){
     
 }
 
-function OnClickCata(group_id, group_name, urlxJson){
+function OnClickCata(group_id, group_name, urlxJson, xlength){
     // alert(group_id);
     localStorage.setItem('group_id',group_id);
     localStorage.setItem('group_name',group_name);
@@ -98,6 +120,28 @@ function OnClickCata(group_id, group_name, urlxJson){
     let addUrl = "&BookingID="+getBookingID;
     let menu_id = group_id;
     // console.log(group_name);
+
+    // console.log(group_id);
+    // let menu_recommend = document.getElementsByClassName("href_catagory_recommend");
+    // menu_recommend.className = 'btn btn-info-copper href_catagory_recommend';
+    let xmenu_recommend = document.getElementById("xmenu_recommend");
+    // console.log(xmenu_recommend);
+    xmenu_recommend.classList.remove("active");
+
+    let xmenu_cata_all = document.querySelector(".href_catagory").id;
+    // console.log('id:',xmenu_cata_all);
+    // console.log(xlength);
+    for(var x=1; x<=xlength; x++){
+        let xmenu_id = document.getElementById("menucata"+x);
+        xmenu_id.classList.remove("active");
+        // console.log('x',xmenu_id);
+    }
+
+    let xmenu_recommend_list = document.getElementById("menucata"+group_id);
+    // console.log(xmenu_recommend_list);
+    xmenu_recommend_list.className = "btn btn-info-copper active href_catagory";
+
+    
 
     if(group_name == "Live Station"){
         // console.log('live station');

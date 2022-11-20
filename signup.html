@@ -17,6 +17,7 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/style_new.css" rel="stylesheet">
     <!-- Sidebar CSS -->
     <link href="vendor/sidebar/demo.css" rel="stylesheet">
     <style>
@@ -24,6 +25,7 @@
             background-image: url('img/bg2.png');
             background-repeat: no-repeat;
             background-position: center;
+            
         }
         .btn_y {
             border: 2px solid black;
@@ -39,24 +41,9 @@
             color: #000;
         }
 
-        .inp-name {
-            background: transparent;
-            border: 3px solid #ccc;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            font-size: 20px; 
-            text-align: center;
-        }
         
-        .inp-name::placeholder {
-            font-weight: bold;            
-            color: #FFF;
-        }
 
-        .showdesc {
-            color: #FFF;
-        }
+        
 
         .showpackage {
             color: #FFF;
@@ -95,6 +82,60 @@
         .button-42:hover {
         box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
         }
+
+        .photo {
+            margin: 30px;
+            position: relative;
+            width: 180px;
+            height: 130px;
+            float: left;
+        }
+        .photo img {
+            background: #fff;
+            border: solid 1px #ccc;
+            padding: 4px;
+        }
+        .photo span {
+            width: 20px;
+            height: 18px;
+            display: block;
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: url(img/digg-style.gif) no-repeat;
+        }
+        .photo a {
+            text-decoration: none;
+        }
+        
+        .sample1 span {
+            width: 28px;
+            height: 21px;
+            display: block;
+            position: absolute;
+            top: -12px;
+            left: 90px;
+            background: url(img/reviewer1.png) no-repeat;
+        }
+        .textbox1 {
+            border: solid;
+            border-color: #E62C03;
+        }
+        .textbox1 p {
+            color: #FF7E31;
+            font-size: 20px;
+        }
+        .chkbox1 span {
+            color: #FFF;
+            display: block;
+            position: absolute;
+            top: 274px;
+            margin-left: 100px;
+            padding: 5px;
+            text-align: center;
+            background-color: #E62C03;
+            font-size: 20px;
+        }
     </style>
 </head>
 
@@ -108,40 +149,67 @@
 					<img alt="#" src="img/logo-white.png" class="img-fluid item-img w-80">
 					
                     <p class="p-5"></p>
-                    <h6 class="text-center showdesc">package</h6>
-                    <h4 id="ins_promote" class="text-center showpackage">Hungry Hub Exclusive Menus Unlimited All Premium M</h4>
+                    <p class="p-5"></p>
+
+                    <!-- <div class="photo sample1">
+                        <a href="#"><span></span><img src="img/logo_circle_copper02.png" alt="image" /></a>
+                    </div> -->
+
+                    <!-- <div class="textbox1 chkbox1">
+                        <span>จำนวน</span>
+                        <p>52</p>
+                    </div> -->
                     
 				</div>
 				
 				<form id="myForm" class="mt-5 mb-4" action="home.html">
                     <div class="row">
+                        <div class="col-12">
+                            <div class="">
+                                <!-- <h5 class="text-center">กรุณาระบุชื่อ</h5> -->
+                                <input type="text" placeholder="กรุณาระบุชื่อ" class="form-control inp-name" id="ins_newname" aria-describedby="nameHelp" required>
+                                <input type="hidden" id="ins_invno" >
+                                <input type="hidden" id="hdins_invno" >
+                                <input type="hidden" id="booking_ref" >
+                                <input type="hidden" id="hdbooking_ref" >
+                                <input type="hidden" id="hdtableno" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row p-4"></div>
+                    <div class="row">
                         <div class="col-4">
                             <!-- <label for="exampleInputNumber1" class="text-dark text-center" style="font-size: 20px;">โต๊ะ</label> -->
                             <h5 class="text-center showdesc">โต๊ะ</h5>
-                            <h6 class="text-center border-bottom showdesc" id="ins_tableno">20</h6>
+                            <h6 class="text-center border-bottom showvalue" id="ins_tableno">20</h6>
                         </div>
                         <div class="col-4">
                             <h5 class="text-center showdesc">เวลา</h5>
-                            <h6 class="text-center border-bottom p-0 showdesc" id="ins_timebook">10.00 - 12.00</h6>
+                            <h6 class="text-center border-bottom p-0 showvalue" id="ins_timebook">10.00 - 12.00</h6>
                         </div>
                         <div class="col-4">                            
                             <h5 class="text-center showdesc">จำนวน</h5>
-                            <h6 class="text-center border-bottom p-0 showdesc" id="ins_adult">4</h6>
+                            <h6 class="text-center border-bottom p-0 showvalue" id="ins_adult">4</h6>
                         </div>
                     </div>
-					<div class="row p-4"></div>
-					<div class="form-group">
-						<!-- <h5 class="text-center">กรุณาระบุชื่อ</h5> -->
-						<input type="text" placeholder="กรุณาระบุชื่อ" class="form-control inp-name" id="ins_newname" aria-describedby="nameHelp" required>
-                        <input type="hidden" id="ins_invno" >
-                        <input type="hidden" id="hdins_invno" >
-                        <input type="hidden" id="booking_ref" >
-                        <input type="hidden" id="hdbooking_ref" >
-                        <input type="hidden" id="hdtableno" >
-					</div>
-					<button class="btn btn-primary btn-lg btn-block" style="height: 90px;" onclick="getAccount()">
-					   สั่งอาหาร
-					</button>
+					<div class="row p-2"></div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h6 class="text-center showdesc">package</h6>
+                            <h4 id="ins_promote" class="text-center showpackage">Hungry Hub Exclusive Menus Unlimited All Premium M</h4>
+
+                        </div>                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <button class="btn btn-signup" style="height: 90px;" onclick="getAccount()">
+                                เริ่มสั่งอาหาร
+                             </button>
+                        </div>
+                    </div>
+					
+					
                     <p id="demo"></p>
 				</form>
 				
@@ -234,7 +302,7 @@
             })
             .then(function (data){
                 const urlxJson = data.urlJson;
-                // checkin(bookingid, pathname, urlxJson);
+                checkin(bookingid, pathname, urlxJson);
                 // resultxData(xxx)
             })
             .catch(function(err){

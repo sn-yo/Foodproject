@@ -38,6 +38,13 @@
         }
     </style> -->
     <style>
+        body {
+            background-image: url('img/bg_home2.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
         .flex-item {                        
             width: 200px;
             color: white;
@@ -110,33 +117,28 @@
     </header>
     <div class="osahan-home-page">
         
-        <div class="d-none">
-            <div class="p-3">                
-                <div class="row text-center">
-                    <img src="img/logo_copper03.png" alt="#">
-                </div>
+        <div class="p-2">
+            
+            <div class="row p-2">
+                <div class="col-4 text-center"><span></span></div>
+                <div class="col-4 text-center"><img src="img/logo_copper05.png" alt="#"></div>
+                <div class="col-4 text-center"><span></span></div>
             </div>
-            <div class="bg-primary p-3 align-items-center">
+            <div class="bg-copper">
                 <div class="row">
-                    <div class="col-3 text-center">
-                        <h6 class="font-weight-bold m-0 text-white" style="padding-top: 10px;">คุณ นพดล</h6>
+                    <div class="col-6">
+                        <span class="showtxtsirname">คุณ <span class="showtxtname" id="setcustomername">blue</span></span>
                     </div>
-                    <div class="col-6 text-center">
-                        
-                    </div>
-                    <div class="col-3 text-center">
-                        <h6 class="font-weight-bold m-0 text-white" style="padding-top: 10px;">เหลือเวลา</h6>
+                    <div class="col-6 text-right">
+                        <span class="showtxtshowtimedesc">เหลือเวลาอีก </span>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-3 text-center">
-                        <h6 class="font-weight-bold m-0 text-white" id="settableno" style="padding-top: 10px;">โต๊ะ  124</h6>
+                    <div class="col-6">
+                        <span class="showtxtsirname">โต๊ะ &nbsp;<span class="showtxtname" id="settableno">blue</span></span>
                     </div>
-                    <div class="col-6 text-center">
-                        
-                    </div>
-                    <div class="col-3 text-center">
-                        <h6 class="font-weight-bold m-0 text-white"  style="padding-top: 10px;">83:10 นาที</h6>
+                    <div class="col-6 text-right">
+                        <span class="showtxtshowtimeout">83:20 <span class="showtxtsirname">นาที</span> </span>
                     </div>
                 </div>
             </div>
@@ -151,7 +153,7 @@
             <div class="cat-item px-1" id="master" >
                 <a class="btn btn-info-copper href_catagory" href="#">
                     <!-- <img alt="#" src="img/icons/Salad.png" class="img-fluid mb-2 pic_catagory"> -->
-                    <p class="m-0 small" id="cata_2"></p>
+                    <p class="m-0 smallx grp-menucata" id="cata_2"></p>
                 </a>
             </div>
         </template>
@@ -221,7 +223,7 @@
 		
 			<!-- CATAGORY  GRILL & STEAK -->
             <div class="pt-2 pb-3 title d-flex align-items-center">
-                <h5 class="m-0" id="cata_showgroupname">Recommended เมนูแนะนำ</h5>
+                <h5 class="m-0 showgrpname" id="cata_showgroupname">เมนูแนะนำ</h5>
                 
             </div>
             
@@ -245,9 +247,9 @@
 
             <template>
                 <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm" id="master_catagory_steak">
-                    <div class="list-card-image">
+                    <div class="list-card-image bg-white">
                         <a href="get_food.html" class="click_for_this" onclick="OnChooseFood('code','name','nameeng','path','prc','livestation')">
-                            <img alt="#" src="img/steak01.png" class="img-fluid item-img w-100 pic_catagory_steak">
+                            <img alt="#" src="img/steak01.png" class="img-fluid item-img w-100 p-2  pic_catagory_steak">
                         </a>
                     </div>
                     <div class="p-3 position-relative">
@@ -299,6 +301,30 @@
     <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
         <div class="row notify_message" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
             <div class="col">
+                <a href="" class="btn btn-coppernew rounded">
+                    <p class="h4 m-0 p-copper"><i class="feather-home text-copper"></i></p>
+                    เมนูหลัก
+                </a>
+            </div>
+            <div class="col">
+                <a href="checkout.html" class="btn btn-coppernew rounded">
+                    <p class="h4 m-0 p-copper"><i class="feather-shopping-cart text-copper"></i></p>
+                    รายการอาหารที่เลือก
+                </a>
+            </div>
+            <div class="col">
+                <a href="my_order.html" class="btn btn-coppernew rounded">
+                    <p class="h4 m-0 p-copper"><i class="feather-file-text text-copper"></i></p>
+                    รายการอาหารที่สั่ง
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+    <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
+        <div class="row notify_message" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+            <div class="col">
                 <a href="home.html"  onclick="test()" class="text-copper small font-weight-bold text-decoration-none">
                     <p class="h4 m-0 p-copper"><i class="feather-home text-copper"></i></p>
                     Home
@@ -308,7 +334,7 @@
                 <div class="bg-copper rounded-circle mt-n0 shadow">
                     <a href="checkout.html" class="text-white small font-weight-bold text-decoration-none">
                         <div class="counter-container">
-                            <!-- <span id="counter">1</span> -->
+                            
                             <i class="feather-shopping-cart"></i>
                         </div>
                     </a>
@@ -322,6 +348,7 @@
             </div>
         </div>
     </div>
+    -->
 	
 	<!-- footer -->
     <footer class="section-footer border-top bg-dark">
@@ -487,10 +514,16 @@
         }
 
         let getSet_tableno = localStorage.getItem("Set_tableno");
+        let getSet_customer = localStorage.getItem("Set_name");
         if(getSet_tableno == null || getSet_tableno == ''){
-            document.getElementById("settableno").innerHTML = "โต๊ะ 00";
+            document.getElementById("settableno").innerHTML = "00";
         }else{            
-            document.getElementById("settableno").innerHTML = "โต๊ะ"+getSet_tableno;
+            document.getElementById("settableno").innerHTML = ""+getSet_tableno;
+        }
+        if(getSet_customer == null || getSet_customer == ''){
+            document.getElementById("setcustomername").innerHTML = "..";
+        }else{
+            document.getElementById("setcustomername").innerHTML = getSet_customer;
         }
 
         // shownotify();
