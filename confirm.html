@@ -352,6 +352,19 @@
         
         // console.log(withPmAm);
         // document.getElementById("confirm_showtime").innerHTML = xtoday+' '+withPmAm;
+
+        let getSet_tableno = localStorage.getItem("Set_tableno");
+        let getSet_customer = localStorage.getItem("Set_name");
+        if(getSet_tableno == null || getSet_tableno == ''){
+            document.getElementById("settableno").innerHTML = "00";
+        }else{            
+            document.getElementById("settableno").innerHTML = ""+getSet_tableno;
+        }
+        if(getSet_customer == null || getSet_customer == ''){
+            document.getElementById("setcustomername").innerHTML = "..";
+        }else{
+            document.getElementById("setcustomername").innerHTML = getSet_customer;
+        }
     </script>
     
 </body>
