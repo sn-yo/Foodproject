@@ -443,3 +443,65 @@
 }
 
 /* check out */
+
+/* home */
+
+.homeshow_name{
+    color: #633710;
+    font-weight: 500;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* home */
+
+/* confirm */
+.confirm_showname{
+    color: #633710;
+    font-weight: 400;
+    font-size: 18px;
+    padding-left: 5px;
+}
+
+.confirm_showqty {
+    color: #633710;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.confirm_showprc {
+    color: #633710;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.show_line {
+    border-bottom: 1px #633710 dotted;
+}
+
+.showsumpricetxt {
+    color: #633710;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+}
+
+.confirm_showrule {
+    color: #8f6f5a;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+
+.confirm_showruledetail {
+    color: #8f6f5a;
+    font-weight: 400;
+    font-size: 15px;
+    
+}
+
+/* confirm */
