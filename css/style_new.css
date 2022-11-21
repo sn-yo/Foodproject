@@ -505,3 +505,30 @@
 }
 
 /* confirm */
+
+/* my order */
+
+.myorder_showmain {
+    background-color: #bea38e;
+    padding: 10px;
+}
+
+.myorder_maindetail {
+    color: #633710;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.myorder_showdetail {
+    color: #633710;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.myorder_showsmprc {
+    color: #633710;
+    font-weight: bold;
+    font-size: 17px;
+
+}
+/* my order */

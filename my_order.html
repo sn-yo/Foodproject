@@ -17,8 +17,17 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/style_new.css" rel="stylesheet">
     <!-- Sidebar CSS -->
     <link href="vendor/sidebar/demo.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('img/bg_home2.png');
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
 
 <body class="fixed-bottom-bar">
@@ -64,22 +73,60 @@
         </section>
         <!-- header-main .// -->
     </header>
-    <div class="d-none">
-        <div class="bg-primary p-3 align-items-center">
-            <div class="row">
-                <div class="col-2 text-center">
-                    <img alt="#" src="img/logo_circle_copper02.png">
+    <div class="osahan-checkout">
+        <div class="p-2">
+            
+            <div class="row p-2">
+                <div class="col-4 text-center"><span></span></div>
+                <div class="col-4 text-center"><img src="img/logo_copper05.png" alt="#"></div>
+                <div class="col-4 text-center"><span></span></div>
+            </div>
+            <div class="bg-copper">
+                <div class="row">
+                    <div class="col-6">
+                        <span class="showtxtsirname">คุณ <span class="showtxtname" id="setcustomername"></span></span>
+                    </div>
+                    <div class="col-6 text-right">
+                        <span class="showtxtshowtimedesc">เหลือเวลาอีก </span>
+                    </div>
                 </div>
-                <div class="col-8 text-center">
-                    <h4 class="font-weight-bold m-0 text-white" style="padding-top: 10px;">COPPER Buffet</h4>
-                </div>
-                <div class="col-2 text-center">
-                    <h4 class="font-weight-bold m-0 text-white" id="settableno" style="padding-top: 10px;"></h4>
+                <div class="row">
+                    <div class="col-6">
+                        <span class="showtxtsirname">โต๊ะ &nbsp;<span class="showtxtname" id="settableno"></span></span>
+                    </div>
+                    <div class="col-6 text-right">
+                        <span class="showtxtshowtimeout">83:20 <span class="showtxtsirname">นาที</span> </span>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="container position-relative">
+            <div class="row p-2">
+                <div class="col-12 text-center">
+                    <span class="showtoppic">รายการอาหารที่คุณสั่ง</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="tab-content col-md-12" id="myTabContent">
+                        <div class="tab-pane fade show active" id="completed" role="tabpanel" aria-labelledby="completed-tab">
+                            <div class="order-body" id="myorder_point">
+    
+                                                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
-    <section class="py-4 osahan-main-body">
+    
+    
+    <!-- <section class="py-4 osahan-main-body">
         <div class="container">
             <div class="row">
                 <div class="tab-content col-md-12" >
@@ -91,24 +138,16 @@
         <div class="container">
             <div class="row">
                 
-                <div class="tab-content col-md-12" id="myTabContent">
-                    <div class="tab-pane fade show active" id="completed" role="tabpanel" aria-labelledby="completed-tab">
-                        <div class="order-body" id="myorder_point">
-
-                                                        
-                        </div>
-                    </div>
-                    
-                </div>
+                
             </div>
         </div>
-    </section>
+    </section> -->
 
     <template>
         <div class="pb-3">
-            <div class="p-3 rounded shadow-sm bg-white" >
+            <div class="rounded shadow-sm bg-white" >
                 
-                <div class="d-flex border-bottom pb-3" style="background-color: #F5F5F5; padding-top: 15px 15px 1px 15px;">                                        
+                <div class="d-flex border-bottom pb-3 myorder_showmain">                                        
                     <div>                                            
                         <p class="myorder_showtime">0</p>
                     </div>
@@ -117,12 +156,12 @@
                     </div>
                 </div>
                 <div class="d-flex pt-3" style="background-color: #FFFAF0; padding:5px;" id="showlistitem">
-                    <div class="small" id="myorder_showlistfood">
+                    <div class="myorder_showdetail" id="myorder_showlistfood">
                         <p class="font-weight-bold mb-0">ส้มตำ x 1</p>
                         <p class="text- font-weight-bold mb-0">ซูชิเนื้อวากิว x 4</p>
                         <p class="text- font-weight-bold mb-0">ซูชิแซลมอน x 4</p>
                     </div>
-                    <div class="text-muted m-0 ml-auto mr-3 small">รวมเงิน<br>
+                    <div class="text-muted m-0 ml-auto mr-3">ราคารวม<br>
                         <span class="text-dark font-weight-bold myorder_showprc">0</span>
                     </div>
                     <div class="text-right">
@@ -146,27 +185,23 @@
     </footer>
     
     <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
-        <div class="row notify_message" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+        <div class="row notify_message" >
             <div class="col">
-                <a href="home.html"  onclick="clicktoHome()" class="text-copper small font-weight-bold text-decoration-none">
+                <a href="home.html" class="btn btn-coppernew rounded" onclick="clicktoHome()">
                     <p class="h4 m-0 p-copper"><i class="feather-home text-copper"></i></p>
-                    Home
+                    เมนูหลัก
                 </a>
             </div>
-            <div class="col bg-white rounded-circle mt-n4 px-3 py-2">
-                <div class="bg-copper rounded-circle mt-n0 shadow">
-                    <a href="checkout.html" class="text-white small font-weight-bold text-decoration-none">
-                        <div class="counter-container">
-                            <!-- <span id="counter">1</span> -->
-                            <i class="feather-shopping-cart"></i>
-                        </div>
-                    </a>
-                </div>
+            <div class="col">
+                <a href="checkout.html" class="btn btn-coppernew rounded">
+                    <p class="h4 m-0 p-copper"><i class="feather-shopping-cart text-copper"></i></p>
+                    รายการอาหารที่เลือก
+                </a>
             </div>
             <div class="col">
-                <a href="my_order.html" class="text-copper small font-weight-bold text-decoration-none">
-                    <p class="h4 m-0 p-copper"><i class="feather-user text-copper"></i></p>
-                    My Order
+                <a href="my_order.html" class="btn btn-coppernew rounded">
+                    <p class="h4 m-0 p-copper"><i class="feather-file-text text-copper"></i></p>
+                    รายการอาหารที่สั่ง
                 </a>
             </div>
         </div>
@@ -190,8 +225,21 @@
             // console.log('redirect');
             window.location.href = "signup.html";
         }
+        // let getSet_tableno = localStorage.getItem("Set_tableno");
+        // document.getElementById("settableno").innerHTML = "#"+getSet_tableno;
+
         let getSet_tableno = localStorage.getItem("Set_tableno");
-        document.getElementById("settableno").innerHTML = "#"+getSet_tableno;
+        let getSet_customer = localStorage.getItem("Set_name");
+        if(getSet_tableno == null || getSet_tableno == ''){
+            document.getElementById("settableno").innerHTML = "00";
+        }else{            
+            document.getElementById("settableno").innerHTML = ""+getSet_tableno;
+        }
+        if(getSet_customer == null || getSet_customer == ''){
+            document.getElementById("setcustomername").innerHTML = "..";
+        }else{
+            document.getElementById("setcustomername").innerHTML = getSet_customer;
+        }
     </script>
 </body>
 
