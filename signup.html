@@ -22,10 +22,11 @@
     <link href="vendor/sidebar/demo.css" rel="stylesheet">
     <style>
         body {
-            background-image: url('img/bg2.png');
+            background-image: url('img/bg_signup02.png');
             background-repeat: no-repeat;
             background-position: top center;
             background-attachment: fixed;
+            background-color: #000;
             
         }
         .btn_y {
@@ -42,13 +43,13 @@
             color: #000;
         }
 
-        
-
-        
-
         .showpackage {
             color: #FFF;
-            border: 4px solid #FFF;
+            border: 2px solid #FFF;
+            font-weight: 200;
+            font-size: 18px;
+            padding: 5px 10px 10px 10px;
+            
         }
 
         /* CSS */
@@ -137,6 +138,29 @@
             background-color: #E62C03;
             font-size: 20px;
         }
+
+        .entername {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px #FFF solid;
+            font-weight: bold;
+            font-size: 20px;
+            color: #FFF;
+            text-align: center;
+        }
+
+        .entername:focus {
+            outline: none;
+        }
+        .entername::placeholder {
+            font-weight: normal;            
+            color: #FFF;
+        }
+        .entername:focus::placeholder {
+            color: transparent;
+        }
+
+        
     </style>
 </head>
 
@@ -165,16 +189,23 @@
 				
 				<form id="myForm" class="mt-5 mb-4" action="home.html">
                     <div class="row">
-                        <div class="col-12">
-                            <div class="">
+                        <div class="col-12 text-center">
+                            <!-- <input type="text" class="entername" placeholder="กรุณาระบุชื่อ" id="ins_newname" required> -->
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            
                                 <!-- <h5 class="text-center">กรุณาระบุชื่อ</h5> -->
-                                <input type="text" placeholder="กรุณาระบุชื่อ" class="form-control inp-name" id="ins_newname" aria-describedby="nameHelp" required>
+                                <!-- <input type="text" placeholder="กรุณาระบุชื่อ" class="form-control inp-name" id="ins_newname" aria-describedby="nameHelp" required> -->
+                                <input type="text" class="entername" placeholder="กรุณาระบุชื่อ" id="ins_newname" required autocomplete="off">
                                 <input type="hidden" id="ins_invno" >
                                 <input type="hidden" id="hdins_invno" >
                                 <input type="hidden" id="booking_ref" >
                                 <input type="hidden" id="hdbooking_ref" >
                                 <input type="hidden" id="hdtableno" >
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="row p-4"></div>
@@ -195,18 +226,26 @@
                     </div>
 					<div class="row p-2"></div>
                     <div class="row">
-                        <div class="col-12">
-                            <h6 class="text-center showdesc">package</h6>
-                            <h4 id="ins_promote" class="text-center showpackage">Hungry Hub Exclusive Menus Unlimited All Premium M</h4>
+                        <div class="col-12 text-center">
+                            <h6 class="text-center showdesc">แพ๊คเกจ</h6>
+                            <span id="ins_promote" class="text-center showpackage">Hungry Hub Exclusive Menus Unlimited All Premium M</span>
 
                         </div>                        
+                    </div>
+                    <div class="row">
+                        <p class="p-2"></p>
                     </div>
 
                     <div class="row">
                         <div class="col-12 text-center">
-                            <button class="btn btn-signup" style="height: 90px;" onclick="getAccount()">
+                            <button class="btn btn-signup" style="height: 50px;" onclick="getAccount()">
                                 เริ่มสั่งอาหาร
                              </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            
                         </div>
                     </div>
 					

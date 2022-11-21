@@ -12,8 +12,9 @@
 
 .btn-info-copper {
     color: #fff;
-    background-color: transparent;
-    border-color: #b84a17;
+    /* background-color: transparent; */
+    /* border-color: #b84a17; */
+    background-color: #eae1d8;
     height: 50px;
     width: 100%;
     display: block;
@@ -135,7 +136,7 @@
 .grp-menucata {
     font: bold;
     font-size: 11px;
-    color: #b84a17;
+    color: #aa6b40;
     text-align: center;
     justify-items: center;    
     justify-content: center;
@@ -144,6 +145,13 @@
 
 .bg-copper {
     background-color: #976a4d !important;
+}
+
+.headertest {
+    background-image: url('../img/bg-head.png');
+    /* background-repeat: no-repeat; */
+    /* background-position: top; */
+    /* background-attachment: fixed; */
 }
   
   a.bg-copper:hover, a.bg-copper:focus,
@@ -194,6 +202,7 @@
 
     font-size: 20px; 
     text-align: center;
+    width: 100%;
 }
 
 .inp-name::placeholder {
