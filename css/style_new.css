@@ -457,6 +457,48 @@
     border-bottom: 1px #633710 dotted;
 }
 
+.checkout_removeitem {
+    color: #aa6b40;
+    font-size: 20px;
+}
+
+.btn-outline-delitem-chkout {
+    color: #976a4d;
+    border: 1px #ddd0c7 solid;
+    background-color: #ddd0c7;
+    height: 24px;
+    
+}
+
+.btn-outline-delitem-chkout:hover {
+    color: #976a4d;
+    background-color: #fde4d3;
+    border-color: #976a4d;
+}
+
+.btn-outline-delitem-chkout:focus, .btn-outline-delitem-chkout.focus {
+    /* box-shadow: 0 0 0 0.2rem rgba(216, 17, 156, 0.5); */
+    box-shadow: none;
+}
+
+.btn-outline-delitem-chkout.disabled, .btn-outline-delitem-chkout:disabled {
+    color: #976a4d;
+    background-color: transparent;
+}
+
+.btn-outline-delitem-chkout:not(:disabled):not(.disabled):active, .btn-outline-delitem-chkout:not(:disabled):not(.disabled).active,
+.show > .btn-outline-delitem-chkout.dropdown-toggle {
+    color: #fff;
+    background-color: #976a4d;
+    border-color: #976a4d;
+}
+
+.btn-outline-delitem-chkout:not(:disabled):not(.disabled):active:focus, .btn-outline-delitem-chkout:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-delitem-chkout.dropdown-toggle:focus {
+    /* box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.5); */
+    box-shadow: none;
+}
+
 /* check out */
 
 /* home */
