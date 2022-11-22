@@ -40,9 +40,11 @@
     <style>
         body {
             background-image: url('img/bg_home2.png');
-            background-repeat: no-repeat;
+            background-repeat: repeat-y;
             background-position: top center;
             background-attachment: fixed;
+            -webkit-background-size: cover;
+            background-size: cover;
         }
 
         .flex-item {                        
@@ -302,7 +304,7 @@
     <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
         <div class="row notify_message" >
             <div class="col">
-                <a href="" class="btn btn-coppernew rounded">
+                <a href="" class="btn btn-coppernew rounded" onclick="test()">
                     <p class="h4 m-0 p-copper"><i class="feather-home text-copper"></i></p>
                     เมนูหลัก
                 </a>

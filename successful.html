@@ -26,6 +26,8 @@
             background-repeat: no-repeat;
             background-position: top center;
             background-attachment: fixed;
+            -webkit-background-size: cover;
+            background-size: cover;
         }
     </style>
 </head>
@@ -219,7 +221,7 @@
             document.getElementById("setcustomername").innerHTML = getSet_customer;
         }
         
-        setTimeout(xredirecto, 1500);
+        setTimeout(xredirecto, 3000);
         function xredirecto(){
             window.location.href = "home.html";
         }
