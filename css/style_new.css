@@ -250,8 +250,8 @@
 
 .btn-outline-delitem {
     color: #976a4d;
-    border-color: #976a4d;
-    background-color: #fde4d3;
+    border: 1px #ddd0c7 solid;
+    background-color: #ddd0c7;
     
 }
 
@@ -352,6 +352,12 @@
 .btn-copperaddcart:not(:disabled):not(.disabled):active:focus, .btn-copperaddcart:not(:disabled):not(.disabled).active:focus,
 .show > .btn-copperaddcart.dropdown-toggle:focus {
     box-shadow: 0 0 0 0.2rem rgba(219, 149, 20, 0.5);
+}
+
+.getfood_optiontitle {
+    color: #633710;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 
@@ -470,7 +476,7 @@
 .confirm_showname{
     color: #633710;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 14px;
     padding-left: 5px;
 }
 
@@ -525,13 +531,13 @@
 .myorder_maindetail {
     color: #633710;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 15px;
 }
 
 .myorder_showdetail {
     color: #633710;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .myorder_showsmprc {
@@ -541,3 +547,18 @@
 
 }
 /* my order */
+
+/* success */
+
+.success_confirmorder{
+    color: #633710;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.success_plswait {
+    color: #633710;
+    font-weight: 300;
+    font-size: 23px;
+}
+/* success */
