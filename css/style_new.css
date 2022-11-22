@@ -216,8 +216,78 @@
     font-size: 18px;
 }
 
+.showtxttable {
+    color: #96694C;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.showvalueborder {
+    border: 2px #96694C solid;
+}
+
 .showvalue {
     color: #FFF;
+    font-weight: 200;
+    font-size: 18px;
+}
+
+.showtxtqty {
+    color: #96694C;
+    font-weight: 300;
+    font-size: 18px;    
+}
+
+.showqtyborder {
+    border: 2px #96694C solid;
+}
+
+.showtxttime {
+    color: #96694C;
+    font-weight: 300;
+    font-size: 18px;    
+}
+
+.showtimeborder {
+    border: 2px #96694C solid;
+}
+
+.showvalue {
+    color: #FFF;
+    font-weight: 200;
+    font-size: 18px;
+}
+
+.showtxtpackage {
+    color: #96694C;
+    font-weight: 300;
+    font-size: 18px;     
+}
+
+.showpackageborder {
+    border: 2px solid #96694C;
+}
+
+.showpackage {
+    color: #FFF;
+    font-weight: 300;
+    font-size: 18px;
+    /* padding: 20px; */
+    
+}
+
+.setlanguage{
+    margin-top: 20px;
+    color: #FFF;
+    font-weight: 200;
+    font-size: 18px;
+}
+
+.setth {
+    font-weight: bold;
+    font-size: 18px;
+}
+.seten {
     font-weight: 200;
     font-size: 18px;
 }
