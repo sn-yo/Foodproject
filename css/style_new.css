@@ -360,7 +360,7 @@
 }
 
 .count-number-input-getfood2 {
-    width: 80px;
+    width: 120px;
     text-align: center;
     margin: 0 5px;
     background: #976a4d;
@@ -376,21 +376,16 @@
 
 .btn-copperaddcart {
     background-image: linear-gradient(#976a4d, #633710);
-    border: none;
-    color: white;
-    
+    border: none;    
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    height: 70px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 20px;
-    margin: 2px 2px;
     cursor: pointer;
+    width: 120px;
 }
 .btn-copperaddcart i {
     color: #fff;
+    font-size: 25px;
 }
   
 .btn-copperaddcart:hover {
@@ -428,6 +423,73 @@
     color: #633710;
     font-weight: bold;
     font-size: 16px;
+}
+
+.getfoodtxt_addtocart {
+    color: #FFF;
+    font-weight: 200;
+    font-size: 15px;
+
+}
+
+.sh-cart {
+    padding-left: 5px;;
+}
+
+.my_cart01{
+    background-image: url(../img/svg/my_cart02.svg);
+    color: red;
+    font-size: 10px;
+}
+
+.showqtyonmycart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.showqtyonmycart span{
+    position: absolute;
+    background: #FFF;
+    width: 1.2rem;
+    height: 1.2rem;
+    font-weight: bold;
+    font-size: 10px;
+    border-radius: 50%;
+    display: flex;
+    color: #633710;
+    align-items: center;
+    justify-content: center;
+    top: .2rem;
+    right: 37px;
+}
+
+.showqtyonmycartx{
+    position: absolute;
+    background: #FFF;
+    width: 1.2rem;
+    height: 1.2rem;
+    font-weight: bold;
+    font-size: 10px;
+    border-radius: 50%;
+    display: flex;
+    color: #633710;
+    align-items: center;
+    justify-content: center;
+    top: .2rem;
+    right: 39px;
+}
+
+.desc-opt-list {
+    color: #633710;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.desc-opt-checkbox{
+    border: 1px #633710 solid;
+    background-color: #633710;
 }
 
 

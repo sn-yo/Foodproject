@@ -24,7 +24,7 @@ function onLoadPage(code, urlxJson){
 
         document.getElementById("show_detail_name").innerHTML = get_name;
         document.getElementById("show_detail_img").src = get_img;
-        document.getElementById("show_detail_nameeng").innerHTML = get_nameeng;
+        // document.getElementById("show_detail_nameeng").innerHTML = get_nameeng;
 
         let current_livestation = localStorage.getItem("livestation");
         let current_livestationdesc = localStorage.getItem("livestationdesc");
@@ -194,4 +194,5 @@ function shownotify(){
             arrowShow: false,
         }
     );
+
 }

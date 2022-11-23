@@ -317,6 +317,7 @@
             </div>
             <div class="col">
                 <a href="checkout.html" class="btn btn-coppernew rounded">
+                    <span id="showqty_mycart" class="showqtyonmycartx"></span>
                     <p class="h4 m-0 p-copper"><i class="feather-shopping-cart text-copper"></i></p>
                     รายการอาหารที่เลือก
                 </a>
@@ -475,6 +476,7 @@
     <script src="json/notify-metro.js"></script>
     <script src="json/get_menu_catagory.js"></script>
     <script src="json/get_menu_recommend.js"></script>
+    <script src="json/main_func.js"></script>
     <!-- <script src="json/get_menu_mostpopular.js"></script> -->
 
     <!-- slick Slider JS-->
@@ -491,6 +493,8 @@
         localStorage.setItem('group_id', 0);
         // localStorage.setItem('currPage', 0);
         const my_bookingid = localStorage.getItem("Set_bookingref");
+        let showqty = document.getElementById("showqty_mycart");
+        showqty.style.display = "none";
         // console.log(my_bookingid);
         if(my_bookingid == '' || my_bookingid == null){
             // console.log('redirect');
@@ -545,6 +549,7 @@
 
             if(count_mycart > 0 && curr_mycart != null){
                 shownotify();
+                showqty_on_mycart();
 
                 // $.notify({
                 //     delay : 0,

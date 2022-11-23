@@ -314,6 +314,7 @@
             </div>
             <div class="col">
                 <a href="checkout.html" class="btn btn-coppernew rounded">
+                    <span id="showqty_mycart" class="showqtyonmycartx"></span>
                     <p class="h4 m-0 p-copper"><i class="feather-shopping-cart text-copper"></i></p>
                     รายการอาหารที่เลือก
                 </a>
@@ -363,6 +364,9 @@
             // console.log('redirect');
             window.location.href = "signup.html";
         }
+
+        let showqty = document.getElementById("showqty_mycart");
+        showqty.style.display = "none";
         
         let getSet_tableno = localStorage.getItem("Set_tableno");
         let getSet_customer = localStorage.getItem("Set_name");
@@ -376,6 +380,22 @@
         }else{
             document.getElementById("setcustomername").innerHTML = getSet_customer;
         }
+
+        $(document).ready(function() {   //same as: $(function() { 
+            let curr_mycart = JSON.parse(localStorage.getItem("cart"));
+            let count_mycart = 0;
+            // console.log(curr_mycart);
+            if(curr_mycart){
+                count_mycart = curr_mycart.length;
+            }else{
+                count_mycart = 0;
+            }
+
+            if(count_mycart > 0 && curr_mycart != null){
+                //shownotify();
+                showqty_on_mycart();
+            }
+        });
     </script>
 </body>
 
