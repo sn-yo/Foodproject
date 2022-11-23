@@ -100,7 +100,7 @@
                         <span class="showtxtsirname">โต๊ะ &nbsp;<span class="showtxtname" id="settableno"></span></span>
                     </div>
                     <div class="col-6 text-right">
-                        <span class="showtxtshowtimeout">83:20 <span class="showtxtsirname">นาที</span> </span>
+                        <span class="showtxtshowtimeout" id="counttimeout">00:00 </span><span class="showtxtminutes">นาที</span>
                     </div>
                 </div>
             </div>
@@ -200,6 +200,7 @@
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="js/osahan.js"></script>
     <script src="json/main_func.js"></script>
+    <script src="json/timetoout.js"></script>
     <script>
         const my_bookingid = localStorage.getItem("Set_bookingref");
         // console.log(my_bookingid);

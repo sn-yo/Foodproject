@@ -91,6 +91,9 @@ function onLoadPage(code, urlxJson){
                 let data = response.data[0];
                 console.log(data.LimitQty);
                 localStorage.setItem("LimitQty", data.LimitQty);
+                if(data.LimitQty == 0){
+                    document.getElementById("ins_qty").value = 0;
+                }
             }
         });
     }

@@ -74,7 +74,9 @@ function appendData(data, bookingid, pathname){
 
     var booking_ref = document.getElementById("hdbooking_ref");
     booking_ref.value = data.data[0].Booking_Ref;
-    
+
+    var timetoout = document.getElementById("hdLastOrderTime");
+    timetoout.value = data.data[0].LastOrderTime;    
     
 }
 

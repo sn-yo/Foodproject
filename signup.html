@@ -164,32 +164,54 @@
             width: 100%;
         }
 
-        .form-inline .form-group label {
-            align-self: start;
-            background-image: linear-gradient(to top,var(--color-background-alt) 0 calc(50% - 2px),var(--color-background) calc(50% - 2px));
-            font-size: .9rem;
-            padding-left: 0.5em;
-            padding-right: 0.5em;
+        /* .formx {
             position: relative;
-            transform: translate(0.5rem,-50%);
-            width: -webkit-max-content;
-            width: max-content;
-            color: red;
-            top: 22px;
         }
 
-        .form-inline .form-group>* {
-            grid-area: group;
+        input {
+            outline: none;
+            border: 3px #FF7E31 solid;
+            background-color: transparent;
+            border-radius: 8px;
+            font-size: 25px;
+            position: relative;
+            transition: all 0.3s ease;
+            height: 70px;
+            color: #FFF;
+            text-align: center;
         }
 
-        .form-group label {
-            font-size: 1.35rem;
-            line-height: 1;
-            width: -webkit-fit-content;
-            width: -moz-fit-content;
-            width: fit-content;
+        input:focus {
+            border: 3px #E62C03 solid;
+        }
+        label {
+            position: absolute;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 25px;
+            transition: all 0.3s ease;
+            color: #ccc;
+            pointer-events: none;
+        }
+        input:focus + label,
+        input:not(:placeholder-shown) + label {
+            top: 0;
+            left: 20px;
+            color: #ccc;
+        } 
+
+        input:focus + label {
+            color: #FFF;
         }
 
+        span {
+            padding: 5px;
+            background-color: #000;
+            border-radius: 1000px;
+            border: #FF7E31 1px solid;
+        } */
+        
         
     </style>
 </head>
@@ -218,16 +240,14 @@
 				</div>
 				
 				<form id="myForm" class="mt-5 mb-4" action="home.html">
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-12">
-                            <div class="form-inline">
-                                <div class="form-group">
-                                    <label for="name1">name1</label>
-                                    <input type="text" class="form-field" id="name1" name="name1">
-                                </div>
+                            <div class="formx">
+                                <input type="text" id="name1" name="name1" autocomplete="off">
+                                <label for="name1"><span>white something</span></label>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row">
                         <div class="col-12 text-center">
                             <!-- <input type="text" class="entername" placeholder="กรุณาระบุชื่อ" id="ins_newname" required> -->
@@ -245,6 +265,7 @@
                                 <input type="hidden" id="booking_ref" >
                                 <input type="hidden" id="hdbooking_ref" >
                                 <input type="hidden" id="hdtableno" >
+                                <input type="hidden" id="hdLastOrderTime" >
                             
                         </div>
                     </div>
@@ -416,6 +437,7 @@
             var ins_newinvno = document.getElementById("hdins_invno").value;
             var ins_newbookingref = document.getElementById("hdbooking_ref").value;
             var ins_newtableno = document.getElementById("hdtableno").value;
+            var ins_timetoout = document.getElementById("hdLastOrderTime").value;
             // console.log(ins_newbookingref);
 
             
@@ -424,6 +446,7 @@
                 localStorage.setItem('Set_invno', ins_newinvno);
                 localStorage.setItem('Set_bookingref', ins_newbookingref);
                 localStorage.setItem('Set_tableno', ins_newtableno);
+                localStorage.setItem('Set_timetoout', ins_timetoout);
             }
             localStorage.setItem('currPage', 0);
 

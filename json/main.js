@@ -106,7 +106,7 @@ function chk_limit_qty(itemcode){
                 success: function( response ) {
                     // console.log(response.urlJson);
                     let data = response.data[0];
-                    console.log(data.LimitQty);
+                    // console.log(data.LimitQty);
                     qty = data.LimitQty;
                 }
             });
@@ -116,7 +116,7 @@ function chk_limit_qty(itemcode){
 }
 
 function chk_additem(item){
-    console.log('item', item);
+    // console.log('item', item);
     var get_val = document.getElementById("show_qty"+item).value;
     get_val = parseInt(get_val);
     var get_cart = JSON.parse(localStorage.getItem("cart"));
@@ -141,7 +141,7 @@ function chk_additem(item){
     }else{
         get_cart[item].qty = chk_qty_foodcode;
     }
-    console.log('curr qty', get_cart[item].qty);
+    // console.log('curr qty', get_cart[item].qty);
     document.getElementById("show_qty"+item).value = get_cart[item].qty;
 
     //get_cart[item].qty += 1;

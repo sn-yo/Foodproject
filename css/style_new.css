@@ -189,6 +189,13 @@
     color: #fff;
 }
 
+.showtxtminutes {
+    font-weight: 100;
+    font-size: 18px;
+    padding-right: 15px;
+    color: #FFF;
+}
+
 .showgrpname {
     font-weight: bold;
     color: #633710;
@@ -221,10 +228,12 @@
     color: #96694C;
     font-weight: 300;
     font-size: 18px;
+    border-radius: 8px;
 }
 
 .showvalueborder {
     border: 2px #96694C solid;
+    border-radius: 5px;
 }
 
 .showvalue {
@@ -241,6 +250,7 @@
 
 .showqtyborder {
     border: 2px #96694C solid;
+    border-radius: 5px;
 }
 
 .showtxttime {
@@ -251,6 +261,7 @@
 
 .showtimeborder {
     border: 2px #96694C solid;
+    border-radius: 5px;
 }
 
 .showvalue {
@@ -267,6 +278,7 @@
 
 .showpackageborder {
     border: 2px solid #96694C;
+    border-radius: 5px;
 }
 
 .showpackage {
@@ -294,6 +306,16 @@
 }
 
 /* get_food */
+
+.btn-getfood {
+    color: #633710;
+    font-weight: 300;
+    font-size: 20px;
+    margin-top: 20px;
+    border: 1px #633710 solid;
+    border-radius: 5px;
+
+}
 
 .show_detail_name{
     color: #976a4d;

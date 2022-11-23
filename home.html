@@ -140,7 +140,7 @@
                         <span class="showtxtsirname">โต๊ะ &nbsp;<span class="showtxtname" id="settableno"></span></span>
                     </div>
                     <div class="col-6 text-right">
-                        <span class="showtxtshowtimeout">83:20 <span class="showtxtsirname">นาที</span> </span>
+                        <span class="showtxtshowtimeout" id="counttimeout">00:00 </span><span class="showtxtminutes">นาที</span>
                     </div>
                 </div>
             </div>
@@ -479,6 +479,7 @@
     <script src="json/get_menu_catagory.js"></script>
     <script src="json/get_menu_recommend.js"></script>
     <script src="json/main_func.js"></script>
+    <script src="json/timetoout.js"></script>
     <!-- <script src="json/get_menu_mostpopular.js"></script> -->
 
     <!-- slick Slider JS-->
@@ -537,6 +538,8 @@
         }else{
             document.getElementById("setcustomername").innerHTML = getSet_customer;
         }
+
+        
 
         // shownotify();
         $(document).ready(function() {   //same as: $(function() { 
