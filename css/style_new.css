@@ -149,6 +149,7 @@
 
 .headertest {
     background-image: url('../img/bg-head.png');
+    padding-left: 10px;
     /* background-repeat: no-repeat; */
     /* background-position: top; */
     /* background-attachment: fixed; */
@@ -691,6 +692,65 @@
     font-weight: 400;
     font-size: 15px;
     
+}
+
+.btn-copperconfirm {
+    background-image: linear-gradient(#976a4d, #633710);
+    border: none;
+    color: white;
+    
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 2px 2px;
+    cursor: pointer;
+}
+.btn-copperconfirm i {
+    color: #fff;
+}
+  
+.btn-copperconfirm:hover {
+    color: #fff;
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+.btn-copperconfirm:focus, .btn-copperconfirm.focus {
+    color: #fff;
+    background-color: #138496;
+    border-color: #117a8b;
+    box-shadow: 0 0 0 0.2rem rgba(58, 176, 195, 0.5);
+}
+
+.btn-copperconfirm.disabled, .btn-copperconfirm:disabled {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+
+.btn-copperconfirm:not(:disabled):not(.disabled):active, .btn-copperconfirm:not(:disabled):not(.disabled).active,
+.show > .btn-copperconfirm.dropdown-toggle {
+    color: #fff;
+    background-color: #117a8b;
+    border-color: #10707f;
+}
+
+.btn-copperconfirm:not(:disabled):not(.disabled):active:focus, .btn-copperconfirm:not(:disabled):not(.disabled).active:focus,
+.show > .btn-copperconfirm.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(219, 149, 20, 0.5);
+}
+
+.confirm_showiconfile {
+    color: #633710;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.confirm_showitem {
+    color: #633710;
+    font-weight: 300;
+    font-size: 16px;
 }
 
 /* confirm */

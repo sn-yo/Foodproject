@@ -75,9 +75,10 @@ function chktimeout(typeconfirm){
             // console.log(response.urlJson);
             let urlxJson = response.urlJson;
             if(typeconfirm == 'normal'){
-                clickconfirm(urlxJson);
+                clickconfirm(urlxJson, typeconfirm);
             }else if(typeconfirm == 'fast'){
-                fastconfirm(urlxJson);
+                //fastconfirm(urlxJson);
+                clickconfirm(urlxJson, typeconfirm);
             }else{
 
             }
@@ -85,7 +86,7 @@ function chktimeout(typeconfirm){
     });
 }
 
-function clickconfirm(urlxJson){
+function clickconfirm(urlxJson, typeconfirm){
     var get_curr_food_code = localStorage.getItem("code");
     var get_curr_food_name = localStorage.getItem("name");
     var get_curr_food_img = localStorage.getItem("pathimg");
@@ -208,12 +209,12 @@ function clickconfirm(urlxJson){
                             // console.log(response.urlJson);
                             let urlxJson = response.urlJson;
                             myFunction_showmessagetimeout(chk_addcart, urlxJson);                
-                            setTimeout(xredirecto, 3000);
+                            setTimeout(xredirecto(typeconfirm), 3000);
                         }
                     });
                 }else{
                     // alert('555');
-                    setTimeout(xredirecto, 500);
+                    setTimeout(xredirecto(typeconfirm), 500);
                     
                 }
             }else{
@@ -225,8 +226,12 @@ function clickconfirm(urlxJson){
 
 }
 
-function xredirecto(){
-    window.location.href = "home.html";
+function xredirecto(chkconfirm){
+    if(chkconfirm == 'normal'){
+        window.location.href = "home.html";
+    }else{
+        window.location.href = "checkout.html";
+    }
 }
 
 function fastconfirm(urlxJson){    

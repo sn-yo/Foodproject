@@ -2,7 +2,7 @@ function onLoadPage(){
 
     let my_cart = localStorage.getItem("cart");
     my_cart = JSON.parse(my_cart);
-    document.getElementById("confirm_showitem").innerHTML = my_cart.length;
+    document.getElementById("confirm_showitem").innerHTML = my_cart.length+"เมนู";
 
     // document.getElementById("confirm_showtableno").innerHTML = '#'+localStorage.getItem("Set_tableno");
 
