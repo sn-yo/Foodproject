@@ -84,19 +84,67 @@ function redirectto(){
     window.location.href = "home.html";
 }
 
+function chk_limit_qty(itemcode){
+    let qty = 0;
+    let jsonUrl2 = "json/config.json";
+    $.ajax({
+        type: "GET",
+        url: jsonUrl2,
+        async: false,
+        cache: false,
+        success: function( response ) {
+            // console.log(response.urlJson);
+            let urlxJson = response.urlJson;
+            var get_bookingid = localStorage.getItem("Set_bookingref");
+            var data_limitqty = urlxJson+"GetFood?BookingID="+get_bookingid+"&FoodCode="+itemcode;
+            
+            $.ajax({
+                type: "GET",
+                url: data_limitqty,
+                async: false,
+                cache: false,
+                success: function( response ) {
+                    // console.log(response.urlJson);
+                    let data = response.data[0];
+                    console.log(data.LimitQty);
+                    qty = data.LimitQty;
+                }
+            });
+        }
+    });
+    return qty;
+}
+
 function chk_additem(item){
-    
+    console.log('item', item);
     var get_val = document.getElementById("show_qty"+item).value;
     get_val = parseInt(get_val);
-
-    if(get_val){
-        get_val += 1;
-        document.getElementById("show_qty"+item).value = get_val;
-    }
-
     var get_cart = JSON.parse(localStorage.getItem("cart"));
     // console.log(get_cart[item]);
-    get_cart[item].qty += 1;
+    var get_food_code = get_cart[item].code;
+    var chk_qty_foodcode = parseInt(chk_limit_qty(get_food_code));
+
+    // if(get_val){
+    //     console.log('get val', get_val);
+    //     if((get_val += 1) <= chk_qty_foodcode){
+    //         get_val += 1;
+    //     }else{
+    //         get_val = chk_qty_foodcode;
+    //     }
+    //     // get_val += 1;
+    //     document.getElementById("show_qty"+item).value = get_val;
+    // }
+    // console.log('chk_qty_foodcode', chk_qty_foodcode);
+
+    if((get_cart[item].qty+1) <= chk_qty_foodcode){
+        get_cart[item].qty += 1;
+    }else{
+        get_cart[item].qty = chk_qty_foodcode;
+    }
+    console.log('curr qty', get_cart[item].qty);
+    document.getElementById("show_qty"+item).value = get_cart[item].qty;
+
+    //get_cart[item].qty += 1;
     localStorage.setItem('cart', JSON.stringify(get_cart));
     call_refresh(get_cart);
     

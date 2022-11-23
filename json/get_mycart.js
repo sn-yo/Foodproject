@@ -2,8 +2,9 @@ function chk_additem(){
     
     var get_val = document.getElementById("ins_qty").value;
     get_val = parseInt(get_val);
+    var get_LimitQty = localStorage.getItem("LimitQty");
 
-    if(get_val){
+    if(get_val < get_LimitQty){
         get_val += 1;
         document.getElementById("ins_qty").value = get_val;
     }
@@ -93,6 +94,7 @@ function clickconfirm(urlxJson, typeconfirm){
     var get_bookingid = localStorage.getItem("Set_bookingref");
     var get_curr_food_prc = parseFloat(localStorage.getItem("prc"));
     var chk_qty = parseInt(document.getElementById("ins_qty").value);
+    var get_curr_limitqty = parseInt(localStorage.getItem("LimitQty"));
 
     // console.log(urlxJson);
     $.ajax({
@@ -177,7 +179,12 @@ function clickconfirm(urlxJson, typeconfirm){
                             // console.log('1',get_cart);
                             // console.log('2',data);
                             if(data.code == get_curr_food_code && data.opt_inst == allcheck){
-                                data.qty += chk_qty;
+                                if((data.qty+chk_qty) <= get_curr_limitqty){
+                                    data.qty += chk_qty;
+                                }else{
+                                    data.qty = get_curr_limitqty;
+                                }
+                                //alert(data.qty);
                                 /// ตรวจสอบ การเลือก option
                                 data.opt_inst = '';
                                 for(var c=0; c<val_check.length; c++){

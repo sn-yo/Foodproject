@@ -76,7 +76,23 @@ function onLoadPage(code, urlxJson){
             }
         }
 
+        //load limit qty
+        var get_bookingid = localStorage.getItem("Set_bookingref");
+        var data_limitqty = urlxJson+"GetFood?BookingID="+get_bookingid+"&FoodCode="+code;
+        console.log('limit qty',data_limitqty);
 
+        $.ajax({
+            type: "GET",
+            url: data_limitqty,
+            async: false,
+            cache: false,
+            success: function( response ) {
+                // console.log(response.urlJson);
+                let data = response.data[0];
+                console.log(data.LimitQty);
+                localStorage.setItem("LimitQty", data.LimitQty);
+            }
+        });
     }
 }
 
