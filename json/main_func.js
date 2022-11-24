@@ -25,9 +25,9 @@ function showqty_on_mycart(){
 // var dt_checkin = new Date("Nov 23, 2022 22:30");
 // console.log('dt-checkin', dt_checkin);
 // console.log(addHours(2, dt_checkin));
-var get_timetoout = localStorage.getItem("Set_timetoout");
-var dt_timeout = new Date(get_timetoout).getTime();
+// var get_timetoout = localStorage.getItem("Set_timetoout");
+// var dt_timeout = new Date(get_timetoout).getTime();
 // console.log('dt_timeout', dt_timeout);
 
-const xdate = new Date('2022-11-23 23:30:00').getTime();
+// const xdate = new Date('2022-11-23 23:30:00').getTime();
 // console.log(xdate);

@@ -5,7 +5,10 @@ var x = setInterval(function() {
     // console.log('now', now);
     
     // Find the distance between now and the count down date
-    var distance = dt_timeout - now;
+    var get_timetoout = localStorage.getItem("Set_timetoout");
+    var dtime = new Date(get_timetoout.replace(" ", "T"));
+    var dt_timeout = new Date(get_timetoout).getTime();
+    var distance = dtime - now;
     
     // Time calculations for days, hours, minutes and seconds
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));

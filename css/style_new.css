@@ -17,19 +17,16 @@
     background-color: #eae1d8;
     height: 50px;
     width: 100%;
-    display: block;
+    display: flex;
     
     text-align: center;
     justify-content: center;
     align-items: center;
 }
 
-.btn-info-copper p {
-    top: 50%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
+/* .btn-info-copper p {
+
+} */
 
 .active, .btn-info-copper:hover {
     color: #fff;
@@ -135,7 +132,7 @@
 
 .grp-menucata {
     font: bold;
-    font-size: 11px;
+    font-size: 14px;
     color: #aa6b40;
     text-align: center;
     justify-items: center;    
