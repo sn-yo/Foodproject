@@ -65,57 +65,7 @@
 <body class="fixed-bottom-bar">
     
     <header class="section-header">
-        <section class="header-main shadow-sm bg-white">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-1">
-                        <a href="home.html" class="brand-wrap mb-0">
-                            <img alt="#" class="img-fluid" src="img/logo_circle_copper02.png">
-                        </a>
-                        <!-- brand-wrap.// -->
-                    </div>
-                    <div class="col-3 d-flex align-items-center m-none">
-                        <div class="dropdown mr-3">
-                            <div class="dropdown-menu p-0 drop-loc" aria-labelledby="navbarDropdown">
-                                <div class="osahan-country">
-                                    <div class="search_location bg-primary p-3 text-right">
-                                        <div class="input-group rounded shadow-sm overflow-hidden">
-                                            <div class="input-group-prepend">
-                                                <button class="border-0 btn btn-outline-secondary text-dark bg-white btn-block"><i class="feather-search"></i></button>
-                                            </div>
-                                            <input type="text" class="shadow-none border-0 form-control" placeholder="Enter Your Location">
-                                        </div>
-                                    </div>
-                                    <div class="p-3 border-bottom">
-                                        <a href="home.html" class="text-decoration-none">
-                                            
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- col.// -->
-                    <div class="col-8">
-                        <div class="d-flex align-items-center justify-content-end pr-5">
-                            <!-- signin -->
-                            <a href="checkout.html" class="widget-header mr-4 text-dark">
-                                <div class="icon d-flex align-items-center">
-                                    <i class="feather-shopping-cart h6 mr-2 mb-0"></i> <span>Cart</span>
-                                </div>
-                            </a>
-                            
-                        </div>
-                        <!-- widgets-wrap.// -->
-                    </div>
-                    <!-- col.// -->
-                </div>
-                <!-- row.// -->
-            </div>
-            <!-- container.// -->
-        </section>
-        <!-- header-main .// -->
+        
     </header>
     <div class="osahan-home-page">
         
@@ -306,7 +256,7 @@
     <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
         <div class="row notify_message" >
             <div class="col">
-                <a href="" class="btn btn-coppernew rounded" onclick="test()">
+                <a href="home.html" class="btn btn-coppernew rounded">
                     <p class="h4 m-0 p-copper"><i class="feather-home text-copper"></i></p>
                     เมนูหลัก
                 </a>
@@ -357,11 +307,6 @@
     -->
 	
 	<!-- footer -->
-    <footer class="section-footer border-top bg-dark">
-		<section class="footer-copyright border-top py-3 bg-light">
-            
-        </section>
-    </footer>
 	
     <nav id="main-nav">
 		<ul class="second-nav">
@@ -493,7 +438,8 @@
     <script type="text/javascript" src="js/osahan.js"></script>
     <script>
         // localStorage.setItem("Set_bookingref","553695");
-        localStorage.setItem('group_id', 0);
+        // this
+        //localStorage.setItem('group_id', 0);
         // localStorage.setItem('currPage', 0);
         const my_bookingid = localStorage.getItem("Set_bookingref");
         let showqty = document.getElementById("showqty_mycart");
@@ -518,6 +464,7 @@
         function test(){
             localStorage.setItem("currPage", 0);
             localStorage.setItem('group_id', 0);
+            console.log('this');
         }
         let getLastPage = localStorage.getItem("currPage");
         if(getLastPage != 0){
@@ -613,6 +560,25 @@
             }, 1000);
         });
         
+        
+        var currentSlide = $('.cat-slider').slick('slickCurrentSlide');
+        console.log(currentSlide);
+        $('.cat-slider').on('swipe', function(event, slick, direction){
+            var currentSlide2 = $('.cat-slider').slick('slickCurrentSlide');
+            console.log(currentSlide2);
+        });
+        // $('.your-element').on('edge', function(event, slick, direction){
+        //     console.log('edge was hit');
+        // });
+        var show_groupid = localStorage.getItem("group_id");
+        // console.log('group id', show_groupid);
+        if(show_groupid>=8){
+            $('.cat-slider').slick('slickGoTo',8);
+        }else if(show_groupid>=4){
+            $('.cat-slider').slick('slickGoTo',4);
+        }else{
+            $('.cat-slider').slick('slickGoTo',0);
+        }
 
         
     </script>

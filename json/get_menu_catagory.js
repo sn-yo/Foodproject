@@ -27,7 +27,7 @@ function loadPageGroupmenu(urlxJson){
         async: false,
         cache: false,
         success: function( response ) {
-            // console.log( response );
+            console.log( response );
             var cat_item = document.createElement('div');
             cat_item.className = "cat-slider";
 
@@ -45,8 +45,8 @@ function loadPageGroupmenu(urlxJson){
                 menu.getElementsByClassName('href_catagory')[0].href = "home.html";
                 menu.getElementsByClassName('href_catagory')[0].setAttribute('onclick', "test()");
                 menu.getElementsByClassName('href_catagory')[0].className = 'btn btn-info-copper active href_catagory_recommend';
-
-                cat_item.appendChild(menu);
+                //menuyyyyyyyyyyyyyyyyyyy
+                // cat_item.appendChild(menu);
             }
 
             //สร้างเมนู
@@ -65,6 +65,10 @@ function loadPageGroupmenu(urlxJson){
                 menu.getElementsByClassName('href_catagory')[0].id = 'menucata'+data[i].Grp_ID;
                 menu.getElementsByClassName('href_catagory')[0].href = "#";
                 menu.getElementsByClassName('href_catagory')[0].setAttribute('onclick', "OnClickCata('"+data[i].Grp_ID+"','"+data[i].ShowName+"','"+urlxJson+"',"+data.length+")");
+
+                if(i == 0){
+                    localStorage.setItem("Set_menufirst", data[i].ShowName);
+                }
                 
     
                 // console.log(data[i].Grp_Image);
@@ -127,7 +131,8 @@ function OnClickCata(group_id, group_name, urlxJson, xlength){
     // menu_recommend.className = 'btn btn-info-copper href_catagory_recommend';
     let xmenu_recommend = document.getElementById("menucata0");
     // console.log(xmenu_recommend);
-    xmenu_recommend.classList.remove("active");
+    //menuyyyyyyyyyyyyyyyyyyy
+    //xmenu_recommend.classList.remove("active");
 
     let xmenu_cata_all = document.querySelector(".href_catagory").id;
     // console.log('id:',xmenu_cata_all);
@@ -249,7 +254,7 @@ function OnClickCata(group_id, group_name, urlxJson, xlength){
                 const data = response.data;
                 // console.log(data);
                 var xloop = 0;
-    
+                
                 document.getElementById("cata_showgroupname").innerHTML = group_name;
                 
                 var homemaster = document.getElementById("catagory_home_point");

@@ -19,15 +19,18 @@ $.ajax({
     success: function( response ) {
         // console.log(response.urlJson);
         let urlxJson = response.urlJson;
-        console.log('onclickback');
+        // console.log('onclickback');
         let local_lastpage = localStorage.getItem("lastPage");
         let local_currpage = localStorage.getItem("currPage");
         let group_name = localStorage.getItem("group_name");
-        console.log(local_currpage);
+        // console.log(local_currpage);
         if(local_currpage == 0 || local_currpage == null){
-            loadPageGetRecommend(urlxJson);
+            //menuyyyyyyyyyyyyyyyyyyy
+            //loadPageGetRecommend(urlxJson);
+            loadPageGetCatagory_bylastpage(urlxJson, group_name);
         }else{
             loadPageGetCatagory_bylastpage(urlxJson, group_name);
+            // console.log('loadpagegetcatagory');
         }
     }
 });
@@ -209,12 +212,49 @@ function loadPageGetCatagory_bylastpage(urlxJson, group_name){
     
                 var show_groupname = localStorage.getItem("group_name");
                 document.getElementById("cata_showgroupname").innerHTML = show_groupname;
+                console.log('this', show_groupname);
 
                 let xmenu_recommend = document.getElementById("menucata0");
                 // console.log(xmenu_recommend);
-                xmenu_recommend.classList.remove("active");
+                //menuyyyyyyyyyyyyyyyyyyy
+                //xmenu_recommend.classList.remove("active");
+                
 
                 var show_groupid = localStorage.getItem("group_id");
+                // console.log('group id', show_groupid);
+                // var xlistmenu = 7;
+                // var xxthis = parseInt(xlistmenu) / 4;                
+                // console.log('xxthis',xxthis);
+
+                
+                // let xpage_cata0 = document.getElementById("Grp_ID_recommend");
+                // let xpage_cata1 = document.getElementById("Grp_ID1");
+                // let xpage_cata2 = document.getElementById("Grp_ID2");
+                // let xpage_cata3 = document.getElementById("Grp_ID3");
+                //
+                // let xpage_cata4 = document.getElementById("Grp_ID4");
+                // let xpage_cata5 = document.getElementById("Grp_ID5");
+                // let xpage_cata6 = document.getElementById("Grp_ID6");
+                // let xpage_cata7 = document.getElementById("Grp_ID7");
+                // xpage_cata0.className = "cat-item px-1 slick-slide";
+                // xpage_cata1.className = "cat-item px-1 slick-slide";
+                // xpage_cata2.className = "cat-item px-1 slick-slide";
+                // xpage_cata3.className = "cat-item px-1 slick-slide";
+                // $('.cat-slider').slick('slickGoTo');
+                // var currentSlide = $('.cat-slider').slick('slickCurrentSlide');
+                // var cata7 = xpage_cata7.getAttribute("aria-hidden");
+                // console.log(cata7);
+
+                // xpage_cata0.setAttribute("aria-hidden", "true");
+                // xpage_cata1.setAttribute("aria-hidden", "true");
+                // xpage_cata2.setAttribute("aria-hidden", "true");
+                // xpage_cata3.setAttribute("aria-hidden", "true");
+
+                // xpage_cata4.setAttribute("aria-hidden", "false");
+                // xpage_cata5.setAttribute("aria-hidden", "false");
+                // xpage_cata6.setAttribute("aria-hidden", "false");
+                // xpage_cata7.setAttribute("aria-hidden", "false");
+
                 let xmenu_recommend_list = document.getElementById("menucata"+show_groupid);
                 // console.log(xmenu_recommend_list);
                 xmenu_recommend_list.className = "btn btn-info-copper active href_catagory";

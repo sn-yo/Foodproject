@@ -1,6 +1,10 @@
 function clicktoHome(){
-    localStorage.setItem("currPage", 0);
-    console.log('click to home');
+    // localStorage.setItem("currPage", 0);
+    //menuyyyyyyyyyyyyyyyyyyy
+    localStorage.setItem("group_id", 1);
+    localStorage.setItem("currPage", 1);
+    localStorage.setItem("group_name", localStorage.getItem("Set_menufirst"));
+    // console.log('click to home');
 }
 
 function showqty_on_mycart(){

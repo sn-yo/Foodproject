@@ -79,7 +79,7 @@ function onLoadPage(code, urlxJson){
         //load limit qty
         var get_bookingid = localStorage.getItem("Set_bookingref");
         var data_limitqty = urlxJson+"GetFood?BookingID="+get_bookingid+"&FoodCode="+code;
-        console.log('limit qty',data_limitqty);
+        // console.log('limit qty',data_limitqty);
 
         $.ajax({
             type: "GET",
@@ -89,7 +89,7 @@ function onLoadPage(code, urlxJson){
             success: function( response ) {
                 // console.log(response.urlJson);
                 let data = response.data[0];
-                console.log(data.LimitQty);
+                // console.log(data.LimitQty);
                 localStorage.setItem("LimitQty", data.LimitQty);
                 if(data.LimitQty == 0){
                     document.getElementById("ins_qty").value = 0;

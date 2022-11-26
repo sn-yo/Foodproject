@@ -63,22 +63,22 @@ function onLoadPageMyorder(xbookingid, urlxJson){
                 }
     
                 var row3 = document.createElement("div");
-                row3.className = "d-flex border-bottom pb-1 myorder_showmain";
+                row3.className = "d-flex myorder_showmain";
                 // row3.style = "background-color: #F5F5F5; padding: 15px 15px 1px 15px;";
     
                 var row4 = document.createElement("div");
-                var rowp1 = document.createElement("p");
+                var rowp1 = document.createElement("span");
                 rowp1.className = "myorder_maindetail";
                 rowp1.innerHTML = "คุณ "+mydata[i].Name+'<br/>'+'เวลาที่สั่ง '+mydata[i].Time;
     
                 var row4_2 = document.createElement("div");
                 row4_2.className = "ml-auto";
-                var rowp1_2 = document.createElement("p");
+                var rowp1_2 = document.createElement("span");
                 rowp1_2.className = "myorder_maindetail text-center";
                 rowp1_2.innerHTML = mydata[i].Date;
     
                 var xrow1 = document.createElement("div");
-                xrow1.className  = "d-flex pt-3";
+                xrow1.className  = "d-flex";
                 xrow1.style = "background-color: #FFFAF0; padding:5px;";
     
                 var xrow2 = document.createElement("div");
