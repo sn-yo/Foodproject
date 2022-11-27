@@ -27,7 +27,7 @@ function loadPageGroupmenu(urlxJson){
         async: false,
         cache: false,
         success: function( response ) {
-            console.log( response );
+            // console.log( response );
             var cat_item = document.createElement('div');
             cat_item.className = "cat-slider";
 

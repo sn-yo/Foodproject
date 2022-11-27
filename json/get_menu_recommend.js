@@ -212,7 +212,7 @@ function loadPageGetCatagory_bylastpage(urlxJson, group_name){
     
                 var show_groupname = localStorage.getItem("group_name");
                 document.getElementById("cata_showgroupname").innerHTML = show_groupname;
-                console.log('this', show_groupname);
+                // console.log('this', show_groupname);
 
                 let xmenu_recommend = document.getElementById("menucata0");
                 // console.log(xmenu_recommend);
