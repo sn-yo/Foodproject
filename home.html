@@ -557,6 +557,7 @@
             if (distance < 0) {
                 clearInterval(x);
                 document.getElementById("counttimeout").innerHTML = "หมดเวลา";
+                window.localStorage.clear();
             }
             }, 1000);
         });

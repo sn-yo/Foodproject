@@ -27,6 +27,7 @@ $.ajax({
         if(local_currpage == 0 || local_currpage == null){
             //menuyyyyyyyyyyyyyyyyyyy
             //loadPageGetRecommend(urlxJson);
+            console.log('grp name',group_name);
             loadPageGetCatagory_bylastpage(urlxJson, group_name);
         }else{
             loadPageGetCatagory_bylastpage(urlxJson, group_name);
