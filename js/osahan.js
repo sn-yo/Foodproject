@@ -73,6 +73,7 @@ Version: 1.0
         centerPadding: '40px',
         slidesToShow: 4,
         slidesToScroll: 4,
+        accessibility: false,
 
         responsive: [{
                 breakpoint: 768,
@@ -83,6 +84,7 @@ Version: 1.0
                     centerPadding: '40px',
                     slidesToShow: 4,
                     slidesToScroll: 4,
+                    accessibility: false,
                 }
             },
             {
@@ -94,6 +96,7 @@ Version: 1.0
                     centerPadding: '40px',
                     slidesToShow: 4,
                     slidesToScroll: 4,
+                    accessibility: false,
                 }
             }
         ]

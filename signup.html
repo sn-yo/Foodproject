@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Askbootstrap">
     <meta name="author" content="Askbootstrap">
-    <link rel="icon" type="image/png" href="img/fav.png">
+    <link rel="icon" type="image/png" href="img/icon_logo2.png">
     <title>COPPER Restaurant</title>
     <!-- Slick Slider -->
     <link rel="stylesheet" type="text/css" href="vendor/slick/slick.min.css" />
@@ -17,9 +17,18 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/style_new.css" rel="stylesheet">
     <!-- Sidebar CSS -->
     <link href="vendor/sidebar/demo.css" rel="stylesheet">
     <style>
+        body {
+            background-image: url('img/bg_signup06.png');
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-attachment: fixed;
+            background-color: #000;
+            
+        }
         .btn_y {
             border: 2px solid black;
             background-color: white;
@@ -33,54 +42,286 @@
             border-color: #F5B7B1;
             color: #000;
         }
+
+        
+
+        /* CSS */
+        .button-42 {
+        background-color: initial;
+        background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+        border-radius: 6px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+        height: 40px;
+        line-height: 40px;
+        outline: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        pointer-events: auto;
+        position: relative;
+        text-align: center;
+        touch-action: manipulation;
+        user-select: none;
+        -webkit-user-select: none;
+        vertical-align: top;
+        white-space: nowrap;
+        width: 100%;
+        z-index: 9;
+        border: 0;
+        transition: box-shadow .2s;
+        }
+
+        .button-42:hover {
+        box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+        }
+
+        .photo {
+            margin: 30px;
+            position: relative;
+            width: 180px;
+            height: 130px;
+            float: left;
+        }
+        .photo img {
+            background: #fff;
+            border: solid 1px #ccc;
+            padding: 4px;
+        }
+        .photo span {
+            width: 20px;
+            height: 18px;
+            display: block;
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: url(img/digg-style.gif) no-repeat;
+        }
+        .photo a {
+            text-decoration: none;
+        }
+        
+        .sample1 span {
+            width: 28px;
+            height: 21px;
+            display: block;
+            position: absolute;
+            top: -12px;
+            left: 90px;
+            background: url(img/reviewer1.png) no-repeat;
+        }
+        .textbox1 {
+            border: solid;
+            border-color: #E62C03;
+        }
+        .textbox1 p {
+            color: #FF7E31;
+            font-size: 20px;
+        }
+        .chkbox1 span {
+            color: #FFF;
+            display: block;
+            position: absolute;
+            top: 274px;
+            margin-left: 100px;
+            padding: 5px;
+            text-align: center;
+            background-color: #E62C03;
+            font-size: 20px;
+        }
+
+        .entername {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px #FFF solid;
+            font-weight: bold;
+            font-size: 20px;
+            color: #FFF;
+            text-align: center;
+        }
+
+        .entername:focus {
+            outline: none;
+        }
+        .entername::placeholder {
+            font-weight: normal;            
+            color: #FFF;
+        }
+        .entername:focus::placeholder {
+            color: transparent;
+        }
+
+        .form-group input{
+            --outline-color: var(--color-primary);
+            background-color: var(--color-background-alt);
+            border: 2px solid #FFF;
+            border-radius: 4px;
+            color: var(--color-on-background);
+            font: inherit;
+            padding: 0 0.5em;
+            width: 100%;
+        }
+
+        /* .formx {
+            position: relative;
+        }
+
+        input {
+            outline: none;
+            border: 3px #FF7E31 solid;
+            background-color: transparent;
+            border-radius: 8px;
+            font-size: 25px;
+            position: relative;
+            transition: all 0.3s ease;
+            height: 70px;
+            color: #FFF;
+            text-align: center;
+        }
+
+        input:focus {
+            border: 3px #E62C03 solid;
+        }
+        label {
+            position: absolute;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 25px;
+            transition: all 0.3s ease;
+            color: #ccc;
+            pointer-events: none;
+        }
+        input:focus + label,
+        input:not(:placeholder-shown) + label {
+            top: 0;
+            left: 20px;
+            color: #ccc;
+        } 
+
+        input:focus + label {
+            color: #FFF;
+        }
+
+        span {
+            padding: 5px;
+            background-color: #000;
+            border-radius: 1000px;
+            border: #FF7E31 1px solid;
+        } */
+        
+        
     </style>
 </head>
 
 <body>
-    <div class="osahan-signup login-page">
+    <div class="osahan-signup ">
+        <!-- login-page -->
         
         <div class="py-5 osahan-coming-soon d-flex justify-content-center align-items-center">
 			<div class="col-md-6">
 				<div class="text-center pb-3">
-					<img alt="#" src="img/logo_copper02.png" class="img-fluid item-img w-80">
-					<button class="btn_y copper_yy btn-lg btn-block mt-3">
-                        <h4 id="ins_custname">Customer Book Name</h4>
-                    </button>
-                    <button class="btn_y copper_yy btn-lg btn-block mt-3">
-                        <h4 id="ins_promote">Hungry Hub Exclusive Menus Unlimited All Premium M</h4>
-                    </button>
+					<img alt="#" src="img/logo-white01.png" class="img-fluid item-img w-80">
+					
+                    <p class="p-5"></p>
+                    <p class="p-5"></p>
+
+                    <!-- <div class="photo sample1">
+                        <a href="#"><span></span><img src="img/logo_circle_copper02.png" alt="image" /></a>
+                    </div> -->
+
+                    <!-- <div class="textbox1 chkbox1">
+                        <span>จำนวน</span>
+                        <p>52</p>
+                    </div> -->
                     
 				</div>
 				
 				<form id="myForm" class="mt-5 mb-4" action="home.html">
+                    <!-- <div class="row">
+                        <div class="col-12">
+                            <div class="formx">
+                                <input type="text" id="name1" name="name1" autocomplete="off">
+                                <label for="name1"><span>white something</span></label>
+                            </div>
+                        </div>
+                    </div> -->
                     <div class="row">
-                        <div class="col-4">
-                            <!-- <label for="exampleInputNumber1" class="text-dark text-center" style="font-size: 20px;">โต๊ะ</label> -->
-                            <h5 class="text-center">โต๊ะ</h5>
-                            <h6 class="text-center border-bottom" id="ins_tableno"></h6>
-                        </div>
-                        <div class="col-4">
-                            <h5 class="text-center">เวลา</h5>
-                            <h6 class="text-center border-bottom p-0" id="ins_timebook"></h6>
-                        </div>
-                        <div class="col-4">                            
-                            <h5 class="text-center">จำนวน</h5>
-                            <h6 class="text-center border-bottom p-0" id="ins_adult"></h6>
+                        <div class="col-12 text-center">
+                            <!-- <input type="text" class="entername" placeholder="กรุณาระบุชื่อ" id="ins_newname" required> -->
                         </div>
                     </div>
-					<div class="row p-4"></div>
-					<div class="form-group">
-						<h5 class="text-center">กรุณาระบุชื่อ</h5>
-						<input type="text" placeholder="Enter Name" class="form-control" style="font-size: 20px; text-align: center;" id="ins_newname" aria-describedby="nameHelp" required>
-                        <input type="hidden" id="ins_invno" >
-                        <input type="hidden" id="hdins_invno" >
-                        <input type="hidden" id="booking_ref" >
-                        <input type="hidden" id="hdbooking_ref" >
-                        <input type="hidden" id="hdtableno" >
-					</div>
-					<button class="btn btn-primary btn-lg btn-block" style="height: 90px;" onclick="getAccount()">
-					   สั่งอาหาร
-					</button>
+                    
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            
+                                <!-- <h5 class="text-center">กรุณาระบุชื่อ</h5> -->
+                                <!-- <input type="text" placeholder="กรุณาระบุชื่อ" class="form-control inp-name" id="ins_newname" aria-describedby="nameHelp" required> -->
+                                <input type="text" class="entername" placeholder="กรุณาระบุชื่อ" id="ins_newname" required autocomplete="off">
+                                <input type="hidden" id="ins_invno" >
+                                <input type="hidden" id="hdins_invno" >
+                                <input type="hidden" id="booking_ref" >
+                                <input type="hidden" id="hdbooking_ref" >
+                                <input type="hidden" id="hdtableno" >
+                                <input type="hidden" id="hdLastOrderTime" >
+                            
+                        </div>
+                    </div>
+                    <div class="row p-4"></div>
+                    <div class="row" style="padding-left: 40px; padding-right: 40px;">
+                        <div class="col-3 text-center">
+                            <!-- <label for="exampleInputNumber1" class="text-dark text-center" style="font-size: 20px;">โต๊ะ</label> -->
+                            <span class="text-center showtxttable">โต๊ะ</span>
+                            <div class="showvalueborder text-center">
+                                <span class="text-center showvalue" id="ins_tableno">20</span>
+                            </div>
+                        </div>
+                        <div class="col-6 text-center">
+                            <span class="text-center showtxttime">เวลา</span>
+                            <div class="showtimeborder">
+                                <span class="showvalue" id="ins_timebook">10.00 - 12.00</span>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <span class="text-center showtxtqty">จำนวน</span>
+                            <div class="showqtyborder">
+                                <span class="showvalue" id="ins_adult">4</span>
+                            </div>
+                        </div>
+                    </div>
+					<div class="row p-2"></div>
+                    <div class="row" style="padding-left: 40px; padding-right: 40px;">
+                        <div class="col-12 text-center">
+                            <span class="text-center showtxtpackage">แพ๊คเกจ</span>
+                            <div class="showpackageborder">
+                                <span id="ins_promote" class="showpackage">Hungry Hub Exclusive Menus Unlimited All Premium M</span>
+                            </div>
+
+                        </div>                        
+                    </div>
+                    <div class="row">
+                        <p class="p-2"></p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <button class="btn btn-signup" style="height: 50px;" onclick="getAccount()">
+                                เริ่มสั่งอาหาร
+                             </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p class="p-1"></p>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <span class="setlanguage">LANGUAGE&nbsp; <span class="setth">ไทย</span>&nbsp;|&nbsp;<span class="seten">EN</span></span>
+                        </div>
+                    </div>
+					
+					
                     <p id="demo"></p>
 				</form>
 				
@@ -174,6 +415,7 @@
             .then(function (data){
                 const urlxJson = data.urlJson;
                 checkin(bookingid, pathname, urlxJson);
+                // console.log('seccess: ' + data)
                 // resultxData(xxx)
             })
             .catch(function(err){
@@ -195,6 +437,7 @@
             var ins_newinvno = document.getElementById("hdins_invno").value;
             var ins_newbookingref = document.getElementById("hdbooking_ref").value;
             var ins_newtableno = document.getElementById("hdtableno").value;
+            var ins_timetoout = document.getElementById("hdLastOrderTime").value;
             // console.log(ins_newbookingref);
 
             
@@ -203,8 +446,13 @@
                 localStorage.setItem('Set_invno', ins_newinvno);
                 localStorage.setItem('Set_bookingref', ins_newbookingref);
                 localStorage.setItem('Set_tableno', ins_newtableno);
+                localStorage.setItem('Set_timetoout', ins_timetoout);
+                //menuyyyyyyyyyyyyyyyyyyy
+                localStorage.setItem('group_id', 1);
             }
-            localStorage.setItem('currPage', 0);
+            //menuyyyyyyyyyyyyyyyyyyy
+            // localStorage.setItem('currPage', 0);
+            localStorage.setItem('currPage', 1);
 
             // if(!localStorage.getItem("cart")){                
             //     localStorage.setItem("cart", "[]");

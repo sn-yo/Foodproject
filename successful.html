@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Askbootstrap">
     <meta name="author" content="Askbootstrap">
-    <link rel="icon" type="image/png" href="img/fav.png">
+    <link rel="icon" type="image/png" href="img/icon_logo2.png">
     <title>COPPER Restaurant</title>
     <!-- Slick Slider -->
     <link rel="stylesheet" type="text/css" href="vendor/slick/slick.min.css" />
@@ -17,8 +17,19 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/style_new.css" rel="stylesheet">
     <!-- Sidebar CSS -->
     <link href="vendor/sidebar/demo.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('img/bg_home2.png');
+            background-repeat: no-repeat;
+            background-position: top center;
+            background-attachment: fixed;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+    </style>
 </head>
 
 <body>
@@ -66,28 +77,61 @@
         </section>
         <!-- header-main .// -->
     </header>
-    <div class="d-none">
-        <div class="bg-primary p-3 d-flex align-items-center">
+
+    <div class="osahan-success">
+        <div class="p-2">
             
-            <h4 class="font-weight-bold m-0 text-white">Thanks :)</h4>
-        </div>
-    </div>
-    <div class="py-5 osahan-coming-soon d-flex justify-content-center align-items-center">
-        <div class="col-md-6">
-            <div class="text-center pb-3">
-                <h2 class="font-weight-bold">Your order has been successful</h2>
-                
+            <div class="row p-2">
+                <div class="col-4 text-center"><span></span></div>
+                <div class="col-4 text-center"><img src="img/logo_copper05.png" alt="#"></div>
+                <div class="col-4 text-center"><span></span></div>
             </div>
-            <!-- continue -->
-            <div class="bg-white rounded text-center p-4 shadow-sm">
-                
-                <img src="img/animation_200_check2w.gif" alt="">
-                <h6 class="font-weight-bold mb-2">Preparing your order</h6>
-                <p class="small text-muted">Your order will be prepared and will come soon</p>
-                <a href="home.html" class="btn rounded btn-primary btn-lg btn-block">Home</a>
+            <div class="headertest">
+                <div class="row">
+                    <div class="col-6">
+                        <span class="showtxtsirname">คุณ <span class="showtxtname" id="setcustomername"></span></span>
+                    </div>
+                    <div class="col-6 text-right">
+                        <span class="showtxtshowtimedesc">เหลือเวลาอีก </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <span class="showtxtsirname">โต๊ะ &nbsp;<span class="showtxtname" id="settableno"></span></span>
+                    </div>
+                    <div class="col-6 text-right">
+                        <span class="showtxtshowtimeout" id="counttimeout">00:00 </span><span class="showtxtminutes">นาที</span>
+                    </div>
+                </div>
             </div>
+            <div class="row">
+                <p class="p-5"></p>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <img src="img/success.png" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <p class="p-3"></p>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <span class="success_confirmorder">ยืนยันการสั่งอาหาร</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <span class="success_plswait">สักครู่อาหารจะถูกเสิร์ฟที่โต๊ะของคุณ</span>
+                </div>
+            </div>
+
         </div>
+
     </div>
+
+
+    
     <!-- footer -->
     <footer class="section-footer border-top bg-dark">
         <div class="container">
@@ -124,27 +168,23 @@
         </ul>
     </nav>
     <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
-        <div class="row notify_message" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+        <div class="row notify_message" >
             <div class="col">
-                <a href="home.html"  onclick="clicktoHome()" class="text-copper small font-weight-bold text-decoration-none">
+                <a href="home.html" class="btn btn-coppernew rounded" onclick="clicktoHome()">
                     <p class="h4 m-0 p-copper"><i class="feather-home text-copper"></i></p>
-                    Home
+                    เมนูหลัก
                 </a>
             </div>
-            <div class="col bg-white rounded-circle mt-n4 px-3 py-2">
-                <div class="bg-copper rounded-circle mt-n0 shadow">
-                    <a href="checkout.html" class="text-white small font-weight-bold text-decoration-none">
-                        <div class="counter-container">
-                            <!-- <span id="counter">1</span> -->
-                            <i class="feather-shopping-cart"></i>
-                        </div>
-                    </a>
-                </div>
+            <div class="col">
+                <a href="my_order.html" class="btn btn-coppernew rounded">
+                    <p class="h4 m-0 p-copper"><i class="feather-file-text text-copper"></i></p>
+                    รายการอาหารที่สั่ง
+                </a>
             </div>
             <div class="col">
-                <a href="my_order.html" class="text-copper small font-weight-bold text-decoration-none">
-                    <p class="h4 m-0 p-copper"><i class="feather-user text-copper"></i></p>
-                    My Order
+                <a href="checkout.html" class="btn btn-coppernew rounded">
+                    <p class="h4 m-0 p-copper"><i class="feather-shopping-cart text-copper"></i></p>
+                    รายการอาหารที่เลือก
                 </a>
             </div>
         </div>
@@ -160,6 +200,7 @@
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="js/osahan.js"></script>
     <script src="json/main_func.js"></script>
+    <script src="json/timetoout.js"></script>
     <script>
         const my_bookingid = localStorage.getItem("Set_bookingref");
         // console.log(my_bookingid);
@@ -167,7 +208,21 @@
             // console.log('redirect');
             window.location.href = "signup.html";
         }
-        setTimeout(xredirecto, 1500);
+
+        let getSet_tableno = localStorage.getItem("Set_tableno");
+        let getSet_customer = localStorage.getItem("Set_name");
+        if(getSet_tableno == null || getSet_tableno == ''){
+            document.getElementById("settableno").innerHTML = "00";
+        }else{            
+            document.getElementById("settableno").innerHTML = ""+getSet_tableno;
+        }
+        if(getSet_customer == null || getSet_customer == ''){
+            document.getElementById("setcustomername").innerHTML = "..";
+        }else{
+            document.getElementById("setcustomername").innerHTML = getSet_customer;
+        }
+        
+        setTimeout(xredirecto, 3000);
         function xredirecto(){
             window.location.href = "home.html";
         }

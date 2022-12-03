@@ -24,7 +24,7 @@ function onLoadPage(code, urlxJson){
 
         document.getElementById("show_detail_name").innerHTML = get_name;
         document.getElementById("show_detail_img").src = get_img;
-        document.getElementById("show_detail_nameeng").innerHTML = get_nameeng;
+        // document.getElementById("show_detail_nameeng").innerHTML = get_nameeng;
 
         let current_livestation = localStorage.getItem("livestation");
         let current_livestationdesc = localStorage.getItem("livestationdesc");
@@ -33,13 +33,15 @@ function onLoadPage(code, urlxJson){
             // console.log('live 0');
             // document.getElementById("addtobasket").style.display = "block";
             document.getElementById("addtobasket2").style.display = "inline";
+            document.getElementById("addtobasket3").style.display = "inline";
             // document.getElementById("addtobasket").innerHTML = "";
-            document.getElementById("showbasket").style.display = "none";            
+            document.getElementById("showbasket").style.display = "none";
             document.getElementById("showclickqty").style.display = "block";
         }else{
             // console.log('live 1');
             // document.getElementById("addtobasket").style.display = "none";
             document.getElementById("addtobasket2").style.display = "none";
+            document.getElementById("addtobasket3").style.display = "none";
             document.getElementById("showbasket").style.display = "block";
             document.getElementById("showbasket").innerHTML = current_livestationdesc;
             document.getElementById("showbasket").style.pointerEvents = "none";
@@ -74,7 +76,26 @@ function onLoadPage(code, urlxJson){
             }
         }
 
+        //load limit qty
+        var get_bookingid = localStorage.getItem("Set_bookingref");
+        var data_limitqty = urlxJson+"GetFood?BookingID="+get_bookingid+"&FoodCode="+code;
+        // console.log('limit qty',data_limitqty);
 
+        $.ajax({
+            type: "GET",
+            url: data_limitqty,
+            async: false,
+            cache: false,
+            success: function( response ) {
+                // console.log(response.urlJson);
+                let data = response.data[0];
+                // console.log(data.LimitQty);
+                localStorage.setItem("LimitQty", data.LimitQty);
+                if(data.LimitQty == 0){
+                    document.getElementById("ins_qty").value = 0;
+                }
+            }
+        });
     }
 }
 
@@ -181,17 +202,18 @@ function shownotify(){
     }, 0);  
 
     $(".notify_message").notify({
-            item1 : count_mycart+" Item",
-            p1: "                       ",
-            item2 : sum_prc + " ฿",
+        item1 : "รายการอาหารที่เลือก : "+count_mycart+" รายการ",
+        p1: "                       ",
+        item2 : "฿"+sum_prc,
         },            
         {
             
             position : "top",
             autoHide : false,
             style: 'bootstrap',
-            className: 'success2',
+            className: 'copper',
             arrowShow: false,
         }
     );
+
 }

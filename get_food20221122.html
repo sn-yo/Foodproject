@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Askbootstrap">
+    <meta name="author" content="Askbootstrap">
+    <link rel="icon" type="image/png" href="img/fav.png">
+    <title>COPPER Restaurant</title>
+    <!-- Slick Slider -->
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.min.css" />
+    <!-- Feather Icon-->
+    <link href="vendor/icons/feather.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style_new.css" rel="stylesheet">
+    <!-- Sidebar CSS -->
+    <link href="vendor/sidebar/demo.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/stylemycart.css">
+    <link rel="stylesheet" href="css/stylemymessage.css">
+    <style>
+        body {
+            background-image: url('img/bg_home2.png');
+            background-repeat: repeat-y;
+            background-position: center;
+            background-attachment: fixed;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+
+        .flex-item {                        
+            width: 200px;
+            color: white;
+            font-weight: bold;            
+            text-align: center;
+        }
+
+        .checkwidth{
+            width : 200px;
+        }
+
+        
+    </style>
+</head>
+
+<body class="fixed-bottom-bar">
+    <header class="section-header">
+        <section class="header-main shadow-sm bg-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-1">
+                        <a href="home.html" class="brand-wrap mb-0">
+                            <img alt="#" class="img-fluid" src="img/logo_web.png">
+                        </a>
+                        <!-- brand-wrap.// -->
+                    </div>
+                    <div class="col-3 d-flex align-items-center m-none">
+                        
+                    </div>
+                    <!-- col.// -->
+                    <div class="col-8">
+                        <div class="d-flex align-items-center justify-content-end pr-5">
+                            <!-- search -->
+                            
+                            <!-- offers -->
+                            
+                            <!-- signin -->
+                            
+                            <!-- my account -->
+                            <div class="dropdown mr-4 m-none">
+                                
+                            </div>
+                            <!-- signin -->
+                            <a href="checkout.html" class="widget-header mr-4 text-dark">
+                                <div class="icon d-flex align-items-center">
+                                    <i class="feather-shopping-cart h6 mr-2 mb-0"></i> <span>Cart</span>
+                                </div>
+                            </a>
+                            <!-- <a class="toggle" href="#">
+                                <span></span>
+                            </a> -->
+                        </div>
+                        <!-- widgets-wrap.// -->
+                    </div>
+                    <!-- col.// -->
+                </div>
+                <!-- row.// -->
+            </div>
+            <!-- container.// -->
+        </section>
+        <!-- header-main .// -->
+    </header>
+    <div class="osahan-home-page">
+        <div class="d-none">
+            <div class="align-items-center">
+                <div class="row">
+                    <div class="col-2" style="padding-left: 20px; padding-top: 15px;">
+                        <a href="home.html"><i class="feather-x-circle" style="font-size: 35px; color: #976a4d;"></i></a>
+                    </div>
+                    <div class="col-8 text-center">
+                        <img alt="#" src="img/logo_copper06.png">
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+                <!-- <div class="row">
+                    <div class="col-2 text-center">
+                        
+                        <a href="home.html"><i class="feather-arrow-left-circle" style="font-size: 40px; color: white;"></i></a>
+                    </div>
+                    <div class="col-8 text-center">
+                        <h4 class="font-weight-bold m-0 text-white" style="padding-top: 10px;">COPPER Buffet</h4>
+                    </div>
+                    <div class="col-2 text-center">
+                        <img alt="#" src="img/logo_circle_copper02.png">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-12" style="padding: 20px;">
+    
+                <!-- continue -->
+                <div class="bg-white rounded p-2 shadow-sm">
+                    <a href="#">
+                        <img alt="#" id="show_detail_img" src="" class="img-fluid item-img w-100">
+                    </a>
+                    <div class="row p-1">
+                        <div class="col-10">
+                            <span class="show_detail_name" id="show_detail_name"></span>
+                        </div>
+                        <div class="col-2">
+                            <span class="show_detail_prc" id="show_detail_prc">100</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <span class="show_detail_nameeng" id="show_detail_nameeng" >100</span>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-12">
+                <div id="showclickqty">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <span class="enter_count">ระบุจำนวน</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="align-items-center text-center p-2">
+                                    
+                                <div class="ml-auto">
+                                    <span class="count-number-getfood"><button type="button" id="click_del" onclick="chk_delitem()" class="btn left dec btn-outline-delitem"> <i class="feather-minus text-delitem"></i> </button><input class="count-number-input-getfood2" type="text" id="ins_qty" readonly="" value="1"><button type="button" id="click_add" onclick="chk_additem()" class="btn right inc btn-outline-delitem"> <i class="feather-plus text-delitem"></i> </button></span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                    
+                    <!-- <a href="checkout.html" style="display: none;" class="btn rounded btn-primary btn-lg btn-block" id="addtobasket" onclick="clickconfirm()">Add to Basket</a> -->                
+                    <a href="#" class="btn btn-outline-info btn-lg" id="showbasket" disabled></a>
+                    
+                    <div class="p-2"></div>
+                    <div>
+                        <div class="text-center">
+                            
+                            <!-- <button class="buttonc" id="addtobasket2" onclick="clickconfirm()">
+                                <span>เพิ่มรายการอาหาร</span>
+                                <div class="cart">
+                                    <svg viewBox="0 0 36 26">
+                                        <polyline points="1 2.5 6 2.5 10 18.5 25.5 18.5 28.5 7.5 7.5 7.5"></polyline>
+                                        <polyline points="15 13.5 17 15.5 22 10.5"></polyline>
+                                    </svg>
+                                </div>
+                            </button> -->
+                            <button class="btn btn-copperaddcart rounded" id="addtobasket2" onclick="clickconfirm()">
+                                <i class="feather-shopping-cart text-copper"></i>
+                                เพิ่มรายการอาหาร
+                            </button>
+                        </div>
+                    </div>               
+            </div>        
+    
+        </div>
+    
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="rounded p-4 shadow-sm">                
+                    
+                    <div id="option_forall" style="display: none;">
+        
+                        <div class="row m-0">
+                            <span class="getfood_optiontitle">เลือกรายละเอียดอาหารเพิ่มเติม</span>
+                            <div class="col-md-12 px-0 border-top">
+                                <div class="" id="getfood_point">
+                                    
+                                                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <template>
+                        <div class="p-1 border-bottom gold-members" id="getfood_master">
+                            <span class="float-right"><!-- <a href="#" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#extras">0</a>--></span>
+                            <div class="media">
+                                <div class="custom-control custom-checkbox py-2">
+                                    <input type="checkbox" id="checkbox_for1" name="checkboxfor_" class="custom-control-input desc_idforoption">
+                                        <label title="" type="checkbox" for="checkbox_for1" class="custom-control-label font-weight-bold desc_foroption">ติดมัน.</label>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+        
+    
+        <div class="osahan-coming-soon d-flex justify-content-center align-items-center">
+            <div class="row">
+                
+            </div>
+            
+            <p></p>
+        </div>
+
+    </div>
+    
+
+    <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
+        <!-- <div class="row notify_message" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+            <div class="col">
+                <a href="home.html"  onclick="clicktoHome()" class="text-copper small font-weight-bold text-decoration-none">
+                    <p class="h4 m-0 p-copper"><i class="feather-home text-copper"></i></p>
+                    Home
+                </a>
+            </div>
+            <div class="col bg-white rounded-circle mt-n4 px-3 py-2">
+                <div class="bg-copper rounded-circle mt-n0 shadow">
+                    <a href="checkout.html" class="text-white small font-weight-bold text-decoration-none">
+                        <div class="counter-container">
+                            <i class="feather-shopping-cart"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <a href="my_order.html" class="text-copper small font-weight-bold text-decoration-none">
+                    <p class="h4 m-0 p-copper"><i class="feather-user text-copper"></i></p>
+                    My Order
+                </a>
+            </div>
+        </div> -->
+        <div class="row notify_message" >
+            <div class="col">
+                <a href="home.html" class="btn btn-coppernew rounded" onclick="clicktoHome()" >
+                    <p class="h4 m-0 p-copper"><i class="feather-home text-copper"></i></p>
+                    เมนูหลัก
+                </a>
+            </div>
+            <div class="col">
+                <a href="my_order.html" class="btn btn-coppernew rounded">
+                    <p class="h4 m-0 p-copper"><i class="feather-file-text text-copper"></i></p>
+                    รายการอาหารที่สั่ง
+                </a>
+            </div>
+            <div class="col">
+                <a href="checkout.html" class="btn btn-coppernew rounded">
+                    <p class="h4 m-0 p-copper"><i class="feather-shopping-cart text-copper"></i></p>
+                    รายการอาหารที่เลือก
+                </a>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- footer -->
+    <footer class="section-footer border-top bg-dark">
+        <div class="container">
+            
+            <!-- footer-top.// -->
+            
+        </div>
+        <!-- //container -->
+        <section class="footer-copyright border-top py-3 bg-light">
+            
+        </section>
+    </footer>
+    <nav id="main-nav">
+        <ul class="second-nav">
+            <li><a href="home.html"><i class="feather-home mr-2"></i> Homepage</a></li>
+            <li><a href="my_order.html"><i class="feather-list mr-2"></i> My Orders</a></li>
+            
+        </ul>
+        <ul class="bottom-nav">
+            <li class="email">
+                <a class="text-danger" href="home.html">
+                    <p class="h5 m-0"><i class="feather-home text-danger"></i></p>
+                    Home
+                </a>
+            </li>
+            <li class="ko-fi">
+                <a href="signup.html">
+                    <p class="h5 m-0"><i class="feather-user"></i></p>
+                    Sign Out
+                </a>
+            </li>
+        </ul>
+    </nav>      
+
+    <!-- show message time out -->
+    <div id="snackbar">
+        <span style="font-size: 20px;">เหลือเวลาสั่ง</span> <br>
+        <span style="font-size: 20px;">Order Time</span> <br>
+        <span style="font-size: 22px;" id="snackbar_message"></span>
+    </div>
+    <!-- show message time out -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- slick Slider JS-->
+    <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+    <!-- Sidebar JS-->
+    <script type="text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script type="text/javascript" src="js/osahan.js"></script>
+
+    <!-- json -->
+    <script src="json/notify.js"></script>
+    <script src="json/get_foodinst.js"></script>
+    <script src="json/get_mycart.js"></script>
+    <script src="json/script.js"></script>
+    <script src="json/main_func.js"></script>
+
+    <script>
+        const my_bookingid = localStorage.getItem("Set_bookingref");
+        // console.log(my_bookingid);
+        if(my_bookingid == '' || my_bookingid == null){
+            // console.log('redirect');
+            window.location.href = "signup.html";
+        }
+        let current_menu = localStorage.getItem("code");
+        // console.log(current_menu);
+        // let xdata = JSON.parse(localStorage.getItem("cart"));
+        // let xcount = xdata.length;
+        // console.log(xcount);
+        // document.getElementById("counter").innerHTML = xcount;
+
+        let count = 0;
+        const counter = document.getElementById("counter");
+        //addtobasket
+        
+        // let xdata = JSON.parse(localStorage.getItem("cart"));
+        // let xcount = xdata.length;
+        // if(xcount > 0){
+        //     var yy_count = document.getElementsByClassName("counter-container");
+        //     console.log(yy_count);
+        //     // yy_count.setAtti = "none";
+        // }
+
+        // document.getElementById("add-animation").addEventListener('click', event => {
+        //     const cl = counter.classList;
+        //     const c = 'animated-counter';
+        //     count++;
+        //     counter.innerText = count;
+        //     cl.remove(c, cl.contains(c));
+        //     setTimeout(() =>
+        //     counter.classList.add('animated-counter'),1)
+        // })
+        
+        
+        
+        let jsonUrl2 = "json/config.json";
+        $.ajax({
+            type: "GET",
+            url: jsonUrl2,
+            async: false,
+            cache: false,
+            success: function( response ) {
+                // console.log(response.urlJson);
+                let urlxJson = response.urlJson;
+                onLoadPage(current_menu, urlxJson);
+
+                
+            }
+        });
+
+        $(document).ready(function() {   //same as: $(function() { 
+            let curr_mycart = JSON.parse(localStorage.getItem("cart"));
+            let count_mycart = 0;
+            // console.log(curr_mycart);
+            if(curr_mycart){
+                count_mycart = curr_mycart.length;
+            }else{
+                count_mycart = 0;
+            }
+
+            if(count_mycart > 0 && curr_mycart != null){
+                shownotify();
+            }
+        });
+    </script>
+</body>
+
+</html>

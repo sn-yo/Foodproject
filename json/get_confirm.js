@@ -2,9 +2,9 @@ function onLoadPage(){
 
     let my_cart = localStorage.getItem("cart");
     my_cart = JSON.parse(my_cart);
-    document.getElementById("confirm_showitem").innerHTML = my_cart.length;
+    document.getElementById("confirm_showitem").innerHTML = my_cart.length+"เมนู";
 
-    document.getElementById("confirm_showtableno").innerHTML = '#'+localStorage.getItem("Set_tableno");
+    // document.getElementById("confirm_showtableno").innerHTML = '#'+localStorage.getItem("Set_tableno");
 
     if(my_cart.length > 0){
         var total_amount = 0;
@@ -16,9 +16,9 @@ function onLoadPage(){
             // console.log(menu);
             menu.getElementsByClassName('confirm_showname')[0].innerHTML = my_cart[i].name;
             menu.getElementsByClassName('confirm_showqty')[0].innerHTML = "x "+my_cart[i].qty;
-            menu.getElementsByClassName('confirm_showprc')[0].innerHTML = xFormatNumber(parseFloat(my_cart[i].prc * parseInt(my_cart[i].qty)));
+            menu.getElementsByClassName('confirm_showprc')[0].innerHTML = "฿"+xFormatNumber(parseFloat(my_cart[i].prc * parseInt(my_cart[i].qty)));
             total_amount += parseFloat(my_cart[i].prc * parseInt(my_cart[i].qty));
-            document.getElementById("confirm_showamount").innerHTML = xFormatNumber(total_amount);
+            document.getElementById("confirm_showamount").innerHTML = "฿"+xFormatNumber(total_amount);
 
             // console.log(new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(total_amount));
 

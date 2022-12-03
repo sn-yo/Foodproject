@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="copper">
     <meta name="author" content="copper">
-    <link rel="icon" type="image/png" href="img/fav.png">
+    <link rel="icon" type="image/png" href="img/icon_logo2.png">
     <title>COPPER Restaurant</title>
     <!-- Slick Slider -->
     <link rel="stylesheet" type="text/css" href="vendor/slick/slick.min.css" />
@@ -17,6 +17,7 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/style_new.css" rel="stylesheet">
     <!-- Sidebar CSS -->
     <link href="vendor/sidebar/demo.css" rel="stylesheet">
     <!-- <style>
@@ -37,6 +38,15 @@
         }
     </style> -->
     <style>
+        body {
+            background-image: url('img/bg_home2.png');
+            background-repeat: repeat-y;
+            background-position: top center;
+            background-attachment: fixed;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+
         .flex-item {                        
             width: 200px;
             color: white;
@@ -55,89 +65,53 @@
 <body class="fixed-bottom-bar">
     
     <header class="section-header">
-        <section class="header-main shadow-sm bg-white">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-1">
-                        <a href="home.html" class="brand-wrap mb-0">
-                            <img alt="#" class="img-fluid" src="img/logo_circle_copper02.png">
-                        </a>
-                        <!-- brand-wrap.// -->
-                    </div>
-                    <div class="col-3 d-flex align-items-center m-none">
-                        <div class="dropdown mr-3">
-                            <div class="dropdown-menu p-0 drop-loc" aria-labelledby="navbarDropdown">
-                                <div class="osahan-country">
-                                    <div class="search_location bg-primary p-3 text-right">
-                                        <div class="input-group rounded shadow-sm overflow-hidden">
-                                            <div class="input-group-prepend">
-                                                <button class="border-0 btn btn-outline-secondary text-dark bg-white btn-block"><i class="feather-search"></i></button>
-                                            </div>
-                                            <input type="text" class="shadow-none border-0 form-control" placeholder="Enter Your Location">
-                                        </div>
-                                    </div>
-                                    <div class="p-3 border-bottom">
-                                        <a href="home.html" class="text-decoration-none">
-                                            
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- col.// -->
-                    <div class="col-8">
-                        <div class="d-flex align-items-center justify-content-end pr-5">
-                            <!-- signin -->
-                            <a href="checkout.html" class="widget-header mr-4 text-dark">
-                                <div class="icon d-flex align-items-center">
-                                    <i class="feather-shopping-cart h6 mr-2 mb-0"></i> <span>Cart</span>
-                                </div>
-                            </a>
-                            
-                        </div>
-                        <!-- widgets-wrap.// -->
-                    </div>
-                    <!-- col.// -->
-                </div>
-                <!-- row.// -->
-            </div>
-            <!-- container.// -->
-        </section>
-        <!-- header-main .// -->
+        
     </header>
     <div class="osahan-home-page">
         
-        <div class="d-none">
-            <div class="bg-primary p-3 align-items-center">
+        <div class="p-2">
+            
+            <div class="row">
+                <div class="col-2 text-center"><span></span></div>
+                <div class="col-8 text-center"><img src="img/logo_copper05.png" alt="#"></div>
+                <div class="col-2 text-center"><span></span></div>
+            </div>
+            <div class="headertest">
                 <div class="row">
-                    <div class="col-2 text-center">
-                        <img alt="#" src="img/logo_circle_copper02.png">
+                    <div class="col-6">
+                        <span class="showtxtsirname">คุณ <span class="showtxtname" id="setcustomername"></span></span>
                     </div>
-                    <div class="col-8 text-center">
-                        <h4 class="font-weight-bold m-0 text-white" style="padding-top: 10px;">COPPER Buffet</h4>
+                    <div class="col-6 text-right">
+                        <span class="showtxtshowtimedesc">เหลือเวลาอีก </span>
                     </div>
-                    <div class="col-2 text-center">
-                        <h4 class="font-weight-bold m-0 text-white" id="settableno" style="padding-top: 10px;"></h4>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <span class="showtxtsirname">โต๊ะ &nbsp;<span class="showtxtname" id="settableno"></span></span>
+                    </div>
+                    <div class="col-6 text-right">
+                        <span class="showtxtshowtimeout" id="counttimeout">00:00 </span><span class="showtxtminutes">นาที</span>
                     </div>
                 </div>
             </div>
         </div>
         
         <!-- menu catagory -->
-        <div class="container" id="container_point">
-           
-        </div>
-
-        <template>
-            <div class="cat-item px-1 py-3" id="master" >
-                <a class="bg-white rounded d-block p-2 text-center shadow-sm href_catagory" href="#" style="height: 100px;">
-                    <img alt="#" src="img/icons/Salad.png" class="img-fluid mb-2 pic_catagory">
-                    <p class="m-0 small" id="cata_2"></p>
-                </a>
+        <div class="p-2">
+            <div class="container grp_btn_menucata" id="container_point">
+            
             </div>
-        </template>
+
+            <template>
+                <div class="cat-item px-1" id="master" >
+                    <a class="btn btn-info-copper href_catagory" href="#">
+                        <!-- <img alt="#" src="img/icons/Salad.png" class="img-fluid mb-2 pic_catagory"> -->
+                        <!-- <p class="m-0 smallx grp-menucata" id="cata_2"></p> -->
+                        <span class="m-0 smallx grp-menucata" id="cata_2"></span>
+                    </a>
+                </div>
+            </template>
+        </div>
         <!-- menu catagory -->
         
         <!-- menu recommend and popular -->
@@ -166,9 +140,9 @@
                             <img alt="#" src="img/steak01.png" class="img-fluid item-img w-100 pic_reccomend">
                         </a>
                     </div>
-                    <div class="p-3 position-relative">
+                    <div class="position-relative">
                         <div class="list-card-body">
-                            <h6 class="mb-1"><a href="get_food.html" onclick="OnChooseFood('code','name','path')" id="recommand01" class="text-black"></a>
+                            <h6 class="mb-1"><a href="get_food.html" onclick="OnChooseFood('code','name','path')" id="recommand01" class="homeshow_name"></a>
                             </h6>
                         </div>
                     </div>
@@ -184,9 +158,9 @@
                             <img alt="#" src="img/sushi_wagyu01.png" class="img-fluid item-img w-100 pic_mostpopular">
                         </a>
                     </div>
-                    <div class="p-3 position-relative">
+                    <div class="position-relative">
                         <div class="list-card-body">
-                            <h6 class="mb-1"><a href="get_sushi.html" id="mostpopular01" class="text-black"></a>
+                            <h6 class="mb-1"><a href="get_sushi.html" id="mostpopular01" class="homeshow_name"></a>
                             </h6>
                         </div>
                     </div>
@@ -200,12 +174,13 @@
         </div> -->
 
         <!-- recommanded -->
+        
         <div class="container">
-		
+            		
 			<!-- CATAGORY  GRILL & STEAK -->
             <div class="pt-2 pb-3 title d-flex align-items-center">
-                <h5 class="m-0" id="cata_showgroupname">Recommended เมนูแนะนำ</h5>
-                
+                <h5 class="m-0 showgrpname" id="cata_showgroupname">เมนูแนะนำ</h5>
+                <span id="showcounttime"></span>
             </div>
             
             <div id="mainpoint">
@@ -228,15 +203,15 @@
 
             <template>
                 <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm" id="master_catagory_steak">
-                    <div class="list-card-image">
+                    <div class="list-card-image bg-white">
                         <a href="get_food.html" class="click_for_this" onclick="OnChooseFood('code','name','nameeng','path','prc','livestation')">
-                            <img alt="#" src="img/steak01.png" class="img-fluid item-img w-100 pic_catagory_steak">
+                            <img alt="#" src="img/steak01.png" class="img-fluid item-img w-100 p-2  pic_catagory_steak">
                         </a>
                     </div>
-                    <div class="p-3 position-relative">
+                    <div class="position-relative homeshow_name">
                         <div class="list-card-body">
                             <h6 class="mb-1"><a href="#" onclick="OnChooseFood('code','name','nameeng','path','prc','livestation')" class="text-black text_name">.</a></h6>
-                            <span class="home_shownameeng" style="color:gray"></span>
+                            <!-- <span class="home_shownameeng" style="color:gray"></span> -->
                             
                         </div>
                     </div>
@@ -249,10 +224,10 @@
                             <img alt="#" src="img/steak01.png" class="img-fluid item-img w-100 pic_catagory_steak">
                         </a>
                     </div>
-                    <div class="p-3 position-relative">
+                    <div class="position-relative homeshow_name">
                         <div class="list-card-body">
                             <h6 class="mb-1"><a href="#" onclick="OnChooseFood('code','name','nameeng','path','prc','livestation')" class="text-black text_name">.</a></h6>
-                            <span class="home_shownameeng" style="color:gray; font-size: 13px;"></span>
+                            <!-- <span class="home_shownameeng" style="color:gray; font-size: 13px;"></span> -->
                             
                         </div>
                     </div>
@@ -280,6 +255,31 @@
     </div>
     <!-- Footer -->
     <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
+        <div class="row notify_message" >
+            <div class="col">
+                <a href="home.html" class="btn btn-coppernew rounded">
+                    <p class="h4 m-0 p-copper"><i class="feather-home text-copper"></i></p>
+                    เมนูหลัก
+                </a>
+            </div>
+            <div class="col">
+                <a href="my_order.html" class="btn btn-coppernew rounded">
+                    <p class="h4 m-0 p-copper"><i class="feather-file-text text-copper"></i></p>
+                    รายการอาหารที่สั่ง
+                </a>
+            </div>
+            <div class="col">
+                <a href="checkout.html" class="btn btn-coppernew rounded">
+                    <span id="showqty_mycart" class="showqtyonmycartx"></span>
+                    <p class="h4 m-0 p-copper"><i class="feather-shopping-cart text-copper"></i></p>
+                    รายการอาหารที่เลือก
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 
+    <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
         <div class="row notify_message" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
             <div class="col">
                 <a href="home.html"  onclick="test()" class="text-copper small font-weight-bold text-decoration-none">
@@ -291,7 +291,7 @@
                 <div class="bg-copper rounded-circle mt-n0 shadow">
                     <a href="checkout.html" class="text-white small font-weight-bold text-decoration-none">
                         <div class="counter-container">
-                            <!-- <span id="counter">1</span> -->
+                            
                             <i class="feather-shopping-cart"></i>
                         </div>
                     </a>
@@ -305,13 +305,9 @@
             </div>
         </div>
     </div>
+    -->
 	
 	<!-- footer -->
-    <footer class="section-footer border-top bg-dark">
-		<section class="footer-copyright border-top py-3 bg-light">
-            
-        </section>
-    </footer>
 	
     <nav id="main-nav">
 		<ul class="second-nav">
@@ -428,6 +424,8 @@
     <script src="json/notify-metro.js"></script>
     <script src="json/get_menu_catagory.js"></script>
     <script src="json/get_menu_recommend.js"></script>
+    <script src="json/main_func.js"></script>
+    <!-- <script src="json/timetoout.js"></script> -->
     <!-- <script src="json/get_menu_mostpopular.js"></script> -->
 
     <!-- slick Slider JS-->
@@ -440,8 +438,13 @@
     <!-- Custom scripts for all pages-->
     <script type="text/javascript" src="js/osahan.js"></script>
     <script>
-        // localStorage.setItem("Set_bookingref","553706");
+        // localStorage.setItem("Set_bookingref","553695");
+        // this
+        //localStorage.setItem('group_id', 0);
+        // localStorage.setItem('currPage', 0);
         const my_bookingid = localStorage.getItem("Set_bookingref");
+        let showqty = document.getElementById("showqty_mycart");
+        showqty.style.display = "none";
         // console.log(my_bookingid);
         if(my_bookingid == '' || my_bookingid == null){
             // console.log('redirect');
@@ -461,6 +464,8 @@
         
         function test(){
             localStorage.setItem("currPage", 0);
+            localStorage.setItem('group_id', 0);
+            console.log('this');
         }
         let getLastPage = localStorage.getItem("currPage");
         if(getLastPage != 0){
@@ -470,11 +475,19 @@
         }
 
         let getSet_tableno = localStorage.getItem("Set_tableno");
+        let getSet_customer = localStorage.getItem("Set_name");
         if(getSet_tableno == null || getSet_tableno == ''){
-            document.getElementById("settableno").innerHTML = "#00";
+            document.getElementById("settableno").innerHTML = "00";
         }else{            
-            document.getElementById("settableno").innerHTML = "#"+getSet_tableno;
+            document.getElementById("settableno").innerHTML = ""+getSet_tableno;
         }
+        if(getSet_customer == null || getSet_customer == ''){
+            document.getElementById("setcustomername").innerHTML = "..";
+        }else{
+            document.getElementById("setcustomername").innerHTML = getSet_customer;
+        }
+
+        
 
         // shownotify();
         $(document).ready(function() {   //same as: $(function() { 
@@ -489,6 +502,7 @@
 
             if(count_mycart > 0 && curr_mycart != null){
                 shownotify();
+                showqty_on_mycart();
 
                 // $.notify({
                 //     delay : 0,
@@ -508,8 +522,66 @@
 
                 //$('.notify_message').tooltip({ boundary: 'window' });
             }
+
+            var gettime = localStorage.getItem("Set_timetoout");
+            // document.getElementById("showcounttime").innerHTML = gettime;
+            var x = setInterval(function() {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+            // console.log('now', now);
+
+            // Find the distance between now and the count down date
+            var get_timetoout = localStorage.getItem("Set_timetoout");
+            var dtime = new Date(get_timetoout.replace(" ", "T"));
+            var dt_timeout = new Date(get_timetoout).getTime();
+            var distance = dtime - now;
+            // console.log(distance);
+            // document.getElementById("showcounttime").innerHTML = dtime;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            // document.getElementById("demo").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+            // console.log('hours ',hours);
+            if(hours > 0){
+                minutes =  minutes + (hours*60);
+            }
+            document.getElementById("counttimeout").innerHTML = (minutes) + " : " + seconds;
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("counttimeout").innerHTML = "หมดเวลา";
+                window.localStorage.clear();
+            }
+            }, 1000);
         });
         
+        //check cerrent page
+        // var currentSlide = $('.cat-slider').slick('slickCurrentSlide');
+        // console.log(currentSlide);
+        // $('.cat-slider').on('swipe', function(event, slick, direction){
+        //     var currentSlide2 = $('.cat-slider').slick('slickCurrentSlide');
+        //     console.log(currentSlide2);
+        // });
+        //check cerrent page
+        // $('.your-element').on('edge', function(event, slick, direction){
+        //     console.log('edge was hit');
+        // });
+        var show_groupid = localStorage.getItem("group_id");
+        // console.log('group id', show_groupid);
+        if(show_groupid>=8){
+            $('.cat-slider').slick('slickGoTo',8);
+        }else if(show_groupid>=4){
+            $('.cat-slider').slick('slickGoTo',4);
+        }else{
+            $('.cat-slider').slick('slickGoTo',0);
+        }
 
         
     </script>

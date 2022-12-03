@@ -6786,15 +6786,7 @@ button.bg-danger:focus {
   background-color: #bd2130 !important;
 }
 
-.bg-copper {
-  background-color: #9A6B4D !important;
-}
 
-a.bg-copper:hover, a.bg-copper:focus,
-button.bg-copper:hover,
-button.bg-copper:focus {
-  background-color: #9A6B4D !important;
-}
 
 .bg-light {
   background-color: #f8f9fa !important;

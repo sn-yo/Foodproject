@@ -55,43 +55,44 @@ function onLoadPageMyorder(xbookingid, urlxJson){
                 var row2 = document.createElement("div");
                 if(i % 2){
                     // console.log(i%2);
-                    row2.className = "p-3 rounded shadow-sm bg-white";
+                    row2.className = "rounded shadow-sm bg-white";
                     // row2.style = "background-color: rgb(180, 255, 202)";
                 }else{
-                    row2.className = "p-3 rounded shadow-sm bg-white";
+                    row2.className = "rounded shadow-sm bg-white";
                     // row2.style = "background-color: rgb(64,224,208)";
                 }
     
                 var row3 = document.createElement("div");
-                row3.className = "d-flex border-bottom pb-1 rounded";
-                row3.style = "background-color: #F5F5F5; padding: 15px 15px 1px 15px;";
+                row3.className = "d-flex myorder_showmain";
+                // row3.style = "background-color: #F5F5F5; padding: 15px 15px 1px 15px;";
     
                 var row4 = document.createElement("div");
-                var rowp1 = document.createElement("p");
-                rowp1.innerHTML = 'ORDER '+mydata[i].Time+'<br><font class="font-weigth-bold">'+mydata[i].Name+'</font>';
+                var rowp1 = document.createElement("span");
+                rowp1.className = "myorder_maindetail";
+                rowp1.innerHTML = "คุณ "+mydata[i].Name+'<br/>'+'เวลาที่สั่ง '+mydata[i].Time;
     
                 var row4_2 = document.createElement("div");
                 row4_2.className = "ml-auto";
-                var rowp1_2 = document.createElement("p");
-                rowp1_2.className = "small font-weight-bold text-center";
+                var rowp1_2 = document.createElement("span");
+                rowp1_2.className = "myorder_maindetail text-center";
                 rowp1_2.innerHTML = mydata[i].Date;
     
                 var xrow1 = document.createElement("div");
-                xrow1.className  = "d-flex pt-3";
+                xrow1.className  = "d-flex";
                 xrow1.style = "background-color: #FFFAF0; padding:5px;";
     
                 var xrow2 = document.createElement("div");
-                xrow2.className  = "small";
+                xrow2.className  = "myorder_showdetail";
     
                 var xrow3 = document.createElement("div");
-                xrow3.className = "text-muted m-0 ml-auto mr-3 small";
-                xrow3.style = "font-size: 20px";
-                xrow3.innerHTML = "รวมเงิน<br/>";
+                xrow3.className = "m-0 ml-auto mr-3 myorder_showdetail";
+                // xrow3.style = "font-size: 20px; color: #633710;";
+                xrow3.innerHTML = "ราคารวม<br/>";
     
                 var row_span = document.createElement("span");
-                row_span.className = "text-dark font-weight-bold myorder_showprc";
-                row_span.style = "font-size: 14px";
-                row_span.innerHTML = xFormatNumber(mydata[i].SumPrice);
+                row_span.className = "myorder_showsmprc myorder_showprc";
+                // row_span.style = "font-size: 14px";
+                row_span.innerHTML = xFormatNumber(mydata[i].SumPrice)+" บาท";
                 
     
                 row4.appendChild(rowp1);
@@ -105,8 +106,8 @@ function onLoadPageMyorder(xbookingid, urlxJson){
                 
                 for(var j=0; j<myArray.length; j++){
                     var rowp2 = document.createElement("p");
-                    rowp2.className = "font-weight mb-0";
-                    rowp2.style = "font-size: 12px";
+                    rowp2.className = "font-weight mb-0 myorder_showdetail";
+                    // rowp2.style = "font-size: 12px";
                     rowp2.innerHTML = myArray[j];
                     xrow2.appendChild(rowp2);
                 }
