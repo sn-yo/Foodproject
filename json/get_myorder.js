@@ -32,8 +32,13 @@ function onLoadPageMyorder(xbookingid, urlxJson){
                 menu.getElementsByClassName('myorder_showtime')[0].innerHTML = 'ORDER '+mydata[i].Time;
                 menu.getElementsByClassName('myorder_showdate')[0].innerHTML = mydata[i].Date;
                 menu.getElementsByClassName("myorder_showprc")[0].innerHTML = xFormatNumber(mydata[i].SumPrice);
-    
-                var listfood = mydata[i].Detail;
+                var myLanguage = localStorage.getItem("Set_Language");
+                if(myLanguage == 'EN'){
+                    var listfood = mydata[i].Detail_E;
+                }else{
+                    var listfood = mydata[i].Detail;
+                }   
+                
                 // console.log(listfood);
                 const myArray = listfood.split("/n");
                 // console.log(myArray);
@@ -68,7 +73,6 @@ function onLoadPageMyorder(xbookingid, urlxJson){
     
                 var row4 = document.createElement("div");
                 var rowp1 = document.createElement("span");
-                var myLanguage = localStorage.getItem("Set_Language");
                 rowp1.className = "myorder_maindetail";
                 if(myLanguage == 'EN'){
                     rowp1.innerHTML = "Khun "+mydata[i].Name+'<br/>'+'time of order '+mydata[i].Time;

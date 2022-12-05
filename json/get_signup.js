@@ -46,7 +46,7 @@ function chkbooking(err, bookingid, pathname){
 }
 
 function appendData(data, bookingid, pathname){
-    console.log(data.data[0]);
+    // console.log(data.data[0]);
     if(data.status == "False"){        
         // console.log(pathname);
         window.location.href = "page_error.html"+pathname;

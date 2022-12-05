@@ -77,7 +77,7 @@ function chk_languagehome(urlxJson, language){
         cache: false,
         success: function( response ) {
             //console.log(response);
-            console.log('home',response.data);
+            // console.log('home',response.data);
             if(language == 'EN'){                
                 document.getElementById("language_sir").innerHTML = response.data[6].Lang_EN+" ";
                 document.getElementById("language_timeexp").innerHTML = response.data[7].Lang_EN+" ";
@@ -115,7 +115,7 @@ function chk_language_getfood(urlxJson, language){
         cache: false,
         success: function( response ) {
             //console.log(response);
-            console.log('home',response.data);
+            // console.log('home',response.data);
             if(language == 'EN'){
                 document.getElementById("language_bthome").innerHTML = response.data[10].Lang_EN;
                 document.getElementById("language_btmyorder").innerHTML = response.data[11].Lang_EN;
@@ -152,7 +152,7 @@ function chk_language_myorder(urlxJson, language){
         cache: false,
         success: function( response ) {
             //console.log(response);
-            console.log('home',response.data);
+            // console.log('home',response.data);
             if(language == 'EN'){
                 document.getElementById("language_sir").innerHTML = response.data[6].Lang_EN+" ";
                 document.getElementById("language_timeexp").innerHTML = response.data[7].Lang_EN+" ";
@@ -194,7 +194,7 @@ function chk_language_checkout(urlxJson, language){
         cache: false,
         success: function( response ) {
             //console.log(response);
-            console.log('home',response.data);
+            // console.log('home',response.data);
             if(language == 'EN'){
                 document.getElementById("language_sir").innerHTML = response.data[6].Lang_EN+" ";
                 document.getElementById("language_timeexp").innerHTML = response.data[7].Lang_EN+" ";
@@ -254,7 +254,7 @@ function chk_language_confirm(urlxJson, language){
         cache: false,
         success: function( response ) {
             //console.log(response);
-            console.log('home',response.data);
+            // console.log('home',response.data);
             if(language == 'EN'){
                 document.getElementById("language_sir").innerHTML = response.data[6].Lang_EN+" ";
                 document.getElementById("language_timeexp").innerHTML = response.data[7].Lang_EN+" ";
@@ -312,7 +312,7 @@ function chk_language_success(urlxJson, language){
         cache: false,
         success: function( response ) {
             //console.log(response);
-            console.log('home',response.data);
+            // console.log('home',response.data);
             if(language == 'EN'){
                 document.getElementById("language_sir").innerHTML = response.data[6].Lang_EN+" ";
                 document.getElementById("language_timeexp").innerHTML = response.data[7].Lang_EN+" ";

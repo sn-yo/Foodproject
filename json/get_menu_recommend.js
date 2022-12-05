@@ -211,12 +211,12 @@ function loadPageGetCatagory_bylastpage(urlxJson, group_name){
                 // console.log(data.length);
                 var xloop = 0;
 
-                console.log('show grp name');
+                // console.log('show grp name');
                 
                 var myLanguage = localStorage.getItem("Set_Language");
                 if(myLanguage == 'EN'){
                     var show_groupname = localStorage.getItem("group_nameen");
-                    console.log('sss', show_groupname);
+                    // console.log('sss', show_groupname);
                     if(show_groupname == '' || show_groupname == null){
                         var showfirst_groupname = localStorage.getItem("Set_menufirsten");
                         document.getElementById("cata_showgroupname").innerHTML = showfirst_groupname;

@@ -26,7 +26,7 @@ function chk_language(urlxJson, language){
         cache: false,
         success: function( response ) {
             //console.log(response);
-            console.log(response.data);
+            // console.log(response.data);
             if(language == 'EN'){
                 document.getElementById("setlanguage_th").className = "setth";
                 document.getElementById("setlanguage_en").className = "seten_active";
@@ -42,7 +42,7 @@ function chk_language(urlxJson, language){
                 document.getElementById("setlanguage_th").className = "setth_active";
                 document.getElementById("setlanguage_en").className = "seten";
                 localStorage.setItem("Set_Language", "TH");
-                console.log('set language');
+                // console.log('set language');
 
                 document.getElementById("ins_newname").placeholder = response.data[0].Lang_TH;
                 document.getElementById("language_table").innerHTML = response.data[1].Lang_TH;
