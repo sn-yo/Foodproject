@@ -2,7 +2,7 @@ function onLoadPage(){
 
     let my_cart = localStorage.getItem("cart");
     my_cart = JSON.parse(my_cart);
-    document.getElementById("confirm_showitem").innerHTML = my_cart.length+"เมนู";
+    document.getElementById("confirm_showitem").innerHTML = my_cart.length+" ";
 
     // document.getElementById("confirm_showtableno").innerHTML = '#'+localStorage.getItem("Set_tableno");
 
@@ -14,7 +14,12 @@ function onLoadPage(){
 
             var menu = temp.content.firstElementChild.cloneNode(true);
             // console.log(menu);
-            menu.getElementsByClassName('confirm_showname')[0].innerHTML = my_cart[i].name;
+            var myLanguage = localStorage.getItem("Set_Language");
+            if(myLanguage == 'EN'){
+                menu.getElementsByClassName('confirm_showname')[0].innerHTML = my_cart[i].nameen;
+            }else{
+                menu.getElementsByClassName('confirm_showname')[0].innerHTML = my_cart[i].name;
+            }
             menu.getElementsByClassName('confirm_showqty')[0].innerHTML = "x "+my_cart[i].qty;
             menu.getElementsByClassName('confirm_showprc')[0].innerHTML = "฿"+xFormatNumber(parseFloat(my_cart[i].prc * parseInt(my_cart[i].qty)));
             total_amount += parseFloat(my_cart[i].prc * parseInt(my_cart[i].qty));

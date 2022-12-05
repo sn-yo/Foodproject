@@ -21,8 +21,15 @@ function onLoadPage(code, urlxJson){
         var get_name = localStorage.getItem("name");
         var get_nameeng = localStorage.getItem("nameeng");
         var get_img = localStorage.getItem("pathimg");
+        var myLanguage = localStorage.getItem("Set_Language");
 
-        document.getElementById("show_detail_name").innerHTML = get_name;
+        if(myLanguage == 'EN'){
+            document.getElementById("show_detail_name").innerHTML = get_nameeng;
+        }else{
+            document.getElementById("show_detail_name").innerHTML = get_name;
+        }
+
+        
         document.getElementById("show_detail_img").src = get_img;
         // document.getElementById("show_detail_nameeng").innerHTML = get_nameeng;
 
@@ -66,7 +73,11 @@ function onLoadPage(code, urlxJson){
                 option_choose.getElementsByClassName("desc_foroption")[0].setAttribute("for","optionchoose_"+myoption[i].ID);
                 option_choose.getElementsByClassName("desc_idforoption")[0].setAttribute("id", "optionchoose_"+myoption[i].ID);
                 option_choose.getElementsByClassName("desc_idforoption")[0].setAttribute("name", "checkboxfor_"+myoption[i].ItemID);
-                option_choose.getElementsByClassName("desc_idforoption")[0].setAttribute("value", myoption[i].SpcDesc);
+                if(myLanguage == 'EN'){
+                    option_choose.getElementsByClassName("desc_idforoption")[0].setAttribute("value", myoption[i].SpcDesc_E);
+                }else{
+                    option_choose.getElementsByClassName("desc_idforoption")[0].setAttribute("value", myoption[i].SpcDesc);
+                }
 
                 // var setid_option = document.getElementById("checkbox_for1");
                 // console.log(setid_option);

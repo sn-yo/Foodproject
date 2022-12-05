@@ -59,15 +59,23 @@ function loadPageGroupmenu(urlxJson){
                 menu.setAttribute("id", "Grp_ID"+data[i].Grp_ID);
                 // ชื่อเมนู
                 menu.getElementsByClassName('m-0 smallx')[0].id = data[i].Grp_ID;
-                menu.getElementsByClassName('m-0 smallx')[0].innerHTML = data[i].ShowName;
+                let myLanguage = localStorage.getItem("Set_Language");
+                if(myLanguage == 'EN'){
+                    menu.getElementsByClassName('m-0 smallx')[0].innerHTML = data[i].ShowName_E;
+                    menu.getElementsByClassName('m-0 smallx')[0].className = "m-0 smallx grp-menucata-en";
+                }else{
+                    menu.getElementsByClassName('m-0 smallx')[0].innerHTML = data[i].ShowName;
+                    menu.getElementsByClassName('m-0 smallx')[0].className = "m-0 smallx grp-menucata";
+                }
     
                 // menu.getElementsByClassName('href_catagory')[0].href = "get_catagory_.html";
                 menu.getElementsByClassName('href_catagory')[0].id = 'menucata'+data[i].Grp_ID;
                 menu.getElementsByClassName('href_catagory')[0].href = "#";
-                menu.getElementsByClassName('href_catagory')[0].setAttribute('onclick', "OnClickCata('"+data[i].Grp_ID+"','"+data[i].ShowName+"','"+urlxJson+"',"+data.length+")");
+                menu.getElementsByClassName('href_catagory')[0].setAttribute('onclick', "OnClickCata('"+data[i].Grp_ID+"','"+data[i].ShowName+"','"+data[i].ShowName_E+"','"+urlxJson+"',"+data.length+")");
 
                 if(i == 0){
                     localStorage.setItem("Set_menufirst", data[i].ShowName);
+                    localStorage.setItem("Set_menufirsten", data[i].ShowName_E);
                 }
                 
     
@@ -112,10 +120,11 @@ function loadPageGroupmenu(urlxJson){
     
 }
 
-function OnClickCata(group_id, group_name, urlxJson, xlength){
+function OnClickCata(group_id, group_name, group_nameen, urlxJson, xlength){
     // alert(group_id);
     localStorage.setItem('group_id',group_id);
     localStorage.setItem('group_name',group_name);
+    localStorage.setItem('group_nameen',group_nameen);
 
     let xlastPage = localStorage.getItem("currPage");
     localStorage.setItem("lastPage", xlastPage);
@@ -254,8 +263,12 @@ function OnClickCata(group_id, group_name, urlxJson, xlength){
                 const data = response.data;
                 // console.log(data);
                 var xloop = 0;
-                
-                document.getElementById("cata_showgroupname").innerHTML = group_name;
+                let myLanguage = localStorage.getItem("Set_Language");
+                if(myLanguage == 'EN'){
+                    document.getElementById("cata_showgroupname").innerHTML = group_nameen;
+                }else{
+                    document.getElementById("cata_showgroupname").innerHTML = group_name;
+                }
                 
                 var homemaster = document.getElementById("catagory_home_point");
                 homemaster.remove();
@@ -302,8 +315,12 @@ function OnClickCata(group_id, group_name, urlxJson, xlength){
                             menu.setAttribute("id", "hGrp_ID"+data[xloop].FoodCode);
                             // console.log('i'+i ," Grp_ID"+data[xloop].FoodCode);
                             // console.log('loop:', xloop + data[xloop].FoodCode);
-                            menu.getElementsByClassName('text_name')[0].innerHTML = data[xloop].FoodName;
-                            // menu.getElementsByClassName("home_shownameeng")[0].innerHTML = data[xloop].FoodName_E;
+                            if(myLanguage == 'EN'){
+                                menu.getElementsByClassName('text_name')[0].innerHTML = data[xloop].FoodName_E;
+                            }else{
+                                menu.getElementsByClassName('text_name')[0].innerHTML = data[xloop].FoodName;
+                                // menu.getElementsByClassName("home_shownameeng")[0].innerHTML = data[xloop].FoodName_E;
+                            }
                             var pathimg = "img/FoodImage/"+data[xloop].Food_ImageName;
                             menu.getElementsByClassName('pic_catagory_steak')[0].src = pathimg;
         

@@ -273,19 +273,19 @@
                     <div class="row" style="padding-left: 40px; padding-right: 40px;">
                         <div class="col-3 text-center">
                             <!-- <label for="exampleInputNumber1" class="text-dark text-center" style="font-size: 20px;">โต๊ะ</label> -->
-                            <span class="text-center showtxttable">โต๊ะ</span>
+                            <span class="text-center showtxttable" id="language_table">โต๊ะ</span>
                             <div class="showvalueborder text-center">
                                 <span class="text-center showvalue" id="ins_tableno">20</span>
                             </div>
                         </div>
                         <div class="col-6 text-center">
-                            <span class="text-center showtxttime">เวลา</span>
+                            <span class="text-center showtxttime" id="language_time">เวลา</span>
                             <div class="showtimeborder">
                                 <span class="showvalue" id="ins_timebook">10.00 - 12.00</span>
                             </div>
                         </div>
                         <div class="col-3 text-center">
-                            <span class="text-center showtxtqty">จำนวน</span>
+                            <span class="text-center showtxtqty" id="language_person">จำนวน</span>
                             <div class="showqtyborder">
                                 <span class="showvalue" id="ins_adult">4</span>
                             </div>
@@ -294,7 +294,7 @@
 					<div class="row p-2"></div>
                     <div class="row" style="padding-left: 40px; padding-right: 40px;">
                         <div class="col-12 text-center">
-                            <span class="text-center showtxtpackage">แพ๊คเกจ</span>
+                            <span class="text-center showtxtpackage" id="language_package">แพ๊คเกจ</span>
                             <div class="showpackageborder">
                                 <span id="ins_promote" class="showpackage">Hungry Hub Exclusive Menus Unlimited All Premium M</span>
                             </div>
@@ -307,7 +307,7 @@
 
                     <div class="row">
                         <div class="col-12 text-center">
-                            <button class="btn btn-signup" style="height: 50px;" onclick="getAccount()">
+                            <button class="btn btn-signup" id="language_btstart" style="height: 50px;" onclick="getAccount()">
                                 เริ่มสั่งอาหาร
                              </button>
                         </div>
@@ -315,9 +315,9 @@
                     <div class="row">
                         <p class="p-1"></p>
                     </div>
-                    <div class="row">
+                    <div class="row" id="setdefaultlanguage">
                         <div class="col-12 text-center">
-                            <span class="setlanguage">LANGUAGE&nbsp; <span class="setth">ไทย</span>&nbsp;|&nbsp;<span class="seten">EN</span></span>
+                            <span class="setlanguage">LANGUAGE&nbsp; <a href="#setdefaultlanguage" onclick="get_language('TH')" class="setth"><span id="setlanguage_th" class="seten">ไทย</span></a>&nbsp;|&nbsp;<a href="#setdefaultlanguage" onclick="get_language('EN')" class="seten"><span id="setlanguage_en" class="seten">EN</span></a></span>
                         </div>
                     </div>
 					
@@ -398,6 +398,7 @@
 
     <!-- json data -->
     <script src="json/get_signup.js"></script>
+    <script src="json/get_language.js"></script>
     <script>
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
@@ -415,6 +416,7 @@
             .then(function (data){
                 const urlxJson = data.urlJson;
                 checkin(bookingid, pathname, urlxJson);
+                chk_language(urlxJson,'th');
                 // console.log('seccess: ' + data)
                 // resultxData(xxx)
             })

@@ -101,6 +101,7 @@ function chktimeout(typeconfirm){
 function clickconfirm(urlxJson, typeconfirm){
     var get_curr_food_code = localStorage.getItem("code");
     var get_curr_food_name = localStorage.getItem("name");
+    var get_curr_food_name_en = localStorage.getItem("nameeng");
     var get_curr_food_img = localStorage.getItem("pathimg");
     var get_bookingid = localStorage.getItem("Set_bookingref");
     var get_curr_food_prc = parseFloat(localStorage.getItem("prc"));
@@ -143,6 +144,7 @@ function clickconfirm(urlxJson, typeconfirm){
                         {
                             "code" : get_curr_food_code,
                             "name" : get_curr_food_name,
+                            "nameen" : get_curr_food_name_en,
                             "qty" : chk_qty,
                             "opt_inst" : allcheck,
                             "img_path" : get_curr_food_img,
@@ -176,6 +178,7 @@ function clickconfirm(urlxJson, typeconfirm){
                             {
                                 "code" : get_curr_food_code,
                                 "name" : get_curr_food_name,
+                                "nameen" : get_curr_food_name_en,
                                 "qty" : chk_qty,
                                 "opt_inst" : allcheck,
                                 "img_path" : get_curr_food_img,

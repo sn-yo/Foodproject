@@ -24,8 +24,13 @@ function onloadListData(){
                 var temp = document.getElementsByTagName("template")[0];
 
                 var menu = temp.content.firstElementChild.cloneNode(true);
-
-                menu.getElementsByClassName('my_cart_show_name')[0].innerHTML = my_cart[i].name;
+                var myLanguage = localStorage.getItem("Set_Language");
+                if(myLanguage == 'EN'){
+                    menu.getElementsByClassName('my_cart_show_name')[0].innerHTML = my_cart[i].nameen;
+                }else{
+                    menu.getElementsByClassName('my_cart_show_name')[0].innerHTML = my_cart[i].name;
+                }
+                
                 menu.getElementsByClassName('my_cart_show_optinst')[0].innerHTML = my_cart[i].opt_inst;
 
                 menu.getElementsByClassName("my_cart_show_qty")[0].value = my_cart[i].qty;
@@ -203,9 +208,16 @@ function call_refresh(my_cart){
             return prev + next;
         }, 0);  
         
-        document.getElementById("show_totalitem").innerHTML = my_cart.length+" เมนู";
-        document.getElementById("show_totalqty").innerHTML = xFormatNumber(sum_qty)+" จาน";
-        document.getElementById("show_totalprc").innerHTML = xFormatNumber(sum_prc)+" บาท";
+        let myLanguage = localStorage.getItem("Set_Language");
+        if(myLanguage == 'EN'){
+            document.getElementById("show_totalitem").innerHTML = my_cart.length+" &nbsp;";
+            document.getElementById("show_totalqty").innerHTML = xFormatNumber(sum_qty)+" &nbsp;";
+            document.getElementById("show_totalprc").innerHTML = xFormatNumber(sum_prc)+" &nbsp;";
+        }else{
+            document.getElementById("show_totalitem").innerHTML = my_cart.length+"&nbsp;";
+            document.getElementById("show_totalqty").innerHTML = xFormatNumber(sum_qty)+"&nbsp;";
+            document.getElementById("show_totalprc").innerHTML = xFormatNumber(sum_prc)+"&nbsp;";
+        }
     }else{
         document.getElementById("show_totalitem").innerHTML = '';
         document.getElementById("show_totalqty").innerHTML = '';

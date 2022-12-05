@@ -45,6 +45,13 @@
     box-shadow: none;
 }
 
+.active .grp-menucata-en, .btn-info-copper:hover .grp-menucata-en {
+    color: #fff;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+}
+
 .btn-info-copper:focus, .btn-info-copper.focus {
     color: #fff;
     background-image: linear-gradient(#976a4d, #633710);
@@ -56,6 +63,14 @@
 }
 
 .btn-info-copper:focus .grp-menucata, .btn-info-copper.focus .grp-menucata {
+    color: #fff;
+    width: 100%;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-info-copper:focus .grp-menucata-en, .btn-info-copper.focus .grp-menucata-en {
     color: #fff;
     width: 100%;
     border: 0;
@@ -134,6 +149,17 @@
 .grp-menucata {
     font-weight: bold;
     font-size: 13px;
+    color: #aa6b40;
+    text-align: center;
+    justify-items: center;    
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.grp-menucata-en {
+    font-weight: bold;
+    font-size: 10px;
     color: #aa6b40;
     text-align: center;
     justify-items: center;    
@@ -296,12 +322,27 @@
 }
 
 .setth {
+    font-weight: 200;
+    font-size: 18px;
+    color : #FFF;
+}
+
+.setth_active {
     font-weight: bold;
     font-size: 18px;
+    color : #96694C;
 }
+
 .seten {
     font-weight: 200;
     font-size: 18px;
+    color: #FFF;
+}
+
+.seten_active {
+    font-weight: bold;
+    font-size: 18px;
+    color : #96694C;
 }
 
 /* get_food */
@@ -404,6 +445,7 @@
     display: inline-block;
     cursor: pointer;
     width: 120px;
+    height: 120px;
 }
 .btn-copperaddcart i {
     color: #fff;

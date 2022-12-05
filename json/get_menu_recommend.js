@@ -210,9 +210,29 @@ function loadPageGetCatagory_bylastpage(urlxJson, group_name){
                 const data = response.data;
                 // console.log(data.length);
                 var xloop = 0;
-    
-                var show_groupname = localStorage.getItem("group_name");
-                document.getElementById("cata_showgroupname").innerHTML = show_groupname;
+
+                console.log('show grp name');
+                
+                var myLanguage = localStorage.getItem("Set_Language");
+                if(myLanguage == 'EN'){
+                    var show_groupname = localStorage.getItem("group_nameen");
+                    console.log('sss', show_groupname);
+                    if(show_groupname == '' || show_groupname == null){
+                        var showfirst_groupname = localStorage.getItem("Set_menufirsten");
+                        document.getElementById("cata_showgroupname").innerHTML = showfirst_groupname;
+                    }else{
+                        var showfirst_groupname = localStorage.getItem("Set_menufirst");
+                        document.getElementById("cata_showgroupname").innerHTML = show_groupname;
+                    }
+                }else{
+                    if(show_groupname == '' || show_groupname == null){
+                        var showfirst_groupname = localStorage.getItem("Set_menufirst");
+                        // console.log('show grp name2 = null', showfirst_groupname);         
+                        document.getElementById("cata_showgroupname").innerHTML = showfirst_groupname;
+                    }else{
+                        document.getElementById("cata_showgroupname").innerHTML = show_groupname;
+                    }
+                }
                 // console.log('this', show_groupname);
 
                 let xmenu_recommend = document.getElementById("menucata0");
@@ -300,7 +320,11 @@ function loadPageGetCatagory_bylastpage(urlxJson, group_name){
                             menu.setAttribute("id", "hGrp_ID"+data[xloop].FoodCode);
                             // console.log('i'+i ," Grp_ID"+data[xloop].FoodCode);
                             // console.log('loop:', xloop + data[xloop].FoodCode);
-                            menu.getElementsByClassName('text_name')[0].innerHTML = data[xloop].FoodName;
+                            if(myLanguage == 'EN'){
+                                menu.getElementsByClassName('text_name')[0].innerHTML = data[xloop].FoodName_E;
+                            }else{
+                                menu.getElementsByClassName('text_name')[0].innerHTML = data[xloop].FoodName;
+                            }
                             // menu.getElementsByClassName("home_shownameeng")[0].innerHTML = data[xloop].FoodName_E;
                             var pathimg = "img/FoodImage/"+data[xloop].Food_ImageName;
                             menu.getElementsByClassName('pic_catagory_steak')[0].src = pathimg;
@@ -350,10 +374,17 @@ function shownotify(){
     
     let sum_prc = count_prc.reduce(function(prev, next){
         return prev + next;
-    }, 0);  
+    }, 0);
+
+    let myLanguage = localStorage.getItem("Set_Language");
+    if(myLanguage == 'EN'){
+        txtshownoti = "select food order : "+count_mycart+" item";
+    }else{
+        txtshownoti = "รายการอาหารที่เลือก : "+count_mycart+" รายการ";
+    }
 
     $(".notify_message").notify({
-            item1 : "รายการอาหารที่เลือก : "+count_mycart+" รายการ",
+            item1 : txtshownoti,
             p1: "                       ",
             item2 : "฿"+sum_prc,
         },            

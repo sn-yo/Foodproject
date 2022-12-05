@@ -68,8 +68,13 @@ function onLoadPageMyorder(xbookingid, urlxJson){
     
                 var row4 = document.createElement("div");
                 var rowp1 = document.createElement("span");
+                var myLanguage = localStorage.getItem("Set_Language");
                 rowp1.className = "myorder_maindetail";
-                rowp1.innerHTML = "คุณ "+mydata[i].Name+'<br/>'+'เวลาที่สั่ง '+mydata[i].Time;
+                if(myLanguage == 'EN'){
+                    rowp1.innerHTML = "Khun "+mydata[i].Name+'<br/>'+'time of order '+mydata[i].Time;
+                }else{
+                    rowp1.innerHTML = "คุณ "+mydata[i].Name+'<br/>'+'เวลาที่สั่ง '+mydata[i].Time;
+                }
     
                 var row4_2 = document.createElement("div");
                 row4_2.className = "ml-auto";
@@ -87,12 +92,20 @@ function onLoadPageMyorder(xbookingid, urlxJson){
                 var xrow3 = document.createElement("div");
                 xrow3.className = "m-0 ml-auto mr-3 myorder_showdetail";
                 // xrow3.style = "font-size: 20px; color: #633710;";
-                xrow3.innerHTML = "ราคารวม<br/>";
+                if(myLanguage == 'EN'){
+                    xrow3.innerHTML = "Total price<br/>";
+                }else{
+                    xrow3.innerHTML = "ราคารวม<br/>";
+                }
     
                 var row_span = document.createElement("span");
                 row_span.className = "myorder_showsmprc myorder_showprc";
                 // row_span.style = "font-size: 14px";
-                row_span.innerHTML = xFormatNumber(mydata[i].SumPrice)+" บาท";
+                if(myLanguage == 'EN'){
+                    row_span.innerHTML = xFormatNumber(mydata[i].SumPrice)+" baht";
+                }else{
+                    row_span.innerHTML = xFormatNumber(mydata[i].SumPrice)+" บาท";
+                }
                 
     
                 row4.appendChild(rowp1);
