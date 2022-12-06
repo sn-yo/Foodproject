@@ -15,13 +15,16 @@ $.ajax({
 });
 
 function onLoadPageMyorder(xbookingid, urlxJson){
+    console.log('load my order', urlxJson);
+    console.log('load my order', xbookingid);
     $.ajax({
         type: "GET",
         url: urlxJson+"GetHistory?BookingID="+xbookingid,
         async: false,
         cache: false,
         success: function( response ) {
-            // console.log( response.data );
+            console.log('chk');
+            console.log( response.data );
             var mydata = response.data;
             // console.log(mydata);
     
