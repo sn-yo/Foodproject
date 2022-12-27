@@ -270,7 +270,7 @@
             </div>
             <div class="col">
                 <a href="checkout.html" class="btn btn-coppernew rounded">
-                    <span id="showqty_mycart" class="showqtyonmycartx"></span>
+                    <span id="showqty_mycart" class="showqtyonmycartx0"></span>
                     <p class="h4 m-0 p-copper"><i class="feather-shopping-cart text-copper"></i></p>
                     <span id="language_btmychoose"><!-- รายการอาหารที่เลือก --></span>
                 </a>
@@ -445,6 +445,7 @@
         const my_bookingid = localStorage.getItem("Set_bookingref");
         let showqty = document.getElementById("showqty_mycart");
         showqty.style.display = "none";
+
         // console.log(my_bookingid);
         if(my_bookingid == '' || my_bookingid == null){
             // console.log('redirect');

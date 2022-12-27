@@ -13,6 +13,8 @@ function showqty_on_mycart(){
     let count_mycart = curr_mycart.length;
     
     let showqty = document.getElementById("showqty_mycart");
+    console.log(showqty);
+    showqty.classList.add("showqtyonmycartx");
     showqty.style.display = 'flex';
     showqty.innerHTML = count_mycart;
 }

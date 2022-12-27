@@ -529,6 +529,22 @@
     right: 37px;
 }
 
+.showqtyonmycartx0{
+    position: absolute;
+    
+    width: 1.2rem;
+    height: 1.2rem;
+    font-weight: bold;
+    font-size: 10px;
+    border-radius: 50%;
+    display: flex;
+    color: #633710;
+    align-items: center;
+    justify-content: center;
+    top: .2rem;
+    right: 39px;
+}
+
 .showqtyonmycartx{
     position: absolute;
     background: #FFF;
