@@ -123,6 +123,7 @@ function chk_language_getfood(urlxJson, language){
                 document.getElementById("language_btmyorder").innerHTML = response.data[11].Lang_EN;
                 document.getElementById("language_btmychoose").innerHTML = response.data[12].Lang_EN;
                 
+                document.getElementById("language_qty").style.display = "block";
                 document.getElementById("language_qty").innerHTML = response.data[13].Lang_EN;
                 document.getElementById("language_addfood").innerHTML = response.data[14].Lang_EN;
                 document.getElementById("language_orderthisfood").innerHTML = response.data[15].Lang_EN;
@@ -132,6 +133,7 @@ function chk_language_getfood(urlxJson, language){
                 document.getElementById("language_btmyorder").innerHTML = response.data[11].Lang_TH;
                 document.getElementById("language_btmychoose").innerHTML = response.data[12].Lang_TH;
 
+                document.getElementById("language_qty").style.display = "block";
                 document.getElementById("language_qty").innerHTML = response.data[13].Lang_TH;
                 document.getElementById("language_addfood").innerHTML = response.data[14].Lang_TH;
                 document.getElementById("language_orderthisfood").innerHTML = response.data[15].Lang_TH;

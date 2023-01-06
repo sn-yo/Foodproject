@@ -69,7 +69,7 @@
                     <!-- continue -->
                     <div class="bg-white rounded p-2 shadow-sm">
                         <a href="#">
-                            <img alt="#" id="show_detail_img" src="" class="img-fluid item-img w-100">
+                            <img alt="#" id="show_detail_img" src="img/FoodImage/main_f_all01.gif" class="img-fluid item-img w-100">
                         </a>
                         <div class="row p-1">
                             <div class="col-10">
@@ -92,7 +92,7 @@
                     <div id="showclickqty">
                         <div class="row">
                             <div class="col-12 text-center">
-                                <span class="enter_count" id="language_qty">ระบุจำนวน</span>
+                                <span class="enter_count" style="display: none;" id="language_qty">ระบุจำนวน</span>
                             </div>
                         </div>
                         <div class="row">
@@ -113,7 +113,7 @@
                 <div class="col-12">
                         
                         <!-- <a href="checkout.html" style="display: none;" class="btn rounded btn-primary btn-lg btn-block" id="addtobasket" onclick="clickconfirm()">Add to Basket</a> -->                
-                        <a href="#" class="btn btn-getfood" id="showbasket" disabled></a>
+                        <a href="#" class="btn btn-getfood" id="showbasket" style="display: none;" disabled></a>
                         
                         
                         <div>
@@ -128,12 +128,12 @@
                                         </svg>
                                     </div>
                                 </button> -->
-                                <button class="btn btn-copperaddcart rounded" id="addtobasket2" onclick="chktimeout('normal')">                                    
+                                <button class="btn btn-copperaddcart rounded" style="display: none;" id="addtobasket2" onclick="chktimeout('normal')">                                    
                                     <i class="feather-shopping-cart text-copper"></i>
                                     <br/>
-                                    <span class="getfoodtxt_addtocart" id="language_addfood">เพิ่มรายการอาหาร</span>
+                                    <span class="getfoodtxt_addtocart" id="language_addfood"></span>
                                 </button>
-                                <button class="btn btn-copperaddcart rounded" id="addtobasket3" onclick="chktimeout('fast')">
+                                <button class="btn btn-copperaddcart rounded" style="display: none;" id="addtobasket3" onclick="chktimeout('fast')">
                                     <i class="feather-shopping-cart text-copper"></i>
                                     <br/>
                                     <span class="getfoodtxt_addtocart" id="language_orderthisfood">สั่งรายการอาหารนี้เลย</span>
