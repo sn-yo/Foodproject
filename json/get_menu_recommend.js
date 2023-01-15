@@ -74,10 +74,11 @@ function loadPageGetRecommend(urlxJson){
 
                         var liveStation = data[xloop].LiveStation;
                         var liveStationdesc = data[xloop].SubGroupName;
+                        var grpid = data[xloop].Grp_ID;
                         // console.log(liveStation)
                         
-                        xx.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"',"+data[xloop].Food_Price+","+liveStation+",'"+liveStationdesc+"')");
-                        yy.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"',"+data[xloop].Food_Price+","+liveStation+",'"+liveStationdesc+"')");
+                        xx.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"',"+data[xloop].Food_Price+","+liveStation+",'"+liveStationdesc+"','"+grpid+"')");
+                        yy.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"',"+data[xloop].Food_Price+","+liveStation+",'"+liveStationdesc+"','"+grpid+"')");
                         yy.href = "get_food.html"
     
                         var col_6_tag1 = document.createElement('div');
@@ -175,10 +176,11 @@ function loadPageGetCatagory_bylastpage(urlxJson, group_name){
         
                                 var liveStation = curr_livestation[xloop].LiveStation;
                                 var liveStationdesc = curr_livestation[xloop].SubGroupName;
+                                var grpid = curr_livestation[xloop].Grp_ID;
                                 // console.log(liveStation)
                                 
-                                xx.setAttribute("onclick", "OnChooseFood('"+curr_livestation[xloop].FoodCode+"','"+curr_livestation[xloop].FoodName+"','"+curr_livestation[xloop].FoodName_E+"','"+pathimg+"',"+curr_livestation[xloop].Food_Price+","+liveStation+",'"+liveStationdesc+"')");
-                                yy.setAttribute("onclick", "OnChooseFood('"+curr_livestation[xloop].FoodCode+"','"+curr_livestation[xloop].FoodName+"','"+curr_livestation[xloop].FoodName_E+"','"+pathimg+"',"+curr_livestation[xloop].Food_Price+","+liveStation+",'"+liveStationdesc+"')");
+                                xx.setAttribute("onclick", "OnChooseFood('"+curr_livestation[xloop].FoodCode+"','"+curr_livestation[xloop].FoodName+"','"+curr_livestation[xloop].FoodName_E+"','"+pathimg+"',"+curr_livestation[xloop].Food_Price+","+liveStation+",'"+liveStationdesc+"','"+grpid+"')");
+                                yy.setAttribute("onclick", "OnChooseFood('"+curr_livestation[xloop].FoodCode+"','"+curr_livestation[xloop].FoodName+"','"+curr_livestation[xloop].FoodName_E+"','"+pathimg+"',"+curr_livestation[xloop].Food_Price+","+liveStation+",'"+liveStationdesc+"','"+grpid+"')");
                                 yy.href = "get_food.html"
 
                                 var col_6_tag1 = document.createElement('div');
@@ -336,10 +338,11 @@ function loadPageGetCatagory_bylastpage(urlxJson, group_name){
     
                             var liveStation = data[xloop].LiveStation;
                             var liveStationdesc = data[xloop].SubGroupName;
+                            var grpid = data[xloop].Grp_ID;
                             // console.log(liveStation)
                             
-                            xx.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"',"+data[xloop].Food_Price+","+liveStation+",'"+liveStationdesc+"')");
-                            yy.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"',"+data[xloop].Food_Price+","+liveStation+",'"+liveStationdesc+"')");
+                            xx.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"',"+data[xloop].Food_Price+","+liveStation+",'"+liveStationdesc+"','"+grpid+"')");
+                            yy.setAttribute("onclick", "OnChooseFood('"+data[xloop].FoodCode+"','"+data[xloop].FoodName+"','"+data[xloop].FoodName_E+"','"+pathimg+"',"+data[xloop].Food_Price+","+liveStation+",'"+liveStationdesc+"','"+grpid+"')");
                             yy.href = "get_food.html"
         
                             var col_6_tag1 = document.createElement('div');

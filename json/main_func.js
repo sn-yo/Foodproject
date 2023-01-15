@@ -61,6 +61,8 @@ function get_languagehome(language, page){
             }else if(page == 'success'){
                 chk_language_success(urlxJson, language);
             }
+
+            getcopperconfig(urlxJson);
         })
         .catch(function(err){
             console.log('error: ' + err)
@@ -345,6 +347,26 @@ function chk_language_success(urlxJson, language){
 
             }
             
+        }
+    });
+
+}
+
+function getcopperconfig(urlxJson){
+    const data_copperconfig = urlxJson+"GetConfig";
+
+    $.ajax({
+        type: "GET",
+        url: data_copperconfig,
+        async: false,
+        cache: false,
+        success: function( response ) {
+            //console.log(response.data[0]);
+            let maxperorder = response.data[0].MaxPerOrder;
+            let maxperqty = response.data[0].MaxPerQty;
+
+            localStorage.setItem("maxperorder", maxperorder);
+            localStorage.setItem("maxperqty", maxperqty);
         }
     });
 

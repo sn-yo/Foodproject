@@ -86,10 +86,10 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                         <span class="showtxtsirname" id="language_table"><!-- โต๊ะ --> &nbsp;</span><span class="showtxtname" id="settableno"></span>
                     </div>
-                    <div class="col-6 text-right">
+                    <div class="col-8 text-right">
                         <span class="showtxtshowtimeout" id="counttimeout"><!-- 00.00 --> </span><span class="showtxtminutes" id="language_minute"><!-- นาที --></span>
                     </div>
                 </div>
@@ -451,7 +451,7 @@
             // console.log('redirect');
             window.location.href = "signup.html";
         }
-        function OnChooseFood(code, name, nameeng, path, prc, livestation, livestationdesc){
+        function OnChooseFood(code, name, nameeng, path, prc, livestation, livestationdesc, grpid){
             // alert(code);
             localStorage.setItem('code',code);
             localStorage.setItem('name',name);
@@ -460,6 +460,7 @@
             localStorage.setItem('prc',prc);
             localStorage.setItem('livestation',livestation);
             localStorage.setItem('livestationdesc',livestationdesc);
+            localStorage.setItem('grpid',grpid);
         }
 
         
@@ -557,7 +558,12 @@
             // If the count down is over, write some text 
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("counttimeout").innerHTML = "หมดเวลา";
+                let chkmyLanguage = localStorage.getItem("Set_Language");
+                if(chkmyLanguage == 'EN'){
+                    document.getElementById("counttimeout").innerHTML = "Out of time";
+                }else{
+                    document.getElementById("counttimeout").innerHTML = "หมดเวลา";
+                }
                 window.localStorage.clear();
             }
             }, 1000);

@@ -101,7 +101,8 @@ function chk_limit_qty(itemcode){
             // console.log(response.urlJson);
             let urlxJson = response.urlJson;
             var get_bookingid = localStorage.getItem("Set_bookingref");
-            var data_limitqty = urlxJson+"GetFood?BookingID="+get_bookingid+"&FoodCode="+itemcode;
+            var get_grpid = localStorage.getItem("grpid");
+            var data_limitqty = urlxJson+"GetFood?BookingID="+get_bookingid+"&FoodCode="+itemcode+"&GrpID="+get_grpid;
             
             $.ajax({
                 type: "GET",

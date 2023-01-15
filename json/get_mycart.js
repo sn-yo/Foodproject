@@ -104,6 +104,7 @@ function clickconfirm(urlxJson, typeconfirm){
     var get_curr_food_name_en = localStorage.getItem("nameeng");
     var get_curr_food_img = localStorage.getItem("pathimg");
     var get_bookingid = localStorage.getItem("Set_bookingref");
+    var get_grpid = localStorage.getItem("grpid");
     var get_curr_food_prc = parseFloat(localStorage.getItem("prc"));
     var chk_qty = parseInt(document.getElementById("ins_qty").value);
     var get_curr_limitqty = parseInt(localStorage.getItem("LimitQty"));
@@ -111,7 +112,7 @@ function clickconfirm(urlxJson, typeconfirm){
         // console.log(urlxJson);
         $.ajax({
             type: "GET",
-            url: urlxJson+"GetFood?BookingID="+get_bookingid+"&FoodCode="+get_curr_food_code,
+            url: urlxJson+"GetFood?BookingID="+get_bookingid+"&FoodCode="+get_curr_food_code+"&GrpID="+get_grpid,
             async: false,
             cache: false,
             success: function( response ) {
@@ -143,6 +144,7 @@ function clickconfirm(urlxJson, typeconfirm){
                     var food_objs = [
                         {
                             "code" : get_curr_food_code,
+                            "list" : 0,
                             "name" : get_curr_food_name,
                             "nameen" : get_curr_food_name_en,
                             "qty" : chk_qty,
@@ -154,64 +156,84 @@ function clickconfirm(urlxJson, typeconfirm){
                     // console.log('food obj', food_objs);
 
                     var get_cart = JSON.parse(localStorage.getItem("cart"));
+                    var get_maxperorder = localStorage.getItem("maxperorder");
                     // console.log('cart ',get_cart);
 
                     if(get_cart == null){
                         localStorage.setItem("cart", JSON.stringify(food_objs));
                     }else{
-                        // for(let data of get_cart){
-                        //     if(data.code == get_curr_food_code){
-                        //         data.qty += chk_qty;
-                        //     }else{
-                        //         // let chk_old_code = get_cart.find(element => element.code == get_curr_food_code);
-                        //         console.log('oth');
-                        //         get_cart.push(food_objs);
-                        //     }
-                        // }
-                        // localStorage.setItem('cart', JSON.stringify(get_cart));
-                        let chk_old_code = get_cart.find(element => element.code == get_curr_food_code && element.opt_inst == allcheck);
+                        //console.log('length', get_cart.length);
+                        //console.log('length', get_maxperorder);
+                        //กำหนดจำนวนที่สามารถสั่งได้
+                        if(get_cart.length < get_maxperorder){
+                            // for(let data of get_cart){
+                            //     if(data.code == get_curr_food_code){
+                            //         data.qty += chk_qty;
+                            //     }else{
+                            //         // let chk_old_code = get_cart.find(element => element.code == get_curr_food_code);
+                            //         console.log('oth');
+                            //         get_cart.push(food_objs);
+                            //     }
+                            // }
+                            // localStorage.setItem('cart', JSON.stringify(get_cart));
+                            let chk_old_code = get_cart.find(element => element.code == get_curr_food_code && element.opt_inst == allcheck);
+                            //let chk_old_code = get_cart.find(element => element.code == get_curr_food_code);
 
-                        // console.log('chk 1', chk_old_code);
-                        if(chk_old_code == undefined){
-                            // console.log('เพิ่มรายการใหม่');
-                            var food_objs = 
-                            {
-                                "code" : get_curr_food_code,
-                                "name" : get_curr_food_name,
-                                "nameen" : get_curr_food_name_en,
-                                "qty" : chk_qty,
-                                "opt_inst" : allcheck,
-                                "img_path" : get_curr_food_img,
-                                "prc" : get_curr_food_prc
-                            }
-                            get_cart.push(food_objs);
-                            localStorage.setItem("cart", JSON.stringify(get_cart));
-                        }else{
-                            // console.log('มีรายการนี้แล้ว บวกเพิ่ม');
-                            // console.log('จำนวนรายการ', get_cart.length);
-                            for(let data of get_cart){
-                                // console.log('1',get_cart);
-                                // console.log('2',data);
-                                if(data.code == get_curr_food_code && data.opt_inst == allcheck){
-                                    if((data.qty+chk_qty) <= get_curr_limitqty){
-                                        data.qty += chk_qty;
-                                    }else{
-                                        data.qty = get_curr_limitqty;
-                                    }
-                                    //alert(data.qty);
-                                    /// ตรวจสอบ การเลือก option
-                                    data.opt_inst = '';
-                                    for(var c=0; c<val_check.length; c++){
-                                        if(c >= 1){
-                                            data.opt_inst += ','+val_check[c];
-                                        }else{
-                                            data.opt_inst += val_check[c];
-                                        }
-                                    }
+                            // console.log('chk 1', chk_old_code);
+                            if(chk_old_code == undefined){
+                                // console.log('เพิ่มรายการใหม่');
+                                var food_objs = 
+                                {
+                                    "code" : get_curr_food_code,
+                                    "list" : get_cart.length,
+                                    "name" : get_curr_food_name,
+                                    "nameen" : get_curr_food_name_en,
+                                    "qty" : chk_qty,
+                                    "opt_inst" : allcheck,
+                                    "img_path" : get_curr_food_img,
+                                    "prc" : get_curr_food_prc
                                 }
+                                get_cart.push(food_objs);
+                                localStorage.setItem("cart", JSON.stringify(get_cart));
+                            }else{
+                                // console.log('มีรายการนี้แล้ว บวกเพิ่ม');
+                                // console.log('จำนวนรายการ', get_cart.length);
+                                // for(let data of get_cart){
+                                //     // console.log('1',get_cart);
+                                //     // console.log('2',data);
+                                //     if(data.code == get_curr_food_code && data.opt_inst == allcheck){
+                                //         if((data.qty+chk_qty) <= get_curr_limitqty){
+                                //             data.qty += chk_qty;
+                                //         }else{
+                                //             data.qty = get_curr_limitqty;
+                                //         }
+                                //         //alert(data.qty);
+                                //         /// ตรวจสอบ การเลือก option
+                                //         data.opt_inst = '';
+                                //         for(var c=0; c<val_check.length; c++){
+                                //             if(c >= 1){
+                                //                 data.opt_inst += ','+val_check[c];
+                                //             }else{
+                                //                 data.opt_inst += val_check[c];
+                                //             }
+                                //         }
+                                //     }
+                                // }
+                                var food_objs = 
+                                {
+                                    "code" : get_curr_food_code,
+                                    "list" : get_cart.length,
+                                    "name" : get_curr_food_name,
+                                    "nameen" : get_curr_food_name_en,
+                                    "qty" : chk_qty,
+                                    "opt_inst" : allcheck,
+                                    "img_path" : get_curr_food_img,
+                                    "prc" : get_curr_food_prc
+                                }
+                                get_cart.push(food_objs);
+                                localStorage.setItem('cart', JSON.stringify(get_cart));
                             }
-                            localStorage.setItem('cart', JSON.stringify(get_cart));
-                        }
+                        }                        
                     }
 
                     var chk_addcart = localStorage.getItem("clickaddcart");
@@ -261,10 +283,11 @@ function xredirecto(chkconfirm){
 function fastconfirm(urlxJson){    
     var get_bookingid = localStorage.getItem("Set_bookingref");
     var get_curr_food_code = localStorage.getItem("code");
+    var get_grpid = localStorage.getItem("grpid");
 
     $.ajax({
         type: "GET",
-        url: urlxJson+"GetFood?BookingID="+get_bookingid+"&FoodCode="+get_curr_food_code,
+        url: urlxJson+"GetFood?BookingID="+get_bookingid+"&FoodCode="+get_curr_food_code+"&GrpID="+get_grpid,
         async: false,
         cache: false,
         success: function( response ) {

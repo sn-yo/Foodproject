@@ -89,7 +89,8 @@ function onLoadPage(code, urlxJson){
 
         //load limit qty
         var get_bookingid = localStorage.getItem("Set_bookingref");
-        var data_limitqty = urlxJson+"GetFood?BookingID="+get_bookingid+"&FoodCode="+code;
+        var get_grpid = localStorage.getItem("grpid");
+        var data_limitqty = urlxJson+"GetFood?BookingID="+get_bookingid+"&FoodCode="+code+"&GrpID="+get_grpid;
         // console.log('limit qty',data_limitqty);
 
         $.ajax({
@@ -210,12 +211,19 @@ function shownotify(){
     
     let sum_prc = count_prc.reduce(function(prev, next){
         return prev + next;
-    }, 0);  
+    }, 0);
+    
+    let myLanguage = localStorage.getItem("Set_Language");
+    if(myLanguage == 'EN'){
+        txtshownoti = "select food order : "+count_mycart+" item";
+    }else{
+        txtshownoti = "รายการอาหารที่เลือก : "+count_mycart+" รายการ";
+    }
 
     $(".notify_message").notify({
-        item1 : "รายการอาหารที่เลือก : "+count_mycart+" รายการ",
-        p1: "                       ",
-        item2 : "฿"+sum_prc,
+            item1 : txtshownoti,
+            p1: "                       ",
+            item2 : "฿"+sum_prc,
         },            
         {
             

@@ -27,6 +27,12 @@ var x = setInterval(function() {
     // If the count down is over, write some text 
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("counttimeout").innerHTML = "หมดเวลา";
+        //document.getElementById("counttimeout").innerHTML = "หมดเวลา";
+        let chkmyLanguage = localStorage.getItem("Set_Language");
+        if(chkmyLanguage == 'EN'){
+            document.getElementById("counttimeout").innerHTML = "Out of time";
+        }else{
+            document.getElementById("counttimeout").innerHTML = "หมดเวลา";
+        }
     }
 }, 1000);
