@@ -148,22 +148,24 @@ function chk_additem(item){
         if(data.code == get_food_code){
             curr_qty += data.qty;
             console.log('old qty', curr_qty);
-            console.log('chk_qty', chk_qty);
-            console.log('get_curr_limitqty', get_curr_limitqty);
-            
-            if((curr_qty+chk_qty) <= get_curr_limitqty){
-                lastfin = chk_qty;
+            console.log('chk_qty', 1);
+            console.log('chk_qty_foodcode', chk_qty_foodcode);
+
+            if((curr_qty+1) <= chk_qty_foodcode){
+                lastfin = 1;
             }else{
                 lastfin = 0;
             }
         }
     }
-
-    if((get_cart[item].qty+1) <= chk_qty_foodcode){
-        get_cart[item].qty += 1;
-    }else{
-        get_cart[item].qty = chk_qty_foodcode;
-    }
+    console.log('lastfin', lastfin);
+    if(lastfin > 0){
+        if((get_cart[item].qty+1) <= chk_qty_foodcode){
+            get_cart[item].qty += 1;
+        }else{
+            get_cart[item].qty = chk_qty_foodcode;
+        }
+    }    
     // console.log('curr qty', get_cart[item].qty);
     document.getElementById("show_qty"+item).value = get_cart[item].qty;
 
