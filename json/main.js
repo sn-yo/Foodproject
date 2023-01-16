@@ -47,7 +47,7 @@ function onloadListData(){
                 bt_plus.setAttribute("onclick", "chk_additem("+i+")");
 
                 var bt_remove = menu.getElementsByClassName("mycart_remove")[0];
-                bt_remove.setAttribute("onclick", "chk_removeitem("+my_cart[i].code+",'"+my_cart[i].opt_inst+"')");
+                bt_remove.setAttribute("onclick", "chk_removeitem("+my_cart[i].code+",'"+my_cart[i].list+"')");
 
 
                 // console.log(menu);
@@ -141,6 +141,23 @@ function chk_additem(item){
     //     document.getElementById("show_qty"+item).value = get_val;
     // }
     // console.log('chk_qty_foodcode', chk_qty_foodcode);
+    let lastfin = 0;
+    let curr_qty = 0;
+
+    for(let data of get_cart){
+        if(data.code == get_food_code){
+            curr_qty += data.qty;
+            console.log('old qty', curr_qty);
+            console.log('chk_qty', chk_qty);
+            console.log('get_curr_limitqty', get_curr_limitqty);
+            
+            if((curr_qty+chk_qty) <= get_curr_limitqty){
+                lastfin = chk_qty;
+            }else{
+                lastfin = 0;
+            }
+        }
+    }
 
     if((get_cart[item].qty+1) <= chk_qty_foodcode){
         get_cart[item].qty += 1;
@@ -182,9 +199,17 @@ function chk_delitem(item){
 
 function chk_removeitem(code, type){
     // console.log(code);
-    // console.log(type);
+    console.log(type);
     var get_cart = JSON.parse(localStorage.getItem("cart"));
-    let curr_cart = get_cart.filter(item => item.code != code || item.opt_inst != type);
+    let curr_cart = get_cart.filter(item => item.code != code || item.list != type);
+    let index = 0;
+    for(let data of curr_cart){
+        console.log(curr_cart);
+        if(index < curr_cart.length){
+            data.list = index;
+        }
+        index++;
+    }
     localStorage.setItem("cart", JSON.stringify(curr_cart));
     
     // document.getElementById("listData_point").style.display = 'none';

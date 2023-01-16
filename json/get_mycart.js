@@ -219,19 +219,43 @@ function clickconfirm(urlxJson, typeconfirm){
                                 //         }
                                 //     }
                                 // }
-                                var food_objs = 
-                                {
-                                    "code" : get_curr_food_code,
-                                    "list" : get_cart.length,
-                                    "name" : get_curr_food_name,
-                                    "nameen" : get_curr_food_name_en,
-                                    "qty" : chk_qty,
-                                    "opt_inst" : allcheck,
-                                    "img_path" : get_curr_food_img,
-                                    "prc" : get_curr_food_prc
+                                // localStorage.setItem('cart', JSON.stringify(get_cart));
+
+                                let chk_old_code = get_cart.find(element => element.code == get_curr_food_code);
+                                let lastfin = 0;
+                                let curr_qty = 0;
+                                if(chk_old_code != undefined){
+                                    for(let data of get_cart){
+                                        if(data.code == get_curr_food_code){
+                                            curr_qty += data.qty;
+                                            console.log('old qty', curr_qty);
+                                            console.log('chk_qty', chk_qty);
+                                            console.log('get_curr_limitqty', get_curr_limitqty);
+                                            if((curr_qty+chk_qty) <= get_curr_limitqty){
+                                                lastfin = chk_qty;
+                                            }else{
+                                                lastfin = 0;
+                                            }
+                                        }
+                                    }
                                 }
-                                get_cart.push(food_objs);
-                                localStorage.setItem('cart', JSON.stringify(get_cart));
+                                console.log('lastfin', lastfin);
+                                if(lastfin > 0){
+                                    var food_objs = 
+                                    {
+                                        "code" : get_curr_food_code,
+                                        "list" : get_cart.length,
+                                        "name" : get_curr_food_name,
+                                        "nameen" : get_curr_food_name_en,
+                                        "qty" : lastfin,
+                                        "opt_inst" : allcheck,
+                                        "img_path" : get_curr_food_img,
+                                        "prc" : get_curr_food_prc
+                                    }
+                                    get_cart.push(food_objs);
+                                    localStorage.setItem('cart', JSON.stringify(get_cart));
+                                }
+                                
                             }
                         }                        
                     }
